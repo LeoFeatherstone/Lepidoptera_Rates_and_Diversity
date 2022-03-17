@@ -1,0 +1,72 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=60;
+	taxlabels
+	Acanthopteroctetes
+	Adela
+	Agathiphaga
+	Andesiana
+	Antispila
+	Apoplania
+	Astrotischeria
+	Azaleodes
+	Callipielus
+	Cauchas
+	Cecidoses
+	Coptotriche
+	Crinopteryx
+	Dicranoses
+	Ditrysia
+	Dyseriocrania
+	Ectoedemia1
+	Ectoedemia_-Fomor_
+	Elhamma
+	Enteucha
+	Epimartyria
+	Eriocrania
+	Eriocraniella
+	Gazorycta
+	Heliozela
+	Heterobathmia
+	Korscheltellus
+	Lampronia
+	Lophocorona
+	Manoneura
+	Micropterix
+	Mnesarchaea
+	Nematopogon
+	Nemophora
+	Neopseustis
+	Ogygioses
+	Opostea_sp_2
+	Opostega_sp_nov
+	Oxycanus
+	Palaephatus
+	Pectinivalva
+	Perthida
+	Phymatopus
+	Prodoxus
+	Prototheora
+	Pseudopostega
+	Ptyssoptera
+	Sabatinca
+	Sporaphaga
+	Sthenopis
+	Stigmella
+	Tegeticula
+	Tischeria
+	Trichoptera
+	Trictena
+	Tridentaforma
+	Trifurcula
+	Vespina
+	Zealandopterix
+	gen_sp_
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] ((((((((((Ditrysia:247.0,Palaephatus:269.0):51.0,(((Tegeticula:20.0,Lampronia:20.0):38.0,Cecidoses:53.0):100.0,(Dicranoses:19.0,Andesiana:21.0):132.0):177.0):118.0,(Nemophora:281.0,((Adela:19.0,Cauchas:20.0):238.0,(((Astrotischeria:20.0,Azaleodes:20.0):78.0,Ptyssoptera:92.0):136.0,(Coptotriche:187.0,(((((Nematopogon:20.0,Antispila:20.0):38.0,Heliozela:53.0):54.0,Crinopteryx:97.0):45.0,(Vespina:20.0,Perthida:20.0):115.0):36.0,(Tischeria:90.0,(Tridentaforma:20.0,Prodoxus:21.0):75.0)[&!rotate=true]:74.0):49.0)[&!rotate=true]:51.0)[&!rotate=true]:53.0)[&!rotate=true]:49.0)[&!rotate=true]:155.0):123.0,(((((Enteucha:20.0,Manoneura:20.0):56.0,Stigmella:69.0):45.0,Pectinivalva:108.0):66.0,((Ectoedemia1:20.0,Ectoedemia_-Fomor_:20.0):91.0,Trifurcula:105.0):67.0):89.0,((Opostega_sp_nov:19.0,Opostea_sp_2:21.0):90.0,Pseudopostega:106.0):140.0):231.0):109.0,((Acanthopteroctetes:20.0,Neopseustis:20.0):56.0,Apoplania:70.0):394.0):83.0,((Dyseriocrania:20.0,Eriocrania:20.0):94.0,(Eriocraniella:20.0,gen_sp_:20.0):94.0):354.0):123.0,((((((((Elhamma:19.0,Oxycanus:20.0):56.0,Callipielus:70.0):42.0,Trictena:108.0):47.0,((Korscheltellus:19.0,Sthenopis:20.0):56.0,Phymatopus:67.0):73.0):42.0,(Gazorycta:20.0,Prototheora:20.0):147.0):52.0,Ogygioses:196.0):51.0,Mnesarchaea:230.0):51.0,Lophocorona:264.0):269.0):104.0,Heterobathmia:499.0):74.0,((((Sabatinca:20.0,Zealandopterix:20.0):54.0,Sporaphaga:70.0):64.0,(Epimartyria:19.0,Micropterix:20.0):110.0):85.0,Agathiphaga:200.0):347.0):63.0,Trichoptera:559.0);
+end;
+
+
