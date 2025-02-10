@@ -1,0 +1,243 @@
+---
+title: "Analysis plan for Lepidoptera rates and diversity project"
+format:
+  pdf:
+    fig-pos: 'H'
+mermaid:
+  theme: default
+execute:
+  echo: false
+  warning: false
+---
+
+## Overview:
+*	I propose a path analysis for each of the genera, family, and major lineage level datasets to simultaneously test:
+    + The direction of the relationship between mutation and speciation
+    + mode of speciation (osculate, musical chairs, escape and radiate)
+    + If results differ for each dataset, we will learn about overarching and proximal drivers of diversification (genera, major lineage, family levels)
+
+*   Key changes in my plan include:
+    + Reducing host variables to `host_species` (the number of host species) and `hosts_mean` (the mean number of hosts)
+
+## Why reduce host variables?
+1.  `host_species`, `host_families`, and `mean_hosts` are too correlated. 'Multicolinearity' is a weakness of path analysis and it will prevent convergence in estimation.
+    + `host_families` could substitute for host_species, but it is necessarily a function of `host_species` (`host_families` $>=$ `host_species`), so it would be extremely cumbersome to include both at once here. The escape and radiate model was the basis of including `host_families`, however I think we could recover a similar signal with `host_species`
+
+2. Likewise, there are too many measures of generalism which will introduce the same issued. I propose we retain `mean_hosts` as the key measure of generalism.
+    + Host phylogenetic diversity would be ideal, but contrasts too zero-inflated at the genera level.
+    + The proportion of generalists in a clade (proportion with $>=1$ host) is too restrictive. E.g. a Koala is the epitome of specialisation, but would be a generalist here because it eats more than one kind of eucalypt!
+
+The proposed path analysis will relate to each speciation hypothesis as in the following diagram. The plan is for a nicer version of this to become part of a graphical methods in the paper.
+
+::::{#fig-paths layout="[ [1, 1], [1, 1] ]"}
+
+:::{#fig-paths-1}
+
+```{mermaid}
+flowchart TB
+    A2[dS] -- pos --> B2[dN]
+    B2 -- pos --> C2[clade_size]
+    D2[mean_hosts] ~~~ C2
+    E2[host_species] ~~~ C2
+    D2 ~~~ E2
+```
+Incompatibility due to isolation
+:::
+
+:::{#fig-paths-2}
+```{mermaid}
+flowchart TB
+    A1[dS] ~~~ B1[dN]
+    B1 ~~~ C1[clade_size]
+    D1[mean_hosts] ~~~ C1
+    E1[host_species] -- pos --> C1
+    D1 ~~~ E1
+```
+Escape and radiate
+:::
+
+:::{#fig-paths-3}
+
+```{mermaid}
+flowchart TB
+    A3[dS] ~~~ B3[dN]
+    B3 ~~~ C3[clade_size]
+    D3[mean_hosts] -- neg --> C3
+    E3[host_species] -- pos --> C3
+    D3 ~~~ E3
+```
+Musical chairs
+:::
+
+:::{#fig-paths-4}
+```{mermaid}
+flowchart TB
+    A4[dS] ~~~ B4[dN]
+    B4 ~~~ C4[clade_size]
+    D4[mean_hosts] -- pos --> C4
+    E4[host_species] -- pos --> C4
+    D4 ~~~ E4
+```
+Oscillate
+:::
+
+Path analysis outcomes that would support each speciation and diversification hypothesis. **(a)** Incompatability due to isolation should show an association between substitution and clade size due to hybrid incompatability. **(b)** In escape and radiate, adaptation to a new 'niche' of hosts drives speciation, so more host species correlate with more diversity. **(c)** Musical chairs refers to taxa iteratively competing for specific hosts, hence a positive association with the number of host species and negative association with generalism. **(d)** Oscillate shouls show a positive association with generalism and the number of host species as generalists beget specialists in an oscillatory manner.
+::::
+
+In the following, I include examples of what the results figues will look like with dummy data, and assess normality in the chosen ($\log$-transformed) variables to support path analysis (Or maybe poisson regression, Xia?). 
+
+## Example results figure
+The key results figure will look like the following (random data presented). I think a heatmap would be a simpler solution too.
+
+```{r, quiet = TRUE}
+#| fig-width: 6.5
+#| fig-height: 4.5
+#| fig-cap: Path diagrams for each dataset. Edges are shown if significant and coloured by the sign of correlation. NB - These are made with random data for demonstration here! No formal analysis of the data has been done!
+#| fig-asp: 1
+
+# Load required libraries
+library(ggplot2)
+library(ggnetwork)
+library(igraph)
+library(dplyr)
+
+# Define nodes and categories
+nodes <- data.frame(
+    id = c("dS", "dN", "host_species", "mean_hosts", "clade_size")
+)
+
+# Random correlations
+rand_corr <- round(runif(15, -1, 1), 2)
+sign_corr <- sapply(
+    rand_corr,
+    function(x) {
+        if(x > 0.5) { 
+            return("red")
+        } else if(x < -0.5) {
+            return("blue")
+        } else {
+            return("grey")
+        }
+    }
+)
+
+# Create a dummy edge list with weights
+edges <- data.frame(
+        from = rep(c("dS", "dN", "host_species", "mean_hosts", "mean_hosts"), 3),
+        to = rep(c("dN", "clade_size", "clade_size", "clade_size", "host_species"), 3),
+        edge_label = rand_corr,
+        edge_color = sign_corr,
+        facet = c(rep("Family", 5), rep("Major Lineage", 5), rep("Genera", 5))
+)
+
+# Create a graph object
+graph <- graph_from_data_frame(d = edges, vertices = nodes, directed = TRUE)
+
+# Convert to ggnetwork format using explicit layout
+network_data <- ggnetwork(graph, by = "facet")
+
+# Plot the faceted network
+ggplot(network_data, aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_edges(aes(color = edge_color)) +
+  #geom_nodes(color = "steelblue", size = 5) +
+  geom_nodelabel(aes(label = name), fill = alpha("dodgerblue", 0.5)) +
+  geom_edgetext(aes(label = edge_label)) +
+  scale_color_manual(values = c("blue", "grey", "red")) +
+  theme_facet() +
+  facet_wrap(~facet, nrow = 3, scales = "free") +
+  xlim(c(-0.1, 1.1)) + ylim(c(-0.1, 1.1)) +
+  theme(
+    legend.position = "none",
+    legend.title = element_blank()
+  )
+```
+
+## Normality of the chosen variables
+
+Here I include what would become a supplementary figure assessing normality for the variables of choice. NB, this is using Andrew's original data. Some counts, such as host species, will change slightly when we revise the counting scheme (as per discussion with Lindell).
+
+```{r}
+#| fig-width: 6.5
+#| fig-height: 4.5
+#| fig-asp: 1
+#| fig-cap: Histograms of log-transformed variable in each dataset as per Andrew's original data. Normality appears to be a reasonable assumption to proceed with path analysis with regular regression for most variables. `host_species` in the Family dataset may be an exception. `n_spp` is the same as the `clade_size` variable above
+
+library(tidyr)
+
+sister_table_files <- list.files(
+    path = "Raw_Sister_Tables", pattern = "*.csv",
+    full.names = TRUE
+)
+sister_table_list <- lapply(
+    sister_table_files, function(x) read.csv(x, row.names = NULL)
+)
+
+names(sister_table_list) <- c(
+    "Family", "Major lineage", "Genera"
+)
+
+set.seed(1234)
+data1 <- sister_table_list[[1]] %>%
+    mutate_if(is.numeric, log) %>%
+    mutate(sign = ifelse(sign(N_spp_first - N_spp_last) != 0, sign(N_spp_first - N_spp_last), sample(c(1, -1), 1, 0.5))) %>%
+    mutate(
+        dN = sign * (dN_first - dN_last),
+        dS = sign * (dS_first - dS_last),
+        n_spp = sign * (N_spp_first - N_spp_last),
+        host_pgen = sign * (asin(sqrt(exp(Hosts_pgen_first))) - asin(sqrt(exp(Hosts_pgen_last)))),
+        host_mean = sign * (Hosts_mean_first - Hosts_mean_last),
+        host_families = sign * (Host_families_first - Host_families_last),
+        host_species = sign * (Host_species_first - Host_species_last),
+        host_pd = sign * (Hosts_pd_first - Hosts_pd_last)
+    ) %>%
+    select(
+        host_pd, dN, dS, host_pgen, host_mean, host_families, host_species, n_spp
+    )
+
+data2 <- sister_table_list[[2]] %>%
+    mutate_if(is.numeric, log) %>%
+    mutate(sign = ifelse(sign(N_spp_first - N_spp_last) != 0, sign(N_spp_first - N_spp_last), sample(c(1, -1), 1, 0.5))) %>%
+    mutate(
+        #dN = sign * (dN_first - dN_last),
+        #dS = sign * (dS_first - dS_last),
+        n_spp = sign * (N_spp_first - N_spp_last),
+        host_pgen = sign * (asin(sqrt(exp(Hosts_pgen_first))) - asin(sqrt(exp(Hosts_pgen_last)))),
+        host_mean = sign * (Hosts_mean_first - Hosts_mean_last),
+        host_families = sign * (Host_families_first - Host_families_last),
+        host_species = sign * (Host_species_first - Host_species_last),
+        host_pd = sign * (Hosts_pd_first - Hosts_pd_last)
+    ) %>%
+    # select(
+    #     host_pd, dN, dS, host_pgen, host_mean, host_families, host_species, n_spp
+    # )
+    select(
+        host_pd, host_pgen, host_mean, host_families, host_species, n_spp
+    )
+
+data3 <- sister_table_list[[3]] %>%
+    mutate_if(is.numeric, log) %>%
+    mutate(sign = ifelse(sign(N_spp_first - N_spp_last) != 0, sign(N_spp_first - N_spp_last), sample(c(1, -1), 1, 0.5))) %>%
+    mutate(
+        dN = sign * (dN_first - dN_last),
+        dS = sign * (dS_first - dS_last),
+        n_spp = sign * (N_spp_first - N_spp_last),
+        host_pgen = sign * (asin(sqrt(exp(Hosts_pgen_first))) - asin(sqrt(exp(Hosts_pgen_last)))),
+        host_mean = sign * (Hosts_mean_first - Hosts_mean_last),
+        host_families = sign * (Host_families_first - Host_families_last),
+        host_species = sign * (Host_species_first - Host_species_last),
+        host_pd = sign * (Hosts_pd_first - Hosts_pd_last)
+    ) %>%
+    select(
+        host_pd, dN, dS, host_pgen, host_mean, host_families, host_species, n_spp
+    )
+
+data_list <- list(data1, data2, data3)
+names(data_list) <- c("Family", "Major lineage", "Genera")
+
+data <- bind_rows(data_list, .id = "dataset") %>%
+    pivot_longer(cols = c("dN", "dS", "host_mean", "host_species", "n_spp"))
+
+ggplot(data) +
+    geom_density(aes(x = value), fill = alpha("dodgerblue", 0.8)) +
+    facet_grid(dataset ~ name)
+```
