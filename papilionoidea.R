@@ -1,12 +1,9 @@
-# Refactoring Papi script
+# Papilionoidea data - wrangle, regress, plot
 
 ## TO DO:
-# - Get baseml and codeml data
+# - codeml data - omega?
 # - Count hosts per species
-# - Pairs Plot before regression
 # - Possibly rerun PAML?
-# - Remove bespoke function as needed later
-
 
 library(tidyverse)
 library(phytools)
@@ -67,7 +64,7 @@ pairs <- lapply(pairs, function(pair) as.data.frame(t(pair)))
 pairs <- bind_rows(pairs, .id = "id")
 colnames(pairs) <- c("pair_id", "left_taxa", "right_taxa")
 
-###### NB, build in PAML runs at this point ######
+###### TODO, maybe build in PAML runs at this point ######
 
 # Get omega, dN, dS, branch length from PAML output
 baseml_trees_files <- str_sort(
@@ -86,7 +83,7 @@ codeml_trees_dS <- lapply(codeml_trees, function(list) list$dS)
 codeml_trees_omega <- lapply(codeml_trees, function(list) list$w)
 
 # Function to extract branch lengths for a given pair of taxa
-# TODO: Add phylogenetic average case for clade
+# TODO: Add phylogenetic average case for family level case
 extract_branch_lengths <- function(pair, tree, measure) {
 
   left_taxa <- pair$left_taxa
@@ -133,7 +130,7 @@ pair_data <- pairs %>%
     left_join(dN_df, by = c("pair_id", "left_taxa", "right_taxa")) %>%
     left_join(dS_df, by = c("pair_id", "left_taxa", "right_taxa"))
 
-# No add species counts to pair_data. Start with isolating genus
+# Now add species counts to pair_data. Start with isolating genus
 
 # Gets genus names from full taxa name
 # TODO: Handle > tmp$name[100]
@@ -162,9 +159,11 @@ papilionoidea_lepindex <- read.csv("Data/Papi_Genera/Papi_Genera_Lepindex_Raw.cs
 
 species_data <- bind_rows(family_lepindex, papilionoidea_lepindex) %>%
     distinct(Name_data, .keep_all = T) %>% 
-    filter(str_detect(Name_data, "Valid Name")) %>%
+    filter(str_detect(Name_data, "Valid Name"))
+
+species_counts <- species_data %>%
     group_by(Genus) %>% 
-    summarise(n_species = n()) %>% # TODO: Check double conts like for hosts?
+    summarise(n_species = n()) %>% # TODO: Check double counts like for hosts?
     mutate(genus = str_to_title(Genus)) %>% # Lowercase to match pair_data$genus
     select(genus, n_species)
 
@@ -174,7 +173,7 @@ pair_data <- pair_data %>%
         values_to = "genus",
         names_to = "side"
     ) %>%
-    left_join(species_data, by = "genus") %>%
+    left_join(species_counts, by = "genus") %>%
     mutate(side = gsub(side, pattern = "genus_", replacement = "")) %>%
     pivot_wider(
         names_from = side,
@@ -186,18 +185,56 @@ pair_data <- pair_data %>%
 host_data <- read.csv("Data/Papi_Genera/Papi_Genera_HOSTS.csv")
 
 # TODO: Hosts per species in database in current data
-
-# Get and add host counts. TODO: handle non-unique cases
-host_counts <- host_data %>%
-    rename_with(tolower) %>%
-    mutate(genus = str_to_title(genus)) %>%
-    mutate(genus = str_trim(genus)) %>%
-    group_by(genus) %>%
-    summarise(
-        n_host_families = n_distinct(host_family),
-        n_host_species = n_distinct(host_name) # Handle non-unique cases
+all_species <- species_data %>%
+    mutate(
+        genus_species = paste(str_to_title(Genus), Name_data)
+    ) %>%
+    rowwise() %>%
+    mutate(
+        hosts = ifelse(
+            genus_species %in% host_data$Host_name,
+            length(grep(host_data$Host_name, pattern = genus_species)),
+            NA
+        )
     )
 
+
+
+# Count hosts
+
+# Key step below handles the case when genus-only samples are
+# present alongside specific species. For example:
+#    host_genus
+#    Citrus
+#    Citrus limonia
+# Here, 'Citrus' counts as one host iff it is the only host of 
+# a particular species from the genus citrus
+host_counts <- host_data %>%
+    filter(!if_all(everything(), ~ . == "")) %>% # Remove weird empty rows
+    rename_with(tolower) %>%
+    mutate(
+        genus = str_to_title(str_trim(genus)),
+        host_genus = sub(" .*", "", host_name)
+    ) %>%
+    group_by(species, host_genus) %>%
+    # Key step!
+    filter(
+        !(nchar(host_name) == nchar(host_genus) & n_distinct(host_name) > 1)
+    ) %>%
+    ungroup() %>%
+    group_by(genus, species) %>%
+    summarise(
+        n_host_families = n_distinct(host_family),
+        n_host_species = n_distinct(host_name)
+    ) %>%
+    mutate(is_generalist = ifelse(n_host_species > 1, 1, 0)) %>%
+    ungroup() %>%
+    group_by(genus) %>%
+    summarise(
+        prop_generalist = sum(is_generalist) / n(),
+        n_host_families = sum(n_host_families),
+        n_host_species = sum(n_host_species)
+    )
 
 pair_data <- pair_data %>%
     pivot_longer(cols = starts_with("genus_"), values_to = "genus", names_to = "side") %>%
