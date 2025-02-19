@@ -5,22 +5,22 @@ library(stringr)
 library(fs)
 library(reshape2)
 
-source("R\\baseml.extract.tree.R")
-source("R\\my.drop.tip.R")
-source("R\\ordered.ls.dir.R")
-source("R\\phylo.average.brlen.R")
-source("R\\welch.test.R")
+source("R/baseml.extract.tree.R")
+source("R/my.drop.tip.R")
+source("R/ordered.ls.dir.R")
+source("R/phylo.average.brlen.R")
+source("R/welch.test.R")
 
-papi.aln <- as.character(read.dna("Data\\Papi_Genera\\S_2c_Dataset_with_COI.phy", format = "sequential"))
+papi.aln <- as.character(read.dna("Data/Papi_Genera/S_2c_Dataset_with_COI.phy", format = "sequential"))
 rownames(papi.aln) <- str_trim(rownames(papi.aln))
-papi.parts <- read.csv("Data\\Papi_Genera\\Papi_Genera_partitions.csv")
+papi.parts <- read.csv("Data/Papi_Genera/Papi_Genera_partitions.csv")
 papi.gaps <- matrix(papi.aln %in% c('a','c','g','t'), nrow = dim(papi.aln)[1])
 rownames(papi.gaps) = rownames(papi.aln)
 papi.covs <- mapply(function (x,y) papi.gaps[,x:y] %*% rep(1,y-x+1), papi.parts$first, papi.parts$last)
 colnames(papi.covs) <- papi.parts$gid
 rownames(papi.covs) <- rownames(papi.gaps)
 
-papi.tre <- read.nexus("Data\\Papi_Genera\\S_3b_core_analysis_median_ages.tre")
+papi.tre <- read.nexus("Data/Papi_Genera/S_3b_core_analysis_median_ages.tre")
 papi.covs.complete <- papi.covs[(papi.covs[,-c(1,3,4,9)] > 0) %*% rep(1, dim(papi.covs)[2] - 4) == (dim(papi.covs)[2] - 4),-c(1,3,4,9)]
 papi.covs.complete <- papi.covs.complete[-which(rownames(papi.covs.complete) == "RWH_96_0878_Macrosoma_bahiata"),]
 papi.tre.complete <- drop.tip(papi.tre, setdiff(papi.tre$tip.label, str_trim(rownames(papi.covs.complete))))
@@ -75,61 +75,119 @@ for (aln in papi.pair.alns) {
 }
 
 for (i in 1:length(papi.pair.alns.ungap)) {
-  print(paste0("writing: Pair_alignments\\Papi_Genera\\papi_", 
+  print(paste0("writing: Pair_alignments/Papi_Genera/papi_", 
                          i, 
                          ".fasta"))
     write.FASTA(
         as.DNAbin(papi.pair.alns.ungap[[i]]),
-        paste0("Pair_alignments\\Papi_Genera\\papi_", i, ".fasta")
+        paste0("Pair_alignments/Papi_Genera/papi_", i, ".fasta")
     )
 
   write.tree(papi.pair.trees[[i]], 
-             paste0("Pair_trees\\Papi_Genera\\papi_",
+             paste0("Pair_trees/Papi_Genera/papi_",
                     i,
                     ".tre")
              )
 }
 
 ## SOURCE TO HERE - THEN USE TREES AND ALIGNMENTS ABOVE TO RUN BASEML & CODEML
-papi.genera <- sapply(str_split(unlist(papi.tip.pairs), "_"), function (x) x[length(x[x != ""]) - 1])
-papi.genus.names <- matrix(papi.genera, nrow = 2)
-rownames(papi.genus.names) <- c("Genus_first", "Genus_last")
 
-papi.baseml.trees <- sapply(ordered.ls.dir("PAML_outputs\\Papi_Genera", regexp = ".*baseml.txt"), baseml.extract.tree, simplify = F)
-papi.codeml.trees <- sapply(ordered.ls.dir("PAML_outputs\\Papi_Genera", regexp = ".*codeml.txt"), codeml.extract.trees, simplify = F)
+# Build data frame of paired taxa (pairs)
+pairs <- lapply(
+    papi.tip.pairs,
+    function(pair) {
+        # split.names <- str_split(unlist(pair), "_")
+        # sapply(split.names, function(x) x[length(x[x != ""]) - 1])
+        as.data.frame(t(unlist(pair)))
+    }
+)
+pairs <- bind_rows(pairs, .id = "id")
+colnames(pairs) <- c("pair.id", "left.taxa", "right.taxa")
 
-papi.blens <- mapply(function (x, y) y$edge.length[y$edge[, 2] <= Ntip(y)][y$tip.label %in% x][order(match(x, y$tip.label))], papi.tip.pairs, papi.baseml.trees)
+# Get trees
+baseml.trees.files <- str_sort(list.files("PAML_outputs/Papi_Genera", pattern = "_baseml.txt", full.names = TRUE), num = TRUE)
+baseml.trees <- sapply(baseml.trees.files, baseml.extract.tree, simplify = F)
+names(baseml.trees) <- str_replace_all(names(baseml.trees), c("_baseml.txt" = "", ".+_" = ""))
+
+
+codeml.trees.files <- list.files("PAML_outputs/Papi_Genera", pattern = "_codeml.txt", full.names = TRUE)
+codeml.trees <- sapply(codeml.trees.files, codeml.extract.trees, simplify = F)
+
+## Attempt 
+# Function to extract branch lengths for a given pair of taxa
+extract_branch_lengths <- function(pair, tree) {
+  left_taxa <- pair$left.taxa
+  right_taxa <- pair$right.taxa
+  terminal_edges <- tree$edge.length[tree$edge[, 2] <= Ntip(tree)]
+  
+  # Ensure we select from edges less than the number of tips
+  left_blen <- terminal_edges[tree$tip.label == left_taxa]
+  right_blen <- terminal_edges[tree$tip.label == right_taxa]
+  
+  return(data.frame(left_taxa = left_taxa, right_taxa = right_taxa, left_blen = left_blen, right_blen = right_blen))
+}
+
+
+# Apply the function to each pair and tree
+branch_lengths <- list()
+for (i in seq_along(pairs[, 1])) {
+    branch_lengths[[i]] <- extract_branch_lengths(pairs[i, ], baseml.trees[[i]])
+}
+
+# Combine the results into a single data frame
+branch_lengths_df <- do.call(rbind, branch_lengths)
+
+contrasts <- merge(pairs, branch_lengths_df, by.x = c("left.taxa", "right.taxa"), by.y = c("left_taxa", "right_taxa"))
+
+# Add genera to match species counte
+extract_genus <- function(name) {
+    split <- unlist(str_split(name, "_"))
+    split <- split[split != ""]
+    genus <- split[length(split) - 1]
+    return(genus)
+}
+# TODO: Handle > tmp$name[100]
+# [1] "NS0181_Setabis_"
+# Also, why on earth do I need to group here?
+contrasts %>%
+    pivot_longer(cols = c("left.taxa", "right.taxa"), names_to = "taxa", values_to = "name") %>%
+    mutate(genus = extract_genus(name))
+
+# TODO: Redo for codeml trees
 papi.code.blens <- mapply(function (x, y) sapply(y[2:3], function (z) z$edge.length[z$edge[, 2] <= Ntip(z)][z$tip.label %in% x][order(match(x, z$tip.label))]), papi.tip.pairs, papi.codeml.trees)
 
-butmoth.lepindex.raw <- read.csv("Data\\Papi_Genera\\Lepi_Families_Lepindex_Raw.csv", stringsAsFactors = F)
+# getting num species
+butmoth.lepindex.raw <- read.csv("Data/Papi_Genera/Lepi_Families_Lepindex_Raw.csv", stringsAsFactors = F)
 butmoth.valid.spp <- butmoth.lepindex.raw %>% 
     distinct(Name_data, .keep_all = T) %>% 
     filter(str_detect(Name_data, "Valid Name")) %>% 
     group_by(Genus) %>% 
     summarise(Valid_spp = n() - 1)
 
-papi.lepindex.raw <- read.csv("Data\\Papi_Genera\\Papi_Genera_Lepindex_Raw.csv", stringsAsFactors = F)
+papi.lepindex.raw <- read.csv("Data/Papi_Genera/Papi_Genera_Lepindex_Raw.csv", stringsAsFactors = F)
 papi.valid.spp <- papi.lepindex.raw %>% 
     distinct(Name_data, .keep_all = T) %>% 
     filter(str_detect(Name_data, "Valid Name")) %>% 
-    group_by(Genus) %>% 
-    summarise(Valid_spp = n() - 1)
+     group_by(Genus) %>% 
+     summarise(Valid_spp = n() - 1)
 
 papi.valid.spp.final <- bind_rows(butmoth.valid.spp, papi.valid.spp) %>% 
     distinct(Genus, .keep_all = T) %>% 
     arrange(Genus)
 
+# Counting num pairs with species counts
 papi.genera.notthere <- data.frame(Genus = toupper(papi.genera[!(toupper(papi.genera) %in% papi.valid.spp.final$Genus)]), Valid_spp = NA)
 papi.valid.spp.final <- bind_rows(papi.valid.spp.final, papi.genera.notthere)
 papi.spp.contrasts <- apply(papi.genus.names, c(1, 2), function (x) papi.valid.spp.final %>% filter(Genus == toupper(x)) %>% pull(Valid_spp))
 
-angiosperm.tree <- read.nexus("Data\\Janssens_et_al_2020_Angiosperm_Tree.new")
+# For host PD - maybe delete?
+angiosperm.tree <- read.nexus("Data/Janssens_et_al_2020_Angiosperm_Tree.new")
 
 papi.out <- t(rbind(matrix(1:length(papi.tip.pairs), nrow = 1), papi.blens, papi.code.blens, papi.spp.contrasts, matrix(papi.pair.ages, nrow = 1)))
 colnames(papi.out) <- c("Pair_no", "blen_first", "blen_last", "dN_first", "dN_last", "dS_first", "dS_last", "N_spp_first", "N_spp_last", "Pair_age")
 papi.out.t <- bind_cols(as_tibble(t(papi.genus.names)), as_tibble(papi.out))
 
-papi_hosts <- read.csv("Data\\Papi_Genera\\Papi_Genera_HOSTS.csv", stringsAsFactors = F)
+papi_hosts <- read.csv("Data/Papi_Genera/Papi_Genera_HOSTS.csv", stringsAsFactors = F)
 papi_hosts_final <- papi_hosts %>% 
     filter(Family != '') %>% 
     mutate(
@@ -247,13 +305,13 @@ papi.blen.hosts.lm <- summary(lm(data = papi.analysis.blen, formula=Host_familie
 papi.dS.hosts.lm <- summary(lm(data = papi.analysis.dS, formula=Host_families_std ~ dS_std-1))$coeff
 papi.dN.hosts.lm <- summary(lm(data = papi.analysis.dN, formula=Host_families_std ~ dN_std-1))$coeff
 
-papi.blen.pl <- ggplot(papi.analysis.blen) + geom_point(aes(x = blen_std, y = N_spp_std)) + xlab("Genus Contrast in Average Total Substitutions\\Site") +  ylab("Genus contrast in clade size")+ theme(panel.background = element_blank(), axis.line = element_line(colour = "black", size = 0.5), text = element_text(family="serif")) + geom_abline(linetype = "dashed", size=1, colour="red", slope=papi.blen.lm[1], intercept = 0)
-papi.dS.pl <- ggplot(papi.analysis.dS) + geom_point(aes(x = dS_std, y = N_spp_std)) + xlab("Genus Contrast in Average Synonymous Substitutions\\Site") +  ylab("Genus contrast in clade size")+ theme(panel.background = element_blank(), axis.line = element_line(colour = "black", size = 0.5), text = element_text(family="serif")) + geom_abline(linetype = "dashed", size=1, colour="red", slope=papi.dS.lm[1], intercept = 0)
-papi.dN.pl <- ggplot(papi.analysis.dN %>% filter(dN_std < 4)) + geom_point(aes(x = dN_std, y = N_spp_std)) + xlab("Genus Contrast in Average Nonsynonymous Substitutions\\Site") +  ylab("Genus contrast in clade size")+ theme(panel.background = element_blank(), axis.line = element_line(colour = "black", size = 0.5), text = element_text(family="serif")) + geom_abline(linetype = "dashed", size=1, colour="red", slope=papi.dN.lm[1], intercept = 0)
+papi.blen.pl <- ggplot(papi.analysis.blen) + geom_point(aes(x = blen_std, y = N_spp_std)) + xlab("Genus Contrast in Average Total Substitutions/Site") +  ylab("Genus contrast in clade size")+ theme(panel.background = element_blank(), axis.line = element_line(colour = "black", size = 0.5), text = element_text(family="serif")) + geom_abline(linetype = "dashed", size=1, colour="red", slope=papi.blen.lm[1], intercept = 0)
+papi.dS.pl <- ggplot(papi.analysis.dS) + geom_point(aes(x = dS_std, y = N_spp_std)) + xlab("Genus Contrast in Average Synonymous Substitutions/Site") +  ylab("Genus contrast in clade size")+ theme(panel.background = element_blank(), axis.line = element_line(colour = "black", size = 0.5), text = element_text(family="serif")) + geom_abline(linetype = "dashed", size=1, colour="red", slope=papi.dS.lm[1], intercept = 0)
+papi.dN.pl <- ggplot(papi.analysis.dN %>% filter(dN_std < 4)) + geom_point(aes(x = dN_std, y = N_spp_std)) + xlab("Genus Contrast in Average Nonsynonymous Substitutions/Site") +  ylab("Genus contrast in clade size")+ theme(panel.background = element_blank(), axis.line = element_line(colour = "black", size = 0.5), text = element_text(family="serif")) + geom_abline(linetype = "dashed", size=1, colour="red", slope=papi.dN.lm[1], intercept = 0)
 
-papi.blen.hosts.pl <- ggplot(papi.analysis.blen) + geom_point(aes(x = blen_std, y = Host_families_std)) + xlab("Family Contrast in Average Total Substitutions\\Site") +  ylab("Family contrast in host family breadth")+ theme(panel.background = element_blank(), axis.line = element_line(colour = "black", size = 0.5), text = element_text(family="serif")) + geom_abline(linetype = "dashed", size=1, colour="red", slope=papi.blen.hosts.lm[1], intercept = 0)
-papi.dS.hosts.pl <- ggplot(papi.analysis.dS) + geom_point(aes(x = dS_std, y = Host_families_std)) + xlab("Family Contrast in Average Synonymous Substitutions\\Site") +  ylab("Family contrast in host family breadth")+ theme(panel.background = element_blank(), axis.line = element_line(colour = "black", size = 0.5), text = element_text(family="serif")) + geom_abline(linetype = "dashed", size=1, colour="red", slope=papi.dS.hosts.lm[1], intercept = 0)
-papi.dN.hosts.pl <- ggplot(papi.analysis.dN) + geom_point(aes(x = dN_std, y = Host_families_std)) + xlab("Family Contrast in Average Nonsynonymous Substitutions\\Site") +  ylab("Family contrast in host family breadth")+ theme(panel.background = element_blank(), axis.line = element_line(colour = "black", size = 0.5), text = element_text(family="serif")) + geom_abline(linetype = "dashed", size=1, colour="red", slope=papi.dN.hosts.lm[1], intercept = 0)
+papi.blen.hosts.pl <- ggplot(papi.analysis.blen) + geom_point(aes(x = blen_std, y = Host_families_std)) + xlab("Family Contrast in Average Total Substitutions/Site") +  ylab("Family contrast in host family breadth")+ theme(panel.background = element_blank(), axis.line = element_line(colour = "black", size = 0.5), text = element_text(family="serif")) + geom_abline(linetype = "dashed", size=1, colour="red", slope=papi.blen.hosts.lm[1], intercept = 0)
+papi.dS.hosts.pl <- ggplot(papi.analysis.dS) + geom_point(aes(x = dS_std, y = Host_families_std)) + xlab("Family Contrast in Average Synonymous Substitutions/Site") +  ylab("Family contrast in host family breadth")+ theme(panel.background = element_blank(), axis.line = element_line(colour = "black", size = 0.5), text = element_text(family="serif")) + geom_abline(linetype = "dashed", size=1, colour="red", slope=papi.dS.hosts.lm[1], intercept = 0)
+papi.dN.hosts.pl <- ggplot(papi.analysis.dN) + geom_point(aes(x = dN_std, y = Host_families_std)) + xlab("Family Contrast in Average Nonsynonymous Substitutions/Site") +  ylab("Family contrast in host family breadth")+ theme(panel.background = element_blank(), axis.line = element_line(colour = "black", size = 0.5), text = element_text(family="serif")) + geom_abline(linetype = "dashed", size=1, colour="red", slope=papi.dN.hosts.lm[1], intercept = 0)
 
 papi.hosts.fam.lm <- summary(lm(data=papi.analysis.hosts, formula=N_spp_std ~ Host_families_std-1))$coeff
 papi.hosts.spp.lm <- summary(lm(data=papi.analysis.hosts, formula=N_spp_std ~ Host_species_std-1))$coeff
