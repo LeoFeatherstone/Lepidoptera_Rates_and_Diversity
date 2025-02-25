@@ -157,14 +157,16 @@ pair_data <- pair_data %>%
 family_lepindex <- read.csv("Data/Papi_Genera/Lepi_Families_Lepindex_Raw.csv", stringsAsFactors = F)
 papilionoidea_lepindex <- read.csv("Data/Papi_Genera/Papi_Genera_Lepindex_Raw.csv", stringsAsFactors = F)
 
-species_data <- bind_rows(family_lepindex, papilionoidea_lepindex) %>%
-    distinct(Name_data, .keep_all = T) %>% 
-    filter(str_detect(Name_data, "Valid Name"))
+species_data <- as_tibble(bind_rows(family_lepindex, papilionoidea_lepindex)) %>%
+    rename_with(tolower) %>%
+    distinct(name_data, .keep_all = T) %>% 
+    filter(str_detect(name_data, "Valid Name"))
+    rename_with(tolower)
 
 species_counts <- species_data %>%
-    group_by(Genus) %>% 
+    group_by(genus) %>% 
     summarise(n_species = n()) %>% # TODO: Check double counts like for hosts?
-    mutate(genus = str_to_title(Genus)) %>% # Lowercase to match pair_data$genus
+    mutate(genus = str_to_title(genus)) %>% # Lowercase to match pair_data$genus
     select(genus, n_species)
 
 pair_data <- pair_data %>%
@@ -184,24 +186,6 @@ pair_data <- pair_data %>%
 # Now add host data. Wrangle to count host families and species
 host_data <- read.csv("Data/Papi_Genera/Papi_Genera_HOSTS.csv")
 
-# TODO: Hosts per species in database in current data
-all_species <- species_data %>%
-    mutate(
-        genus_species = paste(str_to_title(Genus), Name_data)
-    ) %>%
-    rowwise() %>%
-    mutate(
-        hosts = ifelse(
-            genus_species %in% host_data$Host_name,
-            length(grep(host_data$Host_name, pattern = genus_species)),
-            NA
-        )
-    )
-
-
-
-# Count hosts
-
 # Key step below handles the case when genus-only samples are
 # present alongside specific species. For example:
 #    host_genus
@@ -209,7 +193,7 @@ all_species <- species_data %>%
 #    Citrus limonia
 # Here, 'Citrus' counts as one host iff it is the only host of 
 # a particular species from the genus citrus
-host_counts <- host_data %>%
+host_data <- host_data %>%
     filter(!if_all(everything(), ~ . == "")) %>% # Remove weird empty rows
     rename_with(tolower) %>%
     mutate(
@@ -221,7 +205,10 @@ host_counts <- host_data %>%
     filter(
         !(nchar(host_name) == nchar(host_genus) & n_distinct(host_name) > 1)
     ) %>%
-    ungroup() %>%
+    ungroup()
+
+# Break point above touse `host_data` to look at num species with host data
+host_counts <- host_data %>%
     group_by(genus, species) %>%
     summarise(
         n_host_families = n_distinct(host_family),
@@ -242,21 +229,28 @@ pair_data <- pair_data %>%
     left_join(host_counts, by = "genus") %>%
     pivot_wider(
         names_from = side,
-        values_from = c(n_host_species, n_host_families, genus),
+        values_from = c(n_host_species, n_host_families, prop_generalist, genus),
         names_glue = "{.value}_{side}",
         values_fill = NA
     )
 
 # Calculate contrasts and do pairs plot
-plot_data <- pair_data %>%
-    drop_na() %>%
+contrasts <- pair_data %>%
     mutate(label = paste(genus_left, "-", genus_right)) %>%
     mutate(across(
-        .cols = -c(pair_id, left_taxa, right_taxa, genus_left, genus_right, label),
+        .cols = -c(
+            pair_id, left_taxa, right_taxa,
+            genus_left, genus_right, label,
+            prop_generalist_left, prop_generalist_right
+        ),
         .fns = log
     )) %>%
     mutate(
         sign = sign(n_species_left - n_species_right)
+    ) %>%
+    mutate(
+        prop_generalist_left = asin(sqrt(prop_generalist_left)),
+        prop_generalist_right = asin(sqrt(prop_generalist_right))
     ) %>%
     mutate(
         dN_contrast = sign * (dN_left - dN_right),
@@ -264,14 +258,78 @@ plot_data <- pair_data %>%
         n_host_species_contrast = sign * (n_host_species_left - n_host_species_right),
         n_species_contrast = sign * (n_species_left - n_species_right),
         n_host_families_contrast = sign * (n_host_families_left - n_host_families_right),
-        baseml_bl_contrast = sign * (baseml_bl_left - baseml_bl_right)
+        baseml_bl_contrast = sign * (baseml_bl_left - baseml_bl_right),
+        prop_generalist_contrast = sign * (prop_generalist_left - prop_generalist_right)
     ) %>%
     select(c(ends_with("contrast"), "label"))
 
 # Pairs Plot
-pairs_plot <- ggpairs(plot_data, columns = 1:6) +
-    ggtitle("Log-transformed contrasts with pearson correlation") +
+pairs_plot <- ggpairs(contrasts, columns = 1:7) +
+    labs(
+        title = "Log-transformed contrasts with pearson correlation",
+        subtitle = "(prop_generalist is arcsin-sqrt transformed)"
+    ) +
+    theme(text = element_text(size = 11.5))
+
+ggsave(plot = pairs_plot, filename = "genera_pairs.pdf", width = 12, height = 12, units = "in")
+
+# n_species against dS
+species_dS_plot <- contrasts %>%
+    ggplot(aes(x = dS_contrast, y = n_species_contrast)) +
+    geom_smooth(method= "lm", se = FALSE, col = alpha("black", 0.6)) +
+    geom_point(fill = alpha("dodgerblue", 0.7), shape = 21) +
+    ggpubr::stat_cor(method = "pearson", label.x = -0.4, label.y = 5) +
+    labs(x = "dS contrast", y = "Number of species contrast", title = "Papilionoidea genera") +
+    theme(
+        text = element_text(size = 12)
+    )
+ggsave(
+    plot = species_dS_plot, filename = "species_dS_genera.pdf",
+    width = 4, height = 4, units = "in"
+)
+
+# Looking at recorded hosts for each species
+matched_species_host <- species_data %>%
+    mutate(
+        species = word(name_data, 1),
+        genus_species = paste(str_to_title(genus), species),
+    ) %>%
+    filter(!(genus == species)) %>% # Case when genus given as species at new genus
+    select(c(family, genus, genus_species)) %>%
+    rowwise() %>%
+    left_join(
+        host_data %>% group_by(species) %>% summarise(n_hosts = n_distinct(host_name)), 
+        by = c("genus_species" = "species")
+    ) %>%
+    mutate(n_hosts = replace_na(n_hosts, 0))
+
+# Shows that 99% of species don't have host data recorded! (98.9% technically...)
+match_table <- matched_species_host %>%
+    group_by(n_hosts) %>%
+    summarise(
+        num_species = n()
+    ) %>%
+    mutate(
+        prop_species = num_species / sum(num_species)
+    )
+
+# Match table, finding most represented families among those with hose data
+plot <- matched_species_host %>%
+    group_by(family) %>%
+    summarise(
+        num_hosts_recorded = sum(n_hosts)
+    ) %>%
+    ungroup() %>%
+    slice_max(num_hosts_recorded, n = 20) %>%
+    drop_na() %>%
+    arrange(desc(num_hosts_recorded)) %>%
+    ggplot(aes(x = num_hosts_recorded, y = fct_reorder(family, num_hosts_recorded))) +
+    geom_col(fill =alpha("dodgerblue", 0.75)) +
+    labs(x = "Number of recorded hosts", y = "Family (top 20)") +
+    theme_minimal() +
     theme(
         text = element_text(size = 14)
     )
-ggsave(plot = pairs_plot, filename = "genera_pairs.pdf")
+
+ggsave(plot = plot, filename = "top_host_families.pdf", width = 6, height = 6, units = "in")
+
