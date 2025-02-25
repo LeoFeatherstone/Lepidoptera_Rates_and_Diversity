@@ -19,7 +19,18 @@ pairs_plot_genus <- contrasts %>%
     select(-c("dataset", "label")) %>%
     ggpairs() +
     labs(
-        title = "Log-transformed contrasts with pearson correlation",
+        title = "Papilonoidea genera: log-transformed contrasts with pearson correlation",
+        subtitle = "(prop_generalist is arcsin-sqrt transformed)"
+    ) +
+    theme(text = element_text(size = 11.5))
+
+pairs_plot_major_lineage <- contrasts %>%
+    filter(dataset == "major-lineage") %>%
+    ungroup() %>%
+    select(-c("dataset", "label", "dN_contrast", "dS_contrast", "baseml_bl_contrast")) %>%
+    ggpairs() +
+    labs(
+        title = "Lepidoptera major-lineage: log-transformed contrasts with pearson correlation",
         subtitle = "(prop_generalist is arcsin-sqrt transformed)"
     ) +
     theme(text = element_text(size = 11.5))
@@ -30,18 +41,20 @@ pairs_plot_family <- contrasts %>%
     select(-c("dataset", "label")) %>%
     ggpairs() +
     labs(
-        title = "Log-transformed contrasts with pearson correlation",
+        title = "Lepidoptera family: log-transformed contrasts with pearson correlation",
         subtitle = "(prop_generalist is arcsin-sqrt transformed)"
     ) +
     theme(text = element_text(size = 11.5))
 
 ggsave(plot = pairs_plot_genus, filename = "pairs_genera.pdf", width = 12, height = 12, units = "in")
+ggsave(plot = pairs_plot_major_lineage, filename = "pairs_major-lineage.pdf", width = 12, height = 12, units = "in")
 ggsave(plot = pairs_plot_family, filename = "pairs_family.pdf", width = 12, height = 12, units = "in")
 
 # n_species against dS
 
 # Fit linear regression models for each group with y-intercept fixed at 0
 models <- contrasts %>%
+  filter(dataset != "major-lineage") %>%
   group_by(dataset) %>%
   do(model = lm(n_species_contrast ~ 0 + dS_contrast, data = .))
 

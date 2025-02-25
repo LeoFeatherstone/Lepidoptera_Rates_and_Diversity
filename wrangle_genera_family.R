@@ -6,33 +6,41 @@ library(tidyverse)
 library(phytools)
 library(GGally)
 
-# Convenience functions
+## Begin convenience functions
 source("R/baseml.extract.tree.R")
-
 # Extracts left and right branch lengths from pair in PAML output
 # Tree is a tree, measure refers to variable name. baseml_bl for baseml dN, dS for codeml
 extract_paml_lengths <- function(tree, measure) {
+    sister_parent_node <- which(node.depth(tree) == 2)
+    pair <- tree$tip.label[getDescendants(tree, sister_parent_node)]
+    left_taxa <- pair[1]
+    right_taxa <- pair[2]
 
-  # Tree is a triplet, so sister pair always descends from the node with two descendants
-  sister_parent_node <- which(node.depth(tree) == 2)
-  pair <- tree$tip.label[getDescendants(tree, sister_parent_node)]
-  left_taxa <- pair[1]
-  right_taxa <- pair[2]
+    terminal_edges <- tree$edge.length[tree$edge[, 2] <= Ntip(tree)]
+    
+    left_blen <- terminal_edges[tree$tip.label == left_taxa]
+    right_blen <- terminal_edges[tree$tip.label == right_taxa]
+    
+    result <- setNames(
+        data.frame(
+            left_taxa, left_blen,
+            right_taxa, right_blen
+        ),
+        c("taxa_left", paste0(measure, "_left"), "taxa_right", paste0(measure, "_right"))
+    )
+    return(result)
+}
 
-  terminal_edges <- tree$edge.length[tree$edge[, 2] <= Ntip(tree)]
-  
-  # Ensure we select from edges less than the number of tips
-  left_blen <- terminal_edges[tree$tip.label == left_taxa]
-  right_blen <- terminal_edges[tree$tip.label == right_taxa]
-  
-  result <- setNames(
-    data.frame(
-      left_taxa, left_blen,
-      right_taxa, right_blen
-    ),
-    c("taxa_left", paste0(measure, "_left"), "taxa_right", paste0(measure, "_right"))
-  )
-  return(result)
+# Extract branch length data from trees and bind to tibble. Wraps `extract_paml_lengths` to process lists of trees.
+extract_and_bind <- function(trees, measure) {
+    lengths <- lapply(trees, function(tree) extract_paml_lengths(tree, measure))
+    df <- bind_rows(lengths, .id = "file") %>%
+        mutate(
+            dataset = ifelse(grepl("Papi_Genera", file), "genera", "family"),
+            pair_id = str_extract(file, "\\d+")
+        ) %>%
+        select(-file)
+    return(df)
 }
 
 # Extracts genus names from full taxa name
@@ -50,20 +58,9 @@ extract_family <- function(name) {
     taxa <- split[1]
     return(taxa)
 }
+## End convenience functions
 
-# Extract branch length data from trees and bind to tibble
-extract_and_bind <- function(trees, measure) {
-    lengths <- lapply(trees, function(tree) extract_paml_lengths(tree, measure))
-    df <- bind_rows(lengths, .id = "file") %>%
-        mutate(
-            dataset = ifelse(grepl("Papi_Genera", file), "genera", "family"),
-            pair_id = str_extract(file, "\\d+")
-        ) %>%
-        select(-file)
-    return(df)
-}
-
-# Prepare pecies diversity data. Handle family and genera species counts separately
+## Begin prepare species diversity data
 family_lepindex <- read_csv("Data/Papi_Genera/Lepi_Families_Lepindex_Raw.csv") %>%
     filter(!if_all(everything(), ~ . == "")) # Remove weird empty rows
 papilionoidea_lepindex <- read_csv("Data/Papi_Genera/Papi_Genera_Lepindex_Raw.csv") %>%
@@ -76,15 +73,15 @@ species_data <- bind_rows(family_lepindex, papilionoidea_lepindex) %>%
 
 species_counts_genus <- species_data %>%
     group_by(genus) %>% 
-    summarise(n_species = n()) %>% # NB: distinct names filtered above
-    mutate(genus = str_to_title(genus)) %>% # Lowercase to match pair_data$genus
+    summarise(n_species = n()) %>% 
+    mutate(genus = str_to_title(genus)) %>% 
     select(genus, n_species) %>%
     drop_na()
 
 species_counts_family <- species_data %>%
     group_by(family) %>% 
-    summarise(n_species = n()) %>% # NB: distinct names filtered above
-    mutate(family = str_to_title(family)) %>% # Lowercase to match pair_data$family
+    summarise(n_species = n()) %>% 
+    mutate(family = str_to_title(family)) %>% 
     select(family, n_species) %>%
     drop_na()
 
@@ -92,24 +89,18 @@ combined_species_counts <- bind_rows(species_counts_genus, species_counts_family
     rowwise() %>%
     mutate(taxonomic_group = ifelse(is.na(genus), family, genus)) %>%
     select(taxonomic_group, n_species)
+## End preparing species diversity data
 
-# Preparing host counts
+# Begin prepare host counts
 host_datasets <- c(
-        "Data/Papi_Genera/Papi_Genera_HOSTS.csv",
-        "Data/Lepi_MajorLineages/Lepi_MajorLineages_HOSTS.csv",
-        "Data/Lepi_Families/Lepi_Families_HOSTS.csv"
-    )
+    "Data/Papi_Genera/Papi_Genera_HOSTS.csv",
+    "Data/Lepi_MajorLineages/Lepi_MajorLineages_HOSTS.csv",
+    "Data/Lepi_Families/Lepi_Families_HOSTS.csv"
+)
 
-# Key step below handles the case when genus-only samples are
-# present alongside specific species. For example:
-#    host_genus
-#    Citrus
-#    Citrus limonia
-# Here, 'Citrus' counts as one host iff it is the only host of 
-# a particular species from the genus citrus
 host_data <- lapply(host_datasets, read_csv) %>%
     bind_rows() %>%
-    filter(!if_all(everything(), ~ . == "")) %>% # Remove weird empty rows
+    filter(!if_all(everything(), ~ . == "")) %>% 
     rename_with(tolower) %>%
     mutate(
         genus = str_to_title(str_trim(genus)),
@@ -118,13 +109,11 @@ host_data <- lapply(host_datasets, read_csv) %>%
     ) %>%
     distinct() %>%
     group_by(species, host_genus) %>%
-    # Key step!
     filter(
         !(nchar(host_name) == nchar(host_genus) & n_distinct(host_name) > 1)
     ) %>%
     ungroup()
 
-# Cout unique hosts species and families separately, then combine
 host_counts_genus <- host_data %>%
     group_by(genus, species) %>%
     summarise(
@@ -139,7 +128,7 @@ host_counts_genus <- host_data %>%
         n_host_families = sum(n_host_families),
         n_host_species = sum(n_host_species)
     ) %>%
-    filter(genus != "Cosmopterigidae") # One off step. Possible error row in Papi hosts?
+    filter(genus != "Cosmopterigidae")
 
 host_counts_family <- host_data %>%
     group_by(family, species) %>%
@@ -160,22 +149,22 @@ combined_host_counts <- bind_rows(host_counts_genus, host_counts_family) %>%
     rowwise() %>%
     mutate(taxonomic_group = ifelse(is.na(genus), family, genus)) %>%
     select(taxonomic_group, prop_generalist, n_host_families, n_host_species)
+## End prepare hosts counts
 
-# Parse PAML output  as lists of trees for each measure (baseml_bl, dN, dS)
-# Handles genera and family level data simultaneously
+## Begin parse PAML output as lists of trees for each measure (baseml_bl, dN, dS) and major lineagge data
 baseml_trees_files <- list.files(
-        path = c("PAML_outputs/Papi_Genera", "PAML_outputs/Lepi_Families"),
-        pattern = "_baseml.txt", full.names = TRUE
-    ) %>%
+    path = c("PAML_outputs/Papi_Genera", "PAML_outputs/Lepi_Families"),
+    pattern = "_baseml.txt", full.names = TRUE
+) %>%
     str_sort(num = TRUE)
 
-baseml_trees <- lapply(baseml_trees_files[-20], baseml.extract.tree) # NB. 20th family level codeml result is missing. TODO
+baseml_trees <- lapply(baseml_trees_files[-20], baseml.extract.tree)
 names(baseml_trees) <- baseml_trees_files[-20]
 
 codeml_trees_files <- list.files(
     path = c("PAML_outputs/Papi_Genera", "PAML_outputs/Lepi_Families"),
-        pattern = "_codeml.txt", full.names = TRUE
-    )  %>%
+    pattern = "_codeml.txt", full.names = TRUE
+) %>%
     str_sort(num = TRUE)
 
 codeml_trees <- lapply(codeml_trees_files, codeml.extract.trees)
@@ -187,7 +176,33 @@ baseml_bl_df <- extract_and_bind(baseml_trees, "baseml_bl")
 dN_df <- extract_and_bind(codeml_trees_dN, "dN")
 dS_df <- extract_and_bind(codeml_trees_dS, "dS")
 
-# Pair data ready to join species counts and host counts
+# Parse major lineage data separately
+major_lineage_data <- read_csv("Raw_Sister_Tables/Lepidoptera_MajorLineages_Contrasts.csv") %>%
+    mutate(
+        pair_id = as.character(Pair_no), dataset = "major-lineage",
+        n_species_left = N_spp_first, n_species_right = N_spp_last,
+        taxa_left = Lineage_first, taxa_right = Lineage_last,
+        n_host_species_left = Host_species_first, n_host_species_right = Host_species_last,
+        n_host_families_left = Host_families_first, n_host_families_right = Host_families_last,
+        prop_generalist_left = Hosts_pgen_first, prop_generalist_right = Hosts_pgen_last
+    ) %>%
+    select(
+        pair_id, dataset,
+        taxa_left, taxa_right,
+        n_species_left, n_species_right,
+        n_host_species_left, n_host_species_right,
+        n_host_families_left, n_host_families_right,
+        prop_generalist_left, prop_generalist_right
+    ) %>%
+    pivot_longer(
+        cols = ends_with("_left") | ends_with("_right"),
+        names_to = c(".value", "side"),
+        names_pattern = "(.*)_(left|right)"
+    ) 
+
+## End parse PAML output as lists of trees for each measure (baseml_bl, dN, dS) and major lineagge data
+
+## Begin join host and species counts
 pair_data_long <- baseml_bl_df %>%
     left_join(dS_df, by = c("pair_id", "dataset", "taxa_left", "taxa_right")) %>%
     left_join(dN_df, by = c("pair_id", "dataset", "taxa_left", "taxa_right")) %>%
@@ -200,14 +215,13 @@ pair_data_long <- baseml_bl_df %>%
     mutate(
         taxonomic_group = ifelse(dataset == "family", extract_family(taxa), extract_genus(taxa))
     ) %>%
-    mutate(taxonomic_group = ifelse(taxonomic_group == "NS0181", "Setabis", taxonomic_group)) # One-off
+    mutate(taxonomic_group = ifelse(taxonomic_group == "NS0181", "Setabis", taxonomic_group))
 
-# Join species counts and host counts
-#pair_data <- 
-
+# Pivot left-right wider for contrasts and left join major_lineage_data
 pair_data_wide <- pair_data_long %>%
     left_join(combined_species_counts, by = "taxonomic_group") %>%
     left_join(combined_host_counts, by = "taxonomic_group") %>%
+    bind_rows(major_lineage_data) %>%
     group_by(dataset, pair_id) %>%
     pivot_wider(
         names_from = side,
@@ -215,11 +229,12 @@ pair_data_wide <- pair_data_long %>%
         names_glue = "{.value}_{side}",
         values_fill = NA
     )
+## End join host and species counts
 
-# Get contrasts
+## Begin calculate contrasts and save dataset to .Rds
 contrasts <- pair_data_wide %>%
     group_by(dataset) %>%
-    mutate(label = paste(taxonomic_group_left, "-", taxonomic_group_right)) %>% # TODO: For ggplotly later?
+    mutate(label = paste(taxonomic_group_left, "-", taxonomic_group_right)) %>%
     mutate(across(
         .cols = -c(
             pair_id, taxa_left, taxa_right,
@@ -246,14 +261,12 @@ contrasts <- pair_data_wide %>%
     ) %>%
     select(c(ends_with("contrast"), "label"))
 
-# Save contrasts, host_data, species_data to .Rds file
 saveRDS(
     list(
-    contrasts = contrasts,
-    host_data = host_data,
-    species_data = species_data
+        contrasts = contrasts,
+        host_data = combined_host_counts,
+        species_data = combined_species_counts
     ),
     file = "contrasts_host_species_data.Rds"
 )
-
-## Plots (TODO: Must pull in major lineage data above for path analyses)
+## End
