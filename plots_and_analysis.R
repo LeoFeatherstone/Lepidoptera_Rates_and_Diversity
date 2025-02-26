@@ -115,33 +115,39 @@ ggsave(
 
 # Prepare lavaan plot code
 library(lavaan)
-library(semPlot)
 library(gridExtra)
 
 # Define the path model
 path_model <- '
-    n_species_contrast ~ dS_contrast + dN_contrast + baseml_bl_contrast
+    n_species_contrast ~ dS_contrast + dN_contrast + baseml_bl_contrast + prop_generalist_contrast + n_host_families_contrast
     dS_contrast ~ dN_contrast + baseml_bl_contrast
     dN_contrast ~ baseml_bl_contrast
+'
+
+path_model_major_lineage <- '
+    n_species_contrast ~ prop_generalist_contrast
 '
 
 # Fit the model for each group
 fit_models <- contrasts %>%
     group_by(dataset) %>%
-    do(fit = sem(path_model, data = .))
+    do(fit = sem(
+        ifelse(unique(.$dataset) == "major-lineage", path_model_major_lineage, path_model),
+        data = .)
+    )
 
 # Plot the path models
+library(lavaanPlot)
+
 plot_list <- fit_models %>%
     rowwise() %>%
-    mutate(plot = list(semPaths(fit, "std", layout = "circle", title = dataset))) %>%
+    mutate(plot = list(lavaanPlot(model = fit, coefs = TRUE, stand = TRUE))) %>%
     pull(plot)
 
-# Arrange plots side by side
-grid.arrange(grobs = plot_list, ncol = 2)
+# Create a panel plot of the path models
+pdf("path_models_panel.pdf", width = 12, height = 12)
 
-# Save the combined plot
-ggsave(
-    filename = "path_models_combined.pdf",
-    plot = grid.arrange(grobs = plot_list, ncol = 2),
-    width = 16, height = 8, units = "in"
-)
+par(mfrow = c(1, 3))
+for (plot in plot_list) { plot }
+
+dev.off()
