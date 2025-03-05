@@ -6,6 +6,13 @@ library(tidyverse)
 library(phytools)
 library(GGally)
 
+
+# Read the saved datasets later - TEMPORARY CONVENIENCE
+combined_host_counts <- readRDS("combined_host_counts.Rds")
+combined_species_counts <- readRDS("combined_species_counts.Rds")
+pair_data_long <- readRDS("pair_data_long.Rds")
+pair_data_wide <- readRDS("pair_data_wide.Rds")
+
 ## Begin convenience functions
 source("R/baseml.extract.tree.R")
 # Extracts left and right branch lengths from pair in PAML output
@@ -46,20 +53,15 @@ extract_and_bind <- function(trees, measure) {
 # Extracts genus names from full taxa name
 extract_genus <- function(name) {
     split <- unlist(str_split(name, "_"))
-    split <- split[split != ""]
-    taxa <- split[length(split) - 1]
-    return(taxa)
+    return(split[1])
 }
 
 # Extracts family names from full taxa name
 extract_family <- function(name) {
     split <- unlist(str_split(name, "_"))
-    split <- split[split != ""]
-    taxa <- split[1]
-    return(taxa)
+    return(split[2])
 }
-## End convenience functions
-
+    
 ## Begin prepare host counts
 host_datasets <- c(
     "Data/Papi_Genera/Papi_Genera_HOSTS.csv",
@@ -128,6 +130,10 @@ papilionoidea_lepindex <- read_csv("Data/Papi_Genera/Papi_Genera_Lepindex_Raw.cs
 major_lineage_lepindex <- read_csv("Data/Lepi_MajorLineages/Lepi_MajorLineages_Lepindex.csv") %>%
     select(Genus, Name_data) %>% # Avoid first number column
     filter(!if_all(everything(), ~ . == ""))
+major_lineage_taxonomy <- read_csv("Data/Lepi_MajorLineages/Lepi_MajorLineages_taxonomy.csv") %>%
+    filter(!if_all(everything(), ~ . == "")) %>%
+    rename_with(tolower) %>%
+    rowwise()
 
 species_data <- bind_rows(family_lepindex, papilionoidea_lepindex, major_lineage_lepindex) %>%
     rename_with(tolower) %>%
@@ -136,6 +142,7 @@ species_data <- bind_rows(family_lepindex, papilionoidea_lepindex, major_lineage
     distinct(name_data, .keep_all = T) %>% # TODO: Should I take distince name_data or species?
     mutate(species = word(name_data, 1)) %>%
     filter(genus != species) %>% # When genus matches species (avoid n() - 1 in original code)
+    left_join(major_lineage_taxonomy, by = c("genus", "family"), relationship = "many-to-many") %>%
     mutate(
         species = str_to_lower(species),
         genus = str_to_title(genus),
@@ -159,6 +166,8 @@ species_counts_genus <- species_data %>%
         n_species = n_distinct(species),
         n_host_record = sum(host_record)
     ) %>%
+    mutate(level = "genus") %>%
+    rename(taxonomic_group = genus) %>%
     drop_na()
 
 species_counts_family <- species_data %>%
@@ -167,12 +176,34 @@ species_counts_family <- species_data %>%
         n_species = n_distinct(species),
         n_host_record = sum(host_record)
     ) %>%
+    mutate(level = "family") %>%
+    rename(taxonomic_group = family) %>%
     drop_na()
 
-combined_species_counts <- bind_rows(species_counts_genus, species_counts_family) %>%
-    rowwise() %>%
-    mutate(taxonomic_group = ifelse(is.na(genus), family, genus)) %>%
-    mutate(level = ifelse(is.na(genus), "family", "genus")) %>%
+species_counts_tribe <- species_data %>%
+    group_by(tribe) %>%
+    summarise(
+        n_species = n_distinct(species),
+        n_host_record = sum(host_record)
+    ) %>%
+    mutate(level = "tribe") %>%
+    rename(taxonomic_group = tribe) %>%
+    drop_na()
+
+species_counts_superfamily <- species_data %>%
+    group_by(superfamily) %>%
+    summarise(
+        n_species = n_distinct(species),
+        n_host_record = sum(host_record)
+    ) %>%
+    mutate(level = "superfamily") %>%
+    rename(taxonomic_group = superfamily) %>%
+    drop_na()
+
+combined_species_counts <- bind_rows(
+        species_counts_genus, species_counts_family,
+        species_counts_tribe, species_counts_superfamily
+    ) %>%
     select(level, taxonomic_group, n_species, n_host_record)
 ## End preparing species diversity data
 
@@ -201,7 +232,7 @@ baseml_bl_df <- extract_and_bind(baseml_trees, "baseml_bl")
 dN_df <- extract_and_bind(codeml_trees_dN, "dN")
 dS_df <- extract_and_bind(codeml_trees_dS, "dS")
 
-# Parse major lineage data separately
+# Parse major lineage data separately TODO: Add n_host_recorded for major lineage data
 major_lineage_data <- read_csv("Raw_Sister_Tables/Lepidoptera_MajorLineages_Contrasts.csv") %>%
     mutate(
         pair_id = as.character(Pair_no), dataset = "major-lineage",
@@ -223,7 +254,11 @@ major_lineage_data <- read_csv("Raw_Sister_Tables/Lepidoptera_MajorLineages_Cont
         cols = ends_with("_left") | ends_with("_right"),
         names_to = c(".value", "side"),
         names_pattern = "(.*)_(left|right)"
-    )
+    ) %>%
+    left_join(
+        combined_species_counts %>% select(-level),
+        by = c("taxa" = "taxonomic_group")
+    ) %>% print(width = Inf)
 
 ## End parse PAML output as lists of trees for each measure (baseml_bl, dN, dS) and major lineagge data
 
@@ -235,9 +270,9 @@ pair_data_long <- baseml_bl_df %>%
         cols = ends_with("_left") | ends_with("_right"),
         names_to = c(".value", "side"),
         names_pattern = "(.*)_(left|right)"
-    ) %>%
-    rowwise() %>%
-    mutate(
+        mutate(
+            taxonomic_group = ifelse(dataset == "family", extract_family(taxa), extract_genus(taxa))
+        ) %>%
         taxonomic_group = ifelse(dataset == "family", extract_family(taxa), extract_genus(taxa))
     ) %>%
     mutate(taxonomic_group = ifelse(taxonomic_group == "NS0181", "Setabis", taxonomic_group))
@@ -263,14 +298,26 @@ pair_data_wide <- pair_data_long %>%
     )
 ## End join host and species counts
 
+## Begin find those samples not in lepindex
+pair_data_long %>%
+    filter(!(taxonomic_group %in% combined_species_counts$taxonomic_group)) %>%
+    select(dataset, pair_id, taxonomic_group) %>%
+    write_csv(file = "taxa_without_lepindex.csv")
+## End find samples not in lepindex TODO: Add in points that lindell has found
+
 ## Begin calculate contrasts and save dataset to .Rds
+set.seed(1234) # For random sign in n_species ties
 contrasts <- pair_data_wide %>%
     group_by(dataset) %>%
     mutate(label = paste(taxonomic_group_left, "-", taxonomic_group_right)) %>%
     mutate(
-        sign = sign(n_species_left - n_species_right),
+        sign = ifelse(
+            n_species_left - n_species_right != 0,
+            sign(n_species_left - n_species_right),
+            sample(c(1, -1), 1) # Randomise if tie (hence seed above)
+        ),
         weight = 1 / (inv_weight_left + inv_weight_right)
-    ) %>%
+    ) %>% 
     select(-starts_with("inv_weight")) %>%
     mutate(
         prop_generalist_left = asin(sqrt(prop_generalist_left)),
@@ -294,14 +341,49 @@ contrasts <- pair_data_wide %>%
     ) %>%
     select(c(
         ends_with("contrast"), starts_with(c("n_host_record", "n_species")), "label", "weight"
-    ))
+    )) 
 
-saveRDS(
-    list(
-        contrasts = contrasts,
-        host_data = combined_host_counts,
-        species_data = combined_species_counts
-    ),
-    file = "contrasts_host_species_data.Rds"
-)
+# Save data
+write_csv(contrasts, file = "contrasts.csv")
+write_csv(combined_host_counts, file = "combined_host_counts.csv")
+write_csv(combined_species_counts, file = "combined_species_counts.csv")
+
+# Filter contrasts to rows that contain any NA
+pair_data_wide %>%
+    group_by(dataset) %>%
+    mutate(label = paste(taxonomic_group_left, "-", taxonomic_group_right)) %>%
+    mutate(
+        sign = ifelse(
+            n_species_left - n_species_right != 0,
+            sign(n_species_left - n_species_right),
+            sample(c(1, -1), 1) # Randomise if tie (hence seed above)
+        ),
+        weight = 1 / (inv_weight_left + inv_weight_right)
+    ) %>% 
+    select(-starts_with("inv_weight")) %>%
+    mutate(
+        prop_generalist_left = asin(sqrt(prop_generalist_left)),
+        prop_generalist_right = asin(sqrt(prop_generalist_right))
+    ) %>%
+    mutate(
+        dN_contrast = sign * (dN_left - dN_right),
+        dS_contrast = sign * (dS_left - dS_right),
+        n_host_species_contrast = sign * (n_host_species_left - n_host_species_right),
+        n_species_contrast = sign * (n_species_left - n_species_right),
+        n_host_families_contrast = sign * (n_host_families_left - n_host_families_right),
+        baseml_bl_contrast = sign * (baseml_bl_left - baseml_bl_right),
+        prop_generalist_contrast = sign * (prop_generalist_left - prop_generalist_right)
+    ) %>%
+    filter(if_any(everything(), is.na)) %>%
+    select(c(
+        "label", starts_with(c("taxa", "n_host_record", "n_species")), ends_with("contrast"),
+    )) %>%
+    write_csv(file = "contrasts_na.csv")
 ## End
+
+## Convenience - save working tibbles. Delete later
+saveRDS(combined_host_counts, file = "combined_host_counts.Rds")
+saveRDS(combined_species_counts, file = "combined_species_counts.Rds")
+saveRDS(pair_data_long, file = "pair_data_long.Rds")
+saveRDS(pair_data_wide, file = "pair_data_wide.Rds")
+##

@@ -5,58 +5,62 @@
 library(tidyverse)
 library(GGally)
 library(ggpubr)
+library(lavaan)
+library(igraph)
+
 # Read the data
-contrasts_host_species_data <- readRDS("contrasts_host_species_data.Rds")
+contrasts <- read_csv("contrasts.csv")
+host_data <- read_csv("combined_host_counts.csv")
+species_data <- read_csv("combined_species_counts.csv")
 
-contrasts <- contrasts_host_species_data$contrasts
-host_data <- contrasts_host_species_data$host_data
-species_data <- contrasts_host_species_data$species_data
-
-# Pairs plots
-pairs_plot_genus <- contrasts %>%
+## Filter outliers
+outlier_dN <- contrasts %>%
     filter(dataset == "genera") %>%
-    ungroup() %>%
-    select(-c("dataset", "label", "weight", "n_species_left", "n_species_right", starts_with("n_host_record"))) %>%
-    ggpairs() +
-    labs(
-        title = "Papilonoidea genera: log-transformed contrasts with pearson correlation",
-        subtitle = "(prop_generalist is arcsin-sqrt transformed)"
-    ) +
-    theme(text = element_text(size = 11.5))
+    slice_min(dN_contrast) %>%
+    pull(label)
 
-pairs_plot_major_lineage <- contrasts %>%
-    filter(dataset == "major-lineage") %>%
-    ungroup() %>%
-    select(-c("dataset", "label", "dN_contrast", "dS_contrast", "baseml_bl_contrast", "weight", "n_species_left", "n_species_right", starts_with("n_host_record"))) %>%
-    ggpairs() +
-    labs(
-        title = "Lepidoptera major-lineage: log-transformed contrasts with pearson correlation",
-        subtitle = "(prop_generalist is arcsin-sqrt transformed)"
-    ) +
-    theme(text = element_text(size = 11.5))
-
-pairs_plot_family <- contrasts %>%
+outlier_dS <- contrasts %>%
     filter(dataset == "family") %>%
-    ungroup() %>%
-    select(-c("dataset", "label", "weight", "n_species_left", "n_species_right", starts_with("n_host_record"))) %>%
-    ggpairs() +
+    slice_max(dS_contrast) %>%
+    pull(label)
+
+## Remove outliers from contrasts
+contrasts <- contrasts %>%
+    filter(!(label %in% c(outlier_dN, outlier_dS)))
+
+## Begin pairs plots
+pairs_plot_pooled <- contrasts %>%
+    rename_with(~ str_remove(., "_contrast")) %>%
+    select(n_species, dN, dS, n_host_species, n_host_families, prop_generalist, dataset) %>%
+    ggpairs(
+        columns = 1:6,
+        ggplot2::aes(colour = dataset),
+        upper = list(continuous = wrap("cor", size = 4)),
+        lower = list(continuous = wrap("smooth", alpha = 0.5, se = FALSE, lwd = 0.25)),
+        diag = list(continuous = wrap("barDiag", alpha = 0.5, bins = 20))
+    ) +
     labs(
-        title = "Lepidoptera family: log-transformed contrasts with pearson correlation",
+        title = "Difference in log-transformed variables for all datasets. No outliers.",
         subtitle = "(prop_generalist is arcsin-sqrt transformed)"
     ) +
+    scale_color_manual(values = c("red", "dodgerblue", "black")) +
+    scale_fill_manual(values = c("red", "dodgerblue", "black")) +
     theme(text = element_text(size = 11.5))
 
-ggsave(plot = pairs_plot_genus, filename = "pairs_genera.pdf", width = 12, height = 12, units = "in")
-ggsave(plot = pairs_plot_major_lineage, filename = "pairs_major-lineage.pdf", width = 12, height = 12, units = "in")
-ggsave(plot = pairs_plot_family, filename = "pairs_family.pdf", width = 12, height = 12, units = "in")
+ggsave(
+    plot = pairs_plot_pooled,
+    filename = "pairs_pooled_no_outliers.pdf",
+    width = 12, height = 12, units = "in"
+)
+## End pairs plots
 
-# n_species against dS
+## Begin n_species against dS
 
 # Fit linear regression models for each group with y-intercept fixed at 0
 models <- contrasts %>%
-  filter(dataset != "major-lineage") %>%
-  group_by(dataset) %>%
-  do(model = lm(n_species_contrast ~ 0 + dS_contrast, data = .))
+    filter(dataset != "major-lineage") %>%
+    group_by(dataset) %>%
+    do(model = lm(n_species_contrast ~ dS_contrast, data = .))
 
 # Extract coefficients, p-values, and correlations for each group
 fit <- models %>%
@@ -71,39 +75,52 @@ fit <- models %>%
 species_dS_plot <- contrasts %>%
     filter(dataset != "major-lineage") %>%
     left_join(fit, by = "dataset") %>%
-    ggplot(aes(x = dS_contrast, y = n_species_contrast)) +
-    geom_smooth(formula = y ~ x + 0, method= "lm", se = FALSE, col = alpha("black", 0.6)) +
-    geom_point(fill = alpha("dodgerblue", 0.7), shape = 21) +
+    ggplot(aes(x = dS_contrast, y = n_species_contrast, fill = dataset, col = dataset)) +
+    geom_smooth(method = "lm", se = FALSE) +
+    geom_point(shape = 21, col = "black") +
     geom_label(
         aes(
-            x = -0.4, y = 4.25, 
-            label = paste0("italic(p):", round(p_value, 2), "~italic(R^2):", round(r_squared, 2))
-        ), 
+            x = -0.1, y = 4.25,
+            label = paste0("italic(p):", scales::scientific(p_value), "~italic(R^2):", scales::scientific(r_squared))
+        ),
+        col = "black",
+        fill = "white",
         size = 3.5,
         parse = TRUE
     ) +
+    scale_fill_manual(values = alpha(c("red", "dodgerblue"), 0.5)) +
+    scale_color_manual(values = alpha(c("red", "dodgerblue"), 0.5)) +
     facet_wrap(
-        ~dataset, scales = "free",
+        ~dataset,
+        scales = "free",
         labeller = as_labeller(c(family = "Lepidoptera families", genera = "Papilionoidea genera"))
     ) +
-    labs(x = "dS contrast", y = "Number of species contrast") +
+    labs(x = "Difference in log(dS)", y = "Difference in log(number of species)") +
     theme(
-        text = element_text(size = 12)
+        legend.position = "none"
     )
 ggsave(
     plot = species_dS_plot, filename = "species_vs_dS.pdf",
     width = 6, height = 3, units = "in"
 )
+## End n_species against dS
 
-# N species in taxa vs number of host records
+
+## Begin N species in taxa vs number of host records
 host_vs_species_plot <- species_data %>%
     ggplot(aes(x = n_species, y = n_host_record)) +
     geom_point(shape = 21, fill = alpha("dodgerblue", 0.7)) +
     facet_wrap(
-        ~level, scales = "free",
-        labeller = as_labeller(c(family = "LepIndex families", genus = "LepIndex genera"))
+        ~level,
+        scales = "free",
+        labeller = as_labeller(c(
+            family = "LepIndex families",
+            genus = "LepIndex genera",
+            subfamily = "LepIndex subfamilies",
+            tribe = "LepIndex tribes"
+        ))
     ) +
-    labs(x = "Number of species in family/genera", y = "Number with host record") +
+    labs(x = "Species in taxa", y = "Species with host record") +
     theme(
         text = element_text(size = 12)
     )
@@ -112,42 +129,153 @@ ggsave(
     plot = host_vs_species_plot, filename = "host_vs_species.pdf",
     width = 6, height = 3, units = "in"
 )
+## End N species in taxa vs number of host records
 
 # Prepare lavaan plot code
-library(lavaan)
-library(gridExtra)
+# TODO: Add in weights
 
-# Define the path model
-path_model <- '
-    n_species_contrast ~ dS_contrast + dN_contrast + baseml_bl_contrast + prop_generalist_contrast + n_host_families_contrast
-    dS_contrast ~ dN_contrast + baseml_bl_contrast
-    dN_contrast ~ baseml_bl_contrast
-'
+# Define the path models
+# NB If convergence issue, remove dN as a direct effect on N species
+path_model_genera_family <- "
+  # Direct effects
+  # Note dN as an effect below. Removed due to convergence issues
+  n_species ~ n_host_species + n_host_families + prop_generalist + dS + dN
+  #n_species ~ n_host_species + n_host_families + prop_generalist + dS
 
-path_model_major_lineage <- '
-    n_species_contrast ~ prop_generalist_contrast
-'
+  # Indirect effect
+  #dN ~ n_host_species + n_host_families + prop_generalist + b * dS
+  dN ~ b * dS
+
+  # Covariances
+  n_host_families ~~ c_host_fam_species * n_host_species
+  prop_generalist ~~ c_gen_host_species * n_host_species
+
+  # Constraints
+  c_host_fam_species > 0
+  c_gen_host_species > 0
+  b > 0
+
+"
+
+path_model_major_lineage <- "
+  # Direct effects
+  n_species ~ n_host_species + n_host_families + prop_generalist
+
+  # Covariances
+  n_host_families ~~ c_host_fam_species * n_host_species
+  prop_generalist ~~ c_gen_host_species * n_host_species
+
+  # Constraints
+  c_host_fam_species > 0
+  c_gen_host_species > 0
+
+"
 
 # Fit the model for each group
-fit_models <- contrasts %>%
-    group_by(dataset) %>%
-    do(fit = sem(
-        ifelse(unique(.$dataset) == "major-lineage", path_model_major_lineage, path_model),
-        data = .)
+genera_model <- contrasts %>%
+    rename_with(~ str_remove(., "_contrast")) %>%
+    filter(dataset == "genera") %>%
+    mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
+    as.data.frame() %>%
+    sem(data = ., model = path_model_genera_family, sampling.weights = "weight")
+
+# TODO: Weight for major lineage data
+major_lineage_model <- contrasts %>%
+    rename_with(~ str_remove(., "_contrast")) %>%
+    filter(dataset == "major-lineage") %>%
+    mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
+    as.data.frame() %>%
+    sem(data = ., model = path_model_major_lineage, sampling.weights = "weight")
+
+family_model <- contrasts %>%
+    rename_with(~ str_remove(., "_contrast")) %>%
+    filter(dataset == "family") %>%
+    mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
+    as.data.frame() %>%
+    sem(data = ., path_model_genera_family, sampling.weights = "weight")
+
+fit_models <- list(genera_model, major_lineage_model, family_model)
+
+# Convenience function to make network plots for each model with igraph
+plot_model <- function(model, title) {
+    set.seed(1234) # To ensure same layout. 1000 looks good
+
+    # Extract parameter estimates
+    params <- parameterestimates(model) %>%
+        filter(op == "~" | op == "~~") %>%
+        mutate(significant = ifelse(pvalue < 0.05, 1, 0)) %>%
+        mutate(
+            lhs = recode(lhs, 
+                n_species = "Species", 
+                n_host_species = "Host\nspecies", 
+                n_host_families = "Host\nfamilies", 
+                prop_generalist = "Proportion\ngeneralist", 
+                dS = "dS", 
+                dN = "dN"
+            ),
+            rhs = recode(rhs, 
+                n_species = "Species", 
+                n_host_species = "Host\nspecies", 
+                n_host_families = "Host\nfamilies", 
+                prop_generalist = "Proportion\ngeneralist", 
+                dS = "dS", 
+                dN = "dN"
+            )
+        )
+
+    # Create edge list and filter self-loops
+    edges <- params %>%
+        select(lhs, rhs, est, significant, op) %>%
+        rename(from = rhs, to = lhs, weight = est) %>%
+        filter(from != to)
+
+    # Create graph object
+    g <- graph_from_data_frame(edges, directed = TRUE)
+    layout = layout_in_circle(g)
+
+    # Define edge colors based on the effect
+    edge_colors <- case_when(
+        edges$significant == 1 & edges$weight < 0 ~ "dodgerblue",
+        edges$significant == 1 & edges$weight > 0 ~ "orange",
+        TRUE ~ alpha("black", 0.4)
     )
 
-# Plot the path models
-library(lavaanPlot)
+    # Define edge shapes based on the operation
+    edge_shapes <- ifelse(edges$op == "~~", 3, 1)
 
-plot_list <- fit_models %>%
-    rowwise() %>%
-    mutate(plot = list(lavaanPlot(model = fit, coefs = TRUE, stand = TRUE))) %>%
-    pull(plot)
+    # Plot graph with fixed layout
+    plot(
+        g,
+        layout = layout,
+        edge.label = round(E(g)$weight, 2),
+        edge.color = edge_colors,
+        edge.label.color = "black",
+        edge.arrow.mode = edge_shapes,
 
-# Create a panel plot of the path models
-pdf("path_models_panel.pdf", width = 12, height = 12)
+        vertex.label.color = "black",
+        vertex.label.font = 2,
+        vertex.shape = "circle",
+        vertex.size = 45,
+        vertex.color = "white",
+        vertex.label.family = "Helvetica",
+        main = title
+    )
+}
 
-par(mfrow = c(1, 3))
-for (plot in plot_list) { plot }
+pdf("path_diagrams.pdf", width = 12, height = 12)
+
+par(mfrow = c(2, 2))
+plot_model(genera_model, "Papilonoidea genera")
+plot_model(major_lineage_model, "Lepidoptera major lineages")
+plot_model(family_model, "Lepidoptera families")
+
+# Add legend for weight color
+plot.new()
+legend(
+    "center",
+    legend = c("Positive significant", "Negative significant", "Non-significant"),
+    col = c("orange", "dodgerblue", alpha("black", 0.4)), lty = 1, cex = 1.2
+)
 
 dev.off()
+

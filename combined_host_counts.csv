@@ -1,0 +1,6190 @@
+taxa,prop_generalist,n_host_families,n_host_species
+"""Pterophorus""",1,1,2
+?Genus,0.375,17,18
+Abaciscus,0,1,1
+Abagrotis,0.7058823529411765,43,60
+Abantiades,0.3333333333333333,3,4
+Abantis,1,7,7
+Abisara,0.16666666666666666,6,8
+Ableptina?,0,1,1
+Abraxas,0.4444444444444444,25,42
+Abraximorpha,1,1,4
+Abrostola,0.2222222222222222,11,11
+Acada,0,1,1
+Acalyptris,0,5,5
+Acalyptris?,0,1,1
+Acanthoclita,1,4,6
+Acanthoecia,1,4,4
+Acanthophila,0,2,1
+Acanthopsyche,0.625,38,40
+Acanthopteroctetes,0,1,1
+Acanthosphinx,0,1,1
+Acasis,0.3333333333333333,4,4
+Acatapaustus,0,1,1
+Accinctapubes,0,1,1
+Acentria,0.5,7,9
+Acerbas,0,1,1
+Acerra,1,6,11
+Achaea,0.5833333333333334,110,187
+Achalarus,0.5,2,15
+Acharia,1,21,23
+Achatia,1,7,9
+Achatodes,1,4,6
+Acherontia,1,44,141
+Achlya,1,2,4
+Achlyodes,0.75,4,18
+Achroia,0.5,3,3
+Achrosis,0,2,2
+Achyra,0.8571428571428571,31,43
+Achytonix,1,2,5
+Acleris,0.7,248,484
+Acleris Abietana,0,5,1
+Acleris Aenigmana,0,1,1
+Acleris Aestuosa,0,1,1
+Acleris Affinatana,0,6,1
+Acleris Albicomana,0,6,4
+Acleris Askoldana,0,1,1
+Acleris Aspersana,0,14,4
+Acleris Aurichalcana,0,1,1
+Acleris Bergmanniana,0,6,3
+Acleris Boscana,0,2,1
+Acleris Bowmanana,0,6,3
+Acleris Braunana,0,2,1
+Acleris Britannia,0,5,1
+Acleris Busckana,0,2,1
+Acleris Caerulescens,0,1,1
+Acleris Caledoniana,0,6,4
+Acleris Caliginosana,0,1,1
+Acleris Caryosphena,0,1,1
+Acleris Celiana,0,5,3
+Acleris Cervinana,0,2,2
+Acleris Chalybeana,0,7,4
+Acleris Comandrana,0,2,1
+Acleris Comariana,0,11,2
+Acleris Conchyloides,0,1,1
+Acleris Cornana,0,5,1
+Acleris Cristana,0,20,7
+Acleris Crocopepla,0,2,1
+Acleris Curvalana,0,5,1
+Acleris Dealbata,0,1,1
+Acleris Delicatana,0,2,2
+Acleris Emargana,0,11,5
+Acleris Enitescens,0,2,1
+Acleris Exsucana,0,2,2
+Acleris Extensana,0,4,1
+Acleris Ferrugana,0,8,4
+Acleris Fimbriana,0,6,3
+Acleris Flavivittana,0,2,1
+Acleris Foliana,0,4,1
+Acleris Forbesana,0,1,1
+Acleris Forsskaleana,0,1,1
+Acleris Fragariana,0,8,2
+Acleris Fuscana,0,5,2
+Acleris Fuscotogata,0,1,1
+Acleris Gloveranus,0,6,1
+Acleris Gossypiella,0,1,1
+Acleris Hastiana,0,22,7
+Acleris Hippophaeana,0,1,1
+Acleris Hispidana,0,1,1
+Acleris Holmiana,0,10,2
+Acleris Hudsoniana,0,5,3
+Acleris Hyemana,0,6,2
+Acleris Implexana,0,3,1
+Acleris Inana,0,2,2
+Acleris Issikii,0,3,1
+Acleris Japonica,0,1,1
+Acleris Kearfottana,0,4,2
+Acleris Keiferi,0,3,1
+Acleris Laterana,0,10,3
+Acleris Leechi,0,2,1
+Acleris Lipsiana,0,9,5
+Acleris Literana,0,8,5
+Acleris Logiana,0,9,4
+Acleris Lorquiniana,0,1,1
+Acleris Maccana,0,12,6
+Acleris Macdunnoughi,0,4,3
+Acleris Maculidorsana,0,7,3
+Acleris Maximana,0,9,3
+Acleris Minuta,0,13,4
+Acleris Nigrilineana,0,1,1
+Acleris Nigrolinea,0,6,3
+Acleris Nivisellana,0,7,1
+Acleris Notana,0,2,2
+Acleris Orphnocycla,0,5,3
+Acleris Oxycoccana,0,3,2
+Acleris Paradiseana,0,2,1
+Acleris Perfundana,0,3,2
+Acleris Permutana,0,6,2
+Acleris Phantastica,0,1,1
+Acleris Platynotana,0,5,3
+Acleris Quercinana,0,1,1
+Acleris Quinquefasciana,0,1,1
+Acleris Rhombana,0,13,4
+Acleris Robinsoniana,0,2,2
+Acleris Roscidana,0,1,1
+Acleris Rufana,0,8,3
+Acleris Schalleriana,0,9,5
+Acleris Semiannula,0,4,1
+Acleris Semipurpurana,0,9,3
+Acleris Senescens,0,5,3
+Acleris Shepherdana,0,2,1
+Acleris Similis,0,1,1
+Acleris Sparsana,0,10,5
+Acleris Striatana,0,1,1
+Acleris Submaccana,0,3,2
+Acleris Subnivana,0,3,2
+Acleris Tigricolor,0,1,1
+Acleris Tripunctana,0,10,6
+Acleris Ulmicola,0,2,1
+Acleris Umbrana,0,9,5
+Acleris Undulana,0,2,1
+Acleris Variana,0,21,4
+Acleris Variegana,0,24,7
+Acleris Walkerana,0,2,2
+Acleris Yasudai,0,1,1
+Acleris Zimmermani,0,1,1
+Acleros,1,2,2
+Acoloithus,1,1,3
+Acolutha,0,1,1
+Acompsia,0.3333333333333333,4,4
+Acontia,0.5769230769230769,40,50
+Acosmeryx,1,14,21
+Acossus,0,2,2
+Acraea,0.5454545454545454,134,205
+Acraga,0.5,6,6
+Acratodes,0,1,1
+Acratodes Suavata,0,1,1
+Acridotarsa,0,1,1
+Acripia,1,1,2
+Acritocera,1,1,2
+Acrobasis,0.5178571428571429,69,149
+Acrobasopsis,0,1,1
+Acrocercops,0.42777777777777776,234,358
+Acroclita,0.3333333333333333,17,23
+Acroclita?,0,1,1
+Acrodipsas,0,3,3
+Acrodontis,0.5,2,4
+Acrolepia,0.2222222222222222,19,25
+Acrolepiopsis,1,4,11
+Acronicta,0.7792207792207793,358,697
+Acrophtalmia,1,1,3
+Acropolitis,0.3333333333333333,5,5
+Acropteris,0,1,1
+Actebia,1,30,54
+Actias,0.8888888888888888,63,117
+Actinote,0.5833333333333334,19,35
+Actinotia,0.5,3,3
+Actizera,0.6666666666666666,7,12
+Actrix,0,2,2
+Acytolepis,1,14,28
+Adaina,0.42857142857142855,8,14
+Addaea,0.5,5,7
+Addyme,0,2,2
+Adela,0.14285714285714285,8,9
+Adeloneivaia,0.5,7,11
+Adelowalkeria,1,3,4
+Adelpha,0.5333333333333333,39,70
+Adelphagrotis,1,7,9
+Adelpherupa,0,1,1
+Adelphia,0.5,4,6
+Adenoneura,0.16666666666666666,7,7
+Adetomeris,1,6,7
+Adhemarius,0,1,1
+Adicocrita,0,1,1
+Adisura,0.3333333333333333,5,7
+Adita,1,2,4
+Admetovis,0,1,1
+Adoneta,1,2,3
+Adoxophyes,0.5714285714285714,132,188
+Adoxophyes?,1,2,2
+Adris,0,1,1
+Adscita,0.5,2,3
+Aedia,0.5,5,10
+Aedophron,0,1,1
+Aegiale,0,1,1
+Aegilia,0,1,1
+Aegocera,1,5,5
+Aegoceropsis,0.5,8,10
+Aellopos,0.75,6,14
+Aemona,0,1,1
+Aenetus,0.6363636363636364,39,51
+Aeolochroma,0.5,2,3
+Aeologramma,1,1,3
+Aeria,1,1,2
+Aeromachus,0,2,2
+Aeropetes,1,1,2
+Aeschropteryx,0,1,1
+Aethaloessa,0,2,2
+Aethaloida,0,1,1
+Aethalura,0.6666666666666666,12,19
+Aetheria,1,1,5
+Aethes,0.41379310344827586,31,59
+Aethesoides,0,3,3
+Aethesoides Distigmatana Or Nr.,0,1,1
+Aethesoides Distigmatana?,0,1,1
+Aethesoides Nr. Distigmatana,0,1,1
+Aethiopana,0,1,1
+Aethiopsestis,1,1,2
+Aetholix,1,5,7
+Afrobirthama,0,1,1
+Afronarosa,1,3,3
+Agalope,1,1,2
+Aganais,1,3,8
+Aganoptila,0,1,1
+Agape,0,1,1
+Agapeta,0.6666666666666666,6,11
+Agaraeus,0,1,1
+Agarista,1,1,3
+Agassiziella,1,2,2
+Agatasa,0,1,1
+Agathia,0.5,10,21
+Agathiphaga,0.5,2,4
+Agathodes,0.5,17,28
+Agathodes Caliginosalis,0,2,2
+Agathodes Designalis,0,12,5
+Agathodes Modicalis,0,1,1
+Agathodes Monstralis,0,1,1
+Agathodes Musivalis,0,3,1
+Agathodes Ostentalis,0,7,2
+Agathodes Thomensis,0,1,1
+Agathymus,0.4444444444444444,9,15
+Agavenema,0,2,2
+Agdistis,0.42857142857142855,18,25
+Agdistopis,0,4,3
+Agdistopis Halieutica,0,1,1
+Aglais,0.5,7,10
+Aglaope,1,4,11
+Aglaopus,0.5,3,3
+Aglia,1,11,30
+Aglossa,0.5,12,12
+Aglossodes,0,1,1
+Agnidra,1,1,5
+Agnippe,0,2,2
+Agnorisma,0.5,11,12
+Agnosia,0.5,2,3
+Agoma,1,1,3
+Agorarcha,0,1,1
+Agrapha,0.875,25,42
+Agraulis,1,3,44
+Agriades,0.5,11,15
+Agrias,0.5,3,3
+Agrioglypta,0.25,4,6
+Agrioglypta?,0,1,1
+Agriopis,1,10,19
+Agriopodes,1,2,2
+Agriothera,0,1,1
+Agriphila,0.875,10,21
+Agrius,0.6666666666666666,18,51
+Agrius Cingulata,0,16,4
+Agrius Convolvuli,0,46,13
+Agrius Cordiae,0,1,1
+Agrochola,0.6153846153846154,42,58
+Agrodiaetus,0.05263157894736842,20,21
+Agrotera,0.6,21,32
+Agrotera Basinotata,0,9,5
+Agrotera Coelatalis,0,4,2
+Agrotera Nemoralis,0,9,4
+Agrotera Posticalis,0,3,1
+Agrotera Scissalis,0,3,1
+Agrotera Sp.,0,1,1
+Agrotis,0.7,232,387
+Aguna,0.6666666666666666,10,12
+Ahlbergia,1,1,2
+Ahmosia,0,1,1
+Aides,0.3333333333333333,3,5
+Aiteta,0.375,9,11
+Alabama,1,3,8
+Alaena,0.1111111111111111,15,10
+Alarodia,0.3333333333333333,7,8
+Alatuncusia,0,1,1
+Albara,0,1,1
+Alberada,0.5,2,3
+Albinospila,0,1,1
+Albulina,0,1,1
+Alcides,1,1,2
+Alcis,0.5,19,32
+Aleimma,1,4,5
+Alenia,1,1,2
+Aletia,0.17391304347826086,28,29
+Aletis,1,2,2
+Aleucis,0,1,1
+Algedonia,0,1,1
+Algedonia Terrealis,0,1,1
+Allagrapha,1,4,4
+Alloclita,0,1,1
+Allocryptobia,0,1,1
+Allophyes,0.5,3,12
+Allosmaitia,0.3333333333333333,3,4
+Allotalanta,1,1,2
+Allothosea,0.5,4,5
+Allothosea Lola,0,5,3
+Allothosea Plumbea,0,1,1
+Allotinus,0.42857142857142855,9,16
+Allotria,1,3,4
+Aloeides,0.75,22,21
+Alophia,1,2,5
+Alophogaster,0,1,1
+Alpheias,0,1,1
+Alsophila,1,21,62
+Altenia,0,1,1
+Altha,1,24,27
+Alucita,0.5384615384615384,21,28
+Alvaradoia,0,1,1
+Alypia,0.5,9,16
+Amalafrida,0,1,1
+Amata,0.4375,33,39
+Amata Acrospila,0,1,1
+Amata Aperta,0,3,2
+Amata Cyssea,0,12,8
+Amata Elongata,0,2,2
+Amata Fortunei,0,2,2
+Amata Hissarica,0,2,1
+Amata Huebneri,0,1,1
+Amata Passalis,0,17,8
+Amata Perixanthia,0,1,1
+Amata Phegea,0,1,1
+Amata Polymita,0,2,1
+Amata Sp.,0,1,1
+Amata Superbus,0,1,1
+Amata Tomasina,0,2,1
+Amathusia,0.5,6,14
+Amathusia Gunneryi,0,1,1
+Amathusia Phidippus,0,13,2
+Amatissa,0.8333333333333334,16,18
+Amauris,0.7777777777777778,11,50
+Ambesa,1,1,4
+Ambia,0.5,2,3
+Amblopala,1,2,2
+Amblychia,1,3,3
+Amblypalpis,0.3333333333333333,3,4
+Amblypodia,0.25,4,6
+Amblyprora,0.6666666666666666,3,7
+Amblyptila,0.5,2,3
+Amblyptilia,0.8,21,27
+Amblyscirtes,0.4,10,22
+Ambonostola,0,1,1
+Ambulyx,0.625,14,21
+Amelora,1,4,5
+Amephana,0,1,1
+Ametris,0,1,1
+Amicta,0,1,1
+Ammoconia,0.5,8,9
+Ammopolia,0,1,1
+Amnosia,0,1,1
+Amolita,0,3,3
+Amorbia,0.5,49,74
+Amorophaga,0,1,1
+Amorophaga Cryptophori,0,1,1
+Amorpha,1,5,18
+Amorphogynia,0,1,1
+Ampelophaga,0,2,1
+Amphion,1,7,13
+Amphipoea,0.6,19,27
+Amphipyra,0.8,61,111
+Amphithera,0,1,1
+Amphithrix,0,1,1
+Amphixystis,1,2,3
+Ampittia,1,1,2
+Amplypterus,1,3,3
+Amyelois,1,19,29
+Amyna,1,18,39
+Anabasis,1,1,7
+Anacampsis,0.3333333333333333,38,58
+Anacamptodes,0.45454545454545453,35,50
+Anadevidia,1,2,8
+Anadiasa,0.4,8,9
+Anaea,0.4,5,13
+Anagoga,1,5,8
+Anagrapha,1,12,15
+Analyta,0.5,3,3
+Anania,1,3,5
+Anaphaeis,1,6,25
+Anaplectoides,1,15,18
+Anarpia,0,1,1
+Anarsia,0.35714285714285715,65,95
+Anarta,1,6,11
+Anartia,0.6,12,35
+Anartomima,0,1,1
+Anartula,1,1,6
+Anasphaltis,0,1,1
+Anastathma,0,1,1
+Anastrus,0.5,3,5
+Anathamna,0,1,1
+Anathix,0,3,3
+Anatrachyntis,0,1,1
+Anavitrinella,0.5,18,20
+Anaxidia,1,3,3
+Ancema,0.5,2,3
+Ancistroides,0.5,2,4
+Ancova,0,1,1
+Ancylis,0.5686274509803921,88,143
+Ancylolomia,0.42857142857142855,7,12
+Ancylosis,0.2857142857142857,8,9
+Ancylosis?,0,1,1
+Ancylosoma,0,1,1
+Ancylostomia,1,2,8
+Ancyloxypha,1,1,9
+Ancyloxypha Numitor,0,10,1
+Andraca,0.5,3,3
+Andraphisia,0,1,1
+Andriasa,1,1,6
+Andrioplecta,0.7142857142857143,10,73
+Androloma,0,1,1
+Androlymnia,0,1,1
+Andronymus,0.25,5,7
+Andropolia,0.5,8,10
+Anepia,0,1,1
+Anerastia,1,1,5
+Anereuthina,0,1,1
+Anestia,0,1,1
+Anestia Semiochrea,0,1,1
+Anetia,0.5,2,3
+Angerona,1,16,23
+Anhimella,1,2,2
+Anicla,1,9,23
+Anigraea,0.6666666666666666,10,12
+Anilina,0,1,1
+Anisephyra,0,1,1
+Anisodes,0.07692307692307693,14,15
+Anisogona,0,4,4
+Anisoneura,0,1,1
+Anisoplaca,0,2,2
+Anisota,0.9,29,104
+Anisozyga,0.6,10,11
+Annaphila,0.25,18,21
+Anoba,0.25,4,5
+Anomis,0.5806451612903226,60,146
+Anomogenes,0,1,1
+Anonaepestis,0.5,2,4
+Anoncia,0.3333333333333333,6,8
+Anopina,0,2,2
+Anopinella,0,1,1
+Anorthodes,1,2,2
+Anstenoptilia,1,5,6
+Antanartia,0.8333333333333334,6,23
+Anteos,1,5,6
+Antepione,1,6,9
+Anterastria,1,1,3
+Anthanassa,0.5,6,18
+Anthela,0.3125,23,23
+Anthene,0.6875,85,112
+Antheraea,0.7142857142857143,99,266
+Antherina,1,10,11
+Anthistarcha,0,1,1
+Anthocharis,1,6,54
+Anthophila,0.6666666666666666,3,5
+Anthozela,0,1,1
+Antiblemma,0,1,1
+Anticarsia,1,10,44
+Anticlea,0.75,6,10
+Anticollix,1,2,2
+Anticrates,0,1,1
+Antigastra,1,5,9
+Antigius,1,2,20
+Antigonus,1,2,7
+Antiophlebia,0,1,1
+Antiracotis,1,2,2
+Antispila,0.17391304347826086,24,27
+Antistathmoptera,0,1,1
+Antithyra,0,1,1
+Antitrygodes,1,3,5
+Antitype,1,12,18
+Antivaleria,0,1,1
+Anua,0.5,3,4
+Anuga,1,7,9
+Anypsipyla,1,3,4
+Anypsipyla Univitella,0,4,3
+Apamea,0.6046511627906976,75,136
+Apatelodes,0.25,20,31
+Apatetris,0.16666666666666666,7,8
+Apatetris?,0,1,1
+Apatura,0.75,7,16
+Apaustus,1,1,2
+Apeira,1,2,5
+Apelles,0,1,1
+Aphantopus,1,2,8
+Apharetra,0.5,2,3
+Apharitis,0,1,1
+Aphelia,0.7777777777777778,50,91
+Aphendala,0.3333333333333333,9,9
+Aphilopota,1,2,3
+Aphnaeus,0.4,10,11
+Aphomia,0.5,4,4
+Aphrissa,1,4,5
+Aphthonetus,0,3,3
+Aphysoneura,0,1,1
+Apina,1,8,11
+Aplasta,0,1,1
+Aplectoides,1,3,5
+Aplocera,0.6666666666666666,3,6
+Aplochlora,1,2,2
+Aplotelia,0,1,1
+Apocalymnia,0,1,1
+Apocheima,1,10,13
+Apochima,1,10,15
+Apoda,0.6,8,10
+Apodemia,0.6666666666666666,9,30
+Apodia,1,1,4
+Apodrepanulatrix,0,1,1
+Apolychrosis,0.8571428571428571,7,18
+Apomyelois,1,5,6
+Aponoea,0,2,2
+Apopestes,0.5,2,3
+Apopetelia,0,2,2
+Apophthisis,0,1,1
+Aporandria,1,9,12
+Aporia,0.4,14,29
+Aporophyla,1,11,12
+Apospasta,1,5,6
+Apotistatus,0,1,1
+Apotoforma,0.5,2,4
+Apotolype,0,1,1
+Apotomis,0.48,32,45
+Apotomops,1,1,4
+Apotomops Wellingtoniana,0,4,1
+Appana,0,1,1
+Appias,0.7333333333333333,27,69
+Aproaerema,1,3,19
+Apsaphida,0,1,1
+Apterona,1,24,52
+Aquita,1,1,2
+Aracima,0,1,1
+Araeopteron,0,1,1
+Araragi,1,2,6
+Araschnia,0.3333333333333333,3,6
+Arawacus,0,7,7
+Arcas,0.5,3,3
+Arcesis,1,2,2
+Archaeoattacus,1,6,8
+Archaeoses,0,1,1
+Archanara,0.5,16,23
+Archepandemis,0.3333333333333333,3,4
+Archephia,0,1,1
+Archernis,0.5,2,3
+Archiearis,1,4,6
+Archigalleria,0,1,1
+Archilobesia,0,1,1
+Archinemapogon,1,1,2
+Archips,0.7971014492753623,404,684
+Archirhoe,0,1,1
+Archonias,1,2,2
+Archyala,0,2,1
+Arcte,1,3,6
+Arctonotus,1,1,2
+Arcyophora,0,2,2
+Arcyophora Dentula,0,1,1
+Arcyophora Longivalvis,0,2,1
+Ardozyga,0,10,10
+Arenipses,0,1,1
+Areniscythris,1,4,5
+Arenostola,0,1,1
+Arethusana,1,1,8
+Areticulata,0,1,1
+Argema,0.8,28,42
+Argolamprotes,1,3,3
+Argon,0,1,1
+Argynnis,1,7,20
+Argyractis,0,1,1
+Argyresthia,0.35714285714285715,80,122
+Argyreus,1,2,16
+Argyria,0,1,1
+Argyrocosma,0,1,1
+Argyrocupha,1,4,4
+Argyrogramma,1,21,32
+Argyrolacia,0,1,1
+Argyrolepidia,1,1,4
+Argyronome,0.5,2,5
+Argyrophenga,0.3333333333333333,3,7
+Argyrophorus,0,1,1
+Argyroploce,0.15384615384615385,15,18
+Argyrostrotis,0.3333333333333333,4,6
+Argyrotaenia,0.7586206896551724,127,241
+Arhopala,0.358974358974359,74,102
+Ariadne,0.7142857142857143,9,21
+Ariathisa,1,6,9
+Arichanna,0,1,1
+Aricia,0.3333333333333333,8,11
+Aricua,0,2,1
+Arimania,0,1,1
+Arippara,0,2,2
+Aristaea,1,2,6
+Aristotelia,0.35,51,61
+Arla,1,1,2
+Armada,0,1,1
+Arniocera,0,1,1
+Aroga,0.25,17,19
+Arogalea,0,1,1
+Aroma,0,1,1
+Arotrophora,0,4,4
+Arrhenes,0,2,2
+Arsacia,1,1,2
+Arsenura,0.5714285714285714,15,26
+Artace,0.25,9,13
+Artaversala,0,1,1
+Artena,1,3,11
+Artenacia,0,1,1
+Arteurotia,1,1,2
+Arthisma,0,1,1
+Arthroschista,1,2,2
+Artifodina,0,3,3
+Artipe,1,2,4
+Artitropa,0.6666666666666666,3,9
+Artogeia,1,2,10
+Artona,0.5,8,14
+Artopoetes,1,2,3
+Arugisa,1,2,2
+Asbolis,1,1,7
+Ascalapha,1,5,11
+Ascalenia,0.15,22,27
+Ascalenia?,0,1,1
+Ascia,1,8,33
+Asciodes,1,3,5
+Ascotis,0.75,60,104
+Aseptis,0.6,22,31
+Asinduma,0,1,1
+Aslauga,0.6666666666666666,9,19
+Asota,0.3076923076923077,27,50
+Asphadastis,1,2,2
+Aspilapteryx,0,2,2
+Aspilates,1,3,4
+Aspitates,0,1,1
+Aspitha,0,1,1
+Assara,0.5714285714285714,17,27
+Astala,0.5,5,7
+Asterivora,0.5,2,4
+Asterocampa,0.5,10,16
+Asterolepis,0,2,2
+Asteropetes,0,1,1
+Asthena,1,2,2
+Astictopterus,0.6666666666666666,5,5
+Astraptes,0.625,15,24
+Astronauta,0,2,2
+Astygisa,0,2,2
+Astyloneura,0,2,2
+Asymmetrura,1,4,17
+Asymphorodes,1,3,3
+Asymplecta,0,2,2
+Atacira,0.16666666666666666,7,7
+Atalopedes,0.5,2,8
+Ategumia,0,4,4
+Atemelia,1,2,2
+Atemnora,0.5,4,4
+Aterica,1,4,7
+Aterpia,0.5,3,3
+Atethmia,0.5,3,3
+Atheloca,1,2,7
+Athetis,0.42105263157894735,36,38
+Athletes,0.6666666666666666,5,10
+Athrips,0.4,10,14
+Athroolopha,0,1,1
+Athyma,0.8,14,48
+Athyrma,0,1,1
+Athysanota,0,1,1
+Atlides,0.25,5,10
+Atomopteryx,0,1,1
+Atremaea,0,1,1
+Atrytone,1,2,7
+Atrytonopsis,0.5,2,3
+Attacus,0.8,76,141
+Attatha,1,2,6
+Atteva,0.42857142857142855,13,25
+Attonda,1,1,2
+Atypha,0,1,1
+Auaxa,0,1,1
+Aucha,0,4,4
+Auchmis,0.3333333333333333,4,4
+Auchmophila,0,1,1
+Aucula,0,2,2
+Audea,0,2,2
+Audre,0,2,2
+Audre Campestris,0,1,1
+Audre Hippodice,0,1,1
+Augasma,0,1,1
+Augiades,0,1,1
+Aurana,0,1,1
+Aurivillius,1,6,11
+Austrapoda,1,1,2
+Austriana,1,1,2
+Austroypthima,0,1,1
+Autoba,0.625,70,123
+Autoba?,0,1,1
+Autocharis,1,2,2
+Autochton,0.6666666666666666,4,9
+Autographa,0.8095238095238095,120,204
+Automerella,1,2,4
+Automerina,0,2,2
+Automeris,0.6923076923076923,253,432
+Autophila,1,1,2
+Autoplusia,0.6666666666666666,8,13
+Avatha,1,3,7
+Avitta,0.6666666666666666,3,5
+Axinoptera,0,1,1
+Axiocerses,0.625,18,18
+Axylia,0.5,4,8
+Azamora,0,2,2
+Azanus,1,16,20
+Azeta,0,2,2
+Azochis,0.3333333333333333,3,4
+Azuritis,1,1,5
+Azygophleps,0.25,4,7
+Bactra,0.6,24,33
+Badamia,1,4,13
+Badebecia,1,2,2
+Bagisara,0.5,9,14
+Baileya,0.6666666666666666,7,13
+Balaenifrons,0,2,2
+Balantiucha,0,1,1
+Balataea,0.5,3,4
+Balbis,0,1,1
+Baliochila,0.18181818181818182,15,13
+Balsa,1,5,9
+Bambalina,1,1,3
+Bambusiphila,0,1,1
+Bamra,0.5,3,3
+Baniana,1,1,2
+Banisia,0.75,7,16
+Baoris,0.4,5,10
+Baphala,1,2,5
+Baptria,1,1,2
+Baracus,0,1,1
+Barasa,1,3,8
+Barbara,0.6,5,17
+Barbicornis,0,1,1
+Bareia,0,1,1
+Bareia Incidens,0,1,1
+Baria,1,6,7
+Barnardiella,1,1,2
+Baronia,0,1,1
+Basicladus,1,9,5
+Basilarchia,1,22,89
+Basilodes,0,2,2
+Basiothea,0.3333333333333333,5,10
+Basiothia,0.5,7,12
+Bassania,1,1,2
+Bathyphlebia,0,1,1
+Bathypluta,1,2,2
+Bathytricha,0.5,5,9
+Batocnema,1,1,2
+Batrachedra,0.46153846153846156,35,50
+Batrachedra?,0,1,1
+Batrachedrodes,0.2,7,6
+Battaristis,1,1,3
+Beana,1,2,2
+Beara,1,7,9
+Beara Dichromella,0,8,5
+Beara Nubiferella,0,2,2
+Bebearia,0.5,9,14
+Bedellia,0.3333333333333333,18,25
+Behrensia,1,1,2
+Beijinga,0,1,1
+Belciades,0,1,1
+Belciana,1,2,2
+Belemnia,0,1,1
+Belemnia Ochriplaga,0,1,1
+Belenois,0.7333333333333333,19,49
+Belippa,1,1,3
+Bellura,0.75,10,13
+Bema,0,1,1
+Bena,0.5,4,4
+Bendisodes,0,1,1
+Benjaminiola,1,1,2
+Beralade,0,6,6
+Berberia,0,1,1
+Berta,0.42857142857142855,9,11
+Bertula,0,3,3
+Besciva,1,1,2
+Besma,1,8,15
+Betulodes,0,1,1
+Bhagadatta,0,1,1
+Bibasis,0.75,16,22
+Bibasis Fergusonii,0,1,1
+Bibasis Gomata,0,8,3
+Bibasis Harisa,0,3,2
+Bibasis Jaina,0,3,3
+Bibasis Mahintha,0,2,2
+Bibasis Oedipodea,0,2,2
+Bibasis Sena,0,2,2
+Bibasis Tuckeri,0,1,1
+Biblis,1,2,4
+Bicyclus,0.3,10,13
+Bilobata,1,2,5
+Bindahara,1,2,3
+Biopsyche,0.5,4,4
+Birthama,0.25,5,5
+Birthamoides,0,2,2
+Birthamula,1,5,5
+Birthana,0,1,1
+Birthosea,1,8,9
+Biselachista,0.3333333333333333,10,14
+Biston,0.875,89,163
+Bizia,0,1,1
+Blastesthia,1,2,7
+Blasticorhinus,0,2,2
+Blenina,0,6,6
+Blepharita,0.5,17,19
+Bleptina,0,2,2
+Bleszynskia,0.5,2,5
+Boarmia,0.3333333333333333,5,5
+Bocana,1,3,2
+Bocana Manifestalis,0,3,3
+Bocchoris,0,2,2
+Bocchoropsis,0,1,1
+Bocula,0.3333333333333333,3,4
+Boeotarcha,0,3,3
+Bohemannia,0.6666666666666666,3,5
+Bolla,0,1,1
+Boloria,0.5555555555555556,17,22
+Bombycomorpha,0.6666666666666666,5,6
+Bombycopsis,1,27,43
+Bombyx,0.5,3,4
+Bonagota,1,21,24
+Bonchis,1,1,4
+Borbo,0.7,11,43
+Borboryctis,1,1,2
+Borocera,1,4,6
+Botyodes,0.3333333333333333,9,10
+Bourgognea,0,2,2
+Brachiolia,0,1,1
+Brachionycha,0.75,14,17
+Brachmia,0.2222222222222222,10,12
+Brachmia?,0,1,1
+Brachyacma,1,1,5
+Brachycyttarus,1,13,14
+Brachylomia,0.6,9,13
+Bradina,0.5,3,3
+Bradleyella,0,1,1
+Bradyrrhoa,0.5,2,4
+Brahmaea,1,1,2
+Brangas,0,2,2
+Brassolis,1,7,31
+Bremeria,0.3333333333333333,3,4
+Brenthia,0.3333333333333333,15,21
+Brenthis,1,6,18
+Brephidium,1,8,34
+Brephos,1,1,3
+Brihaspa,0,1,1
+Brintesia,1,1,8
+Brithys,0.6666666666666666,13,27
+Brithysana,0.5,11,13
+Bryophilina,0,1,1
+Bryophilopsis,0.5,2,3
+Bryotropha,0.2222222222222222,11,11
+Bubaloceros,0,1,1
+Bubonoxena,1,2,2
+Bucculatrix,0.25170068027210885,167,224
+Buckleria,0.5,3,4
+Bucolarcha,1,1,2
+Bulia,0,2,2
+Bunaeopsis,0.5,18,22
+Bungalotis,0.5,4,7
+Bupalus,1,1,10
+Burca,0,1,1
+Busseola,0.6,7,19
+Buszkoiana,0,1,1
+Byblia,1,5,11
+Cabares,0,1,1
+Cabera,0.75,15,31
+Cabera Borealis,0,5,2
+Cabera Erythemaria,0,2,1
+Cabera Exanthemata,0,9,3
+Cabera Purus,0,4,1
+Cabera Pusaria,0,9,4
+Cabera Variolaria,0,6,2
+Cabotia,0,1,1
+Cabralia,0,1,1
+Cacocharis,0,1,1
+Cacoecimorpha,1,26,36
+Cacotherapia,0,1,1
+Cactoblastis,0.75,5,22
+Cactobrosis,0.5,2,7
+Cacyreus,1,8,31
+Cadarena,0,1,1
+Cadra,0.75,56,89
+Caenides,0,2,2
+Caenurgia,0.5,3,3
+Caenurgina,1,10,15
+Caenurgina Caerulea,0,2,1
+Caenurgina Crassiuscula,0,7,4
+Caenurgina Erechtea,0,9,5
+Cahela,1,1,2
+Caio,1,3,5
+Calamia,1,2,6
+Calamochrous,0,1,1
+Calamograptis,0,1,1
+Calamotropha,0.375,11,12
+Calcarifera,1,2,4
+Calephelis,0.2727272727272727,12,16
+Calesia,0.5,6,12
+Caleta,0.2,5,7
+Calguia,0.3333333333333333,6,6
+Calicha,0,1,1
+Calidota,0,1,1
+Caligatus,1,1,2
+Caligo,0.5833333333333334,22,30
+Caligula,1,38,60
+Calinaga,1,1,2
+Calindoea,0.6666666666666666,4,5
+Calisto,0.4,5,7
+Callabraxas,0,1,1
+Calledapteryx,1,1,2
+Callerebia,0,1,1
+Calletaera,0,1,1
+Callhyccoda,0,1,1
+Callicercops,0,1,1
+Callidrepana,0,3,3
+Calliergis,0,1,1
+Callimormus,0,1,1
+Callionima,0,1,1
+Calliprora,0,1,1
+Callistege,1,8,11
+Callisto,1,6,15
+Callithea,0,2,2
+Callithomia,0,1,1
+Callithrinca,0,1,1
+Callixena,1,2,5
+Callizona,1,2,3
+Callizyga,0,1,1
+Callizygaena,0,1,1
+Callizzia,0,1,1
+Callophrys,0.47368421052631576,50,67
+Callopistria,0.3684210526315789,45,54
+Callosamia,1,29,49
+Callosymploca,0,1,1
+Calluga,1,2,2
+Callyna,0.5714285714285714,8,11
+Calophasia,0.3333333333333333,4,5
+Calopieris,0,1,1
+Caloptilia,0.46629213483146065,217,381
+Caloreas,0.5,8,11
+Calothysanis,0.5,2,4
+Calpodes,1,9,13
+Caltoris,0.8333333333333334,7,14
+Calybites,0.4,8,15
+Calyciphora,0.5,3,3
+Calycopis,0.3333333333333333,10,14
+Calymma,1,1,3
+Calyptra,0.5,12,16
+Cameraria,0.6,75,160
+Campaea,0.5,16,25
+Camptogramma,1,6,6
+Camptopleura,0.5,2,3
+Camptozada,1,1,3
+Campylotes,1,1,2
+Canariana,1,1,4
+Canarsia,1,2,3
+Cancellalata,0,1,1
+Candalides,0.07142857142857142,30,16
+Canephora,1,8,9
+Cangetta,1,1,2
+Cania,0.5,21,24
+Canipsa,1,1,2
+Canthelea,0,1,1
+Caphys,1,4,5
+Capidentalia,0,3,3
+Capperia,0.25,4,5
+Caprona,0.3333333333333333,4,4
+Capronnieria,0,1,1
+Capua,0.25,14,16
+Capusa,0.5,4,4
+Capys,0.7333333333333333,15,27
+Caradrina,0.3333333333333333,13,16
+Carcharodus,0.3333333333333333,3,5
+Cardamyla,0,2,2
+Carea,0.4166666666666667,18,29
+Careades,0,1,1
+Carectocultus,0,1,1
+Carelis,0,1,1
+Cargolia,1,2,3
+Caria,1,2,2
+Carige,0,1,1
+Caripeta,0.8333333333333334,8,40
+Caristanius,1,2,5
+Carmara,0,1,1
+Carmentina,1,1,2
+Carnegia,0,1,1
+Carolella,0,5,5
+Carrhenes,0,1,1
+Carsia,1,3,6
+Cartaletis,1,1,2
+Cartaletis Libyssa,0,4,1
+Carterocephalus,1,2,9
+Carthaea,1,1,3
+Caryocolum,0.6666666666666666,34,92
+Carystoides,0.5,2,3
+Carystus,0.3333333333333333,4,7
+Casbia,0,1,1
+Casphalia,1,2,2
+Cassionympha,0,1,1
+Cassyma,1,1,3
+Castalius,1,1,5
+Castilia,0.3333333333333333,3,4
+Casuariclystis,0,1,1
+Catabena,1,2,3
+Cataclysta,0,1,1
+Catacroptera,1,2,6
+Catada,0,2,2
+Catada?,0,1,1
+Catagela,0,1,1
+Catagramma,0.5,4,6
+Catalebeda,0.5,3,3
+Catamacta,0,2,2
+Catamecia,0,1,1
+Catamola,1,1,3
+Catapaecilma,0.3333333333333333,4,5
+Cataplectica,0,1,1
+Catarhoe,0,2,2
+Catastega,0,1,1
+Catasticta,0.5,3,3
+Catephia,0,2,2
+Catephiodes,0,1,1
+Cathopsyche,0,1,1
+Cathyalia,1,2,2
+Catoblemma,0,4,4
+Catoblepia,0.5,2,3
+Catocala,0.6504065040650406,168,326
+Catochrysops,1,6,15
+Catonephele,0.5714285714285714,11,20
+Catopsilia,0.7142857142857143,19,79
+Catopta,0,1,1
+Catoptria,0.3333333333333333,7,10
+Catopyla,1,1,5
+Catoria,0.5,3,3
+Catuna,1,2,6
+Caudellia,1,1,2
+Caulastrocecis,0,1,1
+Cautethia,0.6666666666666666,5,6
+Cavipalpia,1,1,2
+Cebysa,0,1,1
+Cecharismena,0,1,1
+Cechenena,1,4,4
+Cecidipta,1,1,2
+Cecidophaga,0,1,1
+Cecidoses,1,2,3
+Cecidothyris,0,1,1
+Cedestis,0.6666666666666666,4,8
+Celaena,1,9,10
+Celaenorrhinus,0.3,10,16
+Celaenorrhinus Ambareesa,0,1,1
+Celaenorrhinus Asmara,0,1,1
+Celaenorrhinus Biseriata,0,1,1
+Celaenorrhinus Galenus,0,2,1
+Celaenorrhinus Leucocera,0,5,1
+Celaenorrhinus Maculosa,0,1,1
+Celaenorrhinus Mokeezi,0,3,1
+Celaenorrhinus Plagifera,0,1,1
+Celaenorrhinus Proxima,0,1,1
+Celaenorrhinus Ruficornis,0,1,1
+Celama,0,2,2
+Celastrina,0.45454545454545453,36,109
+Celerena,0,1,1
+Celidomphax,0,1,1
+Celiptera,0,1,1
+Celotes,1,2,10
+Celypha,0.5555555555555556,18,21
+Centroctena,0.5,2,3
+Cephitinea,0,2,2
+Cephonodes,1,19,55
+Cephonodes Armatus,0,3,1
+Cephonodes Hylas,0,44,10
+Cephonodes Kingii,0,4,3
+Cephonodes Picus,0,17,5
+Cephrenes,0.5,5,11
+Cephrenes Acalle?,0,1,1
+Cephrenes Augiades,0,2,1
+Cephrenes Chrysozona,0,9,2
+Cephrenes Moseleyi,0,1,1
+Cepora,0.7142857142857143,8,28
+Cepphis,1,13,17
+Cerace,0.6666666666666666,14,16
+Ceranemota,0.6666666666666666,3,6
+Cerapteryx,1,1,4
+Cerastis,1,15,17
+Ceratinia,1,1,2
+Ceratiscada,0,1,1
+Ceratodalia,0,1,1
+Ceratomia,0.6,14,27
+Ceratonyx,1,2,2
+Ceratophaga,0,2,2
+Ceratrichia,1,1,2
+Cercyonis,0.5,5,11
+Cereophagus,0,1,1
+Cerma,0.5,3,11
+Cerodirphia,0,2,2
+Ceromitia,0,1,1
+Ceroprepes,0,1,1
+Certima,0,1,1
+Cerynea,1,5,5
+Cethosia,0.6666666666666666,11,19
+Cetola,1,4,6
+Ceutholopha,1,1,4
+Chabuata,1,2,2
+Chaetaglaea,1,4,4
+Chaetoprocta,1,1,2
+Chalastra,0.5,4,5
+Chalceopla,0,2,2
+Chalceria,1,3,16
+Chalcidoptera,0.3333333333333333,4,8
+Chalciope,0,2,2
+Chalcocelis,0.3333333333333333,14,22
+Chalcoela,1,2,2
+Chalcoscelides,1,9,11
+Chalcosia,0,3,3
+Chalcoteuches,0,1,1
+Chalioides,0.8333333333333334,23,26
+Chalybs,0,2,2
+Chalybs Hassan,0,1,1
+Chalybs Janias,0,1,1
+Characoma,0.4166666666666667,29,39
+Characoma?,0,1,1
+Charana,0,1,1
+Charanyca,1,2,4
+Charaxes,0.6326530612244898,228,376
+Chariaspilates,0,1,1
+Charidea,0.3333333333333333,4,4
+Charidryas,1,12,54
+Charis,0,1,1
+Charixena,0,1,1
+Chasmina,0.3333333333333333,7,10
+Chasminodes,0,2,2
+Chavarriella,0,1,1
+Chazara,0.5,2,5
+Chazaria,0,1,1
+Chedra,1,1,2
+Chelepteryx,0.5,4,5
+Chelonomorpha,1,2,2
+Chenuala,1,3,5
+Cheritra,1,9,8
+Cheromettia,0.8,38,51
+Chersonesia,0.5,2,6
+Chersotis,0.6,7,8
+Chesias,0,2,2
+Cheteoscelis,0.3333333333333333,4,5
+Chevalierella,0,1,1
+Chiasmia,1,1,2
+Chilades,0.5555555555555556,23,39
+Childrena,0,1,1
+Chilena,0.5,3,4
+Chileulia,1,4,6
+Chilo,0.6666666666666666,29,102
+Chilocampyla,1,2,8
+Chilodes,0,1,1
+Chilomima,0,1,1
+Chilozela,0,2,2
+Chimoptesis,0,2,2
+Chioides,1,2,6
+Chioides Catillus,0,6,2
+Chiomara,0.75,6,9
+Chionodes,0.5,62,111
+Chitoria,0.3333333333333333,3,4
+Chitoria Chrysolora,0,2,1
+Chitoria Sordida,0,1,1
+Chitoria Ulupi,0,2,1
+Chlenias,0.6,8,8
+Chliaria,0.6666666666666666,3,11
+Chloantha,1,1,2
+Chloeres,1,1,3
+Chlorerythra,1,1,2
+Chlorissa,0.5,17,17
+Chlorochlamys,1,8,27
+Chloroclysta,0.7142857142857143,26,36
+Chloroclystis,0.3333333333333333,36,45
+Chlorodes,0,1,1
+Chloromachia,0,2,2
+Chloropteryx,0.5,4,4
+Chlorosea,1,4,5
+Chloroselas,0,1,1
+Chlorostrymon,0.3333333333333333,6,7
+Chlorozada,0,1,1
+Chlosyne,0.5714285714285714,8,37
+Chlumetia,0.2,7,9
+Choaspes,0.6,11,19
+Choephora,1,4,4
+Cholotis,0,1,1
+Cholotis Semnostola,0,1,1
+Chondrolepis,0,3,3
+Chondrostega,1,3,3
+Chora,0,2,2
+Choranthus,0.3333333333333333,4,5
+Choreutis,0.35,26,42
+Choreutis Aegyptiaca,0,5,2
+Choreutis Argoxantha,0,1,1
+Choreutis Betuliperda,0,2,1
+Choreutis Chalcotoxa,0,1,1
+Choreutis Chodzhajevi,0,1,1
+Choreutis Collapsa,0,1,1
+Choreutis Diana,0,7,3
+Choreutis Dichlora,0,1,1
+Choreutis Dryodora,0,1,1
+Choreutis Euclista,0,1,1
+Choreutis Flavimaculata,0,1,1
+Choreutis Fulminea,0,1,1
+Choreutis Ialeura,0,1,1
+Choreutis Melophaga,0,2,1
+Choreutis Nemorana,0,2,1
+Choreutis Orthogona,0,4,2
+Choreutis Pariana,0,13,3
+Choreutis Sycopola,0,2,1
+Choreutis Tigroides,0,1,1
+Choreutis Vinosa,0,2,1
+Choristoneura,0.8461538461538461,136,276
+Chorodna,0,2,2
+Chortodes,0.7142857142857143,8,12
+Chretienia,0,1,1
+Christophia,0,3,3
+Chrysanympha,1,1,3
+Chrysartona,1,1,2
+Chrysaster,1,2,5
+Chrysiridia,1,2,2
+Chrysobotys,1,6,8
+Chrysocentris,0,1,1
+Chrysocercops,0.38461538461538464,13,19
+Chrysocraspeda,0.16666666666666666,6,7
+Chrysodeixis,0.8333333333333334,71,136
+Chrysoesthia,0.375,9,13
+Chrysopeleia,1,2,2
+Chrysoplectrum,0,2,2
+Chrysopsyche,1,6,8
+Chrysorithrum,1,4,4
+Chrysoritis,0,3,3
+Chrysoteuchia,1,6,14
+Chrysotypus,0,1,1
+Chrysozephyrus,0.5625,18,69
+Chundana,0,1,1
+Churia,0,1,1
+Chytolita,0.5,3,3
+Chytonix,1,2,2
+Ciampa,1,5,7
+Cibyra,1,1,2
+Cicia,0,1,1
+Cicinnus,0.42857142857142855,10,14
+Cidaria,0.5,3,4
+Cigaritis,0,3,2
+Cilix,0.5,3,5
+Cimeliomorpha,0,1,1
+Cimitra,0,1,1
+Cinabra,1,3,5
+Cinclidia,1,4,10
+Cingilia,1,19,46
+Circobotys,0,1,1
+Cirina,0.5,14,29
+Cirrhochrista,0.25,5,5
+Cirrhophanus,1,1,4
+Cirrilaspeyresia,0,1,1
+Cirriphora,0,1,1
+Cirriphora Pharaonana,0,1,1
+Cirrochroa,0,5,5
+Cissia,0.3333333333333333,8,11
+Cissusa,0,2,2
+Citheronia,1,67,116
+Citrinophila,0,2,2
+Citripestis,1,7,22
+Cizara,1,1,3
+Cladara,1,8,27
+Clania,0.5,10,13
+Clanis,0.75,7,14
+Clarkeulia,0.8333333333333334,14,15
+Clavigesta,1,2,5
+Clavipalpula,1,1,4
+Clelea,0,2,2
+Cleonymia,0,2,2
+Cleora,0.6086956521739131,88,113
+Cleorodes,0,1,1
+Cleosiris,0,2,2
+Clepsis,0.7142857142857143,98,144
+Clethrophora,0,1,1
+Clossiana,0.8125,41,82
+Clydonopteron,0.5,2,3
+Clytie,0.6,7,8
+Cnaemidophorus,0,3,3
+Cnaphalocrocis,0.6,15,57
+Cnephasia,0.5789473684210527,92,144
+Cnesteboda,1,2,3
+Cnidocampa,1,10,18
+Cnodontes,0,1,1
+Coarica,0,1,1
+Cobalus,0.3333333333333333,3,4
+Cobubatha,0,1,1
+Coccidiphaga,1,9,24
+Coccidiphila,1,2,6
+Coccothera,1,1,2
+Cochisea,1,2,2
+Cochylidia,0.7142857142857143,8,27
+Cochylimorpha,0.5555555555555556,9,15
+Cochylis,0.5,22,49
+Coconympha,1,2,3
+Cocytius,0.6666666666666666,5,9
+Codatractus,1,1,2
+Codatractus Alcaeus,0,2,1
+Codonodes,0,1,1
+Coeliades,0.6,31,48
+Coelites,0,1,1
+Coelonia,1,16,37
+Coelopoeta,0.5,2,4
+Coelostathma,0,1,1
+Coenina,1,3,4
+Coenipeta,0,1,1
+Coenobasis,0.5,3,3
+Coenobia,1,1,2
+Coenocalpe,1,3,3
+Coenodomus,1,2,3
+Coenonympha,0.875,14,50
+Coenophila,1,5,8
+Coenotes,1,9,15
+Coenyra,0,1,1
+Coequosa,1,1,4
+Cogia,0.3333333333333333,6,7
+Coleophora,0.42165242165242167,434,662
+Coleotechnites,0.40425531914893614,53,84
+Colias,0.8461538461538461,41,205
+Collicularia,0,1,1
+Collinsa,0.5,3,3
+Collix,1,3,3
+Colobochyla,0.5,2,3
+Colobura,1,7,9
+Colocleora,0.6,15,19
+Coloradia,0.6666666666666666,4,16
+Colostygia,0,4,4
+Colotis,0.6097560975609756,49,118
+Colotois,1,8,15
+Comadia,0,4,4
+Comana,0,1,1
+Comibaena,0.38461538461538464,26,31
+Commophila,1,1,2
+Commotria,0,1,1
+Comocritis,0.5,8,10
+Comocrus,1,2,3
+Comostola,0.5,13,14
+Compactena,0.5,4,5
+Compsoctena,0.25,6,6
+Compsolechia,0.16666666666666666,6,8
+Compsoptera,1,1,2
+Concaedes,1,3,5
+Conchylodes,0.3333333333333333,4,4
+Condica,0.5,25,65
+Condylolomia,1,2,2
+Condylorrhiza,1,3,3
+Condylorrhiza Vestigialis,0,4,3
+Conga,0,1,1
+Conicofrontia,0,1,1
+Coniesta,1,1,7
+Coniostola,1,1,5
+Conisania,0,1,1
+Conistra,0.7333333333333333,32,44
+Connection_failed,0,1,1
+Conobathra,0.75,6,8
+Conochares,0,2,2
+Conocramboides,0,2,2
+Conogethes,0.8333333333333334,50,85
+Conopomorpha,0.42857142857142855,12,19
+Conopomorphina,0,1,1
+Conservula,0,3,3
+Consul,1,1,7
+Contrafacia,0,1,1
+Cooksonia,0,2,2
+Cooksonia Aliciae,0,1,1
+Cooksonia Neavei,0,1,1
+Copablepharon,0.25,4,5
+Copaeodes,0.5,2,3
+Copamyntis,1,6,11
+Copaxa,0.375,22,30
+Copiopteryx,1,2,3
+Copitarsia,0.5,8,9
+Copivaleria,0,1,1
+Coptarthria,0,1,1
+Coptobasis,1,7,8
+Coptodisca,0.16666666666666666,19,24
+Corcyra,1,20,37
+Cordelia,0.5,2,4
+Coreana,1,2,4
+Corethrovalva,0,2,2
+Corgatha,0.16666666666666666,8,7
+Cornicacoecia,1,5,7
+Cornifrons,0,1,1
+Cornutiplusia,1,7,6
+Correbia,0,1,1
+Correbia Lycoides,0,1,1
+Corsa,0,1,1
+Corsocasis,0,1,1
+Corticea,0,1,1
+Corticivora,0,1,1
+Cortyta,0,2,2
+Corymica,0.3333333333333333,3,5
+Corynophora,0,1,1
+Coryphista,1,1,3
+Coryphodema,1,4,7
+Corythangela,1,1,2
+Coscinocera,1,5,5
+Cosmardia,0,1,1
+Cosmetra,0,1,1
+Cosmia,1,28,48
+Cosmiotes,0.7142857142857143,7,20
+Cosmoclostis,0,3,3
+Cosmodes,1,2,2
+Cosmopterix,0.47368421052631576,48,78
+Cosmopterix?,0,1,1
+Cosmorhoe,0,1,1
+Cosmotriche,1,2,7
+Cossula,0.5,4,5
+Cossus,0.375,33,53
+Costaconvexa,0,2,2
+Cosuma,1,3,3
+Cotachena,0,1,1
+Cotana,0,2,2
+Crambodes,0,1,1
+Crambus,0.46153846153846156,14,19
+Crameria,0,1,1
+Craniophora,0.6666666666666666,5,7
+Crasimorpha,0,1,1
+Craspia,0,1,1
+Crassivesica,1,3,3
+Cremastobombycia,0.6666666666666666,6,16
+Cremnophora,0,1,1
+Creobota,0,1,1
+Creobota Coccophthora,0,1,1
+Creon,1,2,4
+Cretonia,0.5,3,4
+Cricula,0.6666666666666666,27,44
+Crinocraspeda,1,1,2
+Crioa,0,1,1
+Crionica,0,1,1
+Crithote,1,1,2
+Crobylophora,0.3333333333333333,3,6
+Crocallis,1,11,19
+Crocidolomia,0.3333333333333333,9,23
+Crocidophora,0.5,5,7
+Crocidosema,0.6,13,36
+Crocigrapha,1,11,25
+Crombergia,1,2,2
+Crombrugghia,0.2,5,6
+Croniades,1,1,2
+Cropia,0,1,1
+Crothaema,1,1,2
+Crudaria,1,3,3
+Cruria,1,4,4
+Cryphia,0.3333333333333333,12,19
+Cryphiomystis,0.3333333333333333,4,4
+Crypsedra,1,1,5
+Crypsicometa,0,1,1
+Crypsiptya,1,4,17
+Crypsithyris,0.3333333333333333,7,7
+Cryptaspasma,0,1,1
+Cryptoblabes,0.8181818181818182,63,99
+Cryptoblabes?,1,4,4
+Cryptocala,0.5,6,6
+Cryptochorina,1,2,4
+Cryptolectica,0.3333333333333333,3,4
+Cryptomeria,1,2,3
+Cryptophlebia,0.5294117647058824,46,121
+Cryptoptila,1,11,11
+Cryptothelea,0.5833333333333334,39,47
+Cryptothripa,0,1,1
+Ctenocompa,0,1,1
+Ctenolita,0.6666666666666666,6,6
+Ctenomedes,1,2,2
+Ctenomeristis,1,1,2
+Ctenoplusia,1,4,6
+Ctenopseustis,0.5,14,16
+Cucullia,0.5357142857142857,71,127
+Cudonigera,1,1,2
+Culama,0,2,2
+Culcula,1,2,2
+Culladia,1,2,4
+Culpinia,1,2,2
+Cupedia,0,1,1
+Cupha,0.6666666666666666,8,16
+Cuphodes,0,3,3
+Cupido,0.3333333333333333,4,8
+Cupidopsis,1,4,6
+Cupitha,1,2,4
+Cuproxena,0,1,1
+Curetis,0.5555555555555556,15,18
+Curtorama,1,2,2
+Curvisacculus,0,1,1
+Cusiala,0.6666666666666666,11,13
+Cutina,0,4,4
+Cyaniris,0.5,4,6
+Cyanophrys,0.25,9,5
+Cyclargus,0,1,1
+Cyclidia,0,1,1
+Cyclocena,0,1,1
+Cyclodes,1,1,2
+Cycloglypha,0.5,3,4
+Cyclogramma,0,1,1
+Cyclomia,0,2,2
+Cyclophora,0.5,20,28
+Cyclophragma,0.4,5,12
+Cycloplasis,0.5,2,3
+Cyclosemia,0,2,2
+Cyclosia,0.8,12,18
+Cyclyrius,1,3,4
+Cycnus,0,1,1
+Cydalima,0.6666666666666666,11,20
+Cydia,0.5087719298245614,154,279
+Cydia?,0,1,1
+Cydosia,1,2,3
+Cyligramma,1,2,3
+Cyllopsis,0.5,2,3
+Cymaenes,0.6666666666666666,4,10
+Cymatogramma,0,1,1
+Cymatopacha,1,1,2
+Cymatophora,1,3,4
+Cymatophorina,0,1,1
+Cymolomia,0.5,3,9
+Cymothoe,0.3333333333333333,20,26
+Cymotricha,0,1,1
+Cynaeda,1,1,3
+Cynandra,0,1,1
+Cypa,0,1,1
+Cyphosticha,0,2,2
+Cyphura,0.5,2,3
+Cyrestis,0.5714285714285714,8,37
+Cystidia,0.3333333333333333,8,15
+Dacryphanes,0,1,1
+Dactylethrella,1,2,6
+Dactylioglypha,1,1,3
+Dactyloceras,0,1,1
+Daemilus,1,2,2
+Dahlica,0,3,3
+Daimio,1,3,4
+Dalaca,0,2,2
+Dalcera,1,7,7
+Dalcerina,1,4,5
+Damora,0,1,1
+Danaus,0.75,30,170
+Danis,0,1,1
+Daphnis,1,16,45
+Daphnusa,0,1,1
+Dapidodigma,1,3,2
+Dappula,1,9,11
+Darapsa,1,12,27
+Darapsa Choerilus,0,16,5
+Darapsa Myron,0,7,2
+Darapsa Versicolor,0,13,5
+Dargida,0.3333333333333333,5,12
+Darisodes,0,1,1
+Darna,0.46153846153846156,99,130
+Darna Bornesordida,0,2,1
+Darna Bradleyi,0,1,1
+Darna Catenatus,0,5,2
+Darna Diducta,0,29,11
+Darna Diducta?,0,1,1
+Darna Furva,0,5,2
+Darna Metaleuca,0,2,2
+Darna Mindanensis,0.3333333333333333,4,4
+Darna Nararia,0,24,18
+Darna Nemacera,0,1,1
+Darna Ochracea,0,6,5
+Darna Pallivitta,0,8,5
+Darna Sordida,0,12,7
+Darna Trima,0,29,17
+Darna Tuaranensis,0,1,1
+Dasodis,0,1,1
+Dasyboarmia,0,1,1
+Dasygaster,0.5,2,3
+Dasyophthalma,1,2,2
+Dasypolia,1,1,4
+Dasypyga,1,2,5
+Dasyses,1,19,25
+Datanoides,1,1,5
+Daulia,0,1,1
+Dausara,0,1,1
+Davara,1,3,3
+Deanolis,1,2,4
+Deborrea,0.5,4,4
+Decachorda,1,1,2
+Declana,1,7,15
+Decodes,0.5,9,21
+Degia,0.6,11,11
+Deidamia,1,2,6
+Deilephila,1,13,29
+Deileptenia,1,3,5
+Dejongia,1,2,4
+Delgamma,0,1,1
+Delgamma Pangonia,0,1,1
+Delias,0.7142857142857143,42,72
+Deloneura,0.5,7,7
+Deltinea,0.8571428571428571,22,25
+Deltophora,0,1,1
+Deltote,1,4,9
+Demopsestis,1,1,2
+Denaeantha,0,1,1
+Dendrolimus,0.4,12,23
+Dendrophilia,0,5,5
+Dendropsyche,0,1,1
+Dendrorycter,0,1,1
+Deoclona,0,1,1
+Deoptilia,0,1,1
+Derambila,0,1,1
+Dercas,0,1,1
+Descoreba,1,6,13
+Desmia,0.5,6,9
+Desmolycaena,0,1,1
+Deudorix,0.7916666666666666,104,150
+Deuterocopus,0.4,6,7
+Deuterollyta,0.2,5,11
+Deuterophysa,0,2,2
+Diachrysia,0.75,16,19
+Diacme,0,1,1
+Diacrotricha,1,1,2
+Diactenis,0,1,1
+Diaethria,0.5,7,12
+Dialectica,0.5,9,14
+Diapalpus,0.5,8,8
+Diaphania,0.6666666666666666,32,77
+Diaphanopsyche,0,1,1
+Diaphone,1,7,12
+Diarsia,0.6428571428571429,40,45
+Diasemia,0,2,2
+Diastema,0,1,1
+Diastictis,0,1,1
+Diataga,1,2,2
+Diatenes,0,1,1
+Diatraea,0.48484848484848486,35,75
+Dicanticinta,0,1,1
+Dicephalarcha,1,1,2
+Diceratura,0.5,3,3
+Dichelia,1,1,3
+Dichelopa,0,2,2
+Dichocrocis,0.3333333333333333,12,12
+Dichogama,0.3333333333333333,3,5
+Dichomeris,0.45217391304347826,154,281
+Dichonia,0.25,5,5
+Dichorda,0.5,2,4
+Dichordophora,1,1,2
+Dichordophora Phoenix,0,2,1
+Dichorragia,1,3,10
+Dichromia,0,1,1
+Dichromodes,1,2,4
+Dichrorampha,0.44,27,40
+Dicogaster,1,1,2
+Dicranoctetes,0.5,2,4
+Dicymolomia,1,5,5
+Didrimys,1,1,3
+Didymaeformia,0.5,16,34
+Digglesia,0.3333333333333333,5,7
+Digitivalva,0,2,2
+Dilipa,0,1,1
+Diloba,1,1,12
+Dilophothripa,0.5,4,4
+Dilophothripa?,0,1,1
+Dindica,1,2,6
+Dingana,0,1,1
+Dinumma,0.3333333333333333,4,6
+Diomea,0,2,2
+Diomea Cremata,0,1,1
+Diomea Rotundata,0,1,1
+Dione,0.75,4,36
+Diophila,0,1,1
+Dioriste,0,1,1
+Dioryctria,0.3888888888888889,58,139
+Diparopsis,0.3333333333333333,4,4
+Dipha,1,2,4
+Diphthera,1,4,5
+Diphtheroptila,0,1,1
+Dipleurina,0,1,1
+Diplodesma,1,2,2
+Diplonearcha,0,1,1
+Diprotochaeta,0,1,1
+Dipterygina,0,2,2
+Diptychis,1,2,2
+Dira,1,4,11
+Dirades,1,2,5
+Dircenna,1,3,17
+Dirphia,0.6,30,40
+Dirphiopsis,0.6666666666666666,10,10
+Discalma,0,2,2
+Discestra,0.5714285714285714,27,48
+Dischidesia,0,1,1
+Disclisioprocta,0.5,3,7
+Discolampa,1,1,4
+Discoloxia,0,1,1
+Discophlebia,0,1,1
+Discophora,0.6666666666666666,6,13
+Dismorphia,0.75,5,9
+Dissoctena,0,1,1
+Ditula,1,18,24
+Divitiaca,0,1,1
+Dixeia,0,5,5
+Dodonidia,1,2,4
+Dolba,1,8,13
+Dolbina,1,1,3
+Doleschallia,0.5,7,23
+Dolicharthria,0,2,2
+Dolichobela,0,1,1
+Dolichomia,1,1,5
+Dollmania,1,2,3
+Doloessa,0.5,15,19
+Doloploca,0,1,1
+Donacaula,0.5,6,8
+Donacoscaptes,0,4,4
+Donda,0.5,5,6
+Donuca,0,1,1
+Dophla,1,4,6
+Dophla Evelina,0,8,4
+Dorata,0,1,1
+Doratifera,0.5714285714285714,13,24
+Dorithia,0.6666666666666666,4,5
+Dorodoca,0,1,1
+Doryodes,0,2,2
+Dovania,1,2,2
+Doxocopa,0.375,9,13
+Dracaenura,0,1,1
+Drapetodes,1,2,2
+Drasteria,0.14285714285714285,15,16
+Draudtia,0,1,1
+Drepana,1,12,29
+Drepanodes,0,1,1
+Drepanofoda,0,1,1
+Drepanulatrix,0.125,8,10
+Drephalys,0,2,2
+Drimylastis,0.5,8,10
+Drosica,0,1,1
+Druentica,0,2,2
+Drupadia,1,12,8
+Dryadaula,0.4,10,10
+Dryadaula Pactolia,0,2,2
+Dryadaula Terpsichorella,0,5,5
+Dryadaula Tetraglossa,0,1,1
+Dryadula,1,1,14
+Dryadula Phaetusa,0,15,1
+Dryas,1,2,33
+Drymiarcha,0,1,1
+Dryobota,0,1,1
+Dryobotodes,0,6,6
+Dryocampa,1,4,11
+Dryochlora,1,2,2
+Dryotype,0,1,1
+Dubiella,0,1,1
+Dudua,0.3333333333333333,26,41
+Dulcedo,1,1,2
+Duomitus,0,2,2
+Duponchelia,1,3,3
+Durbania,0,7,4
+Durbaniopsis,0,1,1
+Dymasia,1,1,2
+Dynamine,0.5,10,19
+Dynastor,0.6666666666666666,4,11
+Dyops,0.6666666666666666,3,5
+Dyotopasta,1,2,4
+Dypterygia,0.6666666666666666,5,8
+Dyrzela,1,1,2
+Dysaethria,0,5,5
+Dysallacta,1,2,2
+Dyscia,1,1,2
+Dyscia Fagaria,0,2,1
+Dyscophellus,0.5,6,8
+Dysdaemonia,0.6666666666666666,7,8
+Dyseriocrania,0.5,2,8
+Dysgonia,0.30303030303030304,46,57
+Dysmilichia,0,1,1
+Dysodia,0.7,18,23
+Dyspessa,1,1,2
+Dysphania,0.3333333333333333,8,9
+Dysphylia,0,1,1
+Dyspteris,1,1,2
+Dysstroma,0.25,20,26
+Eacles,0.75,69,168
+Eacles Canaima,0,1,1
+Eacles Ducalis,0,6,5
+Eacles Imperialis,0,146,39
+Eacles Lemairei,0,1,1
+Eacles Masoni,0,2,2
+Eacles Ormondei,0,3,2
+Eacles Oslari,0,18,8
+Eacles Penelope,0,15,11
+Eagris,0.75,9,11
+Eagris Decastigma,0,1,1
+Eagris Lucetia,0,5,2
+Eagris Nottoana,0,6,3
+Eagris Sabadius,0,5,3
+Eana,0.6666666666666666,17,16
+Earias,0.6842105263157895,42,130
+Eboda,0,2,2
+Ebulea,0,1,1
+Ebusus,1,1,2
+Ecclitica,0,1,1
+Eccopsis,0.6666666666666666,4,5
+Eccoptocera,0.5,3,5
+Ecdytolopha,0.5714285714285714,14,16
+Echinoscelis,0,1,1
+Ecliptopera,0.5,3,4
+Ecliptoptera,0.5,3,4
+Ecpatia,0.5,3,4
+Ecpetelia,0,1,1
+Ectima,0,2,2
+Ectoedemia,0.2916666666666667,100,168
+Ectohomeosoma,0,1,1
+Ectomyelois,0.75,26,49
+Ectomyelois?,0,1,1
+Ectropina,0,4,4
+Ectropis,0.6363636363636364,105,168
+Edessena,0,1,1
+Egira,0.6,48,65
+Egnasia,0.5,2,4
+Egybolis,1,4,7
+Eicochrysops,1,7,9
+Eidophasia,1,1,2
+Elachista,0.390625,64,127
+Elaphria,1,28,43
+Elasmopalpus,0.5,26,46
+Elatobia,0,1,1
+Elatobia Carbonella,0,1,1
+Elbella,0.75,5,7
+Elcysma,0,1,1
+Eldana,1,3,6
+Electrophaes,1,3,5
+Electrostrymon,0,2,2
+Elegia,0.3333333333333333,3,4
+Elibia,0,1,1
+Eligma,1,1,3
+Elina,0,1,1
+Eliotia,1,1,2
+Elodina,0,1,1
+Eloeidiphilos,0,1,1
+Elophila,0.6,27,27
+Elpiste,1,3,4
+Elusa,0,1,1
+Elymnias,0.25,14,35
+Emarginea,1,1,2
+Ematheudes?,0,1,1
+Ematurga,1,16,33
+Embryonopsis,0,1,1
+Embryonopsis Halticella,0,1,1
+Emesis,0.6,10,10
+Emmalocera,0.3333333333333333,3,4
+Emmelia,1,2,2
+Emmelina,1,8,20
+Emmetia,0,2,2
+Empedaula,0,1,1
+Emrahia,1,2,2
+Enargia,0.6666666666666666,9,17
+Enarmonia,0.2,12,21
+Enarmoniodes,0,1,1
+Encolpotis,1,3,3
+Endoclita,0.8888888888888888,80,106
+Endopiza,0.5,10,16
+Endothenia,0.5263157894736842,35,59
+Endotricha,0.4,6,8
+Endropiodes,0.5,3,3
+Enigmogramma,1,2,2
+Enispa,0,2,2
+Ennomos,0.75,41,81
+Enodia,0.3333333333333333,4,5
+Enolmis,0,1,1
+Enosis,0,1,1
+Enpinanga,0,2,2
+Entephria,0.5,8,14
+Enteucha,1,1,3
+Entheus,0.3333333333333333,3,4
+Entometa,0,3,3
+Entomogramma,0,1,1
+Entomopteryx,0,1,1
+Enyo,0.6666666666666666,8,12
+Enypia,1,6,26
+Eoasthena,0,1,1
+Eochroa,1,1,3
+Eogenes,0,1,1
+Eois,0,1,1
+Eoophyla,0,1,1
+Eooxylides,1,1,2
+Eoparargyractis,1,1,2
+Eoreuma,1,1,4
+Eosphoropteryx,1,2,4
+Epagoge,1,3,4
+Epalxiphora,0,1,1
+Epargyreus,1,13,43
+Epelis,1,1,2
+Epermenia,0.5555555555555556,18,40
+Ephestia,0.6666666666666666,33,39
+Ephestiodes,1,5,6
+Epholca,1,4,4
+Ephormotris,0,1,1
+Ephyriades,0.6666666666666666,5,8
+Ephyrodes,0,1,1
+Ephyrodes Omicron,0,1,1
+Ephysteris,0.5,8,15
+Epiblema,0.39473684210526316,48,69
+Epicampoptera,0,8,8
+Epicephala,0,10,10
+Epichnopterix,0,2,2
+Epichorista,0.3333333333333333,6,8
+Epichoristodes,1,5,6
+Epicorsia,1,6,10
+Epicrocis,0.5,2,4
+Epicroesa,0,2,2
+Epidemia,1,9,26
+Epidesmia,0.5,2,4
+Epidola,0,1,1
+Epiglaea,0.5,3,5
+Epigynopteryx,0.2,6,6
+Epimarptis,1,3,3
+Epimartyria,0.5,2,5
+Epimecia,0,1,1
+Epimecis,0.5,5,7
+Epimimastis,0,1,1
+Epimorius,0,1,1
+Epinotia,0.6095238095238096,161,274
+Epione,0.5,3,6
+Epiorna,0,2,2
+Epipagis,0.3333333333333333,4,4
+Epipaschia,0,1,1
+Epiphile,0.5,2,4
+Epiphora,0.6666666666666666,15,25
+Epiphryne,1,1,2
+Epiphyas,0.45454545454545453,47,61
+Epiplema,0.5,4,8
+Epipsestis,1,1,7
+Epirranthis,0.6666666666666666,4,8
+Epirrhoe,0.4444444444444444,9,16
+Epirrita,1,26,64
+Episcada,0.5,2,3
+Epischnia,0.4,5,8
+Episema,0.5,3,3
+Episimus,0.5,17,23
+Episothalma,0.5,2,3
+Episparis,0.6666666666666666,5,5
+Episteira,0,2,2
+Episteme,0.6666666666666666,10,11
+Epitola,0.13333333333333333,17,17
+Epityches,1,1,3
+Epitymbia,0,2,2
+Eporectis,0,1,1
+Eracon,0,1,1
+Erannis,0.6,38,109
+Erasmia,1,3,3
+Erastria,0.2,6,8
+Erastroides,0.5,4,4
+Ercheia,0.6666666666666666,6,5
+Ercta,0,1,1
+Ercta Vittata,0,1,1
+Erebia,0.7058823529411765,40,109
+Ereboenis,0,1,1
+Erebomorpha,0,1,1
+Erebus,0.4,7,9
+Erechthias,0.3783783783783784,86,106
+Erechthias?,1,2,2
+Erelieva,1,2,2
+Eremberga,0,1,1
+Eremobia,1,1,4
+Eremobina,0,1,1
+Eremophysa,0,2,2
+Eresia,0.5,6,10
+Eresina,0,7,7
+Eresinopsides,0,1,1
+Eretis,0.6666666666666666,3,10
+Eretmocera,0.1,17,20
+Eretmopus,0.2,6,6
+Ericeia,0.4,11,22
+Ericodesma,0,1,1
+Erikssonia,0,1,1
+Erinnyis,0.8571428571428571,28,65
+Erinothus,1,1,2
+Eriocrania,0.375,9,13
+Eriocraniella,0.6,5,12
+Eriogaster,0.5,12,29
+Eriogyna,1,7,10
+Eriogyna Pyretorum,0,10,7
+Erionota,1,8,26
+Eriopsela,1,2,2
+Eriopygodes,1,3,2
+Eristena,0,1,1
+Erizada,1,2,2
+Ernolatia,1,1,3
+Eronia,1,4,4
+Erora,1,6,7
+Erschoviella,1,2,2
+Ertzica,1,2,2
+Erygia,0.5,3,5
+Erygia Apicalis,0,4,2
+Erygia Reflectifascia,0,1,1
+Erynnis,0.9411764705882353,31,146
+Eryphanis,0.5,2,4
+Erysichton,0,4,2
+Esakiopteryx,1,1,6
+Esakiozephyrus,0,1,1
+Etainia,0,1,1
+Etanna,0,1,1
+Eteobalea,0,3,3
+Eteoryctis,0.5,3,8
+Eterusia,0.5,4,4
+Ethelgoda,1,1,3
+Ethelontides,0,1,1
+Ethmiopsis,1,1,2
+Etiella,0.8,17,61
+Euagrotis,1,2,2
+Euaspa,0.5,2,4
+Eubaphe,0.5,4,5
+Eubarnesia,0,1,1
+Eubergia,1,4,4
+Eublemma,0.42857142857142855,61,93
+Eublemmistis,1,3,2
+Eublemmoides,0.3333333333333333,3,4
+Eucalantica,0,1,1
+Eucalliathla,1,1,2
+Eucalybites,0,1,1
+Eucarta,1,1,2
+Eucatagma,1,1,2
+Eucaterva,0,1,1
+Euceratia,0,1,1
+Euchalcia,1,2,5
+Eucheira,0,1,1
+Euchlaena,0.8333333333333334,61,83
+Euchlaena Amoenaria,0,1,1
+Euchlaena Effecta,0,11,7
+Euchlaena Irraria,0,8,8
+Euchlaena Johnsonaria,0,15,10
+Euchlaena Madusaria,0,4,3
+Euchlaena Marginaria,0,13,9
+Euchlaena Mollisaria,0,9,4
+Euchlaena Muzaria,0,1,1
+Euchlaena Obtusaria,0,5,3
+Euchlaena Pectinaria,0,7,4
+Euchlaena Serrata,0,8,4
+Euchlaena Tigrinaria,0,9,7
+Euchloe,1,8,62
+Euchloron,1,1,4
+Euchoeca,1,1,2
+Euchristophia,1,1,3
+Euchromius,0.3333333333333333,4,4
+Euchromius Bella,0,1,1
+Euchromius Californicalis,0,1,1
+Euchromius Ocellea,0,2,2
+Euchrysops,0.6666666666666666,26,63
+Euchrysops?,0,1,1
+Eucirroedia,1,3,4
+Euclasta,0,2,2
+Euclea,0.75,15,24
+Euclemensia,0.5,2,3
+Euclidia,0.6666666666666666,9,15
+Eucoenogenes,0.3333333333333333,3,4
+Eucosma,0.2839506172839506,88,128
+Eucosmomorpha,0,1,1
+Eucosmophora,0,1,1
+Eucraera,0.5,6,7
+Eucrostes,0,1,1
+Eucrotala,0,1,1
+Eucyclodes,0.16666666666666666,7,7
+Eudaemonia,0,2,2
+Eudalaca,0,1,1
+Eudarcia,0.3333333333333333,13,14
+Eudeilinia,1,1,3
+Eudemis,0.5,4,9
+Eudemopsis,0.5,4,5
+Eudesmeola,0,1,1
+Eudocima,0.6923076923076923,46,81
+Eudonia,0.09090909090909091,12,12
+Eudrepanulatrix,0,1,1
+Eudryas,1,12,18
+Eudyaria,1,3,7
+Eueana,1,1,2
+Eueana Niveociliaria,0,2,1
+Eueides,0.7777777777777778,11,58
+Eueretagrotis,1,9,12
+Euexia,1,1,2
+Eufidonia,0.6666666666666666,9,31
+Eugivira,0,1,1
+Euglyphis,0.3333333333333333,15,17
+Eugnorisma,0.6666666666666666,10,11
+Eugnosta,0,1,1
+Eugraphe,1,7,8
+Euhyponomeuta,1,1,2
+Euhyponomeutoides,1,3,8
+Euhyposmocoma,0.5,2,3
+Eulaceura,0,1,1
+Eulamprotes,0.25,5,5
+Euleioptilus,1,2,4
+Eulepidotis,0,3,3
+Eulepte,1,2,6
+Eulia,0.6666666666666666,9,14
+Euliphyra,0,2,2
+Eulithis,0.8571428571428571,39,69
+Eulocastra,0,2,2
+Eulogia,1,3,3
+Eulophonotus,1,7,10
+Euloxia,0.3333333333333333,3,4
+Eulycia,0,1,1
+Eulymnia,0,1,1
+Eumacaria,1,1,5
+Eumaeus,0.5,8,8
+Eumarozia,0.5,3,3
+Eumasia,0,3,2
+Eumedonia,0,1,1
+Eumelea,0.3333333333333333,4,5
+Eumenodora,0,1,1
+Eumestleta,0,1,1
+Eumeta,0.8,95,143
+Eumetisa,0,1,1
+Eumichtis,0,1,1
+Eumorpha,1,18,52
+Eunebristis,1,1,2
+Eunica,0.25,5,5
+Eupackardia,1,10,20
+Eupanacra,0.25,5,11
+Euparthenos,1,3,3
+Euperissus,0,1,1
+Euperissus Catapyrrha,0,1,1
+Euphaedra,0.38095238095238093,24,44
+Euphalacra,0,1,1
+Euphalacra Semisecta,0,1,1
+Euphaneta,1,1,2
+Euphilotes,0.8,5,56
+Euphlycta,0,1,1
+Euphydryas,1,21,93
+Euphyes,0.7142857142857143,8,20
+Euphyia,0.6666666666666666,10,12
+Eupithecia,0.6976744186046512,303,639
+Euplexia,0.6666666666666666,26,31
+Euploea,0.6666666666666666,46,142
+Eupneusta,0,1,1
+Eupoecilia,0.4,17,21
+Euproctis,0.5,3,5
+Euproserpinus,0.5,3,5
+Euprosterna,1,2,2
+Euproutia,0,1,1
+Eupselia,0.3333333333333333,3,4
+Eupsilia,0.8181818181818182,50,94
+Euptera,0.2857142857142857,7,10
+Eupterote,0.6,52,68
+Euptoieta,1,14,28
+Euptychia,0.29411764705882354,17,27
+Eupyrrhoglossum,1,1,3
+Eurema,0.7222222222222222,94,275
+Eurhodope,0,1,1
+Euriphene,0.5,3,3
+Euriphene Achlys,0,2,2
+Euriphene Plautilla,0,1,1
+Euripus,1,3,4
+Eurodryas,1,13,31
+Eurois,1,23,34
+Europlema,0,2,2
+Europtera,0,1,1
+Eurrhypara,1,4,6
+Eurrhyparodes,0,1,1
+Eurybia,0,1,1
+Eurydoxa,1,1,2
+Eurynola,0,1,1
+Eurysacca,0.5,3,3
+Eurytaphria,0,1,1
+Eurytela,0.6666666666666666,6,16
+Eusabena,0,1,1
+Eusarca,0.5,5,6
+Euscirrhopterus,0.75,5,9
+Euselasia,0.6,6,11
+Eustalodes,0,2,2
+Eustixia,1,2,3
+Eustroma,0,3,3
+Eustrotia,0,3,2
+Eutachyptera,0,1,1
+Eutelia,0.5,21,35
+Euthalia,0.5882352941176471,26,43
+Euthaliopsis,0,1,1
+Euthecta,0,1,1
+Euthrix,0.4,8,14
+Euthyatira,1,2,5
+Eutrapela,1,15,25
+Eutrepsia,1,2,2
+Eutrichopidia,1,2,2
+Eutricopis,0,1,1
+Eutychide,1,2,4
+Euwallengrenia,0.5,3,4
+Euxanthe,1,8,16
+Euxanthis,0,1,1
+Euxoa,0.576271186440678,205,278
+Euzophera,0.6470588235294118,48,72
+Euzopherodes,0.5,6,7
+Euzopherodes Dendrophaga,0,1,1
+Euzopherodes Ephestialis,0,3,2
+Euzopherodes Lutisignella,0,1,1
+Euzopherodes Vapidella,0,3,2
+Euzopheroides,0,1,1
+Evenus,0.3333333333333333,3,6
+Everes,0.4444444444444444,13,64
+Evergestis,0.5555555555555556,10,23
+Evetria,0,1,1
+Evippe,0.5714285714285714,7,16
+Evora,1,2,3
+Exangerona,1,2,2
+Exapate,1,8,15
+Exartema,0.5,2,3
+Exelastis,0.3333333333333333,11,20
+Exelis,1,3,4
+Exophyla,0,3,3
+Exoteleia,0.6666666666666666,7,25
+Exsula,0,1,1
+Exyra,0.75,4,11
+Fabriciana,0.75,5,13
+Facidina,0,1,1
+Fagitana,1,3,3
+Falana,1,2,2
+Falcaria,1,1,4
+Falcatula,1,3,4
+Falseuncaria,1,6,9
+Famegana,1,2,2
+Faristenia,0,7,7
+Faronta,0.8,11,52
+Fascellina,0.75,4,13
+Fascista,0,1,1
+Faunis,0.6666666666666666,7,9
+Favonius,1,10,67
+Felinia,0.5,2,3
+Feliniopsis,0.5,6,6
+Feltia,0.6666666666666666,19,41
+Feniseca,1,2,11
+Feralia,0.6666666666666666,10,36
+Feredayia,0,3,3
+Fernaldia,0,1,1
+Filatima,0.45454545454545453,24,39
+Filodes,0,2,2
+Fishia,0.6666666666666666,11,14
+Fissicrambus,1,2,8
+Fixsenia,0.875,12,31
+Flammona,0,1,1
+Flos,0.8,6,13
+Fodina,0.25,6,8
+Fomoria,0,2,2
+Forbestra,0,1,1
+Fountainea,0.4,6,7
+Framinghamia,1,1,2
+Fraus,0,1,1
+Frechinia,0,1,1
+Fresna,0.3333333333333333,3,4
+Freyeria,1,4,10
+Friedlanderia,0,1,1
+Friseria,0,2,2
+Frumenta,0,2,2
+Fulgurodes,1,6,6
+Fulvoclysia,0,1,1
+Fumibotys,0,1,1
+Fundella,1,9,35
+Fuscoptilia,0,1,1
+Gabala,0,2,2
+Gabara,0.3333333333333333,3,4
+Gabriola,1,1,11
+Gadessa,1,5,5
+Gadira,0,1,1
+Gaeides,1,4,16
+Galactica,0,1,1
+Galenara,1,2,3
+Galgula,0,1,1
+Galleria,1,2,2
+Gamelia,1,3,3
+Gamia,1,2,8
+Gandaca,0.5,2,3
+Gangara,1,6,25
+Ganisa,1,1,4
+Ganyra,1,1,3
+Gaphara,0,1,1
+Garaeus,0.6666666666666666,10,12
+Garella,1,3,3
+Gastridiota,0,1,1
+Gastropacha,0.5,18,26
+Gastrophora,1,1,2
+Gastroplakaeis,0.5,4,6
+Gatesclarkeana,1,25,27
+Gathynia,0,1,1
+Gauna,0,1,1
+Gazoryctra,1,4,4
+Gazoryctra Wielgusi,0,4,4
+Gegenes,1,4,14
+Geina,0.3333333333333333,8,17
+Geitoneura,1,2,6
+Gelasma,0.5714285714285714,9,14
+Gelechia,0.30303030303030304,38,48
+Gellonia,1,1,3
+Genduara,1,4,5
+Genopaschia,0,1,1
+Genophantis,1,2,6
+Genus?,0,1,1
+Geometra,0.6666666666666666,11,15
+Gerbathodes,0,1,1
+Gerontha,1,5,5
+Gerosis,0.3333333333333333,3,5
+Gerra,1,1,2
+Gesonia,1,3,2
+Gesta,1,3,5
+Ghesquierellana,1,2,3
+Giacomellia,0,2,2
+Giaura,0.2,6,9
+Gibberifera,1,1,2
+Gibbovalva,0.6,6,22
+Gideona,0,1,1
+Gigantalcis,0,1,1
+Gillmeria,1,1,4
+Gisilia,0.5,2,5
+Givira,0,1,1
+Glacies,0,1,1
+Gladiovalva,0,1,1
+Glanycus,1,6,6
+Glaphyria,0,2,2
+Glaucolepis,0,1,1
+Glaucopsyche,0.625,10,56
+Glena,0.5714285714285714,14,18
+Gloveria,0.8,12,17
+Glycerophthora,0,1,1
+Glyphidocera,0,3,3
+Glyphipterix,0.11764705882352941,17,20
+Glyphodes,0.43478260869565216,33,60
+Glyptocera,1,2,3
+Glyptoteles,1,2,2
+Gnamptonyx,0,1,1
+Gnathifera,0,2,2
+Gnathmocerodes,0.5,3,3
+Gnathothlibus,1,6,13
+Gnophodes,0.5,2,3
+Gnophos,1,5,5
+Gnorimoschema,0.5454545454545454,26,46
+Gnorismoneura,0,1,1
+Godartiana,0,1,1
+Goditha,0,1,1
+Godonela,1,8,13
+Godyris,1,1,2
+Gogana,0.3333333333333333,3,4
+Gomalia,1,1,3
+Gonepatica,0,1,1
+Gonepteryx,0.75,6,12
+Gonerilia,0,1,1
+Gonimbrasia,0.8571428571428571,42,73
+Goniocalpe,1,1,2
+Goniocraspidum,1,1,3
+Goniodoma,0.3333333333333333,3,4
+Goniotorna,0,1,1
+Gonobombyx,1,2,3
+Gonodonta,0.5833333333333334,23,32
+Gonodontis,1,12,13
+Gonometa,0.8333333333333334,20,32
+Gonoreta,0,1,1
+Goodia,0.6,11,15
+Gorgopis,0,1,1
+Gorgopis Libania,0,1,1
+Gorgyra,0,3,3
+Gorgyra Bibulus,0,2,1
+Gorgyra Diva,0,2,1
+Gorgyra Johnstoni,0,1,1
+Gortyna,0.75,12,23
+Gracilodes,0.5,2,3
+Graellsia,1,1,2
+Grais,0,1,1
+Grammodes,0.8,22,28
+Grammodora,1,3,4
+Graphania,0.16666666666666666,8,10
+Graphiocephala,0,1,1
+Graphiphora,1,9,15
+Grapholita,0.36363636363636365,46,86
+Gravitarmata,1,2,4
+Greta,0.3333333333333333,3,4
+Gretchena,0.2857142857142857,8,10
+Gretna,0.5,2,4
+Greya,0.5,12,29
+Griselda,0.3333333333333333,4,19
+Griseothosea,1,4,4
+Guastica,0,1,1
+Gueneria,1,2,2
+Gunda,0.5,2,3
+Gymnancyla,0,3,3
+Gymnelema,0,1,1
+Gymnoscelis,0.6875,50,58
+Gynanisa,0.75,11,22
+Gynnidomorpha,0.6666666666666666,6,7
+Gypsochares,0,2,2
+Gypsonoma,0.6923076923076923,20,31
+Gyrtothripa,0.25,5,5
+Habrodais,0.5,2,5
+Habrosyne,0.6666666666666666,6,15
+Hada,0.5,5,8
+Hadena,0.6666666666666666,22,59
+Hadjina,0,2,2
+Hadraphe,0,1,1
+Haematopis,1,3,6
+Haemerosia,1,1,2
+Hahncappsia,0.5,4,4
+Haliophyle,1,2,2
+Halpe,0.16666666666666666,6,7
+Halseyia,0.3333333333333333,6,6
+Halysidota,0.5714285714285714,32,76
+Halysidota Catenulata,0,1,1
+Halysidota Cinctipes,0,7,3
+Halysidota Harrisii,0,4,3
+Halysidota Harrisii?,0,1,1
+Halysidota Interlineata,0,2,2
+Halysidota Schausi,0,1,1
+Halysidota Tessellaris,0,75,21
+Hamadryas,0.5454545454545454,15,29
+Hamanumida,1,3,5
+Hamearis,1,1,2
+Hammaptera,1,2,3
+Hamodes,1,1,2
+Haploceros,0,1,1
+Haplopacha,0,1,1
+Haplotinea,1,6,7
+Harita,0,1,1
+Haritalodes,1,11,36
+Haritalopha,0,1,1
+Harkenclenus,1,1,7
+Harma,1,2,4
+Harmaclona,1,2,2
+Harmologa,0.5,4,4
+Harpagidia,1,1,2
+Harpendyreus,0.25,5,6
+Harrisimemna,1,11,18
+Harrisina,0.8,7,13
+Hasora,0.8333333333333334,11,23
+Hastula,0,1,1
+Hayarotis,0,1,1
+Hebomoia,1,2,15
+Hecatera,0.6666666666666666,3,5
+Hecatesia,0,1,1
+Hedma,1,2,4
+Hednota,0.8571428571428571,9,20
+Hedraea,0,1,1
+Hedya,0.625,30,66
+Helcyra,0,1,1
+Helcystogramma,0.5,30,58
+Heleanna,0.3333333333333333,4,4
+Heliangara,0,2,2
+Helias,0,1,1
+Heliconisa,1,2,3
+Heliconisa Pagenstecheri,0,3,2
+Heliconius,0.6944444444444444,36,226
+Helicoverpa,0.625,98,249
+Heliocheilus,1,3,5
+Heliocosma,0,1,1
+Heliodines,0.4117647058823529,17,27
+Heliolonche,0.4,5,7
+Heliomata,1,2,2
+Heliomystis,0,1,1
+Heliomystis Electrica,0,1,1
+Heliopetes,0.8,7,31
+Heliophisma,0.5,3,3
+Heliophobus,0.5,5,11
+Heliophorus,0.8,6,10
+Heliothea,0,1,1
+Heliothis,0.7894736842105263,87,166
+Heliothodes,1,1,2
+Heliozela,0.1,10,11
+Hellinsia,0.5384615384615384,18,27
+Hellula,0.6666666666666666,12,35
+Helvibotys,1,2,2
+Hemaris,1,13,48
+Hemeroblemma,0,2,2
+Hemerophila,0.5,2,3
+Hemiargus,0.8,17,52
+Hemicephalis,1,1,2
+Hemichloreis,0,1,1
+Hemieuxoa,0.5,3,3
+Hemigraphiphora,1,6,8
+Hemileuca,0.9545454545454546,99,272
+Heminomistis,1,1,2
+Hemiolaus,0,1,1
+Hemipachnobia,1,4,5
+Hemiscopis,0,2,2
+Hemistola,0.2,5,8
+Hemithea,0.7142857142857143,39,61
+Hendecaneura,1,2,2
+Hendecasis,1,6,6
+Heniocha,0,1,1
+Henometa,1,2,2
+Henotesia,1,3,6
+Henricus,0.25,4,6
+Heodes,0,1,1
+Heortia,0,1,1
+Hepialiscus,0,1,1
+Hepialus,1,16,23
+Heraclia,0.3333333333333333,5,6
+Herculia,0.25,5,6
+Herdonia,0,2,2
+Hermelycaena,0,1,1
+Hermeuptychia,0.3333333333333333,3,11
+Herminia,1,11,12
+Herochroma,0,1,1
+Herochroma Sp.,0,1,1
+Herona,0,1,1
+Herpetogramma,0.6470588235294118,59,96
+Herpystis,0,1,1
+Hespagarista,1,1,2
+Hesperia,1,22,86
+Hesperia Attalus,0,3,1
+Hesperia Columbia,0,3,1
+Hesperia Comma,0,15,2
+Hesperia Dacotae,0,7,2
+Hesperia Juba,0,4,1
+Hesperia Leonardus,0,13,1
+Hesperia Lindseyi,0,3,1
+Hesperia Meskei,0,2,1
+Hesperia Metea,0,3,1
+Hesperia Miriamae,0,2,1
+Hesperia Nevada,0,5,2
+Hesperia Ottoe,0,10,2
+Hesperia Pahaska,0,2,1
+Hesperia Sassacus,0,5,1
+Hesperia Uncas,0,5,1
+Hesperia Viridis,0,5,1
+Hesperia Woodgatei,0,2,2
+Hesperocharis,0.5,4,7
+Hesperopsis,0.3333333333333333,3,6
+Hesperumia,0.25,12,26
+Hestina,0.6666666666666666,3,8
+Hestina Assimilis,0,6,1
+Hestina Japonica,0,3,1
+Hestina Nama,0,1,1
+Hestiochora,0.5,2,3
+Heteranassa,0,1,1
+Heterarmia,1,3,5
+Heterocrasa,0,1,1
+Heterogenea,1,8,13
+Heterolocha,0.6666666666666666,3,5
+Heteromicta,0,1,1
+Heteronympha,0.6666666666666666,8,12
+Heteropacha,0,1,1
+Heteropalpia,0,1,1
+Heteropan,1,2,2
+Heterophleps,0,2,2
+Heteropterus,1,1,3
+Heteroptila,0,1,1
+Heterosais,1,1,2
+Heterosmaitia,0,1,1
+Heterostegane,0.3333333333333333,3,4
+Heterotactis,0,1,1
+Hethemia,1,4,7
+Heuretes,1,4,4
+Hewitsonia,0,6,6
+Hexeris,0,1,1
+Hexorthodes,0.25,5,5
+Heylaertsia,1,2,2
+Hiccoda,0.5,2,3
+Hidari,1,2,9
+Hidripa,0,1,1
+Hilarographa,0,1,1
+Hillia,0,2,2
+Himella,1,5,9
+Hindothosea,1,5,5
+Hipoepa,1,3,3
+Hipparchia,0.6666666666666666,10,51
+Hippotion,0.75,67,115
+Hirasa,1,1,2
+Histia,1,2,3
+Historis,1,6,6
+Hodgesiella,0,1,1
+Holcocerus,1,2,2
+Holocerina,0.75,22,28
+Holocryptis,0,1,1
+Holophysis,0.5,4,4
+Homadaula,1,5,7
+Homaledra,0.5,3,19
+Homochlodes,0,2,2
+Homodes,0.625,25,27
+Homoeopteryx,0,1,1
+Homoeosoma,0.3684210526315789,27,68
+Homoglaea,0.75,8,16
+Homohadena,0.25,8,10
+Homona,0.6956521739130435,121,175
+Homona?,0,1,1
+Homoncocnemis,0,2,2
+Homonopsis,0.6666666666666666,11,20
+Homophlebia,0,1,1
+Homophoberia,1,3,3
+Homophylotis,0.75,6,8
+Homorthodes,0.4,9,11
+Homosaces,0,4,4
+Homosetia,0,1,1
+Honora,0,1,1
+Hoplisa,0,1,1
+Hoplitendemis,0,1,1
+Hoplodrina,0.6666666666666666,18,19
+Hoplojana,0,1,1
+Hoplotarache,0,4,4
+Horaga,1,6,7
+Horisme,0.4,7,8
+Horithyatira,0,1,1
+Hoyosia,0,1,1
+Hulodes,0.5,5,6
+Hulstia,1,2,2
+Hulstina,0,1,1
+Humiphila,1,1,3
+Hyalarcta,0.75,14,25
+Hyalobathra,0.75,5,7
+Hyalophora,1,79,295
+Hyalorista,0.5,2,3
+Hyalornis,0,1,1
+Hyaloscotes,0,1,1
+Hyalospila,1,2,3
+Hyalotharus,0,1,1
+Hyalothyrus,0,1,1
+Hyalyris,0,1,1
+Hyarotis,1,1,4
+Hyblaea,0.625,24,73
+Hydraecia,0.3333333333333333,24,37
+Hydrelia,0.75,10,13
+Hydria,1,9,12
+Hydrillodes,0.125,8,9
+Hydriomena,0.5294117647058824,31,61
+Hydriris,0.5,5,7
+Hydroclada,0,2,2
+Hydrorybina,0,1,1
+Hyladaula,0.5,3,3
+Hylaea,1,1,4
+Hylephila,1,1,16
+Hyles,0.9090909090909091,83,156
+Hylesia,0.6111111111111112,76,107
+Hyllolycaena,1,1,6
+Hyloconis,0.25,4,5
+Hyloicus,1,1,2
+Hylonycta,0,2,2
+Hylophilodes,0,1,1
+Hymenia,0.5,11,17
+Hymenomima,0,2,2
+Hymenoptychis,1,3,3
+Hypaedalea,0,1,1
+Hypagyrtis,0.6666666666666666,20,45
+Hypanartia,0.6666666666666666,5,5
+Hypanua,1,1,2
+Hypargyria,0.5,3,5
+Hypatima,0.5384615384615384,43,54
+Hypaurotis,0,1,1
+Hypelictis,0,1,1
+Hypena,0.45652173913043476,77,117
+Hypenodes,0,1,1
+Hypenomorpha,0,1,1
+Hyperapeira,0,1,1
+Hyperchiria,1,21,30
+Hyperlais,0,1,1
+Hyperstrotia,0.75,5,7
+Hypersypnoides,0.5,2,3
+Hypertropha,1,1,2
+Hyperythra,0,1,1
+Hyphorma,1,5,6
+Hyphormides,0,1,1
+Hypna,0.5,2,3
+Hypobapta,0,1,1
+Hypocala,0.4444444444444444,25,39
+Hypochalcia,1,2,2
+Hypochlorosis,0,1,1
+Hypochrosis,0,1,1
+Hypochrysops,0.09090909090909091,57,25
+Hypocysta,0.25,4,5
+Hypodoxa,0,2,2
+Hypodryas,0.75,15,22
+Hypographa,0.5,2,3
+Hypokopelates,0,1,1
+Hypolamprus,0.3333333333333333,5,5
+Hypoleria,0,2,2
+Hypolimnas,0.9230769230769231,41,105
+Hypolycaena,0.2727272727272727,48,50
+Hypomecis,0.5833333333333334,38,54
+Hypomenitis,1,1,3
+Hyponephele,0.3333333333333333,3,4
+Hyponeuma,0,1,1
+Hypophrictis,0,2,2
+Hypopteridia,0,1,1
+Hypopyra,0.2,6,6
+Hyposcada,1,1,3
+Hyposidra,1,47,73
+Hyposmocoma,0.21428571428571427,74,77
+Hypospila,0,1,1
+Hypostrotia,0,1,1
+Hypostrymon,0,1,1
+Hypotacha,0,2,2
+Hypothyris,0.3333333333333333,3,4
+Hypotia,0.4,6,8
+Hypotrisula,0,1,1
+Hypoxystis,1,2,2
+Hyppa,0.75,17,22
+Hypsipyla,1,19,66
+Hypsochila,0,1,1
+Hypsopygia,1,8,9
+Hypsoropha,0.5,4,4
+Hypsotropa,0.5,2,3
+Hysterophora,1,2,2
+Hysterosia,0.5,4,4
+Hystrichophora,0,1,1
+Hystrichoscelus,1,1,2
+Hystrichoscelus Spathanum,0,2,1
+Iambia,0,3,3
+Iambrix,0,2,2
+Iaspis,0,1,1
+Icelita,0,1,1
+Ichneutica,0,1,1
+Idaea,0.5217391304347826,51,53
+Idalus,0.25,4,6
+Idalus Agastus,0,1,1
+Idalus Critheis,0,4,1
+Idalus Herois,0,1,1
+Idalus Nr. Sublineata,0,1,1
+Idea,0.42857142857142855,10,12
+Ideopsis,0.5,6,9
+Idia,0.3333333333333333,16,15
+Idiobrotis,0,1,1
+Idiochlora,0,3,3
+Idiodes,0,2,2
+Idiophantis,0.5,7,10
+Idiotephria,1,1,2
+Idonauton,1,3,5
+Illiberis,0.3333333333333333,4,5
+Imbophorus,0,1,1
+Imbrasia,0.9354838709677419,152,221
+Imma,0.125,23,23
+Immyrla,0,1,1
+Inachis,1,2,6
+Incarcha,0,1,1
+Incisalia,1,28,82
+Incurvaria,0.45454545454545453,15,20
+Indomyrlaea,1,1,3
+Infurcitinea,1,1,2
+Inurois,0.8333333333333334,11,18
+Iolana,0.3333333333333333,4,5
+Iolaus,0.8545454545454545,62,123
+Ipidecla,0,3,3
+Ipimorpha,0.3333333333333333,8,16
+Iragoides,0,1,1
+Iraota,0.5,3,6
+Iratsume,1,2,8
+Irazona,0,1,1
+Iridana,0,2,2
+Iridopsis,0.75,18,24
+Iridostoma,0,1,1
+Isa,1,7,8
+Iscadia,0.4,6,7
+Iscalina,0,3,3
+Ischalis,0.5,6,6
+Ischnangela,0,1,1
+Ischnurges,0,1,1
+Ischyja,1,12,16
+Isidiella,0,1,1
+Isidiella Divitella,0,1,1
+Isma,0,1,1
+Isocentris,0,1,1
+Isoceras,0,1,1
+Isochaetes,0,1,1
+Isochorista,0,2,2
+Isodemis,1,3,3
+Isognathus,0.8333333333333334,6,13
+Isoparce,1,3,3
+Isophrictis,0.3333333333333333,7,11
+Isorrhoa,0,1,1
+Isospidia,0,1,1
+Isoteinon,1,1,5
+Isotenes,0.5,16,25
+Isotrias,0.5,3,3
+Issoria,0.2,7,10
+Istrianis,0,4,4
+Itame,0.64,56,108
+Itame Abruptata,0,1,1
+Itame Anataria,0,10,3
+Itame Andersoni,0,1,1
+Itame Argillacearia,0,2,1
+Itame Bitactata,0,4,2
+Itame Brunneata,0,8,4
+Itame Colata,0,1,1
+Itame Coortaria,0,8,2
+Itame Decorata,0,1,1
+Itame Evagaria,0,2,2
+Itame Exauspicata,0,23,8
+Itame Extemporata,0,1,1
+Itame Flavicaria,0,2,1
+Itame Guenearia,0,1,1
+Itame Loricaria,0,13,5
+Itame Occiduaria,0,9,5
+Itame Ochrifascia,0,1,1
+Itame Plumosata,0,2,1
+Itame Pustularia,0,13,6
+Itame Quadrilinearia,0,4,2
+Itame Ribearia,0,7,2
+Itame Subcessaria,0,4,1
+Itame Sulphurea,0,2,2
+Itame Varadaria,0,2,1
+Itame Wauaria,0,5,1
+Ithome,0.2857142857142857,8,11
+Ithome Anthraceuta,0,1,1
+Ithome Aquila,0,1,1
+Ithome Concolorella,0,5,1
+Ithome Curvipunctella,0,1,1
+Ithome Edax,0,2,2
+Ithome Lassula,0,2,1
+Ithome Spp.,0,1,1
+Ithomia,0.5,6,9
+Ithomisa,0.5,3,4
+Iwaruna,1,1,2
+Ixala,0,1,1
+Ixala Desperaria,0,1,1
+Ixias,0.6666666666666666,3,9
+Jacoona,1,1,2
+Jalmenus,0.2222222222222222,15,12
+Jamides,0.5333333333333333,35,71
+Jamides Alecto,0,13,4
+Jamides Aleuas,0,1,1
+Jamides Amarauge,0,1,1
+Jamides Bochus,0,31,5
+Jamides Caerulea,0,3,3
+Jamides Celeno,0,16,7
+Jamides Cunilda,0,2,2
+Jamides Cyta,0,1,1
+Jamides Elpis,0,4,2
+Jamides Malaccanus,0,1,1
+Jamides Nemophila,0,1,1
+Jamides Phaseli,0,3,2
+Jamides Pura,0,2,2
+Jamides Purpurata,0,1,1
+Jamides Talinga,0,2,2
+Jana,1,3,4
+Jankowskia,0.5,3,4
+Janomima,0.5,3,4
+Janseodes,1,1,3
+Japonica,0.6666666666666666,3,24
+Jemadia,0,1,1
+Jocara,0.6666666666666666,7,10
+Jocara?,0,1,1
+Jocheaera,1,1,2
+Jodia,0.5,2,3
+Jodis,0.7142857142857143,20,36
+Jordanita,1,1,2
+Jordanita Globulariae,0,2,1
+Junonia,0.90625,91,330
+Junonia Actia,0,2,1
+Junonia Almana,0,31,11
+Junonia Andremiaja,0,2,1
+Junonia Antilope,0,2,1
+Junonia Archesia,0,7,2
+Junonia Artaxia,0,1,1
+Junonia Atlites,0,18,5
+Junonia Ceryne,0,5,2
+Junonia Chorimene,0,7,1
+Junonia Coenia,0,54,6
+Junonia Eurodoce,0,2,1
+Junonia Evarete,0,41,9
+Junonia Genoveva,0,12,4
+Junonia Hedonia,0,5,1
+Junonia Hierta,0,15,1
+Junonia Iphita,1,8,2
+Junonia Lemonias,0,21,6
+Junonia Limnoria,0,5,1
+Junonia Natalica,0,14,2
+Junonia Octavia,0,17,2
+Junonia Oenone,0,12,1
+Junonia Orithya,0,44,8
+Junonia Pelarga,0,3,1
+Junonia Rauana,0,2,1
+Junonia Rhadama,0,6,1
+Junonia Sophia,0,10,2
+Junonia Sp.,0,5,3
+Junonia Stygia,0,7,1
+Junonia Terea,0,10,1
+Junonia Tugela,0,6,1
+Junonia Villida,0,23,10
+Junonia Westermanni,0,10,2
+Kallima,1,6,18
+Kaniska,0.5,5,15
+Kaniska Benguetana?,0,1,1
+Kaniska Canace,0,17,4
+Karacaoglania,0,1,1
+Kaurava,0,1,1
+Kedestes,0,6,6
+Keiferia,1,3,15
+Kennelia,0,1,1
+Kermania,0,1,1
+Kertomesis,1,2,2
+Kessleria,0.6666666666666666,19,36
+Khorassania,0,1,1
+Kophene,0.6,15,17
+Korscheltellus,1,16,25
+Koruthaialos,0,1,1
+Kotochalia,0.4,16,30
+Kricogonia,0.5,2,3
+Krombia,0,2,2
+Kunugia,0.42857142857142855,18,22
+Kurama,1,1,6
+Labanda,0.3333333333333333,4,6
+Labdia,0.48,49,59
+Labedera,0.25,8,11
+Lacanobia,0.8333333333333334,107,154
+Lacciferophaga,0,1,1
+Lacera,0.6666666666666666,8,12
+Lachides,0,1,1
+Lachnocnema,1,7,13
+Lachnoptera,1,4,6
+Lacinipolia,0.6666666666666666,65,87
+Lacosoma,0.3333333333333333,3,10
+Lactura,0.4,6,7
+Ladoga,1,1,11
+Laeliopsis,0,1,1
+Laeosopis,0.5,2,4
+Laetilia,0.5714285714285714,10,29
+Lambdina,0.6,26,60
+Lamellocossus,1,2,2
+Lamida,0.5,7,9
+Lamoria,0.4,8,11
+Lamoria?,0,1,1
+Lampides,1,9,55
+Lamprolectica,0,1,1
+Lamprolophus,0,2,2
+Lampronia,0.25,13,16
+Lamprophaia,1,2,3
+Lampropteryx,0.5,2,3
+Lamprosema,0.4444444444444444,10,15
+Lamprosema Asaphialis,0,4,1
+Lamprosema Crocodora,0,1,1
+Lamprosema Distincta,0,1,1
+Lamprosema Insolitalis,0,2,1
+Lamprosema Lateritialis,0,2,2
+Lamprosema Magnalis,0,1,1
+Lamprosema Niphealis,0,2,1
+Lamprospilus,1,1,2
+Lamprosticta,1,2,2
+Lamprotes,0,1,1
+Langia,1,1,11
+Langsdorfia,0,1,1
+Lantanophaga,0.6666666666666666,6,11
+Laothoe,0.5,6,17
+Lapara,0.5,4,12
+Larentia,0.5,3,6
+Larerannis,1,10,14
+Larinopoda,0,4,3
+Laris,0,1,1
+Larisa,0,1,1
+Lascelina,0,1,1
+Lascoria,0.5,5,5
+Lasiocampa,1,18,43
+Lasiochlora,0,2,2
+Lasiognatha,0,1,1
+Lasiolopha,0,1,1
+Lasiommata,1,3,23
+Lasionycta,0.5,13,14
+Lasiostega,0,1,1
+Lasippa,0.5,2,3
+Laspeyresia,0,1,1
+Laspeyria,1,2,3
+Latebraria,0,1,1
+Lathronympha,0.5,3,4
+Latoia,0.6666666666666666,38,56
+Latoiola,1,4,5
+Latoria,0,1,1
+Lebeda,0.5,15,15
+Lechriolepis,0.8571428571428571,21,32
+Ledaea,1,2,2
+Leguminivora,0.75,6,16
+Leioptilus,0,1,1
+Leipoxais,0.6666666666666666,24,26
+Lelecella,0,1,1
+Lemaireia,1,2,2
+Lemonia,1,1,2
+Lemonia Dumi,0,2,1
+Lemonias,0,1,1
+Lenodora,1,2,4
+Leocyma,0.6666666666666666,3,6
+Leocyma Appollinis,0,3,1
+Leocyma Camilla,0,3,1
+Leocyma Discophora,0,1,1
+Leona,0,1,1
+Lepella,0,1,1
+Lepidochrysops,0.7272727272727273,55,89
+Lepidodelta,0,1,1
+Lepidogma,0,4,4
+Lepidomys,0,1,1
+Lepidoplaga,0,1,1
+Lepidopsyche,0,1,1
+Lepidoscia,1,2,2
+Lepipolys,1,2,2
+Leptidea,0.5,3,6
+Leptoclanis,1,2,2
+Leptomiza,0,1,1
+Leptomyrina,1,6,13
+Leptophobia,1,2,2
+Leptosia,0.42857142857142855,9,22
+Leptostales,0,4,4
+Leptotes,0.7272727272727273,38,76
+Leptozestis,0,2,2
+Leptozygaena,1,2,2
+Lerema,0.5,2,11
+Lerema Accius,0,12,1
+Lerema Ancillaris,0,1,1
+Lerodea,1,3,16
+Lesmone,1,2,2
+Lethe,0.5,18,54
+Letis,0.3333333333333333,4,4
+Leto,0,1,1
+Leucanella,0.6,35,49
+Leucania,0.6538461538461539,64,150
+Leucanthiza,0,4,4
+Leucantigius,1,1,2
+Leucinodes,0.5,8,16
+Leucobrephos,1,2,3
+Leucochlaena,0,2,2
+Leuconycta,0.5,2,3
+Leucophlebia,0.5,2,5
+Leucophobetron,1,7,7
+Leucoplema,0,3,3
+Leucoptera,0.3409090909090909,52,96
+Leucospilapteryx,0.6666666666666666,3,7
+Leucostrophus,0,1,1
+Leucula,0,1,1
+Leuroperna,1,1,3
+Levuana,1,2,8
+Lexias,1,3,4
+Lhommeia,0,1,1
+Lhommeia Subapicata,0,1,1
+Libystica,0,1,1
+Libythea,0.8,7,12
+Libytheana,0.6666666666666666,5,12
+Lienigia,0,1,1
+Ligdia,0,2,2
+Likoma,1,1,2
+Limacosilla,0,1,1
+Limbobotys,0.5,2,3
+Limenitis,0.6,22,43
+Limnaecia,0.2,11,13
+Lindera,0,1,1
+Lineodes,0.16666666666666666,6,22
+Liocrobyla,0.25,4,8
+Lioprosopa,0,1,1
+Lioptilodes,1,1,4
+Liothula,1,4,4
+Liphyra,0.5,2,3
+Lipocosma,0,2,2
+Liptena,0.2,6,6
+Lissomma,0,1,1
+Lista,0,4,4
+Lithacodes,0.5,12,13
+Lithacodia,0,3,3
+Lithariapteryx,1,4,15
+Litholomia,1,4,6
+Lithomoia,1,7,16
+Lithophane,0.7333333333333333,142,237
+Lithostege,0,1,1
+Litobrenthia,1,1,3
+Litocala,0,1,1
+Litoprosopus,0.5,3,3
+Lobesia,0.5384615384615384,96,121
+Lobobunaea,1,23,27
+Lobobunaea Acetes,0,2,2
+Lobobunaea Angasana,0,8,6
+Lobobunaea Christyi,0,2,2
+Lobobunaea Jamesoni,0,2,2
+Lobobunaea Natalensis,0,2,2
+Lobobunaea Phaedusa,0,7,4
+Lobobunaea Saturnus,0,6,5
+Lobocla,0,1,1
+Lobocleta,0,2,2
+Lobogethes,0,1,1
+Lobophora,0.6,8,12
+Loboschiza,0.3333333333333333,5,6
+Lobus,1,1,2
+Locastra,0,1,1
+Loepa,0.75,10,13
+Logania,0.6666666666666666,3,7
+Lomanaltes,1,2,2
+Lomaspilis,0.5,2,3
+Lomera,0,1,1
+Lomographa,0.5454545454545454,22,43
+Lonomia,0.5,11,13
+Lopharcha,0.25,5,5
+Lophocalama,0,1,1
+Lophoceramica,0,1,1
+Lophocrama,1,2,4
+Lophomilia,0.3333333333333333,3,4
+Lophophleps,0,1,1
+Lophoplusia,0,1,1
+Lophoptera,0.5,11,16
+Lophoruza,1,2,2
+Lophosigna,0,1,1
+Lophostethus,1,12,15
+Lophostola,0,2,2
+Lophotavia,0,1,1
+Lophoterges,0,1,1
+Lophothalaina,0,1,1
+Lophothripa,1,4,5
+Lopinga,1,2,7
+Lorita,0.6666666666666666,6,6
+Lotongus,1,1,2
+Loxiorhiza,0,1,1
+Loxofidonia,1,2,2
+Loxomorpha,0.5,4,4
+Loxostege,0.5,29,47
+Loxoterma,0,1,1
+Loxura,0.5,3,4
+Lozotaenia,1,12,16
+Lozotaeniodes,0.5,2,3
+Lucia,0,1,1
+Lucinia,0,1,1
+Ludia,0.2857142857142857,11,27
+Luffia,1,2,3
+Lumacra,0.25,5,5
+Luperina,0.6,5,15
+Luthrodes,0,1,1
+Luxiaria,0,2,2
+Lycaeides,0.8,11,46
+Lycaena,0.32142857142857145,33,50
+Lycaenesthes,0.3333333333333333,3,4
+Lycaenopsis,0,1,1
+Lycas,0,2,2
+Lycaugesia,0,1,1
+Lycia,0.875,44,74
+Lycophotia,0.6666666666666666,12,18
+Lycorea,0.6666666666666666,9,17
+Lygephila,0.5,10,16
+Lygropia,1,10,17
+Lyncestis,1,2,4
+Lyonetia,0.6,33,80
+Lysandra,0,8,7
+Lyssa,0.6666666666666666,4,6
+Lythria,0,2,2
+Lytrosis,1,3,3
+Mabra,0,3,3
+Macalla,0,4,4
+Macarangela,0,1,1
+Macaria,1,4,7
+Macarostola,0.375,8,12
+Macdunnoughia,1,5,7
+Maceda,0,1,1
+Macellopis,0,1,1
+Machlotica,0,1,1
+Macrauzata,0.5,2,7
+Macrenches,0,1,1
+Macrochilo,0.6666666666666666,7,8
+Macrocilix,1,2,7
+Macrocorystis,0,1,1
+Macrocossus,0,1,1
+Macrocyttara,1,2,2
+Macroglossum,0.7692307692307693,20,36
+Macromphalia,1,7,7
+Macronoctua,0.5,4,5
+Macroplectra,0.5,9,13
+Macropoliana,1,6,8
+Macrosoma,0,6,6
+Macrotheca,1,2,2
+Macrothylacia,1,9,19
+Maculinea,0.6666666666666666,10,14
+Madoryx,0,3,3
+Magusa,1,3,8
+Mahasena,0.5555555555555556,36,58
+Mahasena?,1,3,3
+Mahathala,1,2,2
+Makivora,0,1,1
+Malacodea,1,1,2
+Malacosoma,0.8333333333333334,86,305
+Maliarpha,1,1,4
+Maliattha,0.6666666666666666,4,5
+Mallocampa,0.5,2,3
+Mambara,0,1,1
+Mambarilla,0.3333333333333333,4,4
+Mamestra,1,40,74
+Mammifrontia,0,1,1
+Mampava,1,4,6
+Manataria,0,1,1
+Manatha,1,9,12
+Manduca,0.7857142857142857,38,135
+Manga,1,2,2
+Maniola,1,1,10
+Manoneura,0,1,1
+Mantua,0,1,1
+Mapsidius,0,5,5
+Maracayia,0,1,1
+Marasmarcha,0,6,6
+Marasmia,0.5,4,13
+Marathyssa,1,4,7
+Marca,0,1,1
+Marcillada,0,1,1
+Marcipa,0.25,4,5
+Margaronia,0,1,1
+Marmara,0.6111111111111112,22,33
+Marpesia,0.5,7,14
+Maruca,0.8,19,64
+Marumba,0.8,18,35
+Massepha,1,1,4
+Matapa,1,3,13
+Mathoris,0.3333333333333333,3,4
+Matopo,0,1,1
+Matsumuraeses,0.5555555555555556,11,28
+Mauna,0,1,1
+Maurilia,1,9,18
+Maurus,0,1,1
+Maxates,0.5,2,3
+Maxera,0,1,1
+Mazdacis,0,1,1
+Mazdacis Sp.,0,1,1
+Mazuca,1,1,3
+Mechanitis,0.75,5,43
+Mecistoptera,0,1,1
+Mecodina,0.4,7,7
+Mecodinops,0,1,1
+Mecyna,1,3,3
+Mecytha,1,1,6
+Medasina,0.5,3,6
+Megabiston,1,6,10
+Megacraspedus,0.6666666666666666,4,5
+Megaherpystis,0,1,1
+Megalocypha,0,2,2
+Megalodes,0,1,1
+Megalographa,1,16,23
+Megalopalpus,1,1,3
+Megalophanes,0,1,1
+Megalorhipida,1,9,13
+Megalota,0,1,1
+Meganephria,0,1,1
+Meganola,0.375,20,29
+Meganola?,0,1,1
+Meganoton,0.5,3,3
+Megasis,0,1,1
+Megasoma,0,1,1
+Megastes,0,3,3
+Megathymus,1,5,39
+Megisba,0.5,6,11
+Megisto,1,3,7
+Mehteria,1,2,2
+Melanargia,0.8333333333333334,6,35
+Melanchra,1,89,153
+Melanchroia,0.5,4,8
+Melanephia,0.5,3,5
+Melanis,0.3333333333333333,5,5
+Melanis Iarbas,0,3,3
+Melanis Pixe,0,1,1
+Melanis Pronostriga,0,1,1
+Melanitis,0.75,6,53
+Melanocera,0.6666666666666666,5,6
+Melanocercops,1,2,8
+Melanocinclis,0.5,2,3
+Melanocyma,0,1,1
+Melanodes,0,1,1
+Melanographia,0,1,1
+Melanolophia,1,28,48
+Melanolycaena,0,2,2
+Melanomma,0,1,1
+Melanoptilon,0,1,1
+Melanthia,0,1,1
+Melasina,0,1,1
+Meleageria,0,5,5
+Melete,1,2,2
+Melinaea,0,3,3
+Melinoessa,0,1,1
+Melionica,0,1,1
+Melipotis,0.45454545454545453,14,24
+Melissopus,0.5,4,8
+Melitaea,0.8333333333333334,14,30
+Melitara,1,4,8
+Mellana,0,1,1
+Mellea,0.3333333333333333,3,5
+Mellicta,0.8333333333333334,14,37
+Mellilla,1,2,2
+Memphis,0.25,15,23
+Mendesia,0,3,3
+Menevia,1,4,4
+Menophra,0.5,12,15
+Mentaxya,0.6666666666666666,7,7
+Meridemis,0.6666666666666666,11,11
+Merimnetria,0.4166666666666667,12,18
+Meris,0,1,1
+Meritastis,0,2,2
+Meroctena,1,2,2
+Merolonche,0.6666666666666666,6,6
+Merophyas,0.25,16,23
+Meropleon,1,2,8
+Meroptera,0.5,8,12
+Merrifieldia,0,3,3
+Merulempista,1,1,2
+Mervia,0,1,1
+Mesapamea,0.8,10,26
+Mescinia,0,3,3
+Mesepiola,1,2,2
+Meskea,0,1,1
+Mesoacidalia,1,2,13
+Mesocelis,1,4,4
+Mesogona,0.75,6,9
+Mesoleuca,0.3333333333333333,3,4
+Mesoligia,1,2,7
+Mesophleps,0.75,15,37
+Mesorhynchaglaea,0,1,1
+Mesothea,1,7,11
+Mesoxantha,0,1,1
+Mestolobes,0.5,2,3
+Mestolobes Chrysomolybdoides,0,1,1
+Mestolobes Pyropa,0,2,1
+Mestra,0.25,4,6
+Metachrostis,0,3,3
+Metagarista,0,1,1
+Metalectra,0.3333333333333333,7,6
+Metalepsis,0,1,1
+Metallochlora,0,2,2
+Metallosticha,1,1,3
+Metallostichodes,0,1,1
+Metamesia,0,1,1
+Metamimas,0,1,1
+Metamorpha,0,1,1
+Metanastria,0.5,27,49
+Metanastria?,0,1,1
+Metanema,1,9,15
+Metapioplasta,1,3,3
+Metaraphia,0,1,1
+Metarranthis,0.8,23,34
+Metaxaglaea,0.6666666666666666,4,5
+Metaxypsyche,1,3,3
+Metendothenia,0.3333333333333333,6,7
+Meteoristis,1,1,2
+Metephestia,1,1,3
+Metharmostis,0,1,1
+Methona,0.5,5,8
+Metisa,0.625,21,25
+Metisa?,0.5,6,6
+Metisella,0.16666666666666666,6,10
+Metoeca,0,1,1
+Metopiora,0,1,1
+Metopta,1,2,2
+Metrea,0,1,1
+Metria,0,2,2
+Metriochroa,0.2,5,6
+Metrioglypha,0,1,1
+Metriostola,0,2,2
+Metriotes,1,4,6
+Metura,1,3,3
+Metzneria,0.38461538461538464,13,23
+Meyriccia,1,2,2
+Meyrickella,0,1,1
+Micandra,0,1,1
+Michaelus,0.4,7,11
+Micragone,0.4,6,9
+Micragrotis,0,1,1
+Micragrotis?,0,1,1
+Micraphe,1,3,5
+Microbelia,1,3,5
+Microblepsis,1,3,4
+Microcalicha,0.6666666666666666,4,7
+Microcalyptris,0.5,2,3
+Microceris,0,1,1
+Microchlora,0,1,1
+Microctenucha,1,1,2
+Microhelia,1,1,2
+Microleon,1,2,4
+Microphestia,0,1,1
+Microphestia?,0,1,1
+Microplitica,0,1,1
+Microsarotis,1,2,7
+Microstega,0.5,4,5
+Microthauma,1,1,2
+Microthosea,0,3,3
+Microthosea?,0,1,1
+Microthyris,0.5,3,4
+Micrurapteryx,0.8,5,12
+Mictopsichia,0,1,1
+Migoplastis,0,1,1
+Migoplastis Alba,0,1,1
+Milanion,1,2,5
+Miletus,0.6666666666666666,6,15
+Milgithea,0,1,1
+Milionia,1,2,10
+Mimacraea,0,7,5
+Mimaglossa,0,1,1
+Mimallo,1,4,7
+Mimas,0.5,7,13
+Mimasura,0,1,1
+Mimerastria,1,1,4
+Mimeresia,0,2,2
+Mimeusemia,0,2,2
+Mimoniades,0,1,1
+Mimopacha,1,5,5
+Mimorista,0,1,1
+Mimoschinia,1,1,3
+Mimoscopa,0,1,1
+Mimudea,0,1,1
+Miniodes,0,1,1
+Ministrymon,0.16666666666666666,6,7
+Minoa,0,1,1
+Minois,1,2,11
+Minucia,0,2,2
+Minutargyrotoza,0,1,1
+Miodera,0,1,1
+Miresa,0.5,35,48
+Miresa?,0,1,1
+Miresina,1,1,3
+Mirificarma,0.7272727272727273,11,42
+Mitoura,0.7777777777777778,13,34
+Mixochlora,1,2,6
+Mnasilus,0,1,1
+Mnemoses,0,1,1
+Mnesampela,0,1,1
+Mnesixena,0,1,1
+Mniothripa,0,1,1
+Mniotype,1,12,21
+Moca,0,4,4
+Mocis,0.7333333333333333,39,110
+Moduza,0.5,2,16
+Moduza Mata,0,1,1
+Moduza Procris,0,18,1
+Moerarchis,0,2,2
+Moeros,1,1,2
+Molippa,0.75,9,9
+Moltena,0,1,1
+Molybdocrates,0,1,1
+Moma,1,4,9
+Mometa,0.8,6,13
+Mompha,0.23076923076923078,40,53
+Mompha?,0,1,1
+Monca,0,1,1
+Monda,0,2,2
+Monema,1,4,8
+Monobolodes,0,1,1
+Monochroa,0.19230769230769232,31,33
+Monoctenia,0,1,1
+Monoctenocera,0.5,3,5
+Monoleuca,1,4,4
+Monopis,0.07142857142857142,17,15
+Monza,0,1,1
+Moodna,0.5,8,10
+Moriloma,0,1,1
+Morophaga,0,2,2
+Morophagoides,0.5,3,3
+Morova,1,2,2
+Morpheis,1,8,11
+Morpheis Pyracmon,0,6,4
+Morpheis Strigillata,0,2,2
+Morpheis Xylotribus,0,3,2
+Morpho,0.8125,40,65
+Morrisonia,0.75,29,57
+Morvina,0,1,1
+Motya,0,1,1
+Mouralia,1,1,3
+Mudaria,0.25,9,11
+Munroessa,0.5,3,3
+Munychryia,0,2,2
+Murgisca,1,1,2
+Muschampia,0.3333333333333333,3,4
+Musotima,0.25,5,5
+Mussidia,0.6,20,28
+Mustilia,0,2,2
+Mycalesis,0.4090909090909091,22,62
+Myconita,1,2,4
+Myelobia,0.6666666666666666,4,8
+Myelois,0.3333333333333333,3,6
+Myelopsis,0,2,2
+Mylantria,1,4,4
+Mylantria Xanthospila,0,4,4
+Mylothris,0.47058823529411764,26,31
+Mynes,1,1,3
+Myrina,0.8333333333333334,6,15
+Myrioblephara,0,1,1
+Myriotis,0,1,1
+Myrlaea,0,1,1
+Myrteta,1,2,2
+Myscelia,0.5,2,3
+Myscelia Cyaniris,0,2,1
+Myscelia Orsis,0,1,1
+Myscelus,0.5,3,4
+Myscelus Amystis,0,3,2
+Myscelus Pardalina,0,2,1
+Mysoria,1,1,3
+Mythimna,0.5238095238095238,32,61
+Naarda,0,3,3
+Nacaduba,0.46153846153846156,28,28
+Nacoleia,1,10,13
+Nacophora,0.5,5,6
+Nadiasa,0.5,6,8
+Naenia,0.5,13,21
+Naevipenna,0.5,7,7
+Nagadeba,0,2,2
+Nagia,0.25,5,5
+Nagiella,0,1,1
+Nagoda,0.5,3,3
+Nanaguna,0.3333333333333333,9,11
+Napaea,1,1,4
+Napeogenes,0,2,2
+Napta,0,1,1
+Naranga,0.6666666666666666,4,10
+Narangodes,0,1,1
+Narathura,1,2,18
+Narcosius,1,2,2
+Narope,0,1,1
+Narosa,0.3,16,16
+Narosoideus,1,3,6
+Narraga,0.5,2,5
+Narycia,0.16666666666666666,6,7
+Nascia,1,2,3
+Nascia Cilialis,0,4,2
+Nascus,0.3333333333333333,4,5
+Nastra,1,3,7
+Natada,0.3333333333333333,4,6
+Nataxa,0,1,1
+Nathalis,1,8,19
+Nausinoe,1,3,8
+Naxa,0,1,1
+Nealgedonia,0,1,1
+Nealyda,0,4,4
+Nearcha,0,1,1
+Neargyractis,1,3,3
+Nedra,0.25,4,7
+Neelysia,0,3,3
+Negera,0,1,1
+Negeta,0.5,4,5
+Negritothripa,1,1,2
+Neita,0.5,2,3
+Neleucania,1,1,5
+Nemapogon,0.25,21,19
+Nematobola,0,1,1
+Nematocampa,1,22,41
+Nemaxera,1,2,3
+Nemophora,0.5,13,20
+Nemoria,0.6111111111111112,41,62
+Nenomoshia,0,1,1
+Neoalcis,1,3,8
+Neocalyptis,0.5,3,3
+Neocarnegia,1,2,3
+Neochera,0,1,1
+Neocleptria,1,3,5
+Neococytius,0,1,1
+Neocoenyra,0,1,1
+Neocoristis,0,1,1
+Neocrania,0,1,1
+Neodactria,0.6666666666666666,5,6
+Neodiphthera,0,1,1
+Neodora,1,2,2
+Neofaculta,1,3,7
+Neofriseria,0,2,2
+Neogalea,1,6,8
+Neogavara,1,2,2
+Neogurelca,1,1,2
+Neohipparchus,1,2,6
+Neoleucinodes,0.5,2,10
+Neolithocolletis,0.3333333333333333,3,4
+Neolucia,0,4,3
+Neolysandra,0,3,3
+Neominois,0,1,1
+Neomocena,1,8,8
+Neomyrina,0,1,1
+Neonympha,1,3,5
+Neope,0.5,6,12
+Neophasia,0.25,4,14
+Neopithecops,0.5,3,6
+Neoploca,1,1,4
+Neopolyptychus,0.6666666666666666,5,5
+Neopotamia,0,1,1
+Neorina,0,2,2
+Neoris,1,1,2
+Neosphaleroptera,1,3,7
+Neostege,0,1,1
+Neostichtis,0,1,1
+Neotelphusa,0.5,2,3
+Neoterpes,0.25,4,5
+Neotuerta,1,1,2
+Neoxeniades,0,3,3
+Neozephyrus,0.1,15,17
+Nephantis,1,1,5
+Nephantis Serinopa,0,6,1
+Nephele,0.46153846153846156,17,28
+Nephelodes,1,9,14
+Nepheloleuca,1,1,4
+Nepheronia,0.75,8,12
+Nephodia,1,2,2
+Nephopterix,0.3333333333333333,36,39
+Nephopterix?,0,1,1
+Neptidopsis,0.3333333333333333,3,4
+Neptidopsis Fulgurata,0,3,1
+Neptidopsis Ophione,0,2,1
+Neptidopsis Platyptera,0,1,1
+Neptis,0.4791666666666667,104,182
+Nepytia,1,9,35
+Netrobalane,1,3,4
+Neumichtis,1,4,4
+Neumoegenia,0,1,1
+Neuranethes,0,1,1
+Neurobathra,0.25,4,12
+Neurolipa,0,1,1
+Neurostrota,0.6666666666666666,3,5
+Neurothaumasia,1,2,2
+Neurypexina,0,1,1
+Neustrotia,0,1,1
+Nica,1,1,3
+Niceteria,1,1,2
+Niconiades,0,1,1
+Niditinea,0,3,2
+Niepeltia,0,1,1
+Nigramma?,0,1,1
+Nikara,0,1,1
+Nilasera,1,2,2
+Ninodes,0,1,1
+Niphadolepis,0.5,7,8
+Niphanda,1,2,2
+Niphopyralis,0,1,1
+Nippoptilia,0.5,2,5
+Nisaga,1,1,3
+Nisoniades,0.6666666666666666,4,5
+Noctua,0.8571428571428571,45,57
+Noctuelia,0,1,1
+Noctuelita,0,1,1
+Noctuides,0,1,1
+Nodaria,0.6666666666666666,5,6
+Nola,0.4888888888888889,86,117
+Nola?,0,2,2
+Nomophila,1,13,23
+Nonagria,1,2,3
+Noorda,0,2,2
+Nordstromia,1,7,14
+Noreia,0,1,1
+Nosophora,0,1,1
+Notarcha,1,5,10
+Nothodanis,0,1,1
+Nothomiza,0.5,2,3
+Nothris,1,2,4
+Notioplusia,1,2,2
+Notocelia,0.4,5,10
+Notocrypta,1,6,18
+Nr.,0,1,1
+Nudaurelia,0.6666666666666666,41,57
+Numonia,1,2,2
+Nyceryx,0,1,1
+Nychiodes,0,1,1
+Nyctegretis,1,3,5
+Nyctegretis Lineana,0,5,3
+Nyctelius,1,1,7
+Nycteola,0.4666666666666667,18,40
+Nyctus,0,1,1
+Nymphalis,0.8571428571428571,34,87
+Nymphula,0.14285714285714285,8,8
+Nyodes,0.6666666666666666,6,6
+Nyssiodes,1,4,16
+Nyssiodes Lefuarius,0,16,4
+Oarisma,1,4,8
+Oboronia,0.6666666666666666,5,5
+Obrussa,0,1,1
+Obtusipalpis,0.5,3,3
+Ocaria,0,2,2
+Ochetarcha,0,1,1
+Ochlodes,0.3333333333333333,6,18
+Ochrognesia,0,1,1
+Ochromolopis,0,3,3
+Ochropacha,1,3,7
+Ochropleura,0.4444444444444444,30,35
+Ochsenheimeria,1,7,15
+Ochyrotica,0.2857142857142857,10,13
+Ocinara,0.5,5,6
+Ocinaropsis,1,1,2
+Ocnerostoma,0.6666666666666666,3,10
+Ocrasa,1,2,3
+Ocrisia,0,1,1
+Ocybadistes,0,1,1
+Odezia,1,1,4
+Odonestis,0.75,7,8
+Odontestra,0.5,3,3
+Odontivalvia,0,1,1
+Odontocheilopteryx,0.5,4,7
+Odontodes,0,1,1
+Odontogama,0,1,1
+Odontopacha,0,1,1
+Odontopera,0.75,19,37
+Odontoptilum,1,3,5
+Oecocecis,0,1,1
+Oedebasis,0,1,1
+Oedicentra,1,3,3
+Oegoconia,0,3,3
+Oeneis,0.3333333333333333,18,25
+Oenobotys,0,1,1
+Oenochroma,0.5,2,3
+Oenogenes,0,1,1
+Oenomaus,1,1,3
+Oenosandra,0,1,1
+Oenospila,1,5,7
+Oerane,0,1,1
+Ofatulena,0,1,1
+Ogdoconta,1,3,7
+Oglasa,0.5,6,9
+Ogmograptis,0,1,1
+Ogovia,1,2,2
+Ogyris,0,12,12
+Oidaematophorus,0.5714285714285714,31,63
+Oiketicoides,1,2,2
+Oiketicoides?,0,1,1
+Oiketicus,0.8125,126,187
+Oileides,0,1,1
+Oinophila,0,1,1
+Oiticella,0,1,1
+Olceclostera,1,3,8
+Oleria,0.4,5,7
+Olethreutes,0.4523809523809524,151,204
+Oligia,0.5833333333333334,18,27
+Oligochroa,0,1,1
+Oligographa,0,1,1
+Oligoneurina,0,1,1
+Olindia,1,5,6
+Olona,1,2,6
+Olycella,0.5,2,3
+Olynthus,0,4,4
+Omia,0,1,1
+Omiodes,0.4375,67,149
+Omizodes,0,1,1
+Ommatostola,0,1,1
+Omocena,1,7,8
+Omphacodes,0,1,1
+Omphalocera,1,3,4
+Omphalophana,0.5,3,3
+Omphaloscelis,0,2,1
+Omphalucha,0.5,2,3
+Omphalucha?,0,1,1
+Omphax,0,1,1
+Omphisa,1,5,12
+Onceroptila,1,1,2
+Onceropyga,0,1,1
+Oncocera,1,3,8
+Oncocnemis,0.09090909090909091,12,12
+Oncopera,0.3,12,15
+Oneida,0,2,2
+Onophas,0,1,1
+Onryza,1,1,2
+Onychagrotis,0,1,1
+Onycodes,0,1,1
+Operophtera,0.8571428571428571,34,76
+Ophiorrhabda,0.6,11,20
+Ophisma,0.5,4,6
+Ophiusa,0.4166666666666667,38,63
+Ophthalmis,0,1,1
+Ophthalmitis,1,4,9
+Opigena,1,5,5
+Opisthograptis,1,4,9
+Opodiphthera,0.75,22,42
+Opogona,0.5,111,133
+Opostegoides,0.5,2,4
+Opostegoides Minodensis,0,1,1
+Opostegoides Scioterma,0,4,1
+Opsibotys,1,1,2
+Opsigalea,0,1,1
+Opsiphanes,0.6666666666666666,17,31
+Opsirhina,0,2,2
+Opula,0,1,1
+Orachrysops,0,3,3
+Oraesia,0.6666666666666666,19,30
+Oraesia Emarginata,0,17,9
+Oraesia Excavata,0,7,5
+Oraesia Provocans,0,6,2
+Oraesia Rectistria,0,1,1
+Oraesia Subucula,0,1,1
+Oraesia Triobliqua,0,3,1
+Oraidium,1,1,2
+Orbamia,0,1,1
+Orbona,0,1,1
+Oreana,1,7,9
+Orecta,1,1,2
+Oreixenica,0.4,5,7
+Orenaia,0,1,1
+Oreonoma,0,1,1
+Oreopsyche,0,1,1
+Oressinoma,0,1,1
+Oreta,0.6666666666666666,4,7
+Organopoda,1,2,2
+Oria,1,1,4
+Oriens,0.6666666666666666,3,7
+Ormiscodes,0.75,9,10
+Orna,0,1,1
+Ornativalva,0.35714285714285715,15,25
+Ornipholidotos,0,4,3
+Ornithospila,0,1,1
+Orocrambus,0,2,2
+Orophora,0,2,2
+Oroplema,0,1,1
+Oroscopa,0,1,1
+Orothalassodes,0,1,1
+Orphe,0,1,1
+Orrhodiella,1,2,2
+Orses,0,2,2
+Orsotriaena,1,1,2
+Orthaga,0.4,21,27
+Orthenches,0.6666666666666666,5,5
+Orthia,1,2,3
+Orthoclydon,0,1,1
+Orthodes,0.5,13,18
+Orthofidonia,0,1,1
+Orthogonioptilum,0,1,1
+Ortholepis,0.6666666666666666,5,5
+Orthonama,0.6666666666666666,13,20
+Orthosia,0.7428571428571429,148,275
+Orthospila,0.6666666666666666,4,6
+Orthotaenia,1,13,22
+Orthotelia,1,3,3
+Ortilia,1,6,13
+Orudiza,0,1,1
+Oruza,1,5,5
+Oryctometopia,0,1,1
+Orygmophora,0,1,1
+Osmodes,0,1,1
+Osmodes Adosus,0,2,1
+Osteosema,0,1,1
+Ostrinia,0.5714285714285714,51,94
+Othorene,1,7,8
+Othreis,1,1,2
+Otoplecta,0,1,1
+Oulobophora,0,1,1
+Ourapteryx,0.8333333333333334,21,29
+Ovendenia,1,2,3
+Ovios,0,1,1
+Oxicesta,0,2,2
+Oxycanus,0,1,1
+Oxychaeta,0,1,1
+Oxycnemis,0,1,1
+Oxydia,0.25,14,19
+Oxylychna,0,1,1
+Oxyodes,1,2,5
+Oxyptilus,0.5,14,20
+Oxytrypia,0,1,1
+Ozamia,0.3333333333333333,7,8
+Ozarba,0.1,11,11
+Ozola,0.25,4,5
+Ozopteryx,1,2,2
+Pabulatrix,0,1,1
+Paches,0,1,1
+Pachetra,1,3,4
+Pachyagrotis,0,1,1
+Pachycnemia,0,1,1
+Pachyerannis,1,2,4
+Pachylia,1,2,10
+Pachyligia,1,5,9
+Pachylioides,1,2,2
+Pachylioides Resumens,0,3,2
+Pachymeta,0,1,1
+Pachymetana,1,3,5
+Pachyneuria,0,1,1
+Pachypasa,0.6875,52,62
+Pachysphinx,1,5,18
+Pachythelia,1,4,5
+Packardia,1,7,8
+Paectes,0.2727272727272727,14,15
+Pagodiella,0.5,14,18
+Pagyda,0.6666666666666666,4,7
+Palaeochrysophanus,1,1,2
+Palaeonympha,1,1,3
+Palaeotoma,0,1,1
+Paleacrita,0.5,14,37
+Palepicorsia,1,1,2
+Paliga,0.75,9,17
+Palla,1,6,9
+Palmia,0,1,1
+Palpidia,0,1,1
+Palpifer,0.6666666666666666,4,6
+Palpita,0.6666666666666666,18,32
+Palthis,1,16,39
+Palumbina,1,2,6
+Pamea,0,1,1
+Pammene,0.34,57,79
+Pammenemima,0,1,1
+Pamphlebia,0,1,1
+Pamphlebia Rubrolimbraria,0,2,1
+Panacela,0.5,7,14
+Panacra,0,1,1
+Panalipa,0,1,1
+Panaphelix,0,1,1
+Panaphelix Asteliana,0,1,1
+Pancalia,0.5,2,3
+Panchala,1,1,5
+Panchrysia,1,1,2
+Pandemis,0.9166666666666666,125,207
+Pandesma,1,6,10
+Pandita,1,2,3
+Pandoriana,1,2,4
+Panemeria,1,1,2
+Pangrapta,0.16666666666666666,6,9
+Panilla,0,1,1
+Panolis,1,4,12
+Panopoda,0.6666666666666666,9,12
+Panoquina,0.625,9,27
+Panotima,0,2,2
+Pantherodes,1,1,2
+Panthiades,0.3333333333333333,12,5
+Pantoctenia,0,1,1
+Pantographa,1,3,3
+Pantophaea,0,1,1
+Pantoporia,0.5,5,8
+Pantydia,0.3333333333333333,4,5
+Paonias,1,22,63
+Papaipema,0.6363636363636364,112,217
+Papestra,0.6,19,32
+Papias,0,1,1
+Papias Subcostulata,0,1,1
+Papilio,0.6810344827586207,219,955
+Parabagrotis,0.3333333333333333,5,5
+Parabapta,0.5,2,4
+Paracarystus,0,2,2
+Paracentropus,0,1,1
+Parachalciope,0,1,1
+Parachoranthus,0,1,1
+Parachronistis,1,3,5
+Paraclemensia,0.5,7,9
+Paracolax,0.5,5,6
+Paracrama,1,2,2
+Paracroesia,0,1,1
+Paradaemonia,0,1,1
+Paradarisa,1,1,3
+Paradetis,0,1,1
+Paradiarsia,0.75,12,12
+Paradichelia,1,4,4
+Paradiopa,0,1,1
+Paradirphia,0.6,11,13
+Paradoxus,0,1,1
+Paradrina,0.5,4,5
+Paraepermenia,0,1,1
+Parafomoria,0.25,4,7
+Paragathia,0,1,1
+Paraglossa,0,1,1
+Paragonia,0,1,1
+Paragrodiaetus,0,1,1
+Parahyponomeuta,1,1,2
+Parahypopta,0,1,1
+Paralebeda,0.75,12,13
+Paralebeda?,1,2,2
+Paralethe,1,1,2
+Paraleucoptera,0.6666666666666666,3,12
+Paralida,0,2,2
+Paralipsa,1,26,29
+Parallelia,1,3,5
+Paralobesia,0.5,2,12
+Paralucia,0,3,3
+Paramidea,1,2,24
+Paramimus,1,1,2
+Parantica,0.8888888888888888,11,47
+Parapamea,0,1,1
+Parapammene,0,8,8
+Parapediasia,1,2,4
+Paraplatyptilia,0,1,1
+Parapodia,1,1,2
+Parapoynx,0.75,48,55
+Parapsestis,0,1,1
+Paraptychodes,1,5,5
+Pararge,0.6666666666666666,4,16
+Pararguda,0,1,1
+Pararrhaptica,0,3,3
+Parasa,0.6666666666666666,137,221
+Parasa?,0,1,1
+Parasarpa,0,1,1
+Parascotia,0,2,2
+Parastichtis,1,3,7
+Paraswammerdamia,0.3333333333333333,7,11
+Parasyndemis,0,1,1
+Paratalanta,0.5,8,13
+Parategeticula,0,1,1
+Parathemis,0.5,4,4
+Paratisiphone,0,1,1
+Paratorna,0,1,1
+Paratrea,1,4,7
+Paratrytone,1,2,6
+Pardasena,1,8,10
+Pardasena?,0,1,1
+Pardomima,0,1,1
+Pardopsis,1,2,2
+Pareclipsis,0,1,1
+Parectopa,0.32142857142857145,29,41
+Parectropis,1,3,4
+Parepione,1,1,2
+Parepisparis,0,1,1
+Pareronia,0,4,4
+Parerupa,0,1,1
+Pareulype,0,1,1
+Pariambia,1,1,3
+Paridnea,0,1,1
+Parietaria,0,1,1
+Parnara,0.5,9,24
+Parochromolopis,0,1,1
+Paropta,0.6666666666666666,10,11
+Parornix,0.32558139534883723,46,74
+Parosmodes,1,2,4
+Parotis,0.42857142857142855,24,42
+Paroxyplax,0,1,1
+Parphorus,0,1,1
+Parrhasius,1,7,9
+Parthenos,0.5,3,4
+Parum,0,1,1
+Passova,0,2,2
+Pataeta,1,1,6
+Patagonia,1,1,2
+Patagoniodes,0,1,1
+Patalene,1,4,5
+Patania,0,1,1
+Patna,0,2,2
+Paucivena,0,1,1
+Pavonia,0,1,1
+Pebops,0,1,1
+Pechipogo,0,1,1
+Pectinarosa,0,1,1
+Pectinivalva,0.5,2,5
+Pectinophora,0.5,10,37
+Pedaliodes,0,1,1
+Pediasia,0.5,7,11
+Pelagodes,1,7,8
+Pellicia,0,1,1
+Pelochrista,0.6666666666666666,3,5
+Pelochyta,0.3333333333333333,4,4
+Pelochyta Arontes,0,3,2
+Pelochyta Cinerea,0,1,1
+Pelochyta Pallida,0,1,1
+Pelopidas,0.7142857142857143,10,39
+Pelurga,1,1,5
+Pemba,1,1,4
+Pempelia,0.46153846153846156,23,30
+Pempelia?,0,1,1
+Pempeliella,0,2,2
+Penicillaria,0.6,11,17
+Penicillifera,1,1,3
+Penthema,1,1,4
+Pentheochlora,0,1,1
+Penthesilea,0,1,1
+Penthocrates,0.42857142857142855,7,10
+Penthostola,0,1,1
+Pentila,0,15,12
+Peplochora,0,1,1
+Perasia,0,1,1
+Peratophyga,0,1,1
+Percnia,1,2,5
+Perconia,0,2,2
+Pereute,0.5,4,4
+Perforadix,0,1,1
+Pergesa,1,6,15
+Perianthosuta,0,1,1
+Peribatodes,1,8,9
+Perichares,1,2,13
+Periclepsis,1,2,5
+Pericyma,0.4,21,30
+Peridroma,0.5,52,115
+Periga,0,1,1
+Perigea,0.3333333333333333,3,4
+Perigonia,1,3,8
+Perigonica,1,1,3
+Perigramma,0,1,1
+Perigrapha,0.5,2,3
+Perileucoptera,0,2,2
+Perimede,1,5,6
+Perinephela,1,2,4
+Periphanes,1,1,3
+Periphoba,0.6666666666666666,18,26
+Periploca,0.23076923076923078,13,27
+Periploca Atrata,0,2,1
+Periploca Cata,0,1,1
+Periploca Ceanothiella,0,12,1
+Periploca Dentella,0,1,1
+Periploca Funebris,0,1,1
+Periploca Gleditschiaeella,0,2,1
+Periploca Juniperi,0,1,1
+Periploca Laeta,0,1,1
+Periploca Mimula,0,1,1
+Periploca Nigra,0,5,1
+Periploca Orichalcella,0,1,1
+Periploca Serrulata,0,1,1
+Periploca Undescribed,0,1,1
+Peripyra,1,2,2
+Periscepta,0,1,1
+Perisomena,1,3,9
+Peristactis,0,1,1
+Peritropha,0,1,1
+Perittia,0.16666666666666666,6,7
+Perixera,0,3,3
+Perizoma,0.5882352941176471,29,41
+Pernattia,0,1,1
+Pero,0.7,27,50
+Peronea,0,1,1
+Perrhybris,1,2,2
+Persectania,0.8,12,15
+Persicoptila,0,2,2
+Perthida,0.2,5,18
+Perula,0,1,1
+Petasobathra,1,2,2
+Petelia,0.5,2,6
+Petovia,1,5,6
+Petrelaea,0,1,1
+Petrochroa,0,1,1
+Petrophora,0,2,2
+Petrova,0.625,16,29
+Peucoteles,1,1,2
+Pexicopia,1,1,3
+Pezetaera,0,1,1
+Phaecadophora,0,1,1
+Phaecasiophora,0.5,4,4
+Phaedropsis,0,1,1
+Phaedyma,1,5,9
+Phaeoses,1,2,3
+Phaeostrymon,0,1,1
+Phaiogramma,0,1,1
+Phalacra,1,2,7
+Phalacropterix,1,4,7
+Phalaenoides,1,8,12
+Phalaenophana,0,2,1
+Phalaenostola,0.5,8,7
+Phalanta,0.75,20,50
+Phalga,0,1,1
+Phallaria,1,2,2
+Phalonidia,0.6666666666666666,13,30
+Phanerothyris,1,1,2
+Phaneta,0.2,21,25
+Phanus,0,1,1
+Pharambara,0,2,2
+Phareas,1,1,3
+Pharmacis,1,3,3
+Phasicnecus,0,2,2
+Phasis,0.75,5,8
+Phassus,0.5,3,3
+Phauda,0.6666666666666666,5,6
+Phaulernis,1,3,8
+Phazaca,0.3333333333333333,4,14
+Phazaca Alikangensis?,0,1,1
+Phazaca Latifasciata,0,2,1
+Phazaca Sp.,0,12,2
+Phenacodes,0,1,1
+Phengaris,1,4,6
+Phepsalostoma,0,1,1
+Phepsalostoma Electracma,0,1,1
+Phereoeca,0,4,3
+Pherne,0,1,1
+Phiala,0.3333333333333333,9,10
+Phiaris,0,4,3
+Phibalapteryx,0,1,1
+Phidotricha,0.25,12,13
+Phigalia,0.6666666666666666,35,70
+Phigaliohybernia,0,1,1
+Philaethria,1,2,10
+Philedia,1,2,2
+Philedone,1,11,11
+Philedonides,1,9,13
+Philereme,0,1,1
+Philiris,0,14,14
+Philodema,0,1,1
+Philodoria,0.23076923076923078,28,38
+Philonome,1,2,2
+Philotes,1,1,4
+Philotherma,0.75,13,15
+Philotiella,1,1,5
+Philtraea,0,2,2
+Philudoria,1,1,3
+Phlebodes,0,1,1
+Phlebozemia,0,1,1
+Phloeocecis,0,1,1
+Phlogochroa?,0,1,1
+Phlogophora,0.75,31,47
+Phlossa,1,3,3
+Phlyaria,0.5,3,3
+Phlyctaenia,0.8,10,14
+Phoberia,1,1,2
+Phobetron,1,27,46
+Phocides,0.3333333333333333,3,11
+Phocoderma,1,7,9
+Phodoryctis,0.5,9,28
+Phoebis,0.7,24,63
+Pholisora,1,6,16
+Pholodes,0.5,11,14
+Phorma,1,2,4
+Phosphila,1,5,5
+Phostria,0.3333333333333333,7,8
+Photedes,0.5,11,14
+Photoscotosia,0,2,2
+Phragmataecia,0.4,11,19
+Phragmatiphila,1,4,6
+Phricanthes,0.6666666666666666,3,5
+Phrissogonus,1,4,5
+Phrixolepia,1,1,3
+Phrodita,0,1,1
+Phrudocentra,0.5,3,5
+Phryganostola,1,1,3
+Phrygionis,0,1,1
+Phryxus,1,2,2
+Phtheochroa,0.4444444444444444,23,29
+Phthinostoma,0,1,1
+Phthonandria,0,1,1
+Phthonoloba,0,1,1
+Phthonosema,1,20,28
+Phthorimaea,1,6,35
+Phthoropoea,0.75,12,13
+Phyciodes,0.5555555555555556,9,36
+Phycita,0.4117647058823529,26,29
+Phycita?,0,1,1
+Phycitodes,0.3333333333333333,6,9
+Phyle,0,1,1
+Phyllalia,0,3,3
+Phyllobrostis,0,3,3
+Phyllocnistis,0.3333333333333333,69,117
+Phyllodes,0,3,3
+Phyllodesma,0.8,20,50
+Phyllonorycter,0.44884488448844884,343,626
+Phyllophila,0,2,2
+Phylloporia,0,1,1
+Phyllosphingia,0,1,1
+Phylloxiphia,0,1,1
+Phymatopus,0.75,9,10
+Phyprosopus,0,1,1
+Physcaeneura,0,3,3
+Physoptila,0,2,2
+Phystis,1,1,3
+Phytometra,1,1,2
+Picrogama,0,1,1
+Picrostomastis,0,3,3
+Piercea,1,6,9
+Piercia,0,1,1
+Pierella,0.3333333333333333,5,5
+Pieris,0.7692307692307693,34,176
+Piesmopoda,1,1,2
+Piestoceros,0,1,1
+Pigiopsis,0,1,1
+Piletocera,0.4,6,8
+Pilipectus,0,1,1
+Pilocrocis,0.5,9,11
+Pima,0.5,4,8
+Pimelephila,1,1,2
+Pinacopteryx,1,1,4
+Pinara,0,4,4
+Pingasa,0.4444444444444444,30,41
+Piniphila,1,1,5
+Pinzulenza,1,4,4
+Pionea,1,2,2
+Pirdana,0.5,4,4
+Piruna,0,1,1
+Pithauria,0,1,1
+Pithecops,0.6666666666666666,6,9
+Pityocona,0,1,1
+Placidula,1,1,2
+Plagiograpta,0,1,1
+Plagiomimicus,0.25,4,5
+Plagodis,0.8571428571428571,40,75
+Planociampa,1,8,9
+Planostocha,0.5,3,3
+Planotortrix,0.4,18,22
+Plastingia,0,1,1
+Plataea,0,1,1
+Platoeceticus,0,1,1
+Platphalonidia,0.5,2,3
+Platycerota,0,1,1
+Platychasma,0,1,1
+Platyedra,0.6666666666666666,5,10
+Platyja,0,1,1
+Platylesches,0,1,1
+Platynota,0.75,88,124
+Platypepla,0,1,1
+Platyperigea,1,6,7
+Platyphyllis,0,1,1
+Platypolia,0,1,1
+Platyprosterna,0,2,2
+Platyptilia,0.36,26,48
+Platysceptra,0.5,4,4
+Platysenta,0,1,1
+Platysphinx,0.6666666666666666,4,10
+Platytes,1,3,4
+Plautella,0,1,1
+Plebejides,0,1,1
+Plebejus,0.5,25,121
+Plebicula,0,3,3
+Plebulina,1,2,2
+Plecoptera,0.375,9,15
+Plecopterodes,1,1,2
+Pleiomorpha,0,2,2
+Plemyria,1,7,13
+Pleromella,0,1,1
+Pleromelloida,0.6666666666666666,3,6
+Plesanemma,0,1,1
+Plesiomorpha,1,1,4
+Pleurona,1,2,3
+Pleuroprucha,1,12,18
+Pleuroptya,0.9,43,69
+Plodia,1,22,35
+Ploneta,0,1,1
+Ploneta?,0,1,1
+Plotheia,0.5,3,3
+Plusia,0.6666666666666666,26,35
+Plusidia,0,1,1
+Plusiodonta,0.5,6,8
+Plusiopalpa,1,3,4
+Plutella,0.2222222222222222,20,45
+Plutorectis,0,2,2
+Poanes,0.5,7,22
+Pococera,0.5454545454545454,42,69
+Podiasa,0,1,1
+Poecilasthena,1,1,4
+Poecilmitis,0.7647058823529411,52,70
+Poecilocampa,1,9,27
+Poecilonola,0,1,1
+Poecopa,1,1,5
+Poeonoma,0,1,1
+Poeta,0,1,1
+Pogochaetia,1,1,2
+Pogononeura,0,1,1
+Poladryas,1,2,11
+Polemograptis,0,2,2
+Polia,0.6428571428571429,55,81
+Poliana,1,1,4
+Poliostola,0,1,1
+Poliostola Pyralodes,0,1,1
+Polites,0.8571428571428571,9,29
+Pollanisus,0.3333333333333333,4,8
+Poloma,1,2,2
+Polychrosis,0,2,2
+Polychrysia,0.6666666666666666,4,8
+Polyctor,0,1,1
+Polydesma,0.6666666666666666,6,10
+Polygonia,0.9166666666666666,51,89
+Polygonus,1,2,8
+Polygrammate,1,2,2
+Polygrammodes,0,4,4
+Polyhymno,0.3333333333333333,8,8
+Polylopha,1,3,4
+Polymetis,0,1,1
+Polymixinia,0,1,1
+Polymixis,0.6,25,29
+Polyniphes,0,1,1
+Polyocha,0,1,1
+Polyocha Depressella,0,2,1
+Polyommatus,0.42857142857142855,10,18
+Polyphaenis,1,3,3
+Polyploca,0,1,1
+Polypogon,1,2,3
+Polyptychoides,1,2,4
+Polyptychus,0.6,7,12
+Polysoma,0,1,1
+Polytela,1,9,11
+Polytelodes,0,1,1
+Polythlipta,0,2,2
+Polythora,1,1,2
+Polythrix,0.6666666666666666,7,16
+Polythysana,1,7,9
+Polytremis,0.6666666666666666,3,9
+Polytremis Eltola,0,1,1
+Polytremis Lubricans,0,5,1
+Polytremis Pellucida,0,3,1
+Polyura,0.7142857142857143,45,102
+Pompeius,1,1,2
+Pompelon,1,1,2
+Ponometia,0,1,1
+Pontia,1,16,110
+Porela,0.4,5,10
+Poritia,0,2,2
+Porphyrinia,0,1,1
+Porphyrogenes,0,2,2
+Porphyrosela,0.7,11,35
+Porrittia,0,1,1
+Portentomorpha,0,1,1
+Postplatyptilia,0,2,2
+Potanthus,0.5,9,20
+Povolnya,0,1,1
+Praeacedes,0,1,1
+Praepedaliodes,1,1,3
+Praephilotes,0,1,1
+Praesetora,1,9,10
+Praezygaena,0,1,1
+Pramadea,0,1,1
+Prasinocyma,0.4,12,14
+Prasinoxena,1,5,6
+Pratapa,1,1,5
+Praxis,0,1,1
+Prays,0.4666666666666667,17,31
+Prepona,0.6,9,12
+Pringleophaga,0,1,1
+Prionapteryx,0.5,2,4
+Prionapteryx Invectalis,0,1,1
+Prionapteryx Nebulifera,0,3,1
+Prioneris,0.5,4,6
+Prionoxystus,0.6666666666666666,14,21
+Pristarthria,0,1,1
+Pristerognatha,0,1,1
+Prittwitzia,0,1,1
+Probithia,0,1,1
+Problema,0.5,2,3
+Problepsis,0.3333333333333333,3,4
+Probole,0.6666666666666666,18,42
+Procalyptis,1,1,7
+Procalyptis Parooptera,0,7,1
+Procapperia,0,3,3
+Prochalia,1,4,4
+Prochoerodes,0.6666666666666666,19,36
+Prochoreutis,1,3,6
+Procitheronia,0,1,1
+Procrica,1,2,2
+Procris,0,2,2
+Procymbopteryx,0,1,1
+Prodotis,1,3,3
+Prodoxus,0.2727272727272727,11,31
+Proeulia,0.75,19,29
+Progonia,0,1,1
+Prohysterophora,0,1,1
+Prolatoia,0.5,3,3
+Proleucoptera,0.5,4,7
+Prolimacodes,1,13,20
+Prolita,0.5,5,6
+Promylea,1,1,5
+Proneca,1,1,2
+Pronoctua,0,1,1
+Pronomeuta,0,1,1
+Pronomis,0,1,1
+Prophantis,1,2,7
+Propiromorpha,0,1,1
+Prorodes,0,1,1
+Proselena,0,2,2
+Proserpinus,0.6666666666666666,7,17
+Prosoeuzophera,1,3,6
+Prosopalpus,0,1,1
+Prosopandrophila,1,3,4
+Prosotas,0.75,14,10
+Prospalta,1,1,2
+Prostomeus,1,1,2
+Protalcis,0,1,1
+Protambulyx,1,7,14
+Protantigius,0,1,1
+Proteides,1,2,9
+Proteostrenia,1,1,6
+Proteoteras,0.5714285714285714,13,21
+Proterocosma,0,2,2
+Proterospastis,1,3,3
+Protexarnis,0,1,1
+Prothoe,1,1,2
+Protitame,1,4,8
+Protoboarmia,0.6666666666666666,13,39
+Protodeltote,0.3333333333333333,3,4
+Protolampra,1,11,14
+Protolithocolletis,0,1,1
+Protorthodes,0.8333333333333334,22,24
+Protoschinia,1,2,3
+Protosteira,0,1,1
+Protosynaema,0.5,3,3
+Protrigonia,0,1,1
+Protuliocnemis,0.3333333333333333,4,5
+Proutia,0,1,1
+Proutoscia,0,2,2
+Proxenus,1,2,2
+Pryeria,0,1,1
+Psamathocrita,0,2,2
+Psammotis,1,1,2
+Psaphida,0.6666666666666666,8,12
+Psara,0.7142857142857143,19,25
+Psectraglaea,1,2,2
+Pselaphelia,0.3333333333333333,4,6
+Pselnophorus,1,3,5
+Psephea,1,1,3
+Pseudacraea,1,5,26
+Pseudacroclita,1,1,2
+Pseudalcis,1,2,2
+Pseudaletia,1,28,79
+Pseudalmenus,0,1,1
+Pseudalypia,0,1,1
+Pseudanapaea,0,1,1
+Pseudanaphaeis,1,2,7
+Pseudanarta,0,1,1
+Pseudandriasa,0,1,1
+Pseudantheraea,1,8,8
+Pseudanthracia,1,2,2
+Pseudaphelia,1,2,4
+Pseudargyrotoza,1,1,3
+Pseudasellodes,0,1,1
+Pseudathyma,0,1,1
+Pseudathyrma,0,3,3
+Pseudautomeris,0.5714285714285714,16,17
+Pseudelydna,1,1,4
+Pseudepione,1,2,2
+Pseuderannis,1,7,9
+Pseuderesia,0,1,1
+Pseudergolis,0.5,2,3
+Pseuderosia,0,2,2
+Pseudeulia,0,1,1
+Pseudeustrotia,0.5,4,5
+Pseudeva,0,1,1
+Pseudexentera,0.46153846153846156,19,25
+Pseudhemithea,0,1,1
+Pseudimbrasia,1,8,6
+Pseudina,0,1,1
+Pseudoaricia,0,3,3
+Pseudoborbo,1,3,6
+Pseudobunaea,1,20,27
+Pseudocabima,0,1,1
+Pseudochazara,1,1,2
+Pseudochelaria,0.25,4,5
+Pseudoclanis,1,5,11
+Pseudococcyx,1,1,3
+Pseudocoladenia,1,2,2
+Pseudocopaeodes,0,1,1
+Pseudocopivaleria,0,1,1
+Pseudocoremia,1,9,19
+Pseudodipsas,0,8,2
+Pseudodirphia,0.3333333333333333,6,8
+Pseudogalleria,0,1,1
+Pseudoglaea,1,8,10
+Pseudohadena,0.5,2,3
+Pseudohedya,0.5,2,4
+Pseudohermenias,0,1,1
+Pseudohermonassa,0.5,7,9
+Pseudoips,1,7,16
+Pseudojana,0,1,1
+Pseudoleucania,0.6666666666666666,5,9
+Pseudolucia,0,1,1
+Pseudolycaena,0.3333333333333333,20,9
+Pseudolyra,0,1,1
+Pseudomaniola,0,1,1
+Pseudomecia,0,1,1
+Pseudometa,0.42857142857142855,13,15
+Pseudometisa,0,1,1
+Pseudonacaduba,1,2,2
+Pseudoneptis,1,3,10
+Pseudonirmides,1,1,2
+Pseudonympha,0.6,7,9
+Pseudopammene,0,1,1
+Pseudopanthera,1,1,4
+Pseudophilotes,0.14285714285714285,9,8
+Pseudophyllodes,0,1,1
+Pseudopieris,0,1,1
+Pseudoplusia,1,20,47
+Pseudopontia,1,2,2
+Pseudorthodes,1,14,21
+Pseudorthosia,1,2,2
+Pseudosarbia,1,1,4
+Pseudoscada,0,1,1
+Pseudoschinia,1,1,2
+Pseudosciaphila,0.6666666666666666,10,16
+Pseudosphetta,0,1,1
+Pseudosphinx,1,3,7
+Pseudosterrha,1,1,2
+Pseudoswammerdamia,1,1,2
+Pseudotelphusa,0,10,10
+Pseudotergumia,1,1,2
+Pseudoterpna,1,1,3
+Pseudothyatira,1,6,17
+Pseudotomoides,0,1,1
+Pseudoxyroptila,0.5,2,3
+Pseudozizeeria,1,4,3
+Psilalcis,1,2,2
+Psilogramma,1,17,34
+Psilopygida,1,2,2
+Psimada,0,1,1
+Psolos,0,1,1
+Psomocolax,0.5,3,3
+Psoricoptera,0.5,2,3
+Psorosa,0,2,2
+Psorosina,1,1,4
+Psyche,0.625,27,35
+Psychidea,0,1,1
+Psychocampa,0,1,1
+Psychoides,0.6666666666666666,5,6
+Psychomorpha,1,2,3
+Psychonoctua,1,7,8
+Psychonotis,0,1,1
+Psychophora,0,1,1
+Psychromnestra,0,2,2
+Psydrocerocops,0,1,1
+Psyra,1,9,10
+Ptelina,0,1,1
+Pterapherapteryx,1,1,5
+Pteridoporthis,0,1,1
+Pterogonia,0,1,1
+Pterogyne,1,3,3
+Pterolocera,0.3333333333333333,4,4
+Pteroma,0.8,34,58
+Pteronycta,1,1,3
+Pteronymia,0.5,8,17
+Pterophorus,0.09523809523809523,22,24
+Pterotaea,0,2,2
+Pteroteinon,0,2,2
+Pterotopteryx,0,1,1
+Pterotosoma,0,1,1
+Pteroxys,1,3,2
+Ptichodis,0.5,2,3
+Ptilomacra,0,1,1
+Ptiloscola,0,1,1
+Ptiloteina,0,1,1
+Ptisciana,0,1,1
+Ptocheuusa,0.25,5,7
+Ptochophyle,0.3333333333333333,3,4
+Ptochophyle?,0,1,1
+Ptochostola,1,1,2
+Ptycerata,0,1,1
+Ptychandra,0,1,1
+Ptycholoma,0.75,22,36
+Ptycholomoides,1,2,4
+Ptychopseustis,0.5,2,3
+Ptyobathra,0,1,1
+Ptyonocera,0,3,3
+Ptyssoptera,0,6,6
+Puerphorus,0,2,2
+Pycnarmon,0.2,7,14
+Pygmaena,0,1,1
+Pygmaeomorpha,0,3,3
+Pygospila,1,1,5
+Pygospila Tyres,0,5,1
+Pyla,0,1,1
+Pylargosceles,0,1,1
+Pyloetis,1,8,13
+Pyralis,0.75,32,39
+Pyrausta,0.5517241379310345,48,85
+Pyrdalus,0,1,1
+Pyreferra,0.5,7,9
+Pyrgotis,1,4,7
+Pyrgotis Plagiatana,0,7,4
+Pyrgus,0.6666666666666666,15,79
+Pyrinioides,0,1,1
+Pyrisitia,1,1,3
+Pyroderces,0.4857142857142857,101,142
+Pyroderces?,1,2,2
+Pyrois,1,5,5
+Pyromorpha,1,2,3
+Pyronia,1,3,13
+Pyrosis,1,5,6
+Pyrrhia,0.6,25,43
+Pyrrhochalcia,1,2,2
+Pyrrhogyra,0,3,3
+Pyrrhopyge,0.4,15,19
+Pyrrhopyge Amyclas,0,1,1
+Pyrrhopyge Araxes,0,1,1
+Pyrrhopyge Chalybea,0,1,1
+Pyrrhopyge Charybdis,0,5,3
+Pyrrhopyge Pelota,0,2,1
+Pyrrhopyge Phidias,0,4,3
+Pyrrhopyge Rhacia,0,1,1
+Pyrrhopygopsis,1,1,4
+Pythonides,0,2,2
+Quadraforma,0,1,1
+Quadrina,0,1,1
+Quadrus,0.5,2,3
+Quasithosea,1,5,8
+Quedara,1,1,3
+Quercusia,0.6666666666666666,3,15
+Quinta,1,3,3
+Rachiplusia,1,19,33
+Racotis,1,6,10
+Racotis Boarmiaria,0,3,1
+Racotis Inconclusa,0,3,2
+Racotis Petrosa,0,2,1
+Racotis Squalida,0,4,2
+Radara,1,2,3
+Ragadia,1,1,2
+Ramila,0,1,1
+Ramobia,0,1,1
+Ramphidium,1,1,2
+Rapala,0.6923076923076923,71,72
+Raparna,0,1,1
+Raphia,0.25,5,13
+Raphimetopus,1,2,4
+Rathinda,1,8,6
+Ravenna,1,1,6
+Recurvaria,0.5833333333333334,17,43
+Redectis,1,1,2
+Rehimena,1,4,6
+Rekoa,0,21,4
+Rema,0,1,1
+Remelana,1,8,7
+Renia,0.14285714285714285,13,8
+Reptilisocia,1,2,2
+Retinia,1,4,21
+Rhabdophera,1,1,2
+Rhadinastis,0,2,2
+Rhadinopasa,1,2,2
+Rhaesena,1,1,3
+Rhagades,1,2,4
+Rhagastis,0.75,8,9
+Rhagea,0,2,2
+Rhamphura,0,2,2
+Rhanidophora,0.5714285714285714,8,13
+Rhectocraspeda,1,8,17
+Rhesala,0.5714285714285714,11,25
+Rhesala?,0,1,1
+Rhesalides,0,1,1
+Rhescyntis,0.5,3,4
+Rheumaptera,1,25,56
+Rhigognostis,0.5,4,8
+Rhinobombyx,0,1,1
+Rhinopalpa,1,2,3
+Rhinoprora,0,2,1
+Rhinthon,0,1,1
+Rhizedra,0,1,1
+Rhodesia,0,2,2
+Rhodinia,1,16,22
+Rhodochrysa,0,1,1
+Rhodocosmaria,0.5,4,5
+Rhododactyla,0,1,1
+Rhodoecia,1,2,8
+Rhodometra,0.5,5,9
+Rhodoneura,0.4444444444444444,11,17
+Rhodophaea,0,12,12
+Rhodophaga,1,1,2
+Rhodophthitus,0,1,1
+Rhodoprasina,0,1,1
+Rhodostrophia,1,2,2
+Rhombocentra,0,1,1
+Rhombophylla,1,1,2
+Rhomborista,1,1,2
+Rhopalovalva,0.3333333333333333,4,4
+Rhopobota,0.7,26,48
+Rhoptria,0,1,1
+Rhyacia,0.2,6,7
+Rhyacionia,0.35294117647058826,34,75
+Rhynchaglaea,1,1,4
+Rhynchephestia,0,1,1
+Rhynchina,1,1,2
+Rhynchobapta,1,2,3
+Rhynchodontodes,0,2,2
+Rhynchodontodes?,0,1,1
+Ribua,0.3333333333333333,4,5
+Richia,0.5,5,7
+Rictonis,0.5,4,4
+Ricula,0,1,1
+Ridiaschina,0,1,1
+Rifseria,1,1,2
+Rikiosatoa,0,1,1
+Rileyiana,0,1,1
+Risoba,0.5714285714285714,15,21
+Rivula,0.2222222222222222,9,12
+Rivula?,0,1,1
+Roeslerstammia,1,2,3
+Rohana,0,1,1
+Rohaniella,0,1,1
+Rolepa,0,1,1
+Rondotia,0,1,1
+Rostrolaetilia,1,1,2
+Rothschildia,0.7222222222222222,111,167
+Rotruda,1,1,5
+Rougeotiana,0,1,1
+Rufoclanis,0,1,1
+Rumatha,0,2,2
+Rusina,1,4,6
+Russograptis,0,1,1
+Saalmuellerana,0,1,1
+Sabalia,0,1,1
+Sabalia Jacksoni,0,1,1
+Sabaria,0.5,2,4
+Sabatinca,0,2,2
+Sabra,1,4,5
+Sabulodes,0.375,37,45
+Sacada,0.4,6,7
+Sacadodes,1,1,2
+Saccharophagos,0,1,1
+Sagenosoma,0,1,1
+Salamis,0.8,6,17
+Salanoemia,0,1,1
+Salassa,0,1,1
+Salassa Iris,0,1,1
+Salatis,1,2,3
+Salbia,0.5,2,3
+Salebria,0.5,10,13
+Salebria?,1,2,2
+Salebriaria,0,1,1
+Salebriopsis,1,2,2
+Salebriopsis Albicilla,0,3,2
+Saliana,0,2,2
+Saliciphaga,1,2,5
+Saliunca,0.3333333333333333,3,4
+Saliuncella,0,1,1
+Sallya,0.4444444444444444,11,18
+Salma,0.2,18,21
+Saluria,1,1,3
+Samea,0,2,2
+Sameodes,0.5,4,4
+Samia,1,63,104
+Sandava,0,1,1
+Sandia,1,1,2
+Saphenista,0.25,5,5
+Sarangesa,0.6666666666666666,3,5
+Sarasota,0,1,1
+Sarbanissa,0.8,8,14
+Sarbena,1,1,3
+Sarbena Lignifera,0,4,1
+Sarcinodes,0,1,1
+Sarcopolia,1,3,4
+Saridoscelis,1,1,3
+Sarisa,1,2,2
+Sarmatia,0,1,1
+Sarmientoia,0,1,1
+Sarothroceras,0,1,1
+Sasakia,1,1,2
+Sasunaga,1,1,2
+Satarupa,0.5,2,3
+Sataspes,0.6666666666666666,5,6
+Satole,0,1,1
+Satronia,1,1,2
+Saturnia,0.7272727272727273,100,188
+Saturnia Albofasciata,0,12,3
+Saturnia Anona,0,9,5
+Saturnia Atlantica,0,8,4
+Saturnia Cephalariae,0,1,1
+Saturnia Galbina,0,11,8
+Saturnia Homogena,0,6,3
+Saturnia Huttoni,0,3,3
+Saturnia Japonica,0,5,4
+Saturnia Jonasi,0,1,1
+Saturnia Lindia,0,12,7
+Saturnia Mendocino,0,18,4
+Saturnia Pavonia,0,60,18
+Saturnia Pelora,0,1,1
+Saturnia Pyri,0,30,14
+Saturnia Spini,0,13,6
+Saturnia Thibeta,0,4,4
+Saturnia Walterorum,0,11,4
+Saturnia Zuleika,0,2,2
+Satyrium,0.6153846153846154,83,163
+Satyrium Abdominalis,0,3,3
+Satyrium Acaciae,0,1,1
+Satyrium Acadicum,0,6,1
+Satyrium Auretorum,0,4,1
+Satyrium Austrinus,0,1,1
+Satyrium Behrii,0,6,2
+Satyrium Calanus,0,27,5
+Satyrium Californicum,0,11,4
+Satyrium Caryaevorum,0,10,4
+Satyrium Davidi,0,3,2
+Satyrium Edwardsii,0,9,4
+Satyrium Esculi,0,1,1
+Satyrium Eximia,0,4,1
+Satyrium Formosana,0,2,1
+Satyrium Fuliginosum,0,6,1
+Satyrium Hyrcanicum,0,1,1
+Satyrium Ilicis,0,2,2
+Satyrium Inouei,0,1,1
+Satyrium Iyonis,0,2,1
+Satyrium Jebelia,0,1,1
+Satyrium Kingi,0,4,3
+Satyrium Liparops,0,35,10
+Satyrium Marcidus,0,1,1
+Satyrium Mera,0,3,1
+Satyrium Myrtale,0,2,2
+Satyrium Ornata,0,2,1
+Satyrium Percomis,0,2,1
+Satyrium Pruni,0,3,1
+Satyrium Prunoides,0,3,1
+Satyrium Rhymnus,0,2,2
+Satyrium Saepium,0,10,3
+Satyrium Sassanides,0,1,1
+Satyrium Sinensis,0,1,1
+Satyrium Spini,0,2,2
+Satyrium Sylvinum,0,4,1
+Satyrium Tengstroemi,0,1,1
+Satyrium Tetra,0,4,2
+Satyrium V-Album,0,1,1
+Satyrium W-Album,0,19,10
+Satyrodes,1,2,6
+Satyrus,0.6666666666666666,3,10
+Saucrobotys,1,2,2
+Sauris,0.2,12,13
+Savara,1,3,4
+Savoca,0,1,1
+Scada,0,1,1
+Scaeosopha,0,1,1
+Scalmatica,0.5,3,3
+Scardamia,0,1,1
+Sceliodes,1,2,9
+Scelorthus,1,1,3
+Schausiella,0,1,1
+Schausinna,0.5,6,8
+Schedocercops,0,1,1
+Schinia,0.46153846153846156,80,143
+Schistonoea,0,1,1
+Schneidereria,0,3,3
+Schoenobius,1,1,2
+Schrankia,0.75,9,9
+Schreckensteinia,0.6666666666666666,3,7
+Scioglyptis,0,1,1
+Sciomesa,1,1,3
+Scionomia,0,2,2
+Sciota,0.75,4,7
+Scirpophaga,0.5454545454545454,14,34
+Sclerobia,1,1,3
+Sclerocecis,0,1,1
+Sclerocona,0,1,1
+Sclerogenia,1,2,2
+Sclerophantis,0,1,1
+Scobura,0,1,1
+Scodes,1,1,2
+Scodionyx,0,1,1
+Scolecocampa,1,5,5
+Scoliopteryx,1,8,30
+Scolitantides,0.3333333333333333,3,7
+Scoparia,0.16666666666666666,6,7
+Scopelodes,0.7,30,32
+Scoptes,0,1,1
+Scopula,0.4782608695652174,99,121
+Scopula?,0,1,1
+Scoriodyta,0,1,1
+Scotochrosta,0,1,1
+Scotogramma,0,1,1
+Scotopteryx,0.6666666666666666,7,11
+Scotorythra,0.25,19,21
+Scrobigera,0,3,3
+Scrobipalpa,0.30612244897959184,52,81
+Scrobipalpopsis,0,3,3
+Scrobipalpula,0.42857142857142855,16,30
+Scytalopteryx,1,3,5
+Scythris,0.2786885245901639,70,88
+Scythropia,1,1,6
+Sedina,1,2,2
+Seirocastnia,0,1,1
+Selagia,0.3333333333333333,4,4
+Selania,0.5,7,13
+Selenia,0.8571428571428571,31,50
+Selenisa,0.3333333333333333,6,12
+Selepa,0.4166666666666667,49,84
+Selidosema,1,4,6
+Semalea,0.5,2,3
+Semanga,0,1,1
+Sematoneura,1,1,3
+Semiaspilates,1,3,3
+Semiothisa,0.524390243902439,116,213
+Semnocera,0,1,1
+Semnostoma,1,2,2
+Semophylax,1,1,3
+Semutophila,0,1,1
+Semyra,0,1,1
+Semyrilla,0,1,1
+Sena,0.3333333333333333,3,4
+Senta,1,2,2
+Sentica,0,2,2
+Sephisa,0.5,4,6
+Sereda,0,1,1
+Sericaglaea,1,3,3
+Sericoplaga,0,1,1
+Sericosema,0.5,2,3
+Serrodes,1,8,15
+Sesamia,0.7333333333333333,25,101
+Seseria,0,1,1
+Sesquialtera,0,1,1
+Sesquiluna,0,1,1
+Sestra,0.5,3,5
+Sestra Flexata,0,4,2
+Sestra Humeraria,0,1,1
+Setagrotis,0.5,3,3
+Setiodes,0,1,1
+Setomorpha,1,23,24
+Setora,0.5,27,39
+Setothosea,1,4,6
+Shijimia,1,2,4
+Shijimiaeoides,0,1,1
+Shirozua,1,8,11
+Sibataniozephyrus,0.3333333333333333,3,4
+Sibine,0.5714285714285714,50,62
+Siboga,0,1,1
+Siculodes,1,1,3
+Sicya,0.6666666666666666,16,21
+Sicyodes,0,1,1
+Sideridis,0.75,14,16
+Siderone,0.5,2,3
+Siederia,0,1,1
+Sigelgaita,0.3333333333333333,3,4
+Siglophora,0,1,1
+Simiskina,1,2,4
+Simplicia,0.5454545454545454,33,41
+Simplimorpha,1,2,11
+Simyra,0.6666666666666666,24,37
+Sinarella,0,1,1
+Sindonophora,0,1,1
+Sindris,0,2,2
+Singhalia,0,1,1
+Sinia,0,1,1
+Sinibotys,1,1,2
+Sinoe,0.5,2,3
+Sinomphisa,0,1,1
+Sinthusa,1,1,3
+Siona,1,8,11
+Siproeta,1,6,15
+Sisona,0,1,1
+Sithon,1,1,2
+Sitochroa,1,6,10
+Sitotroga,1,3,9
+Slossonia,0,1,1
+Smerinthus,1,20,55
+Smyriodes,0,1,1
+Smyrna,1,2,9
+Solenobia,1,2,8
+Somatina,0.5,5,6
+Somatolophia,0.5,3,3
+Sonia,0.5,5,6
+Sonia Canadana,0,2,2
+Sonia Filiana,0,2,1
+Sonia Paraplesiana,0,1,1
+Sonia Vovana,0,1,1
+Sophista,1,2,2
+Sophronia,0.5,7,9
+Sophronia?,0,1,1
+Sorhagenia,0.6,5,8
+Soritia,0.6666666666666666,8,11
+Sorolopha,0.75,12,19
+Sosipatra,0.6666666666666666,6,7
+Sovia,1,2,2
+Sp.,0.6363636363636364,26,28
+Spaelotis,0.75,20,30
+Spalgis,1,9,24
+Spanioptila,0,2,2
+Sparagmia,0,1,1
+Spargaloma,0,1,1
+Spargania,1,4,8
+Sparganothis,0.5555555555555556,106,162
+Spartiniphaga,0,1,1
+Spatalistis,0.5,2,4
+Spathilepia,1,2,3
+Spatulifimbria,1,4,4
+Spatulipalpia,0,1,1
+Spectrobates,0,1,1
+Speia,1,3,9
+Speiredonia,0,1,1
+Speyeria,0.875,20,54
+Sphecodina,1,2,6
+Sphenarches,0.75,18,31
+Spheterista,0.1111111111111111,9,10
+Sphetta,1,3,6
+Sphingiforma,0,1,1
+Sphingomorpha,1,8,10
+Sphingonaepiopsis,1,3,7
+Sphinx,0.7916666666666666,77,202
+Spialia,0.8,30,55
+Spiloloma,0,1,1
+Spilonota,0.5,23,56
+Spilopera,0,1,1
+Spindasis,0.85,67,65
+Spionades,1,1,2
+Spiralisigna,1,3,3
+Spirama,1,4,5
+Spiramater,1,24,40
+Spiramiopsis,0,1,1
+Spiroterma,0,1,1
+Spododes,0,1,1
+Spodoptera,0.875,311,742
+Spoladea,1,17,32
+Sporadarchis,0,1,1
+Spp.,1,4,4
+Spragueia,0.4,7,7
+Spudaea,0,1,1
+Spulerina,0.7,15,32
+Squamura,0.5,3,3
+Stagmatophora,0.2,11,16
+Stagmatophora Acanthodes,0,1,1
+Stagmatophora Cyma,0,1,1
+Stagmatophora Enchrysa,0,1,1
+Stagmatophora Erebinthia,0,2,1
+Stagmatophora Heydeniella,0,1,1
+Stagmatophora Naviella,0,1,1
+Stagmatophora Serratella,0,6,2
+Stagmatophora Sexnotella,0,3,1
+Stalachtis,0,1,1
+Stallingsia,0,1,1
+Stamnodes,0.25,4,6
+Standfussiana,0.6666666666666666,10,9
+Stangeia,0.5,11,12
+Stangeia Siceliota,0,2,1
+Stangeia Xerodes,0,3,2
+Staphylus,0.75,6,10
+Stasiphron,0,1,1
+Statherotis,0.4,7,12
+Statherotmantis,0,1,1
+Staudingeria,0,4,4
+Staurophora,0,1,1
+Stegasta,0.5,12,19
+Stegommata,0,2,2
+Stemorrhages,0.75,9,13
+Stenachroia,1,1,6
+Stenachroia?,0,1,1
+Stenbergmania,0,1,1
+Stenodes,0.375,10,13
+Stenoglene,0,1,1
+Stenolechia,0.3333333333333333,8,9
+Stenoporpia,1,6,18
+Stenopterygia,0,2,2
+Stenoptilia,0.35714285714285715,22,31
+Stenoptilodes,0.45454545454545453,17,30
+Stenoptiloes,0,1,1
+Stenoptinea,0,1,1
+Stenorumia,0,1,1
+Stenovalva,0,1,1
+Stephensia,0.5,2,3
+Stereomita,1,1,2
+Stericta,0.16666666666666666,6,8
+Sterrhopterix,1,10,23
+Sterrhostoma,0,1,1
+Sthenopis,0.75,6,11
+Stibochiona,1,2,2
+Stichophthalma,1,2,3
+Stictea,1,2,3
+Stictoptera,0.42857142857142855,8,13
+Stigmella,0.44607843137254904,225,475
+Stilbia,0,1,1
+Stilbosis,0.4,12,15
+Stiphrometasia,0,1,1
+Stiria,0,1,1
+Stomopteryx,0.375,8,12
+Stomphastis,0.25,20,29
+Streblote,0.7142857142857143,106,137
+Strepsicrates,0.625,16,51
+Streptoperas,0,1,1
+Stretchia,0.3333333333333333,3,4
+Striglina,0.7272727272727273,35,56
+Striphnopteryx,1,2,2
+Strophedra,1,8,19
+Stroteroides,1,3,3
+Strymon,0.42857142857142855,77,129
+Strymonidia,0,1,1
+Stygionympha,0,5,5
+Stylopalpia,0,1,1
+Styphlolepis,0,1,1
+Suada,0,1,1
+Suana,0.3333333333333333,27,43
+Suastus,0.5,4,15
+Sufetula,0,4,4
+Sugitania,0,1,1
+Suleima,0.2,5,6
+Sunira,0.5,12,13
+Surendra,0.6666666666666666,5,7
+Surida,1,6,6
+Susica,0.5,10,11
+Sutyna,0,1,1
+Swammerdamia,0.45454545454545453,15,30
+Swezeyula,0,1,1
+Sybrida,1,1,4
+Sycacantha,0.5,2,3
+Syllepte,0.47368421052631576,27,31
+Syllomatia,0,2,2
+Symbiopsis,0,1,1
+Symbiopsis Tanais,0,1,1
+Symbrenthia,1,5,24
+Symitha,0.6666666666666666,5,9
+Symitha Indicatana,0,1,1
+Symitha Mangifera,0,2,2
+Symitha Nolalella,0,7,2
+Symmetrischema,0.25,8,16
+Symmimetis,0,1,1
+Symmoca,0.3333333333333333,4,4
+Symmoracma,1,2,2
+Symphaedra,0,1,1
+Symphonistis,0,2,2
+Symphysa,0,1,1
+Symphyta,0,2,2
+Sympis,1,1,3
+Sympistis,0.2,6,6
+Synale,0.5,2,4
+Synaphe,1,2,7
+Synaphe Moldavica,0,5,1
+Synaphe Punctalis,0,2,1
+Synapte,0.5,2,3
+Synargis,1,2,2
+Synaxis,1,16,31
+Synchlora,0.7142857142857143,27,49
+Synclera,0.5,2,4
+Synclita,0.6666666666666666,14,18
+Syncopacma,0.3888888888888889,18,27
+Syndemis,1,12,21
+Synegia,0.4,5,7
+Syneora,0.5,2,3
+Syngamia,0.25,5,10
+Synglochis,0,1,1
+Syngrapha,0.75,49,105
+Synnoma,0.5,2,4
+Synnympha,0,1,1
+Synopsia,0,1,1
+Syntherata,1,6,8
+Syntheta,1,6,6
+Synthymia,0,1,1
+Syntonarcha,1,2,2
+Sypnoides,0.6,5,11
+Syrastrena,0,1,1
+Syringopais,1,1,2
+Syrmadaula,0,1,1
+Syssphinx,0.8333333333333334,41,77
+Systasea,1,2,10
+Systoloneura,0.5,2,3
+Tabidia,0,2,2
+Tacoma,0,1,1
+Tacparia,0,2,2
+Taeda,1,2,2
+Taenaris,0.5,4,5
+Tagiades,0.4,13,18
+Tagoropsis,0.5,4,7
+Tajuria,0.7777777777777778,12,30
+Talanga,0,1,1
+Talbotia,1,2,2
+Taleporia,0,1,1
+Talicada,1,2,2
+Talides,0.5,3,3
+Talis,1,3,3
+Tallula,0.6666666666666666,5,6
+Talponia,0,1,1
+Tamba,0,3,3
+Tamraca,0,1,1
+Tanaecia,0.4,8,8
+Tanaorhinus,0.25,4,6
+Tanyethira,0,1,1
+Tarachidia,0.4,5,9
+Taractrocera,0.3333333333333333,3,4
+Taraka,1,1,5
+Tarema,0,1,1
+Targalla,0.3333333333333333,4,10
+Tarsocera,0,2,2
+Tarsoctenus,0,1,1
+Tarucus,0.8,20,33
+Tascia,0,1,1
+Tasema,0.5,2,3
+Tathodelta,0,1,1
+Tathorhynchus,0,2,2
+Tathothripa,0,1,1
+Tatobotys,0.5,3,4
+Tatobotys Biannulalis,0,3,2
+Tatobotys Janapalis,0,1,1
+Tatochila,0.5,5,16
+Tatorinia,0,1,1
+Taurometopa,0.5,2,3
+Taygete,0,5,5
+Taygetis,0.6666666666666666,3,7
+Tebenna,0.5454545454545454,12,28
+Tecia,0,3,3
+Tegeticula,0.3333333333333333,3,19
+Tegosa,1,2,2
+Tegostoma,0,5,5
+Tegulifera,0,1,1
+Tehama,1,1,2
+Teinoptila,0.5,2,3
+Teladoma,1,1,2
+Telamoptilia,0.5,8,11
+Teldenia,0.5,3,3
+Teldenia Pura,0,1,1
+Teldenia Vestigiata,0,2,2
+Teleiodes,0.6190476190476191,27,41
+Teleiopsis,0,4,4
+Telemiades,0.6666666666666666,5,6
+Telenassa,0,1,1
+Telephila,0,1,1
+Telethusia,0.5,2,3
+Telethusia Ovalis,0,2,1
+Telethusia Rhypodella,0,1,1
+Telicota,0.5454545454545454,13,34
+Teliphasa,0,2,2
+Telipna,0,4,3
+Tellervo,1,2,2
+Telorta,1,1,2
+Telphusa,0.3333333333333333,27,41
+Temenis,1,1,6
+Temnora,0.4166666666666667,19,19
+Tephrina,0.2222222222222222,12,12
+Tephriopis,1,1,3
+Tephris,0,2,2
+Tephris?,0,1,1
+Terastia,1,8,22
+Teratoneura,0,1,1
+Teratozephyrus,0.4,5,9
+Terinos,0,1,1
+Teriomima,0,6,5
+Termioptycha,0,2,2
+Terpna,1,2,5
+Tesagrotis,0,2,2
+Tethea,0.8,5,10
+Tetheella,0,1,1
+Tetracis,1,23,33
+Tetragma,0,1,1
+Tetramoera,0.6666666666666666,4,6
+Tetraschalis,0,1,1
+Tetraschistis,0,1,1
+Tetridia,0,1,1
+Texola,0,1,1
+Thaduka,1,1,2
+Thalaina,0.3333333333333333,4,4
+Thalassodes,0.5882352941176471,61,81
+Thalatha,0,1,1
+Thalatta,0.5,3,3
+Thalera,1,7,9
+Thaleropis,0,1,1
+Thallophaga,1,5,12
+Thalpophila,1,1,2
+Thamnoecha,0,1,1
+Thanatopsyche,1,5,6
+Thargella,0,1,1
+Tharsalea,0.25,4,11
+Thaumatographa,0,4,4
+Thaumatotibia,0.75,35,40
+Thauria,0,1,1
+Theagenes,0,1,1
+Thecla,0.14545454545454545,80,74
+Thecla Alda,0,1,1
+Thecla Aphaca,0,1,1
+Thecla Arola,0,1,1
+Thecla Bagrada,0,1,1
+Thecla Basilides,0,2,1
+Thecla Bassania,0,1,1
+Thecla Betulae,0,13,4
+Thecla Betulina,0,4,1
+Thecla Brillantina,0,1,1
+Thecla Canus,0,3,3
+Thecla Catharina,0,1,1
+Thecla Clarina,0,1,1
+Thecla Dindymus,0,2,2
+Thecla Dolylas,0,1,1
+Thecla Ellida,0,1,1
+Thecla Emessa,0,1,1
+Thecla Empusa,0,1,1
+Thecla Endymion,0,1,1
+Thecla Gabatha,0,1,1
+Thecla Gabina,0,2,2
+Thecla Gabriela,0,1,1
+Thecla Getus,0,2,2
+Thecla Gnosia,0,1,1
+Thecla Hemon,0,4,3
+Thecla Heraldica,0,1,1
+Thecla Hesperitis,0,3,3
+Thecla Hisbon,0,2,2
+Thecla Keila,0,1,1
+Thecla Legota,0,1,1
+Thecla Ligurina,0,2,2
+Thecla Lisus,0,4,4
+Thecla Melma/Charichlorus,0,1,1
+Thecla Mimas,0,2,2
+Thecla Mycon,0,2,2
+Thecla Nr. Cosa,0,1,1
+Thecla Nr. Hesperitis,0,1,1
+Thecla Nr. Hesychia,0,1,1
+Thecla Nr. Mycon,0,1,1
+Thecla Oreala,0,3,1
+Thecla Oxida,0,1,1
+Thecla Paetus,0,1,1
+Thecla Petaurister,0,1,1
+Thecla Phoenissa,0,1,1
+Thecla Phydela,0,2,1
+Thecla Silumena,0,2,2
+Thecla Sp.,0,1,1
+Thecla Spini,0,1,1
+Thecla Syedra,0,2,1
+Thecla Syllis,0,2,2
+Thecla Tympania,0,2,2
+Thecla Umbratus,0,1,1
+Theclinesthes,0,12,7
+Theclopsis,0,1,1
+Thecobathra,0.5,2,6
+Theisoa,0.5,2,3
+Thelosia,0,1,1
+Theope,0,2,2
+Theorica,0,2,2
+Thera,0.6,14,26
+Theresimima,0,1,1
+Theretra,0.8235294117647058,76,134
+Thereus,0.125,12,9
+Thereutis,0,3,3
+Theria,0.5,3,4
+Theritas,0,4,2
+Thespieus,0,1,1
+Thessalia,0.8,6,18
+Thestor,0.25,8,10
+Thetidia,0.6666666666666666,3,5
+Thiacidas,1,3,5
+Thiallela,1,2,2
+Thinopteryx,1,1,3
+Thiodia,0,1,1
+Thioptera,0,1,1
+Thiotricha,0.08333333333333333,12,13
+Thisanotia,1,1,3
+Thisanotia Chrysonuchella,0,3,1
+Thliptoceras,0,2,2
+Tholera,1,2,4
+Thoon,1,2,2
+Thopeutis,0.5,3,3
+Thopeutis Criella,0,1,1
+Thopeutis Forbesellus,0,2,2
+Thoressa,0,2,2
+Thorybes,0.6,5,43
+Thorybes Bathyllus,0,16,1
+Thorybes Confusis,0,1,1
+Thorybes Diversus,0,1,1
+Thorybes Mexicanus,0,4,1
+Thorybes Pylades,0,27,1
+Thosea,0.6785714285714286,125,153
+Thosea?,0,1,1
+Thracides,0.4,7,9
+Thrincophora,0.5,5,6
+Throana,0,2,2
+Thudaca,0,1,1
+Thurberiphaga,1,2,3
+Thyas,0.8571428571428571,14,22
+Thyatira,0.5,2,7
+Thyatirina,1,1,3
+Thylacoptila,1,5,13
+Thymelicus,0.75,4,20
+Thyrassia,0,2,2
+Thyraylia,1,1,2
+Thyridectis,0,1,1
+Thyridia,1,1,2
+Thyridopteryx,1,56,132
+Thyrinteina,0.5,3,6
+Thyris,0.3333333333333333,4,4
+Thyrsostoma,0,1,1
+Thysania,1,1,2
+Thysanoplusia,0,1,1
+Thysanopyga,0,1,1
+Tila,0,1,1
+Tildenia,0.3333333333333333,6,11
+Timandra,0,2,2
+Timelaea,0,1,1
+Timochares,0,1,1
+Timodora,0.5,3,3
+Timora,0,1,1
+Tinagma,0.5,4,6
+Tinea,0.21052631578947367,27,28
+Tineola,0,1,1
+Tineovertex,0,3,3
+Tinolius,0.5,2,3
+Tipasodes,0,1,1
+Tiquadra,0.5,6,6
+Tiracola,0.6666666666666666,34,56
+Tirathaba,0.3333333333333333,24,31
+Tirumala,0.8,10,24
+Tischeria,0.6037735849056604,60,131
+Tisiphone,1,3,6
+Titaea,0.5,4,4
+Titanio,0,1,1
+Titanoceros,0.5,3,4
+Tithorea,1,3,5
+Tlascala,0,1,1
+Tmolus,1,11,18
+Toccolosida,0,1,1
+Tolna,1,3,3
+Tolype,0.45,41,73
+Tomares,0,2,2
+Tomotilus,0,2,2
+Tongeia,0.5,6,9
+Toripalpus,0,1,1
+Tornos,0.5,2,4
+Tortricidia,0.6666666666666666,8,9
+Tortricodes,1,9,11
+Tortrix,0.5294117647058824,41,54
+Tortyra,0,2,2
+Torynesis,0,2,2
+Tosca,0,1,1
+Toxonprucha,0,2,2
+Trabala,0.5,46,83
+Trachea,0.5,4,6
+Tracheplexia,0,1,1
+Tracholena,0,5,5
+Trachonitis,1,2,2
+Trachycentra,0.75,9,11
+Trachycera,1,4,15
+Trachydora,0,3,3
+Trachylepidia,1,5,9
+Trachyptena,0.5,3,3
+Trachypteryx,0,2,2
+Trachysmia,1,1,2
+Trachytyla,0,2,2
+Traminda,0.7142857142857143,12,17
+Triaxomera,0,1,1
+Trichiura,0.6666666666666666,9,26
+Trichoclea,0,2,2
+Trichodezia,1,4,5
+Trichogyia,0.6666666666666666,7,9
+Tricholita,0.6666666666666666,4,8
+Trichophaga,0,4,4
+Trichophassus,1,4,8
+Trichopisthia,0,2,2
+Trichoplusia,0.5454545454545454,66,144
+Trichopterigia,0.5,2,4
+Trichopterygia,0,2,2
+Trichopteryx,0.75,11,22
+Trichoptilus,0.8333333333333334,12,13
+Trichordestra,0.6666666666666666,27,43
+Trichosilia,0,1,1
+Trichotaphe,1,2,2
+Triclema,0.5,7,8
+Triclonella,1,1,4
+Trictena,0,1,1
+Tridesmodes,0,1,1
+Tridrepana,0.25,4,9
+Trifurcula,0.41935483870967744,31,55
+Trigonocyttara,1,3,3
+Trigonodes,0.5,5,7
+Trigonophora,1,5,6
+Trigonoptila,0,1,1
+Trilocha,0.6666666666666666,5,18
+Trimenia,0.5,3,4
+Trimetopia,1,1,2
+Trimetopia Aetheraria,0,2,1
+Triocnemis,1,1,3
+Triodia,1,2,2
+Triphassa,0,2,2
+Triphosa,0.75,11,15
+Triprocris,1,1,2
+Tripseuxoa,1,3,7
+Trisateles,1,2,3
+Trischistognatha,1,1,2
+Trisophista,0,1,1
+Trissochyta,1,2,3
+Trissodoris,0,2,2
+Trissonca,0,1,1
+Tristeirometa,1,1,2
+Tristrophis,0,1,1
+Tritanassa,0,1,1
+Triuncidia,0,1,1
+Trogocrada,0,2,2
+Trogoptera,0,1,1
+Trygodes,1,2,2
+Trymalitis,0,2,2
+Trypanisma,1,1,2
+Trypanophora,0.375,23,29
+Tryphax?,0,1,1
+Tsinilla,1,1,2
+Tsitana,0.3333333333333333,3,4
+Tucumania,0.5,2,4
+Tulsa,1,3,3
+Turanana,0,4,2
+Tuta,0,1,1
+Tuxentius,1,9,12
+Tycomarptes,0.5,4,4
+Tylopaedia,0,1,1
+Tympanota,0,1,1
+Typhedanus,1,2,8
+Tyspanodes,0,1,1
+Tyta,1,1,2
+Ubaena,0,1,1
+Udara,0.4,11,12
+Udaspes,1,4,12
+Udea,0.38235294117647056,66,94
+Udranomia,0,2,2
+Ufa,0.3333333333333333,3,8
+Ufeus,0.3333333333333333,3,4
+Ugia,1,2,2
+Ugiodes,0,1,1
+Ukamenia,1,3,3
+Ulochlaena,0,1,1
+Ulodemis,0.3333333333333333,11,13
+Ulolonche,0,1,1
+Ulopeza,0.5,2,3
+Ulophora,0,1,1
+Ulotricha,0,1,1
+Ulotrichopus,0.6666666666666666,4,5
+Ultraaricia,0,1,1
+Ultraaricia Vandarbani,0,1,1
+Unadilla,0.6666666666666666,3,6
+Undulambia,0,1,1
+Unidentified,0,1,1
+Unkana,0.5,3,5
+Unknown,1,10,11
+Uraba,0.5,3,11
+Urania,0.5,2,3
+Uranothauma,0.4444444444444444,13,17
+Urapteroides,0.5,3,6
+Urbanus,0.6363636363636364,23,58
+Urbona,1,2,4
+Uresiphita,1,16,55
+Urodeta,0,1,1
+Urodus,0.5,6,7
+Urola,0,1,1
+Urota,1,3,5
+Ussara,1,1,2
+Ussuriana,0.5,4,12
+Usta,0.5,4,5
+Vacciniina,1,1,3
+Vacciniina Optilete,0,4,1
+Vacerra,0,1,1
+Vaga,1,6,8
+Vagobanta,0,1,1
+Vagrans,1,3,7
+Valeria,0.5,3,3
+Vanessa,1,55,248
+Varius,0,1,1
+Vegetia,0.5,3,5
+Vehilius,0,1,1
+Veia,0,1,1
+Veniliodes,0,1,1
+Venusia,1,12,23
+Vertica,0,2,2
+Vescisa,1,4,4
+Vespina,1,1,2
+Vettius,0.3333333333333333,6,8
+Vezina,0,1,1
+Victoria,0,1,1
+Victoria Mirabilis,0,1,1
+Vietteania,1,2,4
+Viidaleppia,0,1,1
+Viminia,1,1,2
+Vindula,1,3,9
+Vinicia,0.5,3,3
+Virachola,0.5,4,6
+Vitessa,0,1,1
+Vitula,0.5714285714285714,9,11
+Vladimirea,1,1,2
+Vogtia,0,1,1
+Volatica,0,1,1
+Volobilis,0,2,2
+Volobilis Chloropterella,0,1,1
+Volobilis Sp.,0,1,1
+Voracia,0,1,1
+Vulcaniella,0.6666666666666666,4,5
+Wagimo,1,2,13
+Wallengrenia,1,4,13
+Walshia,0.5,8,17
+Warreniplema,0,1,1
+Watsonalla,0.3333333333333333,4,4
+Wegneria,0,2,2
+Westermannia,0.4444444444444444,9,16
+Wheeleria,0,1,1
+Whitebreadia,0,3,3
+Whittleia,1,1,2
+Wilemania,1,11,24
+Wiseana,0.25,7,5
+Witlesia,0,1,1
+Wockia,1,1,2
+Xamia,1,1,5
+Xandrames,0,2,2
+Xanthia,0.5555555555555556,21,23
+Xanthisthisa,0.6666666666666666,6,9
+Xanthodes,1,11,35
+Xanthodisca,0,1,1
+Xanthograpta,0,1,1
+Xanthopan,1,4,6
+Xanthopastis,1,8,26
+Xanthorhoe,0.8695652173913043,71,97
+Xanthotaenia,0,1,1
+Xanthothrix,0,2,2
+Xanthotype,1,21,24
+Xeneda,0,1,1
+Xeneda Coena,0,1,1
+Xeniades,1,3,5
+Xenimpia,1,5,7
+Xenochroma,1,1,2
+Xenolechia,0.6,6,15
+Xenolepis,0,1,1
+Xenophanes,1,1,3
+Xenostega,0,1,1
+Xenotemna,1,8,15
+Xerociris,0,1,1
+Xestia,0.725,132,202
+Xois,0.5,2,3
+Xubida,0.5,5,7
+Xylena,0.8,71,109
+Xylesthia,0,1,1
+Xyleutes,0.30303030303030304,66,103
+Xylinophylla,0,2,2
+Xylocampa,0,1,1
+Xylocossus,1,2,2
+Xylophanes,0.375,17,32
+Xylopteryx,0.5,2,3
+Xyloscia,0,1,1
+Xylotype,1,6,8
+Xyroptila,0,1,1
+Xyrosaris,0.5,2,5
+Xystopeplus,1,4,5
+Xystophora,0.6666666666666666,3,6
+Yasoda,1,2,2
+Yepcalphis,0,1,1
+Yigoga,0,1,1
+Yoma,0.5,3,3
+Yosemitia,1,1,4
+Yponomeuta,0.5909090909090909,53,124
+Ypsolopha,0.3181818181818182,55,79
+Ypsolophus,0,1,1
+Ypthima,0.391304347826087,23,61
+Yvretta,0,1,1
+Zadalcera,1,2,2
+Zalaca,0,1,1
+Zale,0.6363636363636364,45,75
+Zaleops,0,1,1
+Zamacra,0,1,1
+Zamagiria,0.25,5,7
+Zamarada,0.16666666666666666,7,7
+Zamopsyche,1,5,5
+Zanclognatha,0.4375,30,32
+Zanclopera,0,1,1
+Zapyrastra,1,1,2
+Zaretis,1,4,11
+Zebronia,1,3,10
+Zebronia Phenice,0,17,3
+Zegris,0,1,1
+Zeiraphera,0.7333333333333333,23,79
+Zela,0,1,1
+Zelleria,0.2222222222222222,20,30
+Zelleria?,0,1,1
+Zelotypia,1,1,2
+Zemeros,1,1,4
+Zenonia,0.5,2,4
+Zenophassus,0,1,1
+Zenophleps,1,2,5
+Zenophleps Lignicolorata,0,5,2
+Zera,0.5,2,3
+Zerene,1,2,13
+Zerenopsis,1,3,3
+Zermizinga,1,4,6
+Zesius,1,8,5
+Zesius Chrysomallus,0,11,8
+Zestusa,1,1,2
+Zethenia,1,10,13
+Zethera,0,1,1
+Zetona,0,1,1
+Zeuctoboarmia,0,2,2
+Zeuxidia,0,3,3
+Zeuzera,0.9,88,187
+Zinara,1,6,6
+Zintha,1,1,3
+Zitha,0,2,2
+Zitha Allutalis,0,1,1
+Zitha Vidualis,0,1,1
+Zizeeria,1,16,18
+Zizina,1,8,29
+Zizina Antanossa,0,3,2
+Zizina Labradus,0,6,2
+Zizina Otis,0,21,4
+Zizula,1,7,12
+Zizyphia,0.5,3,3
+Zomaria,0.6666666666666666,3,7
+Zonoplusia,0,1,1
+Zonora,0,1,1
+Zophodia,0,4,4
+Zophoessa,0,1,1
+Zophopetes,0.6666666666666666,3,10
+Zosteropoda,1,5,4
+Zotheca,1,2,3
+Zovax,0,1,1
+Zurobata,1,8,9
+Zutulba,0,1,1
+Zygaena,0.5454545454545454,26,50
+",Acleris",0,209,34
+",Acratodes",0,1,1
+",Aethesoides",0,1,1
+",Agathodes",0,23,8
+",Agdistopis",0,2,1
+",Agrius",0,56,15
+",Agrotera",0,30,11
+",Algedonia",0,1,1
+",Allothosea",0,6,3
+",Amata",0,40,21
+",Amathusia",0,13,2
+",Amorophaga",0,1,1
+",Anarpia",0,1,1
+",Ancyloxypha",0,10,1
+",Anestia",0,1,1
+",Anypsipyla",0,4,3
+",Apotomops",0,4,1
+",Arcyophora",0,3,2
+",Audre",0,2,2
+",Bareia",0,1,1
+",Beara",0,10,7
+",Belemnia",0,1,1
+",Bibasis",0,16,9
+",Bocana",0,3,3
+",Cabera",0,24,6
+",Caenurgina",0,14,6
+",Cartaletis",0,4,1
+",Celaenorrhinus",0,13,4
+",Cephonodes",0,51,13
+",Cephrenes",0,10,2
+",Chalybs",0,1,1
+",Chioides",0,6,2
+",Chitoria",0,3,1
+",Cholotis",0,1,1
+",Choreutis",0,35,8
+",Cirriphora",0,1,1
+",Codatractus",0,2,1
+",Condylorrhiza",0,4,3
+",Cooksonia",0,1,1
+",Correbia",0,1,1
+",Creobota",0,1,1
+",Darapsa",0,31,9
+",Darna",0.025,101,41
+",Delgamma",0,1,1
+",Dichordophora",0,2,1
+",Diomea",0,2,2
+",Dophla",0,8,4
+",Dryadaula",0,8,7
+",Dryadula",0,15,1
+",Dyscia",0,2,1
+",Eacles",0,161,43
+",Eagris",0,15,6
+",Elatobia",0,1,1
+",Embryonopsis",0,1,1
+",Ephyrodes",0,1,1
+",Ercta",0,1,1
+",Eriogyna",0,10,7
+",Erygia",0,5,3
+",Euchlaena",0,51,21
+",Euchromius",0,3,3
+",Eueana",0,2,1
+",Euperissus",0,1,1
+",Euphalacra",0,1,1
+",Euriphene",0,2,2
+",Euzopherodes",0,8,6
+",Gazoryctra",0,4,4
+",Gorgopis",0,1,1
+",Gorgyra",0,5,3
+",Halysidota",0,87,27
+",Heliconisa",0,3,2
+",Heliomystis",0,1,1
+",Herochroma",0,1,1
+",Hesperia",0,57,3
+",Hestina",0,8,2
+",Hystrichoscelus",0,2,1
+",Idalus",0,7,3
+",Isidiella",0,1,1
+",Itame",0,71,17
+",Ithome",0,12,3
+",Ixala",0,1,1
+",Jamides",0,60,12
+",Jordanita",0,2,1
+",Junonia",0.03571428571428571,210,29
+",Kaniska",0,17,4
+",Lamprosema",0,14,7
+",Lemonia",0,2,1
+",Leocyma",0,7,1
+",Lerema",0,13,1
+",Lhommeia",0,1,1
+",Lobobunaea",0,24,13
+",Mazdacis",0,1,1
+",Melanis",0,5,4
+",Mestolobes",0,3,2
+",Migoplastis",0,1,1
+",Moduza",0,19,1
+",Morpheis",0,9,5
+",Mylantria",0,4,4
+",Myscelia",0,2,1
+",Myscelus",0,4,2
+",Nascia",0,4,2
+",Nephantis",0,6,1
+",Neptidopsis",0,5,1
+",Nyctegretis",0,5,3
+",Nyssiodes",0,16,4
+",Opostegoides",0,5,2
+",Oraesia",0,23,9
+",Osmodes",0,2,1
+",Pachylioides",0,3,2
+",Pamphlebia",0,2,1
+",Panaphelix",0,1,1
+",Papias",0,1,1
+",Pelochyta",0,5,4
+",Periploca",0,25,5
+",Phazaca",0,15,3
+",Phepsalostoma",0,1,1
+",Poliostola",0,1,1
+",Polyocha",0,2,1
+",Polytremis",0,7,1
+",Postplatyptilia",0,1,1
+",Prionapteryx",0,4,2
+",Procalyptis",0,7,1
+",Pygospila",0,5,1
+",Pyrgotis",0,7,4
+",Pyrrhopyge",0,12,9
+",Racotis",0,12,3
+",Sabalia",0,1,1
+",Salassa",0,1,1
+",Salebriopsis",0,3,2
+",Sarbena",0,4,1
+",Saturnia",0,152,34
+",Satyrium",0,134,23
+",Sestra",0,4,2
+",Sonia",0,6,2
+",Stagmatophora",0,16,6
+",Stangeia",0,8,5
+",Symbiopsis",0,1,1
+",Symitha",0,9,3
+",Synaphe",0,7,2
+",Tatobotys",0,4,3
+",Teldenia",0,3,3
+",Telethusia",0,3,1
+",Thecla",0,57,34
+",Thisanotia",0,3,1
+",Thopeutis",0,3,3
+",Thorybes",0,41,1
+",Tomotilus",0,1,1
+",Trimetopia",0,2,1
+",Ultraaricia",0,1,1
+",Vacciniina",0,4,1
+",Victoria",0,1,1
+",Volobilis",0,2,2
+",Xeneda",0,1,1
+",Zebronia",0,17,3
+",Zenophleps",0,5,2
+",Zesius",0,11,8
+",Zitha",0,2,2
+",Zizina",0,25,4
+Acanthopteroctetidae,0,1,1
+Adelidae,0.30434782608695654,25,33
+Agathiphagidae,0.5,2,4
+Alucitidae,0.5,22,29
+Anthelidae,0.32,37,40
+Apatelodidae,0.42857142857142855,24,40
+Arctiidae,0.3939393939393939,76,128
+Batrachedridae,0.4666666666666667,40,72
+Bombycidae,0.45,25,45
+Brahmaeidae,0.5,2,3
+Bucculatricidae,0.25170068027210885,167,224
+Callidulidae,0,2,2
+Carthaeidae,1,1,3
+Cecidosidae,0.5,3,4
+Choreutidae,0.45,74,125
+Coleophoridae,0.42178770949720673,444,676
+Cosmopterigidae,0.30659025787965616,504,666
+Cossidae,0.42735042735042733,292,480
+Dalceridae,0.7142857142857143,19,20
+Douglasiidae,0.5,4,6
+Drepanidae,0.5294117647058824,120,241
+Elachistidae,0.36363636363636365,111,202
+Epermeniidae,0.45161290322580644,33,60
+Eriocottidae,0.2,7,7
+Eriocraniidae,0.4375,17,34
+Eupterotidae,0.4418604651162791,92,123
+Gelechiidae,0.39146230699364215,1344,2201
+Geometridae,0.544593088071349,4280,6985
+Glyphipterigidae,0.2608695652173913,25,32
+Gracillariidae,0.42700729927007297,1307,2264
+Hedylidae,0,6,6
+Heliodinidae,0.45161290322580644,31,56
+Heliozelidae,0.1568627450980392,53,62
+Hepialidae,0.5949367088607594,220,290
+Hesperiidae,0.536067892503536,956,2195
+Hyblaeidae,0.625,24,73
+Hypertrophidae,0.2857142857142857,7,9
+Immidae,0.09090909090909091,29,29
+Incurvariidae,0.3684210526315789,28,48
+Lacturidae,0.25,9,10
+Lasiocampidae,0.5446428571428571,896,1526
+Lecithoceridae,0,1,1
+Lemoniidae,0.5,2,3
+Limacodidae,0.5977011494252874,1108,1471
+Lycaenidae,0.47271487039563437,2662,4306
+Lymantriidae,1,4,4
+Lyonetiidae,0.4,130,245
+Micropterigidae,0.25,4,7
+Mimallonidae,0.3684210526315789,28,43
+Nepticulidae,0.3888888888888889,385,747
+Noctuidae,0.5410876132930513,8060,13338
+Nolidae,0.45353159851301117,467,769
+Nymphalidae,0.5947368421052631,2516,6107
+Oecophoridae,0.5,4,9
+Oenosandridae,0,2,2
+Opostegidae,0.5,2,4
+Palaephatidae,0,6,6
+Papilionidae,0.6752136752136753,220,956
+Pieridae,0.6837060702875399,564,1744
+Prodoxidae,0.3409090909090909,46,103
+Psychidae,0.5574468085106383,838,1191
+Pterophoridae,0.4115384615384615,364,559
+Pyralidae,0.4595959595959596,3200,5317
+Roeslerstammiidae,0.1111111111111111,10,11
+Saturniidae,0.7119266055045872,2214,4024
+Schreckensteiniidae,0.5,4,8
+Scythrididae,0.27848101265822783,99,134
+Sphingidae,0.7070422535211267,1020,2205
+Thyrididae,0.47560975609756095,132,184
+Tineidae,0.3452914798206278,480,543
+Tischeriidae,0.5818181818181818,62,133
+Tortricidae,0.5098135426889107,4506,7336
+Uraniidae,0.3023255813953488,48,75
+Urodidae,0.6666666666666666,7,9
+Yponomeutidae,0.41916167664670656,408,710
+Zygaenidae,0.4818181818181818,179,269
+NA,0,3,3
+Acherontiini,0.8125,155,431
+Acraeini,0.5595238095238095,147,226
+Agalopini,1,1,2
+Amathusiini,0.47619047619047616,29,49
+Amblypodiini,0.6,10,21
+Ambulycini,0.6923076923076923,27,43
+Amphipyrini,0.8,61,111
+Anaeini,0.4,36,68
+Aphnaeini,0.3333333333333333,11,12
+Arhopalini,0.38095238095238093,79,109
+Artonini,0.42105263157894735,26,40
+Biblidini,0.45454545454545453,120,228
+Brassolini,0.6,50,82
+Candalidini,0.07142857142857142,30,16
+Chalcosiini,0.4375,36,45
+Charaxini,0.6428571428571429,273,478
+Cheritrini,1,9,8
+Coeini,1,17,27
+Cossini,0.34285714285714286,74,105
+Cyclosiini,0.8,12,18
+Cyrestini,0.5384615384615384,17,57
+Danaini,0.6933333333333334,135,474
+Deudorigini,0.7567567567567568,175,222
+Dilophonotini,0.7560975609756098,84,193
+Elymniini,0.4166666666666667,89,216
+Endagriini,1,1,2
+Eumaeini,0.43209876543209874,365,530
+Euxanthini,1,8,16
+Glottulini,0.8,38,77
+Haeterini,1,1,2
+Heliconiini,0.7153284671532847,225,791
+Heteropanini,1,2,2
+Holcocerini,1,2,2
+Horagini,1,6,7
+Hypolycaenini,0.2727272727272727,48,50
+Iolaini,0.8545454545454545,62,123
+Ithomiini,0.5,65,151
+Kallimini,0.8450704225352113,177,556
+Lachnocnemini,0.5,15,23
+Limenitidini,0.5233644859813084,151,277
+Liphyrini,0.5,2,3
+Liptenini,0.14285714285714285,46,41
+Loxurini,0.5,3,4
+Luciini,0.06896551724137931,64,32
+Lycaenesthini,0.6875,85,112
+Macroglossini,0.6666666666666666,428,779
+Melanitini,0.6666666666666666,8,56
+Melitaeini,0.7121212121212122,129,369
+Micragoniini,0.2857142857142857,8,11
+Miletini,0.6666666666666666,6,15
+Morphini,0.8421052631578947,47,96
+Neptini,0.5,114,199
+Niphandini,1,2,2
+Nymphalini,0.84,166,492
+Pallini,1,6,9
+Papilionini,0.6810344827586207,219,955
+Parthenini,0.5,3,4
+Passovini,0,2,2
+Pentilini,0,15,12
+Philampelini,1,18,52
+Polyommatini,0.6473988439306358,378,980
+Poritiini,0,2,2
+Preponini,0.5714285714285714,12,15
+Prothoini,1,1,2
+Pseudergolini,0.6666666666666666,8,16
+Pyrrhopygini,0.5,13,17
+Rhodoneurini,0.4375,19,29
+Satyrini,0.5166666666666667,207,497
+Siculodini,0.4,20,23
+Smerinthini,0.6935483870967742,153,343
+Spalgini,1,9,24
+Sphingini,0.7246376811594203,191,470
+Sphingulini,1,10,18
+Tarakini,1,1,5
+Tellervini,1,2,2
+Theclini,0.15384615384615385,76,71
+Tomarini,0,2,2
+Tortricini,0.7064220183486238,247,483
+Vagrantini,1,3,7
+Xyleutini,0.28205128205128205,72,112
+Zesiusini,1,8,5
+Zeuzerini,0.6818181818181818,106,216
+NA,0.48546303929651,37218,59712
+Acontiinae,0.4090909090909091,126,144
+Acronictinae,0.6045197740112994,554,966
+Aediinae,0.5,5,10
+Agaristinae,0.578125,109,156
+Agdistinae,0.42857142857142855,18,25
+Agliinae,1,11,30
+Alsophilinae,0.8888888888888888,32,80
+Amphipyrinae,0.8,61,111
+Anacampsinae,0.3,22,42
+Anthelinae,0.34782608695652173,35,38
+Apaturinae,0.47058823529411764,43,71
+Archiearinae,1,6,9
+Aristotelia,0.36363636363636365,56,67
+Arsenurinae,0.6111111111111112,35,51
+Bagisarinae,0.6666666666666666,27,53
+Baroniinae,0,1,1
+Biblidinae,0.45454545454545453,120,228
+Bombycinae,0.5714285714285714,18,38
+Brachmiinae,0.2222222222222222,10,12
+Brenthiinae,0.3333333333333333,15,21
+Bryophilinae,0.3333333333333333,12,19
+Calinaginae,1,1,2
+Callizygaeninae,0,1,1
+Catoptinae,0,1,1
+Cemiostominae,0.3404255319148936,55,102
+Ceratocampinae,0.7638888888888888,237,509
+Chalcosiinae,0.625,68,95
+Charaxinae,0.6139240506329114,336,588
+Chelariinae,0.4342105263157895,124,200
+Chondrosteginae,1,3,3
+Choreutinae,0.4782608695652174,57,101
+Chrysauginae,0.4666666666666667,19,28
+Chrysopeleiinae,0.14285714285714285,15,18
+Coeliadinae,0.7,73,125
+Coliadinae,0.7608695652173914,201,665
+Compsocteninae,0.25,6,6
+Condicinae,0.45,33,78
+Cosmopteriginae,0.4112903225806452,226,314
+Cossinae,0.3783783783783784,77,109
+Cossulinae,0.5,4,5
+Crambinae,0.5572519083969466,152,321
+Cuculliinae,0.5357142857142857,71,127
+Curetinae,0.5555555555555556,15,18
+Cybalomiinae,0.2857142857142857,12,13
+Cyclidiinae,0,1,1
+Cyrestinae,0.5384615384615384,17,57
+Danainae,0.6102941176470589,202,627
+Desmobathrinae,0.2222222222222222,10,12
+Deuterocopinae,0.4,6,7
+Dichomeridinae,0.46218487394957986,158,291
+Dilobinae,0.4,6,25
+Dismorphiinae,0.5714285714285714,9,16
+Drepaninae,0.4716981132075472,73,134
+Dryadaulinae,0.5,9,9
+Elachistinae,0.36633663366336633,102,187
+Endotrichinae,0,1,1
+Ennominae,0.5742331288343558,2304,3881
+Epermeniinae,0.5263157894736842,19,41
+Epichnopteriginae,0.3333333333333333,3,4
+Epipaschiinae,0.3211009174311927,162,220
+Epipleminae,0.16,26,41
+Erechthiinae,0.3783783783783784,86,106
+Eriocottinae,0,1,1
+Eriopinae,0.3684210526315789,45,54
+Eublemminae,0.5,131,216
+Eupterotinae,0.5,64,83
+Eustrotiinae,0.375,21,32
+Galleriinae,0.5111111111111111,136,186
+Ganisa,0.6666666666666666,4,7
+Gelechiinae,0.36633663366336633,121,220
+Geometrinae,0.45726495726495725,480,690
+Glyphipteriginae,0.15,20,24
+Gracillariinae,0.4086629001883239,650,1057
+Hapsiferinae,0.6363636363636364,35,43
+Harmacloninae,1,2,2
+Heliconiinae,0.6576576576576577,375,1024
+Heliothinae,0.5354330708661418,311,633
+Hemileucinae,0.6797752808988764,644,1099
+Hesperiinae,0.5074626865671642,398,956
+Hieroxestinae,0.46153846153846156,117,140
+Hypoptinae,0,2,2
+Janinae,0.5,5,6
+Larentiinae,0.5991379310344828,989,1733
+Lasiocampinae,0.5518867924528302,562,851
+Libytheinae,0.75,12,24
+Limacodinae,0.6226415094339622,396,491
+Limenitidinae,0.5095541401273885,258,463
+Lithocolletinae,0.48205128205128206,441,846
+Lycaeninae,0.6,579,924
+Lyonetiinae,0.5454545454545454,35,82
+Macroglossinae,0.7083333333333334,550,1081
+Macromphaliinae,0.45,41,73
+Macropiratinae,0,2,2
+Malacosominae,0.8,93,314
+Meessiinae,0.36363636363636365,19,22
+Microniinae,0,1,1
+Midilinae,0,2,2
+Miletinae,0.6052631578947368,54,119
+Munychryiinae,0,2,2
+Musotiminae,0.14285714285714285,8,8
+Myrmecozelinae,0.36363636363636365,41,43
+Naryciinae,0.2857142857142857,8,15
+Nemapogoninae,0.3888888888888889,30,30
+Nepticulinae,0.38920454545454547,377,727
+Noctuina,0.875,311,742
+Noctuinae,0.6170212765957447,154,263
+Nymphalinae,0.8031088082901554,489,1444
+Ochromolopinae,0,5,5
+Ochyroticinae,0.2857142857142857,10,13
+Odontiinae,0.20689655172413793,32,38
+Oenochrominae,0.43478260869565216,29,41
+Oiketicinae,0.6666666666666666,263,428
+Orthostixinae,0,1,1
+Oxyteninae,0,1,1
+Panacelinae,0.25,9,16
+Pantheinae,1,6,11
+Papilioninae,0.6810344827586207,219,955
+Pectinivalvinae,0.5,2,5
+Phycitinae,0.4601449275362319,1005,1745
+Phyllocnistinae,0.3220338983050847,78,127
+Physoptila,0,2,2
+Pierinae,0.65625,409,1209
+Platychasmatinae,0,1,1
+Plusiinae,0.7109375,512,895
+Poecilocampinae,0.43478260869565216,104,181
+Polyommatinae,0.6040816326530613,541,1231
+Poritiinae,0.1111111111111111,97,81
+Procridinae,0.4782608695652174,59,95
+Protolechia,0,11,11
+Pseudoergolinae,0.6666666666666666,8,16
+Pseudopontiinae,1,2,2
+Psychinae,0.5454545454545454,32,40
+Pterophorinae,0.4,186,275
+Pyralinae,0.3333333333333333,105,132
+Pyraustinae,0.5925925925925926,397,715
+Pyrginae,0.5894308943089431,365,886
+Pyrrhopyginae,0.45454545454545453,29,39
+Salassinae,0,1,1
+Saridoscelinae,1,1,3
+Saturniinae,0.2857142857142857,8,11
+Satyrinae,0.5081521739130435,460,1065
+Scardiinae,0.2857142857142857,9,9
+Schoenobiinae,0.4166666666666667,34,59
+Scopariinae,0.10526315789473684,20,21
+Scythropiinae,1,1,6
+Setomorphinae,1,23,24
+Siculodinae,0.4375,40,55
+Smerinthinae,0.6933333333333334,180,386
+Sphinginae,0.7468354430379747,279,717
+Sterrhinae,0.4772727272727273,252,310
+Striglininae,0.65,48,79
+Striphnopteryginae,0.3333333333333333,17,19
+Stygiinae,1,1,2
+Taleporiinae,0,1,1
+Theclinae,0.4385150812064965,944,1225
+Thyatirinae,0.6666666666666666,39,97
+Thyridinae,0.6666666666666666,28,33
+Tineinae,0.1320754716981132,72,69
+Tortricinae,0.5909090909090909,2598,4156
+Typhoniinae,0,2,2
+Uraniinae,0.6363636363636364,14,22
+Yponomeutinae,0.5,155,302
+Zeuzerinae,0.4262295081967213,178,328
+Zygaeninae,0.375,31,55
+NA,0.46078875793291024,17820,26121
