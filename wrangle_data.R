@@ -116,9 +116,10 @@ taxonomy_major_lineage <- read_csv("Data/Lepi_MajorLineages/Lepi_MajorLineages_t
     mutate(
         genus = str_to_title(str_trim(genus))
     ) %>%
-    group_by(genus) %>% # Filter duplicates within genus group. >1000X faster!
+    group_by(superfamily, family, genus) %>% # Filter duplicates within superfamily, family group. faster!
     group_modify(~ filter_pseudo_duplicates(.x)) %>%
     ungroup()
+
 ## End format major lineage taxonomy
 
 ## Begin wrangle host data
