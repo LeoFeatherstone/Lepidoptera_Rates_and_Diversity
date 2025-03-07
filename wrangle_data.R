@@ -10,15 +10,17 @@ library(tidyverse)
 genera_data <- read_csv("Raw_Sister_Tables/Papilionoidea_Genera_Contrasts.csv") %>%
     mutate(
         pair_id = as.character(Pair_no), dataset = "genera",
-        taxa_left = Genus_first...2, taxa_right = Genus_last...3, # Note these colmns were duplicated
+        taxa_left = Genus_first...2, taxa_right = Genus_last...3, # Note these columns were duplicated
         dN_left = dN_first, dN_right = dN_last,
-        dS_left = dS_first, dS_right = dS_last
+        dS_left = dS_first, dS_right = dS_last,
+        baseml_bl_left = blen_first, baseml_bl_right = blen_last
     ) %>%
     select(
         pair_id, dataset,
         taxa_left, taxa_right,
         dN_left, dN_right,
-        dS_left, dS_right
+        dS_left, dS_right,
+        baseml_bl_left, baseml_bl_right
     ) %>%
     pivot_longer(
         cols = ends_with("_left") | ends_with("_right"),
@@ -31,13 +33,15 @@ family_data <- read_csv("Raw_Sister_Tables/Lepidoptera_Families_Contrasts.csv") 
         pair_id = as.character(Pair_no), dataset = "family",
         taxa_left = Family_first, taxa_right = Family_last,
         dN_left = dN_first, dN_right = dN_last,
-        dS_left = dS_first, dS_right = dS_last
+        dS_left = dS_first, dS_right = dS_last,
+        baseml_bl_left = blen_first, baseml_bl_right = blen_last
     ) %>%
     select(
         pair_id, dataset,
         taxa_left, taxa_right,
         dN_left, dN_right,
-        dS_left, dS_right
+        dS_left, dS_right,
+        baseml_bl_left, baseml_bl_right
     ) %>%
     pivot_longer(
         cols = ends_with("_left") | ends_with("_right"),
@@ -289,7 +293,8 @@ contrasts <- pairs_long %>%
             "dN_left", "dN_right", "dS_left", "dS_right",
             "n_host_species_left", "n_host_species_right",
             "n_species_left", "n_species_right",
-            "n_host_families_left", "n_host_families_right"
+            "n_host_families_left", "n_host_families_right",
+            "baseml_bl_left", "baseml_bl_right"
         ),
         .fns = log
     )) %>%
@@ -299,7 +304,8 @@ contrasts <- pairs_long %>%
         n_host_species_contrast = sign * (n_host_species_left - n_host_species_right),
         n_species_contrast = sign * (n_species_left - n_species_right),
         n_host_families_contrast = sign * (n_host_families_left - n_host_families_right),
-        prop_generalist_contrast = sign * (prop_generalist_left - prop_generalist_right)
+        prop_generalist_contrast = sign * (prop_generalist_left - prop_generalist_right),
+        baseml_bl_contrast = sign * (baseml_bl_left - baseml_bl_right)
     )
 
 ## End make contrast table
