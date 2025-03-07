@@ -133,17 +133,24 @@ ggsave(
 
 ## Begin Welch and Waxman tests of ds
 ## Begin scatterplot for genera and family level data
+## /sqrt(sum of branch length/2)
 welch_waxman <- contrasts %>%
     filter(dataset %in% c("genera", "family")) %>%
     mutate(
-        abs_dS_scaled = abs(dS_left - dS_right) / sqrt(abs(baseml_bl_left - baseml_bl_right)),
-        sqrt_abs_bl = sqrt(abs(baseml_bl_left - baseml_bl_right))
+        dS_left = exp(dS_left),
+        dS_right = exp(dS_right),
+        baseml_bl_left = exp(baseml_bl_left),
+        baseml_bl_right = exp(baseml_bl_right)
     ) %>%
-    ggplot(aes(x = sqrt_abs_bl, y = abs_dS_scaled, fill = dataset, col = dataset)) +
+    mutate(
+        abs_dS_scaled = abs(dS_left - dS_right) / sqrt((baseml_bl_left + baseml_bl_right) / 2),
+        sqrt_sum_bl = sqrt((baseml_bl_left + baseml_bl_right) / 2)
+    ) %>%
+    ggplot(aes(x = sqrt_sum_bl, y = abs_dS_scaled, fill = dataset, col = dataset)) +
     geom_point(shape = 21, col = "black") +
     scale_fill_manual(values = alpha(c("red", "dodgerblue"), 0.5)) +
     scale_color_manual(values = alpha(c("red", "dodgerblue"), 0.5)) +
-    labs(x = expression(sqrt("|baseml contrast|")), y = expression(frac("|dS contrast|", sqrt("|baseml contrast|")))) +
+    labs(x = expression(sqrt("Sum of branch lengths")), y = expression(frac("|dS contrast|", sqrt("Sum of branch lengths")))) +
     theme(
         text = element_text(size = 12),
         legend.position = "none"
