@@ -9,9 +9,9 @@ library(lavaan)
 library(igraph)
 
 # Read the data
-contrasts <- read_csv("contrasts.csv")
-host_data <- read_csv("combined_host_counts.csv")
-species_data <- read_csv("combined_species_counts.csv")
+contrasts <- read_csv("figures_and_output/contrasts.csv")
+host_data <- read_csv("figures_and_output/combined_host_counts.csv")
+species_data <- read_csv("figures_and_output/combined_species_counts.csv")
 
 ## Filter outliers
 outlier_dN <- contrasts %>%
@@ -49,7 +49,7 @@ pairs_plot_pooled <- contrasts %>%
 
 ggsave(
     plot = pairs_plot_pooled,
-    filename = "pairs_pooled_no_outliers.pdf",
+    filename = "figures_and_output/pairs_pooled_no_outliers.pdf",
     width = 12, height = 12, units = "in"
 )
 ## End pairs plots
@@ -100,7 +100,7 @@ species_dS_plot <- contrasts %>%
         legend.position = "none"
     )
 ggsave(
-    plot = species_dS_plot, filename = "species_vs_dS.pdf",
+    plot = species_dS_plot, filename = "figures_and_output/species_vs_dS.pdf",
     width = 6, height = 3, units = "in"
 )
 ## End n_species against dS
@@ -126,7 +126,7 @@ host_vs_species_plot <- species_data %>%
     )
 
 ggsave(
-    plot = host_vs_species_plot, filename = "host_vs_species.pdf",
+    plot = host_vs_species_plot, filename = "figures_and_output/host_vs_species.pdf",
     width = 6, height = 3, units = "in"
 )
 ## End N species in taxa vs number of host records
@@ -157,7 +157,7 @@ welch_waxman <- contrasts %>%
     ) +
     facet_wrap(~dataset, scales = "free", labeller = as_labeller(c(family = "Lepidoptera families", genera = "Papilionoidea genera")))
 ggsave(
-    plot = welch_waxman, filename = "welch-waxman.pdf",
+    plot = welch_waxman, filename = "figures_and_output/welch-waxman.pdf",
     width = 6, height = 3, units = "in"
 )
 ## End scatterplot for genera and family level data
@@ -290,7 +290,7 @@ plot_model <- function(model, title) {
     )
 }
 
-pdf("path-analyses-dNdS.pdf", width = 12, height = 12)
+pdf("figures_and_output/path-analyses-dNdS.pdf", width = 12, height = 12)
 
 par(mfrow = c(2, 2))
 plot_model(genera_model, "Papilonoidea genera")
@@ -314,7 +314,7 @@ family_model_no_weights <- contrasts %>%
     as.data.frame() %>%
     sem(data = ., model = path_model_genera_family)
 
-pdf("family-path-dNdS-unweighted.pdf", width = 12)
+pdf("figures_and_output/family-path-dNdS-unweighted.pdf", width = 12)
     par(mfrow = c(1, 2))
     plot_model(family_model_no_weights, "Lepidoptera families (unweighted)")
     plot.new()
@@ -380,7 +380,7 @@ family_model_bl <- contrasts %>%
 fit_models_bl <- list(genera_model_bl, major_lineage_model_bl, family_model_bl)
 
 # Plot models with weights
-pdf("path-analyses-bl.pdf", width = 12, height = 12)
+pdf("figures_and_output/path-analyses-bl.pdf", width = 12, height = 12)
 
 par(mfrow = c(2, 2))
 plot_model(genera_model_bl, "Papilonoidea genera")
@@ -405,7 +405,7 @@ family_model_no_weights_bl <- contrasts %>%
     sem(data = ., model = path_model_genera_family_bl)
 
 # Plot models without weights
-pdf("family-path-bl-unweighted.pdf", width = 12, height = 6)
+pdf("figures_and_output/family-path-bl-unweighted.pdf", width = 12, height = 6)
 
 par(mfrow = c(1, 2))
 plot_model(family_model_no_weights_bl, "Lepidoptera families (unweighted)")

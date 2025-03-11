@@ -311,13 +311,13 @@ contrasts <- pairs_long %>%
 ## End make contrast table
 
 ## Begin save contrasts and summary tables
-write_csv(contrasts, file = "contrasts.csv")
-write_csv(combined_host_counts, file = "combined_host_counts.csv")
-write_csv(combined_species_counts, file = "combined_species_counts.csv")
+write_csv(contrasts, file = "figures_and_output/contrasts.csv")
+write_csv(combined_host_counts, file = "figures_and_output/combined_host_counts.csv")
+write_csv(combined_species_counts, file = "figures_and_output/combined_species_counts.csv")
 
 contrasts %>%
     group_by(dataset) %>%
     summarise(n = n()) %>%
-    write_csv("sample_sizes.csv")
+    write_csv("figures_and_output/sample_sizes.csv")
 
 ## End
