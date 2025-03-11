@@ -170,187 +170,28 @@ lepi.fam.pair.ages <- sapply(lepi.fam.pairs.sampled,
 angiosperm.tree <- read.nexus("Data\\Janssens_et_al_2020_Angiosperm_Tree.new")
 
 lepi.fam_hosts <- read.csv("Data\\Lepi_Families\\Lepi_Families_HOSTS.csv", stringsAsFactors = F)
-lepi.fam_hosts_final <- lepi.fam_hosts %>% 
-    filter(Family != '') %>% 
-    mutate(
-        Host_family = sapply(str_split(Host_family, ' '), function (x) x[1]), 
-        Host_genus = sapply(str_split(Host_name, " "), function (x) toupper(x[1]))
-    )
+lepi.fam_hosts_final <- lepi.fam_hosts %>% filter(Family !='') %>% mutate(Host_family = sapply(str_split(Host_family, ' '), function (x) x[1]), Host_genus = sapply(str_split(Host_name, " "), function (x) toupper(x[1])))
 
-lepi.fam_hosts_summ1 <- lepi.fam_hosts_final %>%
-    group_by(Family, Species) %>% 
-    summarise(N_host_sp = length(unique(Host_name))) %>% 
-    summarise(
-        Hosts_pgen = sum(N_host_sp > 1, na.rm = T) / n(), 
-        Hosts_mean = mean(N_host_sp, na.rm = T)
-    )
+lepi.fam_hosts_summ1 <- lepi.fam_hosts_final %>% group_by(Family,Species) %>% summarise(N_host_sp = length(unique(Host_name))) %>% summarise(Hosts_pgen = sum(N_host_sp > 1, na.rm=T)/n(), Hosts_mean = mean(N_host_sp, na.rm=T))
+lepi.fam_hosts_summ2 <- lepi.fam_hosts_final %>% group_by(Family) %>% summarise(Host_families = length(unique(Host_family)), Host_species = length(unique(Host_name)))
+lepi.fam_hosts_summ <- lepi.fam_hosts_summ1 %>% left_join(lepi.fam_hosts_summ2, by = "Family")
 
-lepi.fam_hosts_summ2 <- lepi.fam_hosts_final %>% 
-    group_by(Family) %>% 
-    summarise(
-        Host_families = length(unique(Host_family)), 
-        Host_species = length(unique(Host_name))
-    )
-
-lepi.fam_hosts_summ <- lepi.fam_hosts_summ1 %>% 
-    left_join(lepi.fam_hosts_summ2, by = "Family")
-
-lepi.fam_hosts_notthere <- unlist(c(lepi.fam.out.t$Family_first, lepi.fam.out.t$Family_last))[
-    !(unlist(c(lepi.fam.out.t$Family_first, lepi.fam.out.t$Family_last)) %in% lepi.fam_hosts_summ$Family)
-]
-
-lepi.fam_hosts_notthere.t <- tibble(
-    Family = lepi.fam_hosts_notthere, 
-    Hosts_pgen = NA, 
-    Hosts_mean = NA, 
-    Host_families = NA, 
-    Host_species = NA
-)
-
+lepi.fam_hosts_notthere <- unlist(c(lepi.fam.out.t$Family_first, lepi.fam.out.t$Family_last))[!(unlist(c(lepi.fam.out.t$Family_first, lepi.fam.out.t$Family_last)) %in% lepi.fam_hosts_summ$Family)]
+lepi.fam_hosts_notthere.t <- tibble(Family=lepi.fam_hosts_notthere, Hosts_pgen=NA, Hosts_mean=NA, Host_families=NA, Host_species=NA)
 lepi.fam_hosts_summ_final <- bind_rows(lepi.fam_hosts_summ, lepi.fam_hosts_notthere.t)
 
-lepi.fam_hosttrees_pd <- apply(lepi.fam.famnames, c(1, 2), function (x) 
-    keep.tip(
-        angiosperm.tree, 
-        intersect(
-            angiosperm.tree$tip.label, 
-            gsub(" ", "_", lepi.fam_hosts_final %>% 
-                filter(toupper(Genus) %in% (lepi_taxonomy %>% filter(x == Family) %>% pull(Genus))) %>% 
-                pull(Host_name) %>% 
-                unique
-            )
-        )
-    )
-)
+lepi.fam_hosttrees_pd <- apply(lepi.fam.famnames, c(1,2), function (x) keep.tip(angiosperm.tree, intersect(angiosperm.tree$tip.label, gsub(" ","_", lepi.fam_hosts_final %>% filter(toupper(Genus) %in% (lepi_taxonomy %>% filter(x == Family) %>% pull(Genus))) %>% pull(Host_name) %>% unique))))
 
-lepi.fam_famnames_pd <- apply(lepi.fam_hosttrees_pd, c(1, 2), function (x) 
-    if (is.null(x[[1]])) NA else phylo.average.brlen(x[[1]])
-)
+lepi.fam_famnames_pd <- apply(lepi.fam_hosttrees_pd, c(1,2), function (x) if(is.null(x[[1]])) NA else phylo.average.brlen(x[[1]]))
 
-lepi.fam_hosts_out <- t(rbind(
-    apply(lepi.fam.famnames, c(1, 2), function (x) lepi.fam_hosts_summ_final %>% filter(Family == x) %>% pull(Host_families)), 
-    apply(lepi.fam.famnames, c(1, 2), function (x) lepi.fam_hosts_summ_final %>% filter(Family == x) %>% pull(Host_species)), 
-    apply(lepi.fam.famnames, c(1, 2), function (x) lepi.fam_hosts_summ_final %>% filter(Family == x) %>% pull(Hosts_pgen)), 
-    apply(lepi.fam.famnames, c(1, 2), function (x) lepi.fam_hosts_summ_final %>% filter(Family == x) %>% pull(Hosts_mean)), 
-    lepi.fam_famnames_pd
-))
-
-colnames(lepi.fam_hosts_out) <- c(
-    "Host_families_first", "Host_families_last", 
-    "Host_species_first", "Host_species_last", 
-    "Hosts_pgen_first", "Hosts_pgen_last", 
-    "Hosts_mean_first", "Hosts_mean_last", 
-    "Hosts_pd_first", "Hosts_pd_last"
-)
-
+lepi.fam_hosts_out <- t(rbind(apply(lepi.fam.famnames, c(1,2), function (x) lepi.fam_hosts_summ_final %>% filter(Family == x) %>% pull(Host_families)), apply(lepi.fam.famnames, c(1,2), function (x) lepi.fam_hosts_summ_final %>% filter(Family == x) %>% pull(Host_species)), apply(lepi.fam.famnames, c(1,2), function (x) lepi.fam_hosts_summ_final %>% filter(Family == x) %>% pull(Hosts_pgen)), apply(lepi.fam.famnames, c(1,2), function (x) lepi.fam_hosts_summ_final %>% filter(Family == x) %>% pull(Hosts_mean)), lepi.fam_famnames_pd))
+colnames(lepi.fam_hosts_out) <- c("Host_families_first", "Host_families_last", "Host_species_first", "Host_species_last", "Hosts_pgen_first", "Hosts_pgen_last", "Hosts_mean_first", "Hosts_mean_last", "Hosts_pd_first", "Hosts_pd_last")
 lepi.fam_hosts_out.t <- as_tibble(lepi.fam_hosts_out)
 lepi.fam.out.t <- bind_cols(lepi.fam.out.t, lepi.fam_hosts_out.t) %>% transmute_all(simplify2array)
 
-lepi.fam.out.t$Age = lepi.fam.pair.ages       
+lepi.fam.out.t$Age=lepi.fam.pair.ages       
 
-lepi.fam.hosts.out.unsat.t <- lepi.fam.out.t %>% 
-    filter(dS_first < 2, dS_last < 2, Order != "Trichoptera")
+lepi.fam.hosts.out.unsat.t <- lepi.fam.out.t %>% filter(dS_first < 2, dS_last < 2, Order != "Trichoptera")
+lepi.fam.hosts.out.final.t <- lepi.fam.hosts.out.unsat.t %>% filter(!is.na(N_spp_first), !is.na(N_spp_last)) 
 
-lepi.fam.hosts.out.final.t <- lepi.fam.hosts.out.unsat.t %>% 
-    filter(!is.na(N_spp_first), !is.na(N_spp_last)) 
-
-write.csv(lepi.fam.hosts.out.final.t, "Lepi_Families_Contrasts.csv")
-
-### FINAL OUTPUT ------------------------------------------------------------------------------
-library(ggplot2)
-
-# Analysis for branch lengths
-lepi_fam_analysis_blen <- lepi.fam.hosts.out.final.t %>% 
-    mutate(diff = log(blen_first) - log(blen_last)) %>% 
-    welch.test(diff, Age) %>% 
-    select(-diff) %>% 
-    mutate(across(where(is.numeric), log)) %>% 
-    mutate(blen_std = abs(blen_first - blen_last) / sqrt(exp(Age)), 
-           n_spp_std = sign(blen_first - blen_last) * (n_spp_first - n_spp_last), 
-           hosts_pgen_std = sign(blen_first - blen_last) * (asin(sqrt(exp(hosts_pgen_first))) - asin(sqrt(exp(hosts_pgen_last)))), 
-           hosts_mean_std = sign(blen_first - blen_last) * (hosts_mean_first - hosts_mean_last), 
-           host_families_std = sign(blen_first - blen_last) * (host_families_first - host_families_last), 
-           host_species_std = sign(blen_first - blen_last) * (host_species_first - host_species_last),
-           hosts_pd_std = sign(blen_first - blen_last) * (hosts_pd_first - hosts_pd_last))
-
-# Analysis for synonymous substitutions
-lepi_fam_analysis_dS <- lepi.fam.hosts.out.final.t %>% 
-    mutate(diff = log(dS_first) - log(dS_last)) %>% 
-    welch.test(diff, Age) %>% 
-    select(-diff) %>% 
-    mutate(across(where(is.numeric), log)) %>% 
-    mutate(dS_std = abs(dS_first - dS_last),
-           n_spp_std = sign(dS_first - dS_last) * (n_spp_first - n_spp_last),  
-           hosts_pgen_std = sign(dS_first - dS_last) * (asin(sqrt(exp(hosts_pgen_first))) - asin(sqrt(exp(hosts_pgen_last)))), 
-           hosts_mean_std = sign(dS_first - dS_last) * (hosts_mean_first - hosts_mean_last), 
-           host_families_std = sign(dS_first - dS_last) * (host_families_first - host_families_last), 
-           host_species_std = sign(dS_first - dS_last) * (host_species_first - host_species_last),
-           hosts_pd_std = sign(dS_first - dS_last) * (hosts_pd_first - hosts_pd_last))
-
-# Analysis for nonsynonymous substitutions
-lepi_fam_analysis_dN <- lepi.fam.hosts.out.final.t %>% 
-    mutate(diff = log(dN_first) - log(dN_last)) %>% 
-    welch.test(diff, Age) %>% 
-    select(-diff) %>% 
-    mutate(across(where(is.numeric), log)) %>% 
-    mutate(dN_std = abs(dN_first - dN_last),
-           n_spp_std = sign(dN_first - dN_last) * (n_spp_first - n_spp_last),  
-           hosts_pgen_std = sign(dN_first - dN_last) * (asin(sqrt(exp(hosts_pgen_first))) - asin(sqrt(exp(hosts_pgen_last)))), 
-           hosts_mean_std = sign(dN_first - dN_last) * (hosts_mean_first - hosts_mean_last), 
-           host_families_std = sign(dN_first - dN_last) * (host_families_first - host_families_last), 
-           host_species_std = sign(dN_first - dN_last) * (host_species_first - host_species_last),
-           hosts_pd_std = sign(dN_first - dN_last) * (hosts_pd_first - hosts_pd_last))
-
-# Analysis for hosts
-lepi_fam_analysis_hosts <- lepi.fam.hosts.out.final.t %>% 
-    mutate(across(where(is.numeric), log)) %>% 
-    mutate(n_spp_std = abs(n_spp_first - n_spp_last), 
-           dS_std = sign(n_spp_first - n_spp_last) * (dS_first - dS_last),
-           dN_std = sign(n_spp_first - n_spp_last) * (dN_first - dN_last),
-           hosts_pgen_std = sign(n_spp_first - n_spp_last) * (asin(sqrt(exp(hosts_pgen_first))) - asin(sqrt(exp(hosts_pgen_last)))), 
-           hosts_mean_std = sign(n_spp_first - n_spp_last) * (hosts_mean_first - hosts_mean_last), 
-           host_families_std = sign(n_spp_first - n_spp_last) * (host_families_first - host_families_last), 
-           host_species_std = sign(n_spp_first - n_spp_last) * (host_species_first - host_species_last),
-           hosts_pd_std = sign(n_spp_first - n_spp_last) * (hosts_pd_first - hosts_pd_last))
-
-# Combine all analyses into one tibble
-lepi_fam_analysis <- bind_rows(
-    lepi_fam_analysis_blen %>% mutate(type = "blen"),
-    lepi_fam_analysis_dS %>% mutate(type = "dS"),
-    lepi_fam_analysis_dN %>% mutate(type = "dN"),
-    lepi_fam_analysis_hosts %>% mutate(type = "hosts")
-)
-
-# Linear models
-lepi_fam_blen_lm <- lm(n_spp_std ~ blen_std - 1, data = lepi_fam_analysis_blen)
-lepi_fam_dS_lm <- lm(n_spp_std ~ dS_std - 1, data = lepi_fam_analysis_dS)
-lepi_fam_dN_lm <- lm(n_spp_std ~ dN_std - 1, data = lepi_fam_analysis_dN)
-
-# Plotting
-plot_lm <- function(data, x, y, lm_model, xlab, ylab) {
-    ggplot(data) +
-        geom_point(aes_string(x = x, y = y)) +
-        xlab(xlab) +
-        ylab(ylab) +
-        theme(panel.background = element_blank(), axis.line = element_line(colour = "black", size = 0.5), text = element_text(family = "serif")) +
-        geom_abline(linetype = "dashed", size = 1, colour = "red", slope = coef(lm_model)[1], intercept = 0)
-}
-
-lepi_fam_blen_pl <- plot_lm(lepi_fam_analysis_blen, "blen_std", "n_spp_std", lepi_fam_blen_lm, "Family Contrast in Average Total Substitutions/Site", "Family contrast in clade size")
-lepi_fam_dS_pl <- plot_lm(lepi_fam_analysis_dS, "dS_std", "n_spp_std", lepi_fam_dS_lm, "Family Contrast in Average Synonymous Substitutions/Site", "Family contrast in clade size")
-lepi_fam_dN_pl <- plot_lm(lepi_fam_analysis_dN, "dN_std", "n_spp_std", lepi_fam_dN_lm, "Family Contrast in Average Nonsynonymous Substitutions/Site", "Family contrast in clade size")
-
-# Display plots
-print(lepi_fam_blen_pl)
-print(lepi_fam_dS_pl)
-print(lepi_fam_dN_pl)
-
-# Test independent variable pair age dependence
-
-
-cor.test(abs(log(lepi.fam.out.t$N_spp_first) - log(lepi.fam.out.t$N_spp_last))/sqrt(lepi.fam.out.t$Age), sqrt(lepi.fam.out.t$Age), method="kendall")
-
-remove(lepi.fam.aln)
-remove(lepi.fam.genes)
-#remove(lepi.fam.pair.alns)
-                                
+write.csv("Lepi_Families_Contrasts.csv")
