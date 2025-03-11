@@ -2,7 +2,7 @@
 
 This is a fork of [Lepidoptera_Rates_and_Diversity by amritchie](https://github.com/amritchie/Lepidoptera_Rates_and_Diversity). It takes the raw PAML output, recalculates host and species richness data, and performs analysis and plotting. I have included one new directory and two new scripts. All the original files and directories start with capitals, and my additions start with lowercase letters. 
 
-## Reproducability
+## Reproducibility
 Users can reproduce the analysis by running each `_Run.R` file up to the points of writing the pair data (e.g., `Papilionoidea_Genera_Run.R`). Then run `wrangle_data.R`. From there, all plots and analyses can be reproduced in `plots_and_analysis.R`.
 
 ## Additions
