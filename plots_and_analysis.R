@@ -206,7 +206,6 @@ genera_model <- contrasts %>%
     as.data.frame() %>%
     sem(data = ., model = path_model_genera_family, sampling.weights = "weight")
 
-# TODO: Weight for major lineage data
 major_lineage_model <- contrasts %>%
     rename_with(~ str_remove(., "_contrast")) %>%
     filter(dataset == "major-lineage") %>%
@@ -232,21 +231,23 @@ plot_model <- function(model, title) {
         filter(op == "~" | op == "~~") %>%
         mutate(significant = ifelse(pvalue < 0.05, 1, 0)) %>%
         mutate(
-            lhs = recode(lhs, 
-                n_species = "Species", 
-                n_host_species = "Host\nspecies", 
-                n_host_families = "Host\nfamilies", 
-                prop_generalist = "Proportion\ngeneralist", 
-                dS = "dS", 
-                dN = "dN"
+            lhs = recode(lhs,
+                n_species = "Species",
+                n_host_species = "Host\nspecies",
+                n_host_families = "Host\nfamilies",
+                prop_generalist = "Proportion\ngeneralist",
+                dS = "dS",
+                dN = "dN",
+                baseml_bl = "Branch\nlength"
             ),
-            rhs = recode(rhs, 
-                n_species = "Species", 
-                n_host_species = "Host\nspecies", 
-                n_host_families = "Host\nfamilies", 
-                prop_generalist = "Proportion\ngeneralist", 
-                dS = "dS", 
-                dN = "dN"
+            rhs = recode(rhs,
+                n_species = "Species",
+                n_host_species = "Host\nspecies",
+                n_host_families = "Host\nfamilies",
+                prop_generalist = "Proportion\ngeneralist",
+                dS = "dS",
+                dN = "dN",
+                baseml_bl = "Branch\nlength"
             )
         )
 
@@ -258,13 +259,13 @@ plot_model <- function(model, title) {
 
     # Create graph object
     g <- graph_from_data_frame(edges, directed = TRUE)
-    layout = layout_in_circle(g)
+    layout <- layout_in_circle(g)
 
     # Define edge colors based on the effect
     edge_colors <- case_when(
         edges$significant == 1 & edges$weight < 0 ~ "dodgerblue",
-        edges$significant == 1 & edges$weight > 0 ~ "orange",
-        TRUE ~ alpha("black", 0.4)
+        edges$significant == 1 & edges$weight > 0 ~ "red",
+        .default = "grey"
     )
 
     # Define edge shapes based on the operation
@@ -275,10 +276,10 @@ plot_model <- function(model, title) {
         g,
         layout = layout,
         edge.label = round(E(g)$weight, 2),
+        edge.arrow.mode = edge_shapes,
         edge.color = edge_colors,
         edge.label.color = "black",
-        edge.arrow.mode = edge_shapes,
-
+        curved = 0.1,
         vertex.label.color = "black",
         vertex.label.font = 2,
         vertex.shape = "circle",
@@ -289,7 +290,7 @@ plot_model <- function(model, title) {
     )
 }
 
-pdf("path-analyses.pdf", width = 12, height = 12)
+pdf("path-analyses-dNdS.pdf", width = 12, height = 12)
 
 par(mfrow = c(2, 2))
 plot_model(genera_model, "Papilonoidea genera")
@@ -301,48 +302,27 @@ plot.new()
 legend(
     "center",
     legend = c("Positive significant", "Negative significant", "Non-significant"),
-    col = c("orange", "dodgerblue", alpha("black", 0.4)), lty = 1, cex = 1.2
+    col = c("red", "dodgerblue", "grey"), lty = 1, cex = 1.2
 )
 
 dev.off()
 
-# Fit the model for each group without weights
-genera_model_no_weights <- contrasts %>%
-    rename_with(~ str_remove(., "_contrast")) %>%
-    filter(dataset == "genera") %>%
-    as.data.frame() %>%
-    sem(data = ., model = path_model_genera_family)
-
-major_lineage_model_no_weights <- contrasts %>%
-    rename_with(~ str_remove(., "_contrast")) %>%
-    filter(dataset == "major-lineage") %>%
-    as.data.frame() %>%
-    sem(data = ., model = path_model_major_lineage)
-
+# Fit family with no weights for comparison
 family_model_no_weights <- contrasts %>%
     rename_with(~ str_remove(., "_contrast")) %>%
     filter(dataset == "family") %>%
     as.data.frame() %>%
     sem(data = ., model = path_model_genera_family)
 
-fit_models_no_weights <- list(genera_model_no_weights, major_lineage_model_no_weights, family_model_no_weights)
-
-# Plot models without weights
-pdf("path-analyses-no-weights.pdf", width = 12, height = 12)
-
-par(mfrow = c(2, 2))
-plot_model(genera_model_no_weights, "Papilonoidea genera (no weights)")
-plot_model(major_lineage_model_no_weights, "Lepidoptera major lineages (no weights)")
-plot_model(family_model_no_weights, "Lepidoptera families (no weights)")
-
-# Add legend for weight color
-plot.new()
-legend(
-    "center",
-    legend = c("Positive significant", "Negative significant", "Non-significant"),
-    col = c("orange", "dodgerblue", alpha("black", 0.4)), lty = 1, cex = 1.2
-)
-
+pdf("family-path-dNdS-unweighted.pdf", width = 12)
+    par(mfrow = c(1, 2))
+    plot_model(family_model_no_weights, "Lepidoptera families (unweighted)")
+    plot.new()
+    legend(
+        "center",
+        legend = c("Positive significant", "Negative significant", "Non-significant"),
+        col = c("red", "dodgerblue", "grey"), lty = 1, cex = 1.2
+    )
 dev.off()
 
 # Fit the model for each group with baseml_bl instead of dN and dS
@@ -377,25 +357,25 @@ path_model_major_lineage_bl <- "
 
 # Fit the model for each group with weights
 genera_model_bl <- contrasts %>%
-        rename_with(~ str_remove(., "_contrast")) %>%
-        filter(dataset == "genera") %>%
-        mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
-        as.data.frame() %>%
-        sem(data = ., model = path_model_genera_family_bl, sampling.weights = "weight")
+    rename_with(~ str_remove(., "_contrast")) %>%
+    filter(dataset == "genera") %>%
+    mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
+    as.data.frame() %>%
+    sem(data = ., model = path_model_genera_family_bl, sampling.weights = "weight")
 
 major_lineage_model_bl <- contrasts %>%
-        rename_with(~ str_remove(., "_contrast")) %>%
-        filter(dataset == "major-lineage") %>%
-        mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
-        as.data.frame() %>%
-        sem(data = ., model = path_model_major_lineage_bl, sampling.weights = "weight")
+    rename_with(~ str_remove(., "_contrast")) %>%
+    filter(dataset == "major-lineage") %>%
+    mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
+    as.data.frame() %>%
+    sem(data = ., model = path_model_major_lineage_bl, sampling.weights = "weight")
 
 family_model_bl <- contrasts %>%
-        rename_with(~ str_remove(., "_contrast")) %>%
-        filter(dataset == "family") %>%
-        mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
-        as.data.frame() %>%
-        sem(data = ., model = path_model_genera_family_bl, sampling.weights = "weight")
+    rename_with(~ str_remove(., "_contrast")) %>%
+    filter(dataset == "family") %>%
+    mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
+    as.data.frame() %>%
+    sem(data = ., model = path_model_genera_family_bl, sampling.weights = "weight")
 
 fit_models_bl <- list(genera_model_bl, major_lineage_model_bl, family_model_bl)
 
@@ -403,55 +383,39 @@ fit_models_bl <- list(genera_model_bl, major_lineage_model_bl, family_model_bl)
 pdf("path-analyses-bl.pdf", width = 12, height = 12)
 
 par(mfrow = c(2, 2))
-plot_model(genera_model_bl, "Papilonoidea genera (baseml_bl)")
-plot_model(major_lineage_model_bl, "Lepidoptera major lineages (baseml_bl)")
-plot_model(family_model_bl, "Lepidoptera families (baseml_bl)")
+plot_model(genera_model_bl, "Papilonoidea genera")
+plot_model(major_lineage_model_bl, "Lepidoptera major lineages")
+plot_model(family_model_bl, "Lepidoptera families")
 
 # Add legend for weight color
 plot.new()
 legend(
-        "center",
-        legend = c("Positive significant", "Negative significant", "Non-significant"),
-        col = c("orange", "dodgerblue", alpha("black", 0.4)), lty = 1, cex = 1.2
+    "center",
+    legend = c("Positive significant", "Negative significant", "Non-significant"),
+    col = c("red", "dodgerblue", alpha("black", 0.4)), lty = 1, cex = 1.2
 )
 
 dev.off()
 
 # Fit the model for each group without weights
-genera_model_no_weights_bl <- contrasts %>%
-        rename_with(~ str_remove(., "_contrast")) %>%
-        filter(dataset == "genera") %>%
-        as.data.frame() %>%
-        sem(data = ., model = path_model_genera_family_bl)
-
-major_lineage_model_no_weights_bl <- contrasts %>%
-        rename_with(~ str_remove(., "_contrast")) %>%
-        filter(dataset == "major-lineage") %>%
-        as.data.frame() %>%
-        sem(data = ., model = path_model_major_lineage_bl)
-
 family_model_no_weights_bl <- contrasts %>%
-        rename_with(~ str_remove(., "_contrast")) %>%
-        filter(dataset == "family") %>%
-        as.data.frame() %>%
-        sem(data = ., model = path_model_genera_family_bl)
-
-fit_models_no_weights_bl <- list(genera_model_no_weights_bl, major_lineage_model_no_weights_bl, family_model_no_weights_bl)
+    rename_with(~ str_remove(., "_contrast")) %>%
+    filter(dataset == "family") %>%
+    as.data.frame() %>%
+    sem(data = ., model = path_model_genera_family_bl)
 
 # Plot models without weights
-pdf("path-analyses-no-weights-bl.pdf", width = 12, height = 12)
+pdf("family-path-bl-unweighted.pdf", width = 12, height = 6)
 
-par(mfrow = c(2, 2))
-plot_model(genera_model_no_weights_bl, "Papilonoidea genera (no weights, baseml_bl)")
-plot_model(major_lineage_model_no_weights_bl, "Lepidoptera major lineages (no weights, baseml_bl)")
-plot_model(family_model_no_weights_bl, "Lepidoptera families (no weights, baseml_bl)")
+par(mfrow = c(1, 2))
+plot_model(family_model_no_weights_bl, "Lepidoptera families (unweighted)")
 
 # Add legend for weight color
 plot.new()
 legend(
-        "center",
-        legend = c("Positive significant", "Negative significant", "Non-significant"),
-        col = c("orange", "dodgerblue", alpha("black", 0.4)), lty = 1, cex = 1.2
+    "center",
+    legend = c("Positive significant", "Negative significant", "Non-significant"),
+    col = c("red", "dodgerblue", alpha("black", 0.4)), lty = 1, cex = 1.2
 )
 
 dev.off()
