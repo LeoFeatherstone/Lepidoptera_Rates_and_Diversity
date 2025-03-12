@@ -307,6 +307,102 @@ legend(
 
 dev.off()
 
+# Define the path models with direct effect on dS
+path_model_genera_family_ds <- "
+    # Direct effects
+    n_species ~ n_host_species + n_host_families + prop_generalist + dS
+    dS ~ n_host_species + n_host_families + prop_generalist
+
+    # Indirect effects
+    dN ~ n_host_species + n_host_families + prop_generalist + b * dS
+
+    # Covariances
+    n_host_families ~~ c_host_fam_species * n_host_species
+    prop_generalist ~~ c_gen_host_species * n_host_species
+
+    # Constraints
+    c_host_fam_species > 0
+    c_gen_host_species > 0
+"
+
+path_model_major_lineage_ds <- "
+    # Direct effects
+    n_species ~ n_host_species + n_host_families + prop_generalist
+
+    # Covariances
+    n_host_families ~~ c_host_fam_species * n_host_species
+    prop_generalist ~~ c_gen_host_species * n_host_species
+
+    # Constraints
+    c_host_fam_species > 0
+    c_gen_host_species > 0
+"
+
+# Fit the model for each group with weights
+genera_model_ds <- contrasts %>%
+        rename_with(~ str_remove(., "_contrast")) %>%
+        filter(dataset == "genera") %>%
+        mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
+        as.data.frame() %>%
+        sem(data = ., model = path_model_genera_family_ds, sampling.weights = "weight")
+
+major_lineage_model_ds <- contrasts %>%
+        rename_with(~ str_remove(., "_contrast")) %>%
+        filter(dataset == "major-lineage") %>%
+        mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
+        as.data.frame() %>%
+        sem(data = ., model = path_model_major_lineage_ds, sampling.weights = "weight")
+
+family_model_ds <- contrasts %>%
+        rename_with(~ str_remove(., "_contrast")) %>%
+        filter(dataset == "family") %>%
+        mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
+        as.data.frame() %>%
+        sem(data = ., model = path_model_genera_family_ds, sampling.weights = "weight")
+
+fit_models_ds <- list(genera_model_ds, major_lineage_model_ds, family_model_ds)
+
+# Plot models with weights
+pdf("figures_and_output/path-analyses-ds-host.pdf", width = 12, height = 12)
+
+par(mfrow = c(2, 2))
+plot_model(genera_model_ds, "Papilonoidea genera")
+plot_model(major_lineage_model_ds, "Lepidoptera major lineages")
+plot_model(family_model_ds, "Lepidoptera families")
+
+# Add legend for weight color
+plot.new()
+legend(
+        "center",
+        legend = c("Positive significant", "Negative significant", "Non-significant"),
+        col = c("red", "dodgerblue", "grey"), lty = 1, cex = 1.2
+)
+
+dev.off()
+
+# Fit the model for each group without weights
+family_model_no_weights_ds <- contrasts %>%
+        rename_with(~ str_remove(., "_contrast")) %>%
+        filter(dataset == "family") %>%
+        as.data.frame() %>%
+        sem(data = ., model = path_model_genera_family_ds)
+
+# Plot models without weights
+pdf("figures_and_output/family-path-dS-unweighted.pdf", width = 12, height = 6)
+
+par(mfrow = c(1, 2))
+plot_model(family_model_no_weights_ds, "Lepidoptera families (unweighted)")
+
+# Add legend for weight color
+plot.new()
+legend(
+        "center",
+        legend = c("Positive significant", "Negative significant", "Non-significant"),
+        col = c("red", "dodgerblue", "grey"), lty = 1, cex = 1.2
+)
+
+dev.off()
+
 # Fit family with no weights for comparison
 family_model_no_weights <- contrasts %>%
     rename_with(~ str_remove(., "_contrast")) %>%
