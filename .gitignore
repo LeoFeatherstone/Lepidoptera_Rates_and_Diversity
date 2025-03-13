@@ -1,2 +1,3 @@
 *.docx
+*.docx#
 path_explore.R
