@@ -138,6 +138,12 @@ host_data <- lapply(host_datasets, read_csv) %>%
     bind_rows() %>%
     filter(!if_all(everything(), ~ . == "")) %>%
     rename_with(tolower) %>%
+    # Remove bad rows e.g. 'NA, Anarpia, CONNECTION_FAILED' (sic) in original
+    filter(!(is.na(family) | is.na(genus) | is.na(species))) %>%
+    mutate(
+        host_name = str_to_title(str_trim(host_name)),
+        host_family = str_to_title(str_trim(host_family))
+    ) %>%
     mutate(
         genus = str_to_title(str_trim(genus)),
         family = str_to_title(str_trim(family)),
@@ -149,14 +155,23 @@ host_data <- lapply(host_datasets, read_csv) %>%
         !(nchar(host_name) == nchar(host_genus) & n_distinct(host_name) > 1)
     ) %>%
     ungroup() %>%
+    # Below should be many-to-one. But major-lineage taxonomy
+    # has some species in two higher orders of the same level
+    # I rely on joining with the chosen pairs to select the right one
     left_join(
         taxonomy_major_lineage,
         by = c("genus", "family"),
         relationship = "many-to-many" # Note below ^
-    )
-# ^ Should be many-to-one. But major-lineage taxonomy
-# has some species in two higher orders of the same level
-# I rely on joining with the chosen pairs to select the right one
+    ) %>%
+    # Here manually update a few problematic entries in Host data
+    # TODO: Guard against same species in different higher orders?
+    mutate(case_when(
+        species == "Mnasilus allubitus" ~ "Papias allubitus",
+        species == "Timoachis ruptifasciatus" ~ "Timochares ruptifasciata",
+        species == "Cleosiris catamitus" ~ "Tetraganus catamitus",
+        species == "Cleosiris lycaenoides" ~ "Tetraganus lycaenoides"
+    ))
+
 
 # Convenience function counts hosts at specified taxonomic level (group_var)
 host_counts <- function(data, group_var) {
@@ -179,7 +194,7 @@ host_counts <- function(data, group_var) {
 host_counts_genus <- host_counts(host_data, genus) %>%
     filter(genus != "Cosmopterigidae")
 
-host_counts_family <- host_counts(host_data, family)
+host_counts_family <- host_counts(host_data, family) %>% mutate(family = sub("^,", "", family))
 host_counts_tribe <- host_counts(host_data, tribe)
 host_counts_subfamily <- host_counts(host_data, subfamily)
 
@@ -202,8 +217,8 @@ major_lineage_lepindex <- read_csv("Data/Lepi_MajorLineages/Lepi_MajorLineages_L
     filter(!if_all(everything(), ~ . == ""))
 
 species_data <- bind_rows(
-    family_lepindex, papilionoidea_lepindex, major_lineage_lepindex
-) %>%
+        family_lepindex, papilionoidea_lepindex, major_lineage_lepindex
+    ) %>%
     rename_with(tolower) %>%
     rowwise() %>%
     filter(str_detect(name_data, "Valid Name")) %>%
@@ -221,6 +236,8 @@ species_data <- bind_rows(
         relationship = "many-to-many" # See comment above on many-to-many
     ) %>%
     mutate(species = paste(genus, species)) %>%
+    # Biblis genus case. All species should be hyperia
+    mutate(species = ifelse(genus == "Biblis", "Biblis hyperia", species)) %>%
     # Drop rows with NA family and genus, species, name_data identical in another row
     group_by(genus, species, name_data) %>%
     filter(!(is.na(family) & n() > 1)) %>%
@@ -250,19 +267,24 @@ species_counts_tribe <- species_counts(species_data, tribe, "tribe")
 species_counts_subfamily <- species_counts(species_data, subfamily, "subfamily")
 
 combined_species_counts <- bind_rows(
-    species_counts_genus, species_counts_family,
-    species_counts_tribe, species_counts_subfamily
-) %>%
+        species_counts_genus, species_counts_family,
+        species_counts_tribe, species_counts_subfamily
+    ) %>%
     select(level, taxa, n_species, n_host_record)
 ## End wrangle lepindex data
 
 ## Begin associate recalculated host-related variables for contrasts, add weighting
 pairs_long <- pairs_long %>%
+    # TODO: Thorybes genus also in family host count?
+        #   "Agaristinae" Should be taken care of by removing major-lineage duplicates
     left_join(combined_species_counts, by = "taxa") %>%
     left_join(combined_host_counts, by = "taxa") %>%
     mutate(
         weight_reciprocal = (n_species - n_host_record) / (n_host_record * (n_species - 1))
     )
+
+# Sanity check
+pairs_long %>% filter(n_host_record == 0 & n_host_species > 0)
 
 # Calculate contrasts
 contrasts <- pairs_long %>%

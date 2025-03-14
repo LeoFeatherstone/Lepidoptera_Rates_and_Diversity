@@ -1,0 +1,6 @@
+A fe notes on taxa in the Host data that did not have a match in the 
+LepIndex data, even though there are some suspicious looking potential
+matches that do not seem to come up as synonyms when I google them.
+
+1) Is "Metamorpha pulsitia" any of "Metamorpha elissa"  or "Metamorpha pulsitia"?
+2) Do Euriphene achlys and Euriphene plautilla have other names? There are many species of this genus in the Lepindex data
