@@ -329,3 +329,21 @@ pdf("figures_and_output/family-path-unweighted-final.pdf", width = 12)
         col = c("red", "dodgerblue", "grey"), lty = 1, cex = 1.2
     )
 dev.off()
+
+# TODO: jitter edges for overlapping labels
+
+# Save parameter estimates table
+# Extract parameter estimates from each model and write to a table
+parameter_estimates <- lapply(
+    c(fit_models, family_model_no_weights),
+    parameterestimates
+)
+names(parameter_estimates) <- c("genera", "major_lineage", "family", "family-unweighted")
+
+# Combine all parameter estimates into a single data frame and rename 'op' to 'direction'
+parameter_estimates_df <- bind_rows(parameter_estimates, .id = "model") %>%
+    rename(direction = op) %>%
+    mutate(direction = recode(direction, `~` = "direct effect", `~~` = "covariance"))
+
+# Write the parameter estimates to a CSV file
+write_csv(parameter_estimates_df, "figures_and_output/path_estimates.csv")

@@ -353,3 +353,28 @@ contrasts %>%
     write_csv("figures_and_output/sample_sizes.csv")
 
 ## End
+
+## Begin Alignment Length table for contrasts TODO: filter samples in final contrasts
+alignment_data <- c(
+    "Pair_alignments/Papi_Genera_Alignment_Summary.csv",
+    "Pair_alignments/Lepi_Families_Alignment_Summary.csv"
+)
+names(alignment_data) <- c("genera", "family")
+
+alignment_lengths <- lapply(alignment_data, read_csv) %>%
+    bind_rows(.id = "dataset") %>%
+    rename(
+        pair_id = Pair,
+        taxa = Clade,
+        sequence_id = Sequence_id,
+        alignment_length = Aln_len_bases,
+        n_loci = Num_loci_used
+    ) %>%
+    mutate(pair_id = as.character(pair_id)) %>%
+    select(dataset, pair_id, taxa, sequence_id, alignment_length, n_loci)
+
+alignment_lengths %>%
+    left_join(pairs_long, by = c("pair_id", "dataset", "taxa")) %>%
+    select(dataset, pair_id, taxa, sequence_id, alignment_length, n_loci) %>%
+    write_csv(file = "figures_and_output/alignment_lengths.csv")
+## End Alignment Length table for contrasts
