@@ -63,8 +63,6 @@ major_lineage_data <- read_csv("Raw_Sister_Tables/Lepidoptera_MajorLineages_Cont
         names_to = c(".value", "side"),
         names_pattern = "(.*)_(left|right)"
     )
-
-pairs_long <- bind_rows(genera_data, family_data, major_lineage_data)
 ## End get original pairs and PAML output for contrasts
 
 
@@ -164,13 +162,21 @@ host_data <- lapply(host_datasets, read_csv) %>%
         relationship = "many-to-many" # Note below ^
     ) %>%
     # Here manually update a few problematic entries in Host data
-    # TODO: Guard against same species in different higher orders?
-    mutate(case_when(
-        species == "Mnasilus allubitus" ~ "Papias allubitus",
-        species == "Timoachis ruptifasciatus" ~ "Timochares ruptifasciata",
-        species == "Cleosiris catamitus" ~ "Tetraganus catamitus",
-        species == "Cleosiris lycaenoides" ~ "Tetraganus lycaenoides"
-    ))
+    # TODO do synonyms for Euriphene & Metamorpha exist?
+    mutate(
+        species = case_when(
+            species == "Mnasilus allubitus" ~ "Papias allubitus",
+            species == "Timochares ruptifasciatus" ~ "Timochares ruptifasciata",
+            species == "Cleosiris catamitus" ~ "Tetragonus catamitus",
+            species == "Cleosiris lycaenoides" ~ "Tetragonus lycaenoides",
+            .default = species
+        ),
+        genus = case_when(
+            genus == "Mnasilus" ~ "Papias",
+            genus == "Cleosiris" ~ "Tetragonus",
+            .default = genus
+        )
+    )
 
 
 # Convenience function counts hosts at specified taxonomic level (group_var)
@@ -194,14 +200,18 @@ host_counts <- function(data, group_var) {
 host_counts_genus <- host_counts(host_data, genus) %>%
     filter(genus != "Cosmopterigidae")
 
-host_counts_family <- host_counts(host_data, family) %>% mutate(family = sub("^,", "", family))
+host_counts_family <- host_counts(host_data, family) %>%
+    mutate(family = sub("^,", "", family)) %>%
+    # Dropping genus rows that shouldn't be here. Eg Thorybes, Osomodes,...
+    filter(!(family %in% host_counts_genus$genus))
+
 host_counts_tribe <- host_counts(host_data, tribe)
 host_counts_subfamily <- host_counts(host_data, subfamily)
 
 combined_host_counts <- bind_rows(
-    host_counts_genus, host_counts_family,
-    host_counts_tribe, host_counts_subfamily
-) %>%
+        host_counts_genus, host_counts_family,
+        host_counts_tribe, host_counts_subfamily
+    ) %>%
     rowwise() %>%
     mutate(taxa = coalesce(genus, family, tribe, subfamily)) %>%
     select(taxa, prop_generalist, n_host_families, n_host_species)
@@ -267,24 +277,24 @@ species_counts_tribe <- species_counts(species_data, tribe, "tribe")
 species_counts_subfamily <- species_counts(species_data, subfamily, "subfamily")
 
 combined_species_counts <- bind_rows(
-        species_counts_genus, species_counts_family,
-        species_counts_tribe, species_counts_subfamily
-    ) %>%
+    species_counts_genus, species_counts_family,
+    species_counts_tribe, species_counts_subfamily
+) %>%
     select(level, taxa, n_species, n_host_record)
 ## End wrangle lepindex data
 
 ## Begin associate recalculated host-related variables for contrasts, add weighting
-pairs_long <- pairs_long %>%
-    # TODO: Thorybes genus also in family host count?
-        #   "Agaristinae" Should be taken care of by removing major-lineage duplicates
+pairs_long <- bind_rows(genera_data, family_data, major_lineage_data) %>%
     left_join(combined_species_counts, by = "taxa") %>%
     left_join(combined_host_counts, by = "taxa") %>%
     mutate(
         weight_reciprocal = (n_species - n_host_record) / (n_host_record * (n_species - 1))
     )
 
-# Sanity check
-pairs_long %>% filter(n_host_record == 0 & n_host_species > 0)
+# Sanity check - should return empty tibble. Contains Euriphene and Metamorpha
+pairs_long %>%
+    filter(n_host_record == 0 & n_host_species > 0) %>%
+    print(width = Inf)
 
 # Calculate contrasts
 contrasts <- pairs_long %>%
