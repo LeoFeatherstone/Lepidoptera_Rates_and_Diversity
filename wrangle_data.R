@@ -284,9 +284,33 @@ combined_species_counts <- bind_rows(
 ## End wrangle lepindex data
 
 ## Begin associate recalculated host-related variables for contrasts, add weighting
+#  and impute values for a few families (Doidae, Sematuridae, and Epicopeiidae)
 pairs_long <- bind_rows(genera_data, family_data, major_lineage_data) %>%
     left_join(combined_species_counts, by = "taxa") %>%
     left_join(combined_host_counts, by = "taxa") %>%
+    mutate(
+        prop_generalist = case_when(
+            taxa == "Doidae" ~ 1.0,
+            taxa == "Sematuridae" ~ 2/3,
+            TRUE ~ prop_generalist
+        ),
+        n_host_families = case_when(
+            taxa == "Doidae" ~ 1,
+            taxa == "Epicopeiidae" ~ 7,
+            taxa == "Sematuridae" ~ 9,
+            TRUE ~ n_host_families
+        ),
+        n_host_species = case_when(
+            taxa == "Doidae" ~ 1,
+            taxa == "Sematuridae" ~ 11,
+            TRUE ~ n_host_species
+        ),
+        n_host_record = case_when(
+            taxa == "Doidae" ~ 1,
+            taxa == "Sematuridae" ~ 3,
+            TRUE ~ n_host_record
+        )
+    ) %>%
     mutate(
         weight_reciprocal = (n_species - n_host_record) / (n_host_record * (n_species - 1))
     )
@@ -373,8 +397,10 @@ alignment_lengths <- lapply(alignment_data, read_csv) %>%
     mutate(pair_id = as.character(pair_id)) %>%
     select(dataset, pair_id, taxa, sequence_id, alignment_length, n_loci)
 
-alignment_lengths %>%
-    left_join(pairs_long, by = c("pair_id", "dataset", "taxa")) %>%
+pairs_long %>%
+    select(c(pair_id, dataset, taxa)) %>%
+    filter(dataset != "major-lineage") %>%
+    left_join(alignment_lengths, by = c("pair_id", "dataset", "taxa")) %>%
     select(dataset, pair_id, taxa, sequence_id, alignment_length, n_loci) %>%
     write_csv(file = "figures_and_output/alignment_lengths.csv")
 ## End Alignment Length table for contrasts
