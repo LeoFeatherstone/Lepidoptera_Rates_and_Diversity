@@ -60,7 +60,12 @@ pairs_plot_pooled <- contrasts %>%
 ggsave(
     plot = pairs_plot_pooled,
     filename = "figures_and_output/pairs_pooled_no_outliers.pdf",
-    width = 12, height = 12, units = "in"
+    width = 12, height = 12, units = "in", dpi = 300
+)
+ggsave(
+    plot = pairs_plot_pooled,
+    filename = "figures_and_output/pairs_pooled_no_outliers.png",
+    width = 12, height = 12, units = "in", dpi = 600
 )
 ## End pairs plots
 
@@ -111,7 +116,11 @@ species_dS_plot <- contrasts %>%
     )
 ggsave(
     plot = species_dS_plot, filename = "figures_and_output/species_vs_dS.pdf",
-    width = 6, height = 3, units = "in"
+    width = 6, height = 3, units = "in", dpi = 300
+)
+ggsave(
+    plot = species_dS_plot, filename = "figures_and_output/species_vs_dS.png",
+    width = 6, height = 3, units = "in", dpi = 300
 )
 ## End n_species against dS
 
@@ -137,7 +146,11 @@ host_vs_species_plot <- species_data %>%
 
 ggsave(
     plot = host_vs_species_plot, filename = "figures_and_output/host_vs_species.pdf",
-    width = 6, height = 3, units = "in"
+    width = 6, height = 3, units = "in", dpi = 300
+)
+ggsave(
+    plot = host_vs_species_plot, filename = "figures_and_output/host_vs_species.png",
+    width = 6, height = 3, units = "in", dpi = 300
 )
 ## End N species in taxa vs number of host records
 
@@ -168,7 +181,11 @@ welch_waxman <- contrasts %>%
     facet_wrap(~dataset, scales = "free", labeller = as_labeller(c(family = "Lepidoptera families", genera = "Papilionoidea genera")))
 ggsave(
     plot = welch_waxman, filename = "figures_and_output/welch-waxman.pdf",
-    width = 6, height = 3, units = "in"
+    width = 6, height = 3, units = "in", dpi = 300
+)
+ggsave(
+    plot = welch_waxman, filename = "figures_and_output/welch-waxman.png",
+    width = 6, height = 3, units = "in", dpi = 300
 )
 ## End scatterplot for genera and family level data
 ## End Welch and Waxman
@@ -229,18 +246,20 @@ plot_model <- function(model, title) {
     plot(
         g,
         layout = layout,
+        margin = c(0.1, 0.1, 0.1, 0.1),
         edge.label = round(E(g)$weight, 2),
         edge.arrow.mode = edge_shapes,
         edge.arrow.size = 0.5,
         edge.color = edge_colors,
         edge.label.color = "black",
         edge.label.cex 	= .75,
+        edge.curved = -0.2,
 
         vertex.label.color = "black",
         vertex.shape = "circle",
-        vertex.size = 57,
+        vertex.size = 60,
         vertex.label.cex = 0.75,
-        vertex.label.font = 2,
+        vertex.label.font = 1,
         vertex.color = "white",
         vertex.label.family = "Helvetica",
         main = title
@@ -295,20 +314,37 @@ family_model <- contrasts %>%
 
 fit_models <- list(genera_model, major_lineage_model, family_model)
 
-pdf("figures_and_output/path-analyses-final.pdf", width = 12, height = 12)
+pdf("figures_and_output/path-analyses-final.pdf", width = 6, height = 6, useDingbats = FALSE)
 
-par(mfrow = c(2, 2))
-plot_model(genera_model, "Papilonoidea genera")
-plot_model(major_lineage_model, "Lepidoptera major lineages")
-plot_model(family_model, "Lepidoptera families")
+    par(mfrow = c(2, 2), mar = c(1, 1, 1, 1))
+    plot_model(genera_model, "Papilonoidea genera")
+    plot_model(major_lineage_model, "Lepidoptera major lineages")
+    plot_model(family_model, "Lepidoptera families")
 
-# Add legend for weight color
-plot.new()
-legend(
-    "center",
-    legend = c("Positive significant", "Negative significant", "Non-significant"),
-    col = c("red", "dodgerblue", "grey"), lty = 1, cex = 1.2
-)
+    # Add legend for weight color
+    plot.new()
+    legend(
+        "center",
+        legend = c("Positive significant", "Negative significant", "Non-significant"),
+        col = c("red", "dodgerblue", "grey"), lty = 1, cex = 1.2
+    )
+
+dev.off()
+
+png("figures_and_output/path-analyses-final.png", width = 6, height = 6, units = "in", res = 600)
+
+    par(mfrow = c(2, 2), mar = c(1, 1, 1, 1))
+    plot_model(genera_model, "Papilonoidea genera")
+    plot_model(major_lineage_model, "Lepidoptera major lineages")
+    plot_model(family_model, "Lepidoptera families")
+
+    # Add legend for weight color
+    plot.new()
+    legend(
+        "center",
+        legend = c("Positive significant", "Negative significant", "Non-significant"),
+        col = c("red", "dodgerblue", "grey"), lty = 1, cex = 1.2
+    )
 
 dev.off()
 
@@ -319,18 +355,28 @@ family_model_no_weights <- contrasts %>%
     as.data.frame() %>%
     sem(data = ., model = path_model_genera_family)
 
-pdf("figures_and_output/family-path-unweighted-final.pdf", width = 12)
-    par(mfrow = c(1, 2))
-    plot_model(family_model_no_weights, "Lepidoptera families (unweighted)")
+pdf("figures_and_output/family-path-unweighted-final.pdf", width = 7, height = 4)
+    par(mfrow = c(1, 2), mar = c(1, 1, 2.5, 1))
+    plot_model(family_model_no_weights, "Lepidoptera families\n(unweighted)")
     plot.new()
     legend(
         "center",
         legend = c("Positive significant", "Negative significant", "Non-significant"),
-        col = c("red", "dodgerblue", "grey"), lty = 1, cex = 1.2
+        col = c("red", "dodgerblue", "grey"), lty = 1, cex = 0.8
     )
 dev.off()
 
-# TODO: jitter edges for overlapping labels
+png("figures_and_output/family-path-unweighted-final.png",  width = 7, height = 4, units = "in", res = 600)
+    par(mfrow = c(1, 2), mar = c(1, 1, 2.5, 1))
+    plot_model(family_model_no_weights, "Lepidoptera families\n(unweighted)")
+    plot.new()
+    legend(
+        "center",
+        legend = c("Positive significant", "Negative significant", "Non-significant"),
+        col = c("red", "dodgerblue", "grey"), lty = 1, cex = 0.8
+    )
+dev.off()
+
 
 # Save parameter estimates table
 # Extract parameter estimates from each model and write to a table
