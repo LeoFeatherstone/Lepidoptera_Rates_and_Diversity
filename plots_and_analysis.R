@@ -13,21 +13,6 @@ contrasts <- read_csv("figures_and_output/contrasts.csv")
 host_data <- read_csv("figures_and_output/combined_host_counts.csv")
 species_data <- read_csv("figures_and_output/combined_species_counts.csv")
 
-## Filter outliers
-outlier_dN <- contrasts %>%
-    filter(dataset == "genera") %>%
-    slice_min(dN_contrast) %>%
-    pull(label)
-
-outlier_dS <- contrasts %>%
-    filter(dataset == "family") %>%
-    slice_max(dS_contrast) %>%
-    pull(label)
-
-## Remove outliers from contrasts
-contrasts <- contrasts %>%
-    filter(!(label %in% c(outlier_dN, outlier_dS)))
-
 ## Begin pairs plots
 pairs_plot_pooled <- contrasts %>%
     rename_with(~ str_remove(., "_contrast")) %>%

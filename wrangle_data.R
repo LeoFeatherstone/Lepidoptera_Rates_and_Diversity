@@ -375,6 +375,22 @@ contrasts <- pairs_long %>%
 contrasts <- contrasts %>% filter(
     !(dataset == "major-lineage" & pair_id %in% c(8, 11, 13, 26, 47))
 )
+
+## Filter outliers
+outlier_dN <- contrasts %>%
+    filter(dataset == "genera") %>%
+    slice_min(dN_contrast) %>%
+    pull(label)
+
+outlier_dS <- contrasts %>%
+    filter(dataset == "family") %>%
+    slice_max(dS_contrast) %>%
+    pull(label)
+
+## Remove outliers from contrasts
+contrasts <- contrasts %>%
+    filter(!(label %in% c(outlier_dN, outlier_dS)))
+    
 ## Begin save contrasts and summary tables
 write_csv(contrasts, file = "figures_and_output/contrasts.csv")
 write_csv(combined_host_counts, file = "figures_and_output/combined_host_counts.csv")
