@@ -366,6 +366,15 @@ contrasts <- pairs_long %>%
 
 ## End make contrast table
 
+## Filter some major lineage pair-ids because they pseudo-replicate ala Lindell's instructions:
+# " Delete pair 8	major-lineage	Epipaschiinae	Pyralinae (nested within pair 39)
+#   Delete either 11 or 15 (both contain Agarastinae)
+#   Delete pair 13 (nested within 45)
+#   Delete pair 26 (nested within 39)
+#   Delete either 47 or 29 (29 is nested within 47) "
+contrasts <- contrasts %>% filter(
+    !(dataset == "major-lineage" & pair_id %in% c(8, 11, 13, 26, 47))
+)
 ## Begin save contrasts and summary tables
 write_csv(contrasts, file = "figures_and_output/contrasts.csv")
 write_csv(combined_host_counts, file = "figures_and_output/combined_host_counts.csv")
