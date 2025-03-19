@@ -63,8 +63,6 @@ major_lineage_data <- read_csv("Raw_Sister_Tables/Lepidoptera_MajorLineages_Cont
         names_to = c(".value", "side"),
         names_pattern = "(.*)_(left|right)"
     )
-
-pairs_long <- bind_rows(genera_data, family_data, major_lineage_data)
 ## End get original pairs and PAML output for contrasts
 
 
@@ -138,6 +136,12 @@ host_data <- lapply(host_datasets, read_csv) %>%
     bind_rows() %>%
     filter(!if_all(everything(), ~ . == "")) %>%
     rename_with(tolower) %>%
+    # Remove bad rows e.g. 'NA, Anarpia, CONNECTION_FAILED' (sic) in original
+    filter(!(is.na(family) | is.na(genus) | is.na(species))) %>%
+    mutate(
+        host_name = str_to_title(str_trim(host_name)),
+        host_family = str_to_title(str_trim(host_family))
+    ) %>%
     mutate(
         genus = str_to_title(str_trim(genus)),
         family = str_to_title(str_trim(family)),
@@ -149,14 +153,31 @@ host_data <- lapply(host_datasets, read_csv) %>%
         !(nchar(host_name) == nchar(host_genus) & n_distinct(host_name) > 1)
     ) %>%
     ungroup() %>%
+    # Below should be many-to-one. But major-lineage taxonomy
+    # has some species in two higher orders of the same level
+    # I rely on joining with the chosen pairs to select the right one
     left_join(
         taxonomy_major_lineage,
         by = c("genus", "family"),
         relationship = "many-to-many" # Note below ^
+    ) %>%
+    # Here manually update a few problematic entries in Host data
+    # TODO do synonyms for Euriphene & Metamorpha exist?
+    mutate(
+        species = case_when(
+            species == "Mnasilus allubitus" ~ "Papias allubitus",
+            species == "Timochares ruptifasciatus" ~ "Timochares ruptifasciata",
+            species == "Cleosiris catamitus" ~ "Tetragonus catamitus",
+            species == "Cleosiris lycaenoides" ~ "Tetragonus lycaenoides",
+            .default = species
+        ),
+        genus = case_when(
+            genus == "Mnasilus" ~ "Papias",
+            genus == "Cleosiris" ~ "Tetragonus",
+            .default = genus
+        )
     )
-# ^ Should be many-to-one. But major-lineage taxonomy
-# has some species in two higher orders of the same level
-# I rely on joining with the chosen pairs to select the right one
+
 
 # Convenience function counts hosts at specified taxonomic level (group_var)
 host_counts <- function(data, group_var) {
@@ -179,14 +200,18 @@ host_counts <- function(data, group_var) {
 host_counts_genus <- host_counts(host_data, genus) %>%
     filter(genus != "Cosmopterigidae")
 
-host_counts_family <- host_counts(host_data, family)
+host_counts_family <- host_counts(host_data, family) %>%
+    mutate(family = sub("^,", "", family)) %>%
+    # Dropping genus rows that shouldn't be here. Eg Thorybes, Osomodes,...
+    filter(!(family %in% host_counts_genus$genus))
+
 host_counts_tribe <- host_counts(host_data, tribe)
 host_counts_subfamily <- host_counts(host_data, subfamily)
 
 combined_host_counts <- bind_rows(
-    host_counts_genus, host_counts_family,
-    host_counts_tribe, host_counts_subfamily
-) %>%
+        host_counts_genus, host_counts_family,
+        host_counts_tribe, host_counts_subfamily
+    ) %>%
     rowwise() %>%
     mutate(taxa = coalesce(genus, family, tribe, subfamily)) %>%
     select(taxa, prop_generalist, n_host_families, n_host_species)
@@ -202,8 +227,8 @@ major_lineage_lepindex <- read_csv("Data/Lepi_MajorLineages/Lepi_MajorLineages_L
     filter(!if_all(everything(), ~ . == ""))
 
 species_data <- bind_rows(
-    family_lepindex, papilionoidea_lepindex, major_lineage_lepindex
-) %>%
+        family_lepindex, papilionoidea_lepindex, major_lineage_lepindex
+    ) %>%
     rename_with(tolower) %>%
     rowwise() %>%
     filter(str_detect(name_data, "Valid Name")) %>%
@@ -221,6 +246,8 @@ species_data <- bind_rows(
         relationship = "many-to-many" # See comment above on many-to-many
     ) %>%
     mutate(species = paste(genus, species)) %>%
+    # Biblis genus case. All species should be hyperia
+    mutate(species = ifelse(genus == "Biblis", "Biblis hyperia", species)) %>%
     # Drop rows with NA family and genus, species, name_data identical in another row
     group_by(genus, species, name_data) %>%
     filter(!(is.na(family) & n() > 1)) %>%
@@ -257,12 +284,41 @@ combined_species_counts <- bind_rows(
 ## End wrangle lepindex data
 
 ## Begin associate recalculated host-related variables for contrasts, add weighting
-pairs_long <- pairs_long %>%
+#  and impute values for a few families (Doidae, Sematuridae, and Epicopeiidae)
+pairs_long <- bind_rows(genera_data, family_data, major_lineage_data) %>%
     left_join(combined_species_counts, by = "taxa") %>%
     left_join(combined_host_counts, by = "taxa") %>%
     mutate(
+        prop_generalist = case_when(
+            taxa == "Doidae" ~ 1.0,
+            taxa == "Sematuridae" ~ 2/3,
+            TRUE ~ prop_generalist
+        ),
+        n_host_families = case_when(
+            taxa == "Doidae" ~ 1,
+            taxa == "Epicopeiidae" ~ 7,
+            taxa == "Sematuridae" ~ 9,
+            TRUE ~ n_host_families
+        ),
+        n_host_species = case_when(
+            taxa == "Doidae" ~ 1,
+            taxa == "Sematuridae" ~ 11,
+            TRUE ~ n_host_species
+        ),
+        n_host_record = case_when(
+            taxa == "Doidae" ~ 1,
+            taxa == "Sematuridae" ~ 3,
+            TRUE ~ n_host_record
+        )
+    ) %>%
+    mutate(
         weight_reciprocal = (n_species - n_host_record) / (n_host_record * (n_species - 1))
     )
+
+# Sanity check - should return empty tibble. Contains Euriphene and Metamorpha
+pairs_long %>%
+    filter(n_host_record == 0 & n_host_species > 0) %>%
+    print(width = Inf)
 
 # Calculate contrasts
 contrasts <- pairs_long %>%
@@ -321,3 +377,30 @@ contrasts %>%
     write_csv("figures_and_output/sample_sizes.csv")
 
 ## End
+
+## Begin Alignment Length table for contrasts TODO: filter samples in final contrasts
+alignment_data <- c(
+    "Pair_alignments/Papi_Genera_Alignment_Summary.csv",
+    "Pair_alignments/Lepi_Families_Alignment_Summary.csv"
+)
+names(alignment_data) <- c("genera", "family")
+
+alignment_lengths <- lapply(alignment_data, read_csv) %>%
+    bind_rows(.id = "dataset") %>%
+    rename(
+        pair_id = Pair,
+        taxa = Clade,
+        sequence_id = Sequence_id,
+        alignment_length = Aln_len_bases,
+        n_loci = Num_loci_used
+    ) %>%
+    mutate(pair_id = as.character(pair_id)) %>%
+    select(dataset, pair_id, taxa, sequence_id, alignment_length, n_loci)
+
+pairs_long %>%
+    select(c(pair_id, dataset, taxa)) %>%
+    filter(dataset != "major-lineage") %>%
+    left_join(alignment_lengths, by = c("pair_id", "dataset", "taxa")) %>%
+    select(dataset, pair_id, taxa, sequence_id, alignment_length, n_loci) %>%
+    write_csv(file = "figures_and_output/alignment_lengths.csv")
+## End Alignment Length table for contrasts

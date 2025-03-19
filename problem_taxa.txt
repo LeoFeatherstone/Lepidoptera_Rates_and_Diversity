@@ -1,0 +1,11 @@
+A few notes on taxa in the Host data that did not have a match in the 
+LepIndex data, even though there are some suspicious looking potential
+matches that do not seem to come up as synonyms when I google them.
+
+1) Is "Metamorpha pulsitia" "Metamorpha elissa"?
+2) Do Euriphene achlys and Euriphene plautilla have other names? There are many Euriphene species of this genus in the Lepindex data, but neither of these are in the host database
+
+Following families need prop_generalist, n_host_families, n_host_species:
+Doidae
+Epicopeiidae
+Sematuridae

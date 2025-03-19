@@ -28,6 +28,16 @@ outlier_dS <- contrasts %>%
 contrasts <- contrasts %>%
     filter(!(label %in% c(outlier_dN, outlier_dS)))
 
+## Filter some major lineage pair-ids because they pseudo-replicate ala Lindell's instructions:
+# " Delete pair 8	major-lineage	Epipaschiinae	Pyralinae (nested within pair 39)
+#   Delete either 11 or 15 (both contain Agarastinae)
+#   Delete pair 13 (nested within 45)
+#   Delete pair 26 (nested within 39)
+#   Delete either 47 or 29 (29 is nested within 47) "
+contrasts <- contrasts %>% filter(
+    !(dataset == "major-lineage" & pair_id %in% c(8, 11, 13, 26, 47))
+)
+
 ## Begin pairs plots
 pairs_plot_pooled <- contrasts %>%
     rename_with(~ str_remove(., "_contrast")) %>%
@@ -50,7 +60,12 @@ pairs_plot_pooled <- contrasts %>%
 ggsave(
     plot = pairs_plot_pooled,
     filename = "figures_and_output/pairs_pooled_no_outliers.pdf",
-    width = 12, height = 12, units = "in"
+    width = 12, height = 12, units = "in", dpi = 300
+)
+ggsave(
+    plot = pairs_plot_pooled,
+    filename = "figures_and_output/pairs_pooled_no_outliers.png",
+    width = 12, height = 12, units = "in", dpi = 600
 )
 ## End pairs plots
 
@@ -101,7 +116,11 @@ species_dS_plot <- contrasts %>%
     )
 ggsave(
     plot = species_dS_plot, filename = "figures_and_output/species_vs_dS.pdf",
-    width = 6, height = 3, units = "in"
+    width = 6, height = 3, units = "in", dpi = 300
+)
+ggsave(
+    plot = species_dS_plot, filename = "figures_and_output/species_vs_dS.png",
+    width = 6, height = 3, units = "in", dpi = 300
 )
 ## End n_species against dS
 
@@ -127,7 +146,11 @@ host_vs_species_plot <- species_data %>%
 
 ggsave(
     plot = host_vs_species_plot, filename = "figures_and_output/host_vs_species.pdf",
-    width = 6, height = 3, units = "in"
+    width = 6, height = 3, units = "in", dpi = 300
+)
+ggsave(
+    plot = host_vs_species_plot, filename = "figures_and_output/host_vs_species.png",
+    width = 6, height = 3, units = "in", dpi = 300
 )
 ## End N species in taxa vs number of host records
 
@@ -158,69 +181,17 @@ welch_waxman <- contrasts %>%
     facet_wrap(~dataset, scales = "free", labeller = as_labeller(c(family = "Lepidoptera families", genera = "Papilionoidea genera")))
 ggsave(
     plot = welch_waxman, filename = "figures_and_output/welch-waxman.pdf",
-    width = 6, height = 3, units = "in"
+    width = 6, height = 3, units = "in", dpi = 300
+)
+ggsave(
+    plot = welch_waxman, filename = "figures_and_output/welch-waxman.png",
+    width = 6, height = 3, units = "in", dpi = 300
 )
 ## End scatterplot for genera and family level data
 ## End Welch and Waxman
 
 # Define the path models
 # NB If convergence issue, remove dN as a direct effect on N species
-path_model_genera_family <- "
-  # Direct effects
-  # Note dN as an effect below. Removed due to convergence issues
-  n_species ~ n_host_species + n_host_families + prop_generalist + dS
-
-  # Indirect effect
-  dN ~ n_host_species + n_host_families + prop_generalist + b * dS
-
-  # Covariances
-  n_host_families ~~ c_host_fam_species * n_host_species
-  prop_generalist ~~ c_gen_host_species * n_host_species
-
-  # Constraints
-  c_host_fam_species > 0
-  c_gen_host_species > 0
-  b > 0
-
-"
-
-path_model_major_lineage <- "
-  # Direct effects
-  n_species ~ n_host_species + n_host_families + prop_generalist
-
-  # Covariances
-  n_host_families ~~ c_host_fam_species * n_host_species
-  prop_generalist ~~ c_gen_host_species * n_host_species
-
-  # Constraints
-  c_host_fam_species > 0
-  c_gen_host_species > 0
-
-"
-
-# Fit the model for each group
-genera_model <- contrasts %>%
-    rename_with(~ str_remove(., "_contrast")) %>%
-    filter(dataset == "genera") %>%
-    mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
-    as.data.frame() %>%
-    sem(data = ., model = path_model_genera_family, sampling.weights = "weight")
-
-major_lineage_model <- contrasts %>%
-    rename_with(~ str_remove(., "_contrast")) %>%
-    filter(dataset == "major-lineage") %>%
-    mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
-    as.data.frame() %>%
-    sem(data = ., model = path_model_major_lineage, sampling.weights = "weight")
-
-family_model <- contrasts %>%
-    rename_with(~ str_remove(., "_contrast")) %>%
-    filter(dataset == "family") %>%
-    mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
-    as.data.frame() %>%
-    sem(data = ., path_model_genera_family, sampling.weights = "weight")
-
-fit_models <- list(genera_model, major_lineage_model, family_model)
 
 # Convenience function to make network plots for each model with igraph
 plot_model <- function(model, title) {
@@ -275,35 +246,105 @@ plot_model <- function(model, title) {
     plot(
         g,
         layout = layout,
+        margin = c(0.1, 0.1, 0.1, 0.1),
         edge.label = round(E(g)$weight, 2),
         edge.arrow.mode = edge_shapes,
+        edge.arrow.size = 0.5,
         edge.color = edge_colors,
         edge.label.color = "black",
-        curved = 0.1,
+        edge.label.cex 	= .75,
+        edge.curved = -0.2,
+
         vertex.label.color = "black",
-        vertex.label.font = 2,
         vertex.shape = "circle",
-        vertex.size = 45,
+        vertex.size = 60,
+        vertex.label.cex = 0.75,
+        vertex.label.font = 1,
         vertex.color = "white",
         vertex.label.family = "Helvetica",
         main = title
     )
 }
 
-pdf("figures_and_output/path-analyses-dNdS.pdf", width = 12, height = 12)
+path_model_genera_family <- "
+  # Direct effects
+  # Note dN as an effect below. Removed due to convergence issues
+  n_species ~ n_host_species + n_host_families + prop_generalist
 
-par(mfrow = c(2, 2))
-plot_model(genera_model, "Papilonoidea genera")
-plot_model(major_lineage_model, "Lepidoptera major lineages")
-plot_model(family_model, "Lepidoptera families")
+  # Covariances
+  n_host_families ~~ n_host_species
+  prop_generalist ~~ n_host_species
+  n_host_families ~~ baseml_bl
+  prop_generalist ~~ baseml_bl
+  n_host_species ~~ baseml_bl
+  n_species ~~ baseml_bl
+"
 
-# Add legend for weight color
-plot.new()
-legend(
-    "center",
-    legend = c("Positive significant", "Negative significant", "Non-significant"),
-    col = c("red", "dodgerblue", "grey"), lty = 1, cex = 1.2
-)
+path_model_major_lineage <- "
+  # Direct effects
+  # Note dN as an effect below. Removed due to convergence issues
+  n_species ~ n_host_species + n_host_families + prop_generalist
+
+  # Covariances
+  n_host_families ~~ n_host_species
+  prop_generalist ~~ n_host_species
+"
+
+# Fit the model for each group
+genera_model <- contrasts %>%
+    rename_with(~ str_remove(., "_contrast")) %>%
+    filter(dataset == "genera") %>%
+    mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
+    as.data.frame() %>%
+    sem(data = ., model = path_model_genera_family, sampling.weights = "weight")
+
+major_lineage_model <- contrasts %>%
+    rename_with(~ str_remove(., "_contrast")) %>%
+    filter(dataset == "major-lineage") %>%
+    mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
+    as.data.frame() %>%
+    sem(data = ., model = path_model_major_lineage, sampling.weights = "weight")
+
+family_model <- contrasts %>%
+    rename_with(~ str_remove(., "_contrast")) %>%
+    filter(dataset == "family") %>%
+    mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
+    as.data.frame() %>%
+    sem(data = ., path_model_genera_family, sampling.weights = "weight")
+
+fit_models <- list(genera_model, major_lineage_model, family_model)
+
+pdf("figures_and_output/path-analyses-final.pdf", width = 6, height = 6, useDingbats = FALSE)
+
+    par(mfrow = c(2, 2), mar = c(1, 1, 1, 1))
+    plot_model(genera_model, "Papilonoidea genera")
+    plot_model(major_lineage_model, "Lepidoptera major lineages")
+    plot_model(family_model, "Lepidoptera families")
+
+    # Add legend for weight color
+    plot.new()
+    legend(
+        "center",
+        legend = c("Positive significant", "Negative significant", "Non-significant"),
+        col = c("red", "dodgerblue", "grey"), lty = 1, cex = 1.2
+    )
+
+dev.off()
+
+png("figures_and_output/path-analyses-final.png", width = 6, height = 6, units = "in", res = 600)
+
+    par(mfrow = c(2, 2), mar = c(1, 1, 1, 1))
+    plot_model(genera_model, "Papilonoidea genera")
+    plot_model(major_lineage_model, "Lepidoptera major lineages")
+    plot_model(family_model, "Lepidoptera families")
+
+    # Add legend for weight color
+    plot.new()
+    legend(
+        "center",
+        legend = c("Positive significant", "Negative significant", "Non-significant"),
+        col = c("red", "dodgerblue", "grey"), lty = 1, cex = 1.2
+    )
 
 dev.off()
 
@@ -314,108 +355,41 @@ family_model_no_weights <- contrasts %>%
     as.data.frame() %>%
     sem(data = ., model = path_model_genera_family)
 
-pdf("figures_and_output/family-path-dNdS-unweighted.pdf", width = 12)
-    par(mfrow = c(1, 2))
-    plot_model(family_model_no_weights, "Lepidoptera families (unweighted)")
+pdf("figures_and_output/family-path-unweighted-final.pdf", width = 7, height = 4)
+    par(mfrow = c(1, 2), mar = c(1, 1, 2.5, 1))
+    plot_model(family_model_no_weights, "Lepidoptera families\n(unweighted)")
     plot.new()
     legend(
         "center",
         legend = c("Positive significant", "Negative significant", "Non-significant"),
-        col = c("red", "dodgerblue", "grey"), lty = 1, cex = 1.2
+        col = c("red", "dodgerblue", "grey"), lty = 1, cex = 0.8
     )
 dev.off()
 
-# Fit the model for each group with baseml_bl instead of dN and dS
-path_model_genera_family_bl <- "
-    # Direct effects
-    n_species ~ n_host_species + n_host_families + prop_generalist + baseml_bl
-
-    # Indirect effect
-    baseml_bl ~ n_host_species + n_host_families + prop_generalist
-
-    # Covariances
-    n_host_families ~~ c_host_fam_species * n_host_species
-    prop_generalist ~~ c_gen_host_species * n_host_species
-
-    # Constraints
-    c_host_fam_species > 0
-    c_gen_host_species > 0
-"
-
-path_model_major_lineage_bl <- "
-    # Direct effects
-    n_species ~ n_host_species + n_host_families + prop_generalist
-
-    # Covariances
-    n_host_families ~~ c_host_fam_species * n_host_species
-    prop_generalist ~~ c_gen_host_species * n_host_species
-
-    # Constraints
-    c_host_fam_species > 0
-    c_gen_host_species > 0
-"
-
-# Fit the model for each group with weights
-genera_model_bl <- contrasts %>%
-    rename_with(~ str_remove(., "_contrast")) %>%
-    filter(dataset == "genera") %>%
-    mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
-    as.data.frame() %>%
-    sem(data = ., model = path_model_genera_family_bl, sampling.weights = "weight")
-
-major_lineage_model_bl <- contrasts %>%
-    rename_with(~ str_remove(., "_contrast")) %>%
-    filter(dataset == "major-lineage") %>%
-    mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
-    as.data.frame() %>%
-    sem(data = ., model = path_model_major_lineage_bl, sampling.weights = "weight")
-
-family_model_bl <- contrasts %>%
-    rename_with(~ str_remove(., "_contrast")) %>%
-    filter(dataset == "family") %>%
-    mutate(weight = ifelse(is.na(weight), 0, weight)) %>%
-    as.data.frame() %>%
-    sem(data = ., model = path_model_genera_family_bl, sampling.weights = "weight")
-
-fit_models_bl <- list(genera_model_bl, major_lineage_model_bl, family_model_bl)
-
-# Plot models with weights
-pdf("figures_and_output/path-analyses-bl.pdf", width = 12, height = 12)
-
-par(mfrow = c(2, 2))
-plot_model(genera_model_bl, "Papilonoidea genera")
-plot_model(major_lineage_model_bl, "Lepidoptera major lineages")
-plot_model(family_model_bl, "Lepidoptera families")
-
-# Add legend for weight color
-plot.new()
-legend(
-    "center",
-    legend = c("Positive significant", "Negative significant", "Non-significant"),
-    col = c("red", "dodgerblue", alpha("black", 0.4)), lty = 1, cex = 1.2
-)
-
+png("figures_and_output/family-path-unweighted-final.png",  width = 7, height = 4, units = "in", res = 600)
+    par(mfrow = c(1, 2), mar = c(1, 1, 2.5, 1))
+    plot_model(family_model_no_weights, "Lepidoptera families\n(unweighted)")
+    plot.new()
+    legend(
+        "center",
+        legend = c("Positive significant", "Negative significant", "Non-significant"),
+        col = c("red", "dodgerblue", "grey"), lty = 1, cex = 0.8
+    )
 dev.off()
 
-# Fit the model for each group without weights
-family_model_no_weights_bl <- contrasts %>%
-    rename_with(~ str_remove(., "_contrast")) %>%
-    filter(dataset == "family") %>%
-    as.data.frame() %>%
-    sem(data = ., model = path_model_genera_family_bl)
 
-# Plot models without weights
-pdf("figures_and_output/family-path-bl-unweighted.pdf", width = 12, height = 6)
-
-par(mfrow = c(1, 2))
-plot_model(family_model_no_weights_bl, "Lepidoptera families (unweighted)")
-
-# Add legend for weight color
-plot.new()
-legend(
-    "center",
-    legend = c("Positive significant", "Negative significant", "Non-significant"),
-    col = c("red", "dodgerblue", alpha("black", 0.4)), lty = 1, cex = 1.2
+# Save parameter estimates table
+# Extract parameter estimates from each model and write to a table
+parameter_estimates <- lapply(
+    c(fit_models, family_model_no_weights),
+    parameterestimates
 )
+names(parameter_estimates) <- c("genera", "major_lineage", "family", "family-unweighted")
 
-dev.off()
+# Combine all parameter estimates into a single data frame and rename 'op' to 'direction'
+parameter_estimates_df <- bind_rows(parameter_estimates, .id = "model") %>%
+    rename(direction = op) %>%
+    mutate(direction = recode(direction, `~` = "direct effect", `~~` = "covariance"))
+
+# Write the parameter estimates to a CSV file
+write_csv(parameter_estimates_df, "figures_and_output/path_estimates.csv")

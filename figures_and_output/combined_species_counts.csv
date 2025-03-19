@@ -1742,7 +1742,7 @@ genus,Biagicola,1,0
 genus,Bibarrambla,1,0
 genus,Bibasilaris,2,0
 genus,Bibasis,41,9
-genus,Biblis,4,0
+genus,Biblis,1,4
 genus,Bicavernaria,1,0
 genus,Bicilia,2,0
 genus,Biclavigera,5,0
@@ -12126,7 +12126,7 @@ genus,Tetracme,1,0
 genus,Tetraconta,1,0
 genus,Tetragonodes,8,0
 genus,Tetragonodes_auctorum,1,0
-genus,Tetragonus,2,0
+genus,Tetragonus,2,2
 genus,Tetramoera,6,2
 genus,Tetrapalpus,1,0
 genus,Tetraphleba,2,0
@@ -12327,7 +12327,7 @@ genus,Timaea,1,0
 genus,Timandra,28,2
 genus,Timandromorpha,3,0
 genus,Timelaea,9,1
-genus,Timochares,4,0
+genus,Timochares,4,2
 genus,Timochreon,4,0
 genus,Timora,99,1
 genus,Tina,1,0
@@ -13125,7 +13125,7 @@ family,Alucitidae,168,12
 family,Autostichidae,144,1
 family,Bombycidae,207,11
 family,Brahmaeidae,81,5
-family,Callidulidae,54,0
+family,Callidulidae,54,2
 family,Choreutidae,360,26
 family,Cimeliidae,14,0
 family,Cosmopterigidae,1645,180
@@ -13143,7 +13143,7 @@ family,Euteliidae,477,56
 family,Geometridae,24946,1337
 family,Hedylidae,33,5
 family,Hepialidae,589,62
-family,Hesperiidae,4895,601
+family,Hesperiidae,4895,602
 family,Immidae,237,15
 family,Lacturidae,59,1
 family,Limacodidae,1425,218
@@ -13259,7 +13259,7 @@ subfamily,Autostichinae,120,1
 subfamily,Boletobiinae,116,6
 subfamily,Bombycinae,97,11
 subfamily,Brenthiinae,62,11
-subfamily,Callidulinae,8,0
+subfamily,Callidulinae,8,2
 subfamily,Callizygaeninae,19,1
 subfamily,Calpinae,2022,146
 subfamily,Catoptinae,23,0
@@ -13357,7 +13357,7 @@ subfamily,Pterophorinae,653,86
 subfamily,Pterothysaninae,2,0
 subfamily,Pyralinae,999,38
 subfamily,Pyraustinae,1408,118
-subfamily,Pyrginae,1754,215
+subfamily,Pyrginae,1754,216
 subfamily,Pyrrhopyginae,197,21
 subfamily,Riodininae,1783,24
 subfamily,Rivulinae,77,6
