@@ -362,7 +362,8 @@ contrasts <- pairs_long %>%
         n_host_families_contrast = sign * (n_host_families_left - n_host_families_right),
         prop_generalist_contrast = sign * (prop_generalist_left - prop_generalist_right),
         baseml_bl_contrast = sign * (baseml_bl_left - baseml_bl_right)
-    )
+    ) %>%
+    ungroup()
 
 ## End make contrast table
 
@@ -379,7 +380,7 @@ contrasts <- contrasts %>% filter(
 ## Filter outliers
 outlier_dN <- contrasts %>%
     filter(dataset == "genera") %>%
-    slice_min(dN_contrast) %>%
+    slice_min(dN_contrast, n = 1) %>%
     pull(label)
 
 outlier_dS <- contrasts %>%
