@@ -159,7 +159,7 @@ host_data <- lapply(host_datasets, read_csv) %>%
     left_join(
         taxonomy_major_lineage,
         by = c("genus", "family"),
-        relationship = "many-to-many" # Note below ^
+        relationship = "many-to-many" # Note ^
     ) %>%
     # Here manually update a few problematic entries in Host data
     # TODO do synonyms for Euriphene & Metamorpha exist?
@@ -264,7 +264,8 @@ species_counts <- function(data, group_var, level_name) {
         group_by({{ group_var }}) %>%
         summarise(
             n_species = n_distinct(species),
-            n_host_record = sum(host_record)
+            n_host_record = sum(host_record),
+            n_species_with_host_record = n_distinct(species[host_record > 0])
         ) %>%
         mutate(level = level_name) %>%
         rename(taxa = {{ group_var }}) %>%
@@ -277,10 +278,10 @@ species_counts_tribe <- species_counts(species_data, tribe, "tribe")
 species_counts_subfamily <- species_counts(species_data, subfamily, "subfamily")
 
 combined_species_counts <- bind_rows(
-    species_counts_genus, species_counts_family,
-    species_counts_tribe, species_counts_subfamily
-) %>%
-    select(level, taxa, n_species, n_host_record)
+        species_counts_genus, species_counts_family,
+        species_counts_tribe, species_counts_subfamily
+    ) %>%
+    select(level, taxa, n_species, n_host_record, n_species_with_host_record)
 ## End wrangle lepindex data
 
 ## Begin associate recalculated host-related variables for contrasts, add weighting
@@ -288,6 +289,7 @@ combined_species_counts <- bind_rows(
 pairs_long <- bind_rows(genera_data, family_data, major_lineage_data) %>%
     left_join(combined_species_counts, by = "taxa") %>%
     left_join(combined_host_counts, by = "taxa") %>%
+    # Further manual adjustment for Lindell-checked values
     mutate(
         prop_generalist = case_when(
             taxa == "Doidae" ~ 1.0,
@@ -335,7 +337,7 @@ contrasts <- pairs_long %>%
         sign = ifelse(
             n_species_left - n_species_right != 0,
             sign(n_species_left - n_species_right),
-            sample(c(1, -1), 1) # Randomise if tie (hence seed above)
+            sample(c(1, -1), 1) # Randomise if tie
         ),
         weight = 1 / (weight_reciprocal_left + weight_reciprocal_right)
     ) %>%
@@ -343,7 +345,7 @@ contrasts <- pairs_long %>%
     mutate(
         prop_generalist_left = asin(sqrt(prop_generalist_left)),
         prop_generalist_right = asin(sqrt(prop_generalist_right))
-    ) %>%
+    ) #%>%
     mutate(across(
         .cols = c(
             "dN_left", "dN_right", "dS_left", "dS_right",
@@ -380,12 +382,12 @@ contrasts <- contrasts %>% filter(
 ## Filter outliers
 outlier_dN <- contrasts %>%
     filter(dataset == "genera") %>%
-    slice_min(dN_contrast, n = 1) %>%
+    slice_min(dN_contrast, n = 1) %>% # lowest is outlier upon inspection
     pull(label)
 
 outlier_dS <- contrasts %>%
     filter(dataset == "family") %>%
-    slice_max(dS_contrast) %>%
+    slice_max(dS_contrast) %>% # max is outlier upon inspection
     pull(label)
 
 ## Remove outliers from contrasts
